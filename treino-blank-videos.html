@@ -445,8 +445,8 @@
                 // Substitui os espaços por "+" na palavra-chave para formar a URL de busca
                 keyword = keyword.replace(/\s/g, '+');
 
-                // URL de busca do YouTube com a palavra-chave inserida
-                var searchUrl = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=' + keyword + '&key=AIzaSyAak9tSnzEoKqk50Kmz39nFZWAWAV7V4ro';
+                // URL de busca do YouTube com a palavra-chave inserida e o número máximo de resultados
+                var searchUrl = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=' + keyword + '&key=AIzaSyAak9tSnzEoKqk50Kmz39nFZWAWAV7V4ro';
 
                 // Requisição AJAX para a API do YouTube
                 var xhr = new XMLHttpRequest();
@@ -472,6 +472,7 @@
                 alert('Por favor, insira o nome do exercício.');
             }
         }
+
     </script>
 
 
