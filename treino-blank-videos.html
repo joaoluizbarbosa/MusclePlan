@@ -24,14 +24,14 @@
         <ul class="lista__titulo-do-treino">
             <li class="lista__titulo-do-treino__item">
                 <div class="lista__titulo-do-treino__item-div">
-                    <textarea class="titulo-do-treino" placeholder="NOME DO TREINO" maxlength="30"  oninput="updateCounter(this)"></textarea>
+                    <textarea class="titulo-do-treino" placeholder="NOME DO TREINO" maxlength="30"  oninput="limitLines(this, 1); updateCounter(this)"></textarea>
                     <span class="contador"></span>
                 </div>
                 <a href="index.html" class="back-to-index"><img src="/img/logo.png" class="logo-treino-blank"></a>
             </li>
         </ul>
 
-        <textarea class="treino__obs" placeholder="Observações gerais sobre o treino" maxlength="130"  oninput="updateCounter(this)"></textarea>
+        <textarea class="treino__obs" placeholder="Observações gerais sobre o treino" maxlength="130"  oninput="limitLines(this, 3); updateCounter(this)"></textarea>
         <span class="contador"></span>
 
         <section class="exercicio-n" id="exercicio-1">
@@ -39,12 +39,12 @@
             <ul class="lista__nome-do-exercicio">
                 <li class="lista__nome-do-exercicio__item">
                     <p class="lista__nome-do-exercicio__numero">1</p>
-                    <textarea class="exercicio__nome" placeholder="Nome do exercício" maxlength="30"></textarea>
+                    <textarea class="exercicio__nome" placeholder="Nome do exercício" maxlength="30" oninput="limitLines(this, 1)"></textarea>
                     <button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-1')">></button>
                 </li>     
             </ul>
 
-            <textarea class="exercicio__obs" placeholder="Observações sobre o exercício" maxlength="150"  oninput="updateCounter(this)"></textarea>
+            <textarea class="exercicio__obs" placeholder="Observações sobre o exercício" maxlength="150"  oninput="limitLines(this, 4); updateCounter(this)"></textarea>
             <span class="contador"></span>
 
             <ul class="lista__primeira-linha">
@@ -247,12 +247,12 @@
             <ul class="lista__nome-do-exercicio">
                     <li class="lista__nome-do-exercicio__item">
                         <p class="lista__nome-do-exercicio__numero">${j}</p>
-                        <textarea class="exercicio__nome" placeholder="Nome do exercício" maxlength="30"></textarea>
+                        <textarea class="exercicio__nome" placeholder="Nome do exercício" maxlength="30" oninput="limitLines(this, 1)"></textarea>
                         <button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-${j}')">></button>
                     </li>     
                 </ul>
 
-                <textarea class="exercicio__obs" placeholder="Observações sobre o exercício" maxlength="150"  oninput="updateCounter(this)"></textarea>
+                <textarea class="exercicio__obs" placeholder="Observações sobre o exercício" maxlength="150"  oninput="limitLines(this, 4); updateCounter(this)"></textarea>
                 <span class="contador"></span>
 
                 <ul class="lista__primeira-linha">
@@ -507,6 +507,14 @@
             var contador = textarea.nextElementSibling;
 
             contador.textContent = currentLength + '/' + maxLength;
+        }
+
+        // Função para limitar o número de linhas em uma textarea
+        function limitLines(textarea, maxLines) {
+            var lines = textarea.value.split('\n');
+            if (lines.length > maxLines) {
+                textarea.value = lines.slice(0, maxLines).join('\n');
+            }
         }
     </script>
 
