@@ -23,24 +23,24 @@
 
         <ul class="lista__titulo-do-treino">
             <li class="lista__titulo-do-treino__item">
-                <textarea class="titulo-do-treino" placeholder="NOME DO TREINO"></textarea>
+                <textarea class="titulo-do-treino" placeholder="NOME DO TREINO" maxlength="30"></textarea>
                 <a href="index.html" class="back-to-index"><img src="/img/logo.png" class="logo-treino-blank"></a>
             </li>
         </ul>
 
-        <textarea class="treino__obs" placeholder="Observações gerais sobre o treino"></textarea>
+        <textarea class="treino__obs" placeholder="Observações gerais sobre o treino" maxlength="126"></textarea>
         
         <section class="exercicio-n" id="exercicio-1">
 
             <ul class="lista__nome-do-exercicio">
                 <li class="lista__nome-do-exercicio__item">
                     <p class="lista__nome-do-exercicio__numero">1</p>
-                    <textarea class="exercicio__nome" placeholder="Nome do exercício"></textarea>
+                    <textarea class="exercicio__nome" placeholder="Nome do exercício" maxlength="50"></textarea>
                     <button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-1')">></button>
                 </li>     
             </ul>
 
-            <textarea class="exercicio__obs" placeholder="Observações sobre o exercício"></textarea>
+            <textarea class="exercicio__obs" placeholder="Observações sobre o exercício" maxlength="250"></textarea>
             
             <ul class="lista__primeira-linha">
                 <li>
@@ -473,6 +473,24 @@
             }
         }
 
+    </script>
+
+    <script>
+        // Adiciona eventos para limitar o número de caracteres em cada textarea
+        document.addEventListener("DOMContentLoaded", function() {
+            var textareas = document.querySelectorAll('textarea');
+        
+            textareas.forEach(function(textarea) {
+                textarea.addEventListener('input', function() {
+                    var maxLength = parseInt(this.getAttribute('maxlength'));
+                    var currentLength = this.value.length;
+        
+                    if (currentLength > maxLength) {
+                        this.value = this.value.slice(0, maxLength);
+                    }
+                });
+            });
+        });
     </script>
 
 

@@ -193,7 +193,7 @@ body {
     border-radius: 4px;
     font-family: var(--fonte-principal);
     width: 90%; /* Define a largura do textarea */
-    height: 50px; /* Define a altura do textarea */
+    height: 70px; /* Define a altura do textarea */
     resize: none; /* Impede o redimensionamento do textarea */
 }
 
