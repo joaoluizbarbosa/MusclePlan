@@ -55,8 +55,7 @@ body {
     align-items: center;
 }
 
-.ancora-index {
-    border: 0.5px solid black;
+.ancora-index:active {
     border-radius: 35px;
 }
 
