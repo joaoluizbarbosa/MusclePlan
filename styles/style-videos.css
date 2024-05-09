@@ -338,12 +338,12 @@ select {
 
 @media (min-width: 700px) {
     .cabecalho {
-        width: 70%;
+        width: 60%;
         margin: auto;
     }
 
     .main__treino-blank {
-        width: 70%;
+        width: 60%;
         margin: auto;
     }
 
@@ -354,20 +354,16 @@ select {
     .select-kg {
         width: 95%;
     }
-
-    .input-unico {
-        width: 78%;
-    }
 }
 
 @media (min-width: 1024px) {
     .cabecalho {
-        width: 50%;
+        width: 40%;
         margin: auto;
     }
 
     .main__treino-blank {
-        width: 50%;
+        width: 40%;
         margin: auto;
     }
 
@@ -378,48 +374,40 @@ select {
     .select-kg {
         width: 93%;
     }
-
-    .input-unico {
-        width: 77%;
-    }
 }
 
 @media (min-width: 1440px) {
     .cabecalho {
-        width: 35%;
+        width: 30%;
         margin: auto;
     }
     
     .main__treino-blank {
-        width: 35%;
+        width: 30%;
         margin: auto;
-    }
-
-    .input-unico {
-        width: 76.5%;
     }
 }
 
 @media (min-width: 1680px) {
     .cabecalho {
-        width: 30%;
+        width: 25%;
         margin: auto;
     }
     
     .main__treino-blank {
-        width: 30%;
+        width: 25%;
         margin: auto;
     }
 }
 
 @media (min-width: 1920px) {
     .cabecalho {
-        width: 25%;
+        width: 20%;
         margin: auto;
     }
     
     .main__treino-blank {
-        width: 25%;
+        width: 20%;
         margin: auto;
     }
 
@@ -434,29 +422,25 @@ select {
 
 @media (min-width: 2560px) {
     .cabecalho {
-        width: 19%;
+        width: 16%;
         margin: auto;
     }
     
     .main__treino-blank {
-        width: 19%;
+        width: 16%;
         margin: auto;
     }
 }
 
 @media (min-width: 3370px) {
     .cabecalho {
-        width: 15%;
+        width: 12%;
         margin: auto;
     }
     
     .main__treino-blank {
-        width: 15%;
+        width: 12%;
         margin: auto;
-    }
-
-    .input-unico {
-        width: 76%;
     }
 
     select {
