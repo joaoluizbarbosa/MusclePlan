@@ -23,25 +23,30 @@
 
         <ul class="lista__titulo-do-treino">
             <li class="lista__titulo-do-treino__item">
-                <textarea class="titulo-do-treino" placeholder="NOME DO TREINO" maxlength="30"></textarea>
+                <div class="lista__titulo-do-treino__item-div">
+                    <textarea class="titulo-do-treino" placeholder="NOME DO TREINO" maxlength="30"  oninput="updateCounter(this)"></textarea>
+                    <span class="contador"></span>
+                </div>
                 <a href="index.html" class="back-to-index"><img src="/img/logo.png" class="logo-treino-blank"></a>
             </li>
         </ul>
 
-        <textarea class="treino__obs" placeholder="Observações gerais sobre o treino" maxlength="126"></textarea>
-        
+        <textarea class="treino__obs" placeholder="Observações gerais sobre o treino" maxlength="130"  oninput="updateCounter(this)"></textarea>
+        <span class="contador"></span>
+
         <section class="exercicio-n" id="exercicio-1">
 
             <ul class="lista__nome-do-exercicio">
                 <li class="lista__nome-do-exercicio__item">
                     <p class="lista__nome-do-exercicio__numero">1</p>
-                    <textarea class="exercicio__nome" placeholder="Nome do exercício" maxlength="50"></textarea>
+                    <textarea class="exercicio__nome" placeholder="Nome do exercício" maxlength="30"></textarea>
                     <button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-1')">></button>
                 </li>     
             </ul>
 
-            <textarea class="exercicio__obs" placeholder="Observações sobre o exercício" maxlength="250"></textarea>
-            
+            <textarea class="exercicio__obs" placeholder="Observações sobre o exercício" maxlength="150"  oninput="updateCounter(this)"></textarea>
+            <span class="contador"></span>
+
             <ul class="lista__primeira-linha">
                 <li>
                     <p>Set</p>
@@ -242,12 +247,13 @@
             <ul class="lista__nome-do-exercicio">
                     <li class="lista__nome-do-exercicio__item">
                         <p class="lista__nome-do-exercicio__numero">${j}</p>
-                        <textarea class="exercicio__nome" placeholder="Nome do exercício"></textarea>
+                        <textarea class="exercicio__nome" placeholder="Nome do exercício" maxlength="30"></textarea>
                         <button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-${j}')">></button>
                     </li>     
                 </ul>
 
-                <textarea class="exercicio__obs" placeholder="Observações sobre o exercício"></textarea>
+                <textarea class="exercicio__obs" placeholder="Observações sobre o exercício" maxlength="150"  oninput="updateCounter(this)"></textarea>
+                <span class="contador"></span>
 
                 <ul class="lista__primeira-linha">
                     <li>
@@ -491,6 +497,17 @@
                 });
             });
         });
+    </script>
+
+    <script>
+        // Função para atualizar o contador de caracteres
+        function updateCounter(textarea) {
+            var maxLength = parseInt(textarea.getAttribute('maxlength'));
+            var currentLength = textarea.value.length;
+            var contador = textarea.nextElementSibling;
+
+            contador.textContent = currentLength + '/' + maxLength;
+        }
     </script>
 
 

@@ -97,18 +97,11 @@ body {
     height: 30px;
 }
 
-.back-to-index {
-    margin: 0.7em 0.5em 0.5em auto;
-    width: 40px;
-}
-
-.logo-treino-blank {
-    width: 40px;
-}
-
 .lista__titulo-do-treino__item{
-    display: flex;
+    display: grid;
+    grid-template-columns: 85% 15%;
     align-items: center;
+    margin-bottom: 0.5em;
 }
 
 .titulo-do-treino {
@@ -122,9 +115,25 @@ body {
     color: var(--cor-fonte-2);
     font-weight: 500;
     font-size: 1.1em;
-    margin: 0.5em 0.5em 0.5em 0.5em;
+    margin: 0.5em 0.5em 0 0.5em;
     padding: 0.2em;
 }
+
+.contador {
+    font-size: 0.7em;
+    color: var(--cor-fonte-1);
+    margin: 0.5em 0 0 1em;
+}
+
+.back-to-index {
+    margin: 0.7em 0.5em 0.5em auto;
+    width: 40px;
+}
+
+.logo-treino-blank {
+    width: 40px;
+}
+
 
 .treino__obs {
     display: block;
