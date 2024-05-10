@@ -194,6 +194,11 @@ body {
     height: 18px;
 }
 
+.video-container {
+    display: flex;
+    justify-content: center;
+}
+
 .exercicio__obs {
     display: block;
     margin-left: auto;
