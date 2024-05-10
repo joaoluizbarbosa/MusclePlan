@@ -531,6 +531,31 @@
         }
     </script>
 
+    <script>
+
+        // Obtém todos os elementos <textarea> com as classes 'texto-area-1' e 'texto-area-2'
+        var textAreas1 = document.querySelectorAll(".titulo-do-treino");
+        var textAreas2 = document.querySelectorAll(".exercicio__nome");
+        
+        // Função para converter texto em letras maiúsculas
+        function converterParaMaiusculas() {
+            this.value = this.value.toUpperCase();
+        }
+        
+        // Itera sobre os elementos <textarea> da primeira classe
+        textAreas1.forEach(function(textarea) {
+            // Adiciona um ouvinte de evento para o evento 'input'
+            textarea.addEventListener("input", converterParaMaiusculas);
+        });
+        
+        // Itera sobre os elementos <textarea> da segunda classe
+        textAreas2.forEach(function(textarea) {
+            // Adiciona um ouvinte de evento para o evento 'input'
+            textarea.addEventListener("input", converterParaMaiusculas);
+        });
+
+    </script>
+
 
 </body>
 </html>
