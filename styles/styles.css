@@ -105,6 +105,7 @@ body {
 }
 
 .titulo-do-treino {
+    text-transform: uppercase;
     display: block;
     background-color: var(--cor-fundo-main);
     border: none;
@@ -142,9 +143,9 @@ body {
     padding: 0.5em;
     border-radius: 4px;
     font-family: var(--fonte-principal);
-    width: 92.5%; /* Define a largura do textarea */
-    height: 50px; /* Define a altura do textarea */
-    resize: none; /* Impede o redimensionamento do textarea */
+    width: 92.5%;
+    height: 50px;
+    resize: none;
 }
 
 .exercicio-n {
@@ -163,21 +164,23 @@ body {
 }
 
 .lista__nome-do-exercicio__numero {
+    font-size: 1em;
     color: var(--paleta-cor-6);
     font-weight: 600;
 }
 
 .exercicio__nome {
+    padding-top: 0.5em;
+    text-transform: uppercase;
     display: block;
     background-color: var(--cor-fundo-exercicio);
     border: none;
-    /* margin-right: auto; */
     font-family: var(--fonte-principal);
-    font-size: 1em;
+    font-size: 0.8em;
     font-weight: 500;
     color: var(--cor-fonte);
-    width: 95%; /* Define a largura do textarea */
-    height: 18px; /* Define a altura do textarea */
+    width: 95%; 
+    height: 18px;
     resize: none; /* Impede o redimensionamento do textarea */
 }
 
@@ -208,9 +211,9 @@ body {
     padding: 0.5em;
     border-radius: 4px;
     font-family: var(--fonte-principal);
-    width: 90%; /* Define a largura do textarea */
-    height: 70px; /* Define a altura do textarea */
-    resize: none; /* Impede o redimensionamento do textarea */
+    width: 90%;
+    height: 70px;
+    resize: none;
 }
 
 
