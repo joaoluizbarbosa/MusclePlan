@@ -197,7 +197,7 @@ body {
 .video-container {
     display: flex;
     justify-content: center;
-    margin-botton: 1em;
+    margin-bottom: 1em;
 }
 
 .exercicio__obs {
