@@ -12,6 +12,8 @@
         <div class="export-buttons">
             <button class="export-whatsapp" onclick="exportToWhatsApp()">Exp. WhatsApp</button>
             <button class="export-excel" onclick="exportToExcel()">Exp. Excel</button>
+            <button class="import-excel" onclick="importFromExcel()">Imp. Excel</button>
+
         </div>
 
     </header>
@@ -427,6 +429,68 @@
         }
     </script>
 
+    <script>
+        function importFromExcel() {
+            // Cria um input do tipo file para permitir ao usuário escolher um arquivo
+            var input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.xlsx'; // Aceita apenas arquivos Excel
+            input.addEventListener('change', function() {
+                var file = input.files[0];
+                var reader = new FileReader();
+
+                // Ao carregar o arquivo, executa a função para processar os dados
+                reader.onload = function(e) {
+                    var data = new Uint8Array(e.target.result);
+                    var workbook = XLSX.read(data, {type: 'array'});
+
+                    // Obtém a primeira planilha do arquivo Excel
+                    var firstSheetName = workbook.SheetNames[0];
+                    var worksheet = workbook.Sheets[firstSheetName];
+
+                    // Converte a planilha em um array de objetos
+                    var jsonData = XLSX.utils.sheet_to_json(worksheet, {header: 1});
+
+                    // Preenche os campos do HTML com os dados do arquivo Excel
+                    fillHTMLFields(jsonData);
+                };
+
+                // Lê o arquivo como array buffer
+                reader.readAsArrayBuffer(file);
+            });
+
+            // Dispara o evento de clique no input file
+            input.click();
+        }
+    </script>
+
+    <script>
+        function fillHTMLFields(data) {
+            // Preenche o título do treino e as observações gerais
+            document.querySelector('.titulo-do-treino').value = data[0][0];
+            document.querySelector('.treino__obs').value = data[1][0];
+
+            // Itera sobre os exercícios e preenche os campos correspondentes
+            var exercicios = document.querySelectorAll('.exercicio-n');
+            data.slice(2).forEach((exercicioData, index) => {
+                var exercicio = exercicios[index];
+                exercicio.querySelector('.exercicio__nome').value = exercicioData[0];
+                exercicio.querySelector('.exercicio__obs').value = exercicioData[1];
+
+                // Preenche os campos de aquecimento
+                var aquecimentoInputs = exercicio.querySelectorAll('.lista__aquecimento__input');
+                for (let i = 0; i < aquecimentoInputs.length; i++) {
+                    aquecimentoInputs[i].value = exercicioData[i + 2];
+                }
+
+                // Preenche os campos da segunda linha
+                var segundaLinhaInputs = exercicio.querySelectorAll('.lista__segunda-linha__input');
+                for (let i = 0; i < segundaLinhaInputs.length; i++) {
+                    segundaLinhaInputs[i].value = exercicioData[i + 5];
+                }
+            });
+        }
+    </script>
 
     <script>
         function searchYouTubeDynamic(sectionId) {
