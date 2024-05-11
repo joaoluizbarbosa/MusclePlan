@@ -148,14 +148,19 @@
         // Função para exportar o texto para o WhatsApp
         function exportToWhatsApp() {
             // Selecionar os elementos desejados
-            let tituloTreino = document.querySelector('.titulo-do-treino').value;
-            let obsTreino = document.querySelector('.treino__obs').value;
+            let tituloTreinoInput = document.querySelector('.titulo-do-treino');
+            let obsTreinoInput = document.querySelector('.treino__obs');
             let exercicios = document.querySelectorAll('.exercicio-n');
             let textoExercicios = '';
     
+            // Obter o título do treino em letras maiúsculas
+            let tituloTreino = tituloTreinoInput.value.toUpperCase();
+            let obsTreino = obsTreinoInput.value;
+    
             // Iterar sobre cada exercício
             exercicios.forEach((exercicio, index) => {
-                let nomeExercicio = exercicio.querySelector('.exercicio__nome').value;
+                let nomeExercicioInput = exercicio.querySelector('.exercicio__nome');
+                let nomeExercicio = nomeExercicioInput.value.toUpperCase();
                 let obsExercicio = exercicio.querySelector('.exercicio__obs').value;
                 let sets = exercicio.querySelectorAll('.lista__segunda-linha__item');
                 let aquecimentoInputs = exercicio.querySelectorAll('.lista__aquecimento__input');
@@ -195,6 +200,7 @@
             window.open(`https://wa.me/?text=${textoWhatsApp}`, '_blank');
         }
     </script>
+    
     
 
     <script>
