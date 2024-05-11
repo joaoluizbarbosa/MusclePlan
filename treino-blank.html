@@ -12,7 +12,6 @@
         <div class="export-buttons">
             <button class="export-whatsapp" onclick="exportToWhatsApp()">Exp. WhatsApp</button>
             <button class="export-excel" onclick="exportToExcel()">Exp. Excel</button>
-            <button class="export-log" onclick="saveData()">Exp. Log File</button>
         </div>
 
     </header>
@@ -369,100 +368,65 @@
         }    
     </script>
 
-<script>
-    function exportToExcel() {
-        let data = [];
-
-        // Coleta os dados do título do treino e observações gerais
-        let tituloTreino = document.querySelector('.titulo-do-treino').value;
-        let obsTreino = document.querySelector('.treino__obs').value;
-        data.push([tituloTreino]);
-        data.push([obsTreino]);
-
-        // Coleta os dados de cada exercício
-        let exercicios = document.querySelectorAll('.exercicio-n');
-        exercicios.forEach((exercicio, index) => {
-            let nomeExercicio = exercicio.querySelector('.exercicio__nome').value;
-            let obsExercicio = exercicio.querySelector('.exercicio__obs').value;
-
-            // Adiciona o nome e as observações do exercício
-            data.push([nomeExercicio]);
-            data.push([obsExercicio]);
-
-            // Coleta e formata os dados do aquecimento
-            let aquecimentoInputs = exercicio.querySelectorAll('.lista__aquecimento__input');
-            let aquecimentoData = [];
-            aquecimentoInputs.forEach((input, i) => {
-                if (i % 3 === 0) {
-                    aquecimentoData = [input.value];
-                } else {
-                    aquecimentoData.push(input.value);
-                }
-                if ((i + 1) % 3 === 0) {
-                    data.push(["a-Set", ...aquecimentoData]);
-                }
-            });
-
-            // Coleta e formata os dados da segunda linha
-            let segundaLinhaInputs = exercicio.querySelectorAll('.lista__segunda-linha__input');
-            let segundaLinhaData = [];
-            segundaLinhaInputs.forEach((input, i) => {
-                if (i % 5 === 0) {
-                    segundaLinhaData = [input.value];
-                } else {
-                    segundaLinhaData.push(input.value);
-                }
-                if ((i + 1) % 5 === 0) {
-                    data.push(["Set", ...segundaLinhaData]);
-                }
-            });
-        });
-
-        // Cria um novo workbook
-        let wb = XLSX.utils.book_new();
-        let ws = XLSX.utils.aoa_to_sheet(data);
-        XLSX.utils.book_append_sheet(wb, ws, "Dados");
-
-        // Salva o workbook como um arquivo Excel
-        XLSX.writeFile(wb, 'dados_excel.xlsx');
-    }
-</script>
-
-
-
-
-
-
-
     <script>
-        function saveData() {
-            let data = "";
+        function exportToExcel() {
+            let data = [];
 
-            // Coleta os dados dos campos de input
-            let inputs = document.querySelectorAll('.lista__segunda-linha__input');
-            inputs.forEach(input => {
-                data += input.value + "\n";
+            // Coleta os dados do título do treino e observações gerais
+            let tituloTreino = document.querySelector('.titulo-do-treino').value;
+            let obsTreino = document.querySelector('.treino__obs').value;
+            data.push([tituloTreino]);
+            data.push([obsTreino]);
+
+            // Coleta os dados de cada exercício
+            let exercicios = document.querySelectorAll('.exercicio-n');
+            exercicios.forEach((exercicio, index) => {
+                let nomeExercicio = exercicio.querySelector('.exercicio__nome').value;
+                let obsExercicio = exercicio.querySelector('.exercicio__obs').value;
+
+                // Adiciona o nome e as observações do exercício
+                data.push([nomeExercicio]);
+                data.push([obsExercicio]);
+
+                // Coleta e formata os dados do aquecimento
+                let aquecimentoInputs = exercicio.querySelectorAll('.lista__aquecimento__input');
+                let aquecimentoData = [];
+                aquecimentoInputs.forEach((input, i) => {
+                    if (i % 3 === 0) {
+                        aquecimentoData = [input.value];
+                    } else {
+                        aquecimentoData.push(input.value);
+                    }
+                    if ((i + 1) % 3 === 0) {
+                        data.push(["a-Set", ...aquecimentoData]);
+                    }
+                });
+
+                // Coleta e formata os dados da segunda linha
+                let segundaLinhaInputs = exercicio.querySelectorAll('.lista__segunda-linha__input');
+                let segundaLinhaData = [];
+                segundaLinhaInputs.forEach((input, i) => {
+                    if (i % 5 === 0) {
+                        segundaLinhaData = [input.value];
+                    } else {
+                        segundaLinhaData.push(input.value);
+                    }
+                    if ((i + 1) % 5 === 0) {
+                        data.push(["Set", ...segundaLinhaData]);
+                    }
+                });
             });
 
-            // Salva os dados em um arquivo de log
-            download("dados_log.txt", data);
+            // Cria um novo workbook
+            let wb = XLSX.utils.book_new();
+            let ws = XLSX.utils.aoa_to_sheet(data);
+            XLSX.utils.book_append_sheet(wb, ws, "Dados");
+
+            // Salva o workbook como um arquivo Excel
+            XLSX.writeFile(wb, 'dados_excel.xlsx');
         }
-
-        // Função para realizar o download do arquivo
-        function download(filename, text) {
-            var element = document.createElement('a');
-            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-            element.setAttribute('download', filename);
-
-            element.style.display = 'none';
-            document.body.appendChild(element);
-
-            element.click();
-
-            document.body.removeChild(element);
-        }
-
     </script>
+
 
     <script>
         function searchYouTubeDynamic(sectionId) {
