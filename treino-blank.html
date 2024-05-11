@@ -364,50 +364,62 @@
         }    
     </script>
 
-    <script>
-        function exportToExcel() {
-            let data = [];
+<script>
+    function exportToExcel() {
+        let data = [];
 
-            // Título do Treino
-            let tituloTreino = document.querySelector('.titulo-do-treino').value;
-            data.push(["Título do Treino", tituloTreino]);
+        // Título do Treino
+        let tituloTreino = document.querySelector('.titulo-do-treino').value;
+        let obsTreino = document.querySelector('.treino__obs').value;
+        data.push(["Título do Treino", tituloTreino]);
+        data.push(["Observações Gerais", obsTreino]);
+        data.push([]); // Adiciona uma linha em branco para separar os dados
 
-            // Observações Gerais do Treino
-            let obsTreino = document.querySelector('.treino__obs').value;
-            data.push(["Observações Gerais", obsTreino]);
+        // Coleta os dados dos campos de input dos exercícios
+        let exercicios = document.querySelectorAll('.exercicio-n');
+        exercicios.forEach((exercicio, index) => {
+            let nomeExercicio = exercicio.querySelector('.exercicio__nome').value;
+            let obsExercicio = exercicio.querySelector('.exercicio__obs').value;
 
-            // Coleta os dados dos campos de input dos exercícios
-            let exercicios = document.querySelectorAll('.exercicio-n');
-            exercicios.forEach((exercicio, index) => {
-                let nomeExercicio = exercicio.querySelector('.exercicio__nome').value;
-                let obsExercicio = exercicio.querySelector('.exercicio__obs').value;
-                data.push(["Exercício " + (index + 1) + " - Nome", nomeExercicio]);
-                data.push(["Exercício " + (index + 1) + " - Observações", obsExercicio]);
+            // Adiciona os dados do exercício como uma nova linha
+            data.push([nomeExercicio, "", "", ""]); // Adiciona o nome do exercício
+            data.push(["", "Observações", obsExercicio, ""]); // Adiciona uma linha para as observações do exercício
 
-                // Coleta os dados dos campos de input de aquecimento
-                let aquecimentoInputs = exercicio.querySelectorAll('.lista__aquecimento__input');
-                aquecimentoInputs.forEach(input => {
-                    data.push(["Exercício " + (index + 1) + " - Aquecimento", input.value]);
-                });
-
-                // Coleta os dados dos campos de input da segunda linha
-                let segundaLinhaInputs = exercicio.querySelectorAll('.lista__segunda-linha__input');
-                segundaLinhaInputs.forEach(input => {
-                    data.push(["Exercício " + (index + 1) + " - Segunda Linha", input.value]);
-                });
+            // Coleta os dados dos campos de input de aquecimento
+            let aquecimentoInputs = exercicio.querySelectorAll('.lista__aquecimento__input');
+            let aquecimentoData = [];
+            aquecimentoInputs.forEach((input, i) => {
+                aquecimentoData.push(input.value);
+                if ((i + 1) % 3 === 0) {
+                    data.push(["", "Aquecimento"].concat(aquecimentoData)); // Adiciona uma linha para cada grupo de 3 inputs
+                    aquecimentoData = []; // Limpa o array para o próximo grupo
+                }
             });
 
-            // Cria um novo workbook
-            let wb = XLSX.utils.book_new();
-            let ws = XLSX.utils.aoa_to_sheet(data);
-            XLSX.utils.book_append_sheet(wb, ws, "Dados");
+            // Coleta os dados dos campos de input da segunda linha
+            let segundaLinhaInputs = exercicio.querySelectorAll('.lista__segunda-linha__input');
+            let segundaLinhaData = [];
+            segundaLinhaInputs.forEach((input, i) => {
+                segundaLinhaData.push(input.value);
+                if ((i + 1) % 5 === 0) {
+                    data.push(["", "Segunda Linha"].concat(segundaLinhaData)); // Adiciona uma linha para cada grupo de 5 inputs
+                    segundaLinhaData = []; // Limpa o array para o próximo grupo
+                }
+            });
 
-            // Salva o workbook como um arquivo Excel
-            XLSX.writeFile(wb, 'dados_excel.xlsx');
-        }
+            data.push([]); // Adiciona uma linha em branco para separar os dados de diferentes exercícios
+        });
 
+        // Cria um novo workbook
+        let wb = XLSX.utils.book_new();
+        let ws = XLSX.utils.aoa_to_sheet(data);
+        XLSX.utils.book_append_sheet(wb, ws, "Dados");
 
-    </script>
+        // Salva o workbook como um arquivo Excel
+        XLSX.writeFile(wb, 'dados_excel.xlsx');
+    }
+</script>
+
 
     <script>
         function saveData() {
