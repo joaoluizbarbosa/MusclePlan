@@ -132,7 +132,6 @@
             
         </section>
 
-        
         <div class="session-buttons">
             <button class="new-session-button" onclick="addSection()">Adicionar exercício</button>
             <button class="remove-session-button" onclick="removeLastSection()">Remover exercício</button>
@@ -374,46 +373,49 @@
     function exportToExcel() {
         let data = [];
 
-        // Título do Treino
+        // Coleta os dados do título do treino e observações gerais
         let tituloTreino = document.querySelector('.titulo-do-treino').value;
         let obsTreino = document.querySelector('.treino__obs').value;
-        data.push(["Título do Treino", tituloTreino]);
-        data.push(["Observações Gerais", obsTreino]);
-        data.push([]); // Adiciona uma linha em branco para separar os dados
+        data.push([tituloTreino]);
+        data.push([obsTreino]);
 
-        // Coleta os dados dos campos de input dos exercícios
+        // Coleta os dados de cada exercício
         let exercicios = document.querySelectorAll('.exercicio-n');
         exercicios.forEach((exercicio, index) => {
             let nomeExercicio = exercicio.querySelector('.exercicio__nome').value;
             let obsExercicio = exercicio.querySelector('.exercicio__obs').value;
 
-            // Adiciona os dados do exercício como uma nova linha
-            data.push([nomeExercicio, "", "", ""]); // Adiciona o nome do exercício
-            data.push(["", "Observações", obsExercicio, ""]); // Adiciona uma linha para as observações do exercício
+            // Adiciona o nome e as observações do exercício
+            data.push([nomeExercicio]);
+            data.push([obsExercicio]);
 
-            // Coleta os dados dos campos de input de aquecimento
+            // Coleta e formata os dados do aquecimento
             let aquecimentoInputs = exercicio.querySelectorAll('.lista__aquecimento__input');
             let aquecimentoData = [];
             aquecimentoInputs.forEach((input, i) => {
-                aquecimentoData.push(input.value);
+                if (i % 3 === 0) {
+                    aquecimentoData = [input.value];
+                } else {
+                    aquecimentoData.push(input.value);
+                }
                 if ((i + 1) % 3 === 0) {
-                    data.push(["", "Aquecimento"].concat(aquecimentoData)); // Adiciona uma linha para cada grupo de 3 inputs
-                    aquecimentoData = []; // Limpa o array para o próximo grupo
+                    data.push(["a-Set", ...aquecimentoData]);
                 }
             });
 
-            // Coleta os dados dos campos de input da segunda linha
+            // Coleta e formata os dados da segunda linha
             let segundaLinhaInputs = exercicio.querySelectorAll('.lista__segunda-linha__input');
             let segundaLinhaData = [];
             segundaLinhaInputs.forEach((input, i) => {
-                segundaLinhaData.push(input.value);
+                if (i % 5 === 0) {
+                    segundaLinhaData = [input.value];
+                } else {
+                    segundaLinhaData.push(input.value);
+                }
                 if ((i + 1) % 5 === 0) {
-                    data.push(["", "Segunda Linha"].concat(segundaLinhaData)); // Adiciona uma linha para cada grupo de 5 inputs
-                    segundaLinhaData = []; // Limpa o array para o próximo grupo
+                    data.push(["Set", ...segundaLinhaData]);
                 }
             });
-
-            data.push([]); // Adiciona uma linha em branco para separar os dados de diferentes exercícios
         });
 
         // Cria um novo workbook
@@ -425,6 +427,11 @@
         XLSX.writeFile(wb, 'dados_excel.xlsx');
     }
 </script>
+
+
+
+
+
 
 
     <script>
