@@ -1,31 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --paleta-cor-1: #153448;
-    --paleta-cor-2: #3C5B6F;
-    --paleta-cor-3: #948979;
-    --paleta-cor-4: #DFD0B8;
+    --paleta-cor-1: #404258;
+    --paleta-cor-2: #474E68;
+    --paleta-cor-3: #50577A;
+    --paleta-cor-4: #6B728E;
     --paleta-cor-5: #C40C0C;
     --paleta-cor-6: #FF6500;
     --paleta-cor-7: #FF8A08;
     --paleta-cor-8: #FFC100;
-    --paleta-cor-9: #4793AF;
-    --paleta-cor-10: #FFC470;
-    --paleta-cor-11: #DD5746;
-    --paleta-cor-12: #8B322C;
+    --paleta-cor-9: #00224D;
+    --paleta-cor-10: #5D0E41;
+    --paleta-cor-11: #A0153E;
+    --paleta-cor-12: #FF204E;
+
     --fonte-principal: "Montserrat", sans-serif;
     --cor-fonte: #DFD0B8;
     --cor-fonte-1: WHITE;
     --cor-fonte-2: BLACK;
     --cor-fonte-botao: white;
-    --cor-fundo-main: #948979;
-    --cor-fundo-exercicio: #3C5B6F;
+    --cor-fonte-placeholder: BLACK;
+    --cor-fundo-main: #6B728E;
+    --cor-fundo-exercicio: #474E68;
     --cor-fundo-select: #DFD0B8;
     --cor-fundo-input-reps1: white;
     --cor-fundo-input-reps2: #FFC100;
     --cor-fundo-input-kg: #FFC100;
-    --cor-fundo-input-rpe1: #FF6500;
-    --cor-fundo-input-rpe2: #C40C0C;
+    --cor-fundo-input-rpe1: #FF8A08;
+    --cor-fundo-input-rpe2: #c42e2e;
     --cor-fundo-botao: #153448;
     
 }
@@ -75,7 +77,7 @@ body {
 }
 
 ::placeholder {
-    color: var(--cor-fonte-2);
+    color: var(--cor-fonte-placeholder);
 }
 
 .export-buttons {
@@ -95,6 +97,11 @@ body {
     box-shadow: 1px 1px 1px black;
     width: 33%;
     height: 30px;
+}
+
+.import-excel {
+    color: var(--cor-fonte-botao);
+    background-color: var(--paleta-cor-11);
 }
 
 .lista__titulo-do-treino__item{
@@ -320,7 +327,8 @@ select {
 }
 
 .add-w-button {
-    color: var(--paleta-cor-7);
+    color: var(--cor-fonte-2);
+    background-color: var(--paleta-cor-6);
 }
 
 .session-buttons {
