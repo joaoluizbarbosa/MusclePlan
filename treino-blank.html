@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/reset.css">
     <link rel="stylesheet" href="/styles/styles.css">
-    <title>MusclePlan - BLANK [videos]</title>
+    <title>MusclePlan - BLANK</title>
 </head>
 <body>
     <header class="cabecalho">
@@ -386,37 +386,23 @@
                 let nomeExercicio = exercicio.querySelector('.exercicio__nome').value;
                 let obsExercicio = exercicio.querySelector('.exercicio__obs').value;
 
-                // Adiciona o nome e as observações do exercício
-                data.push([nomeExercicio]);
-                data.push([obsExercicio]);
-
                 // Coleta e formata os dados do aquecimento
                 let aquecimentoInputs = exercicio.querySelectorAll('.lista__aquecimento__input');
                 let aquecimentoData = [];
                 aquecimentoInputs.forEach((input, i) => {
-                    if (i % 3 === 0) {
-                        aquecimentoData = [input.value];
-                    } else {
-                        aquecimentoData.push(input.value);
-                    }
-                    if ((i + 1) % 3 === 0) {
-                        data.push(["a-Set", ...aquecimentoData]);
-                    }
+                    aquecimentoData.push(input.value);
                 });
 
                 // Coleta e formata os dados da segunda linha
                 let segundaLinhaInputs = exercicio.querySelectorAll('.lista__segunda-linha__input');
                 let segundaLinhaData = [];
                 segundaLinhaInputs.forEach((input, i) => {
-                    if (i % 5 === 0) {
-                        segundaLinhaData = [input.value];
-                    } else {
-                        segundaLinhaData.push(input.value);
-                    }
-                    if ((i + 1) % 5 === 0) {
-                        data.push(["Set", ...segundaLinhaData]);
-                    }
+                    segundaLinhaData.push(input.value);
                 });
+
+                // Adiciona os dados do exercício à matriz de dados
+                data.push([nomeExercicio, obsExercicio, ...aquecimentoData, ...segundaLinhaData]);
+                // data.push([]); // Adiciona uma linha em branco entre os exercícios
             });
 
             // Cria um novo workbook
@@ -425,72 +411,81 @@
             XLSX.utils.book_append_sheet(wb, ws, "Dados");
 
             // Salva o workbook como um arquivo Excel
-            XLSX.writeFile(wb, 'dados_excel.xlsx');
+            XLSX.writeFile(wb, 'import_model.xlsx');
         }
     </script>
+
 
     <script>
         function importFromExcel() {
-            // Cria um input do tipo file para permitir ao usuário escolher um arquivo
-            var input = document.createElement('input');
-            input.type = 'file';
-            input.accept = '.xlsx'; // Aceita apenas arquivos Excel
-            input.addEventListener('change', function() {
-                var file = input.files[0];
-                var reader = new FileReader();
+        // Cria um input do tipo file para permitir ao usuário escolher um arquivo
+        var input = document.createElement('input');
+        input.type = 'file';
+        input.accept = '.xlsx'; // Aceita apenas arquivos Excel
+        input.addEventListener('change', function() {
+            var file = input.files[0];
+            var reader = new FileReader();
 
-                // Ao carregar o arquivo, executa a função para processar os dados
-                reader.onload = function(e) {
-                    var data = new Uint8Array(e.target.result);
-                    var workbook = XLSX.read(data, {type: 'array'});
+            // Ao carregar o arquivo, executa a função para processar os dados
+            reader.onload = function(e) {
+                var data = new Uint8Array(e.target.result);
+                var workbook = XLSX.read(data, {type: 'array'});
 
-                    // Obtém a primeira planilha do arquivo Excel
-                    var firstSheetName = workbook.SheetNames[0];
-                    var worksheet = workbook.Sheets[firstSheetName];
+                // Obtém a primeira planilha do arquivo Excel
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
 
-                    // Converte a planilha em um array de objetos
-                    var jsonData = XLSX.utils.sheet_to_json(worksheet, {header: 1});
+                // Defina aqui a correspondência entre as células do Excel e os campos HTML
+                var mappings = {
+                    'A1': ['.titulo-do-treino'],
+                    'A2': ['.treino__obs'],
+                    'A3': ['.exercicio__nome'],
+                    'B3': ['.exercicio__obs'],
+                    'C3': ['.lista__aquecimento__input.input-reps1'],
+                    'D3': ['.lista__aquecimento__input.input-reps2'],
+                    'E3': ['.lista__aquecimento__input.input-kg'],
 
-                    // Preenche os campos do HTML com os dados do arquivo Excel
-                    fillHTMLFields(jsonData);
+                    'I3': ['.lista__segunda-linha__input.input-reps1'],
+                    'J3': ['.lista__segunda-linha__input.input-reps2'],
+                    'K3': ['.lista__segunda-linha__input.input-kg'],
+                    'L3': ['.lista__segunda-linha__input.input-rpe1'],
+                    'M3': ['.lista__segunda-linha__input.input-rpe2'],
+                    
+                    // Adicione mais correspondências conforme necessário
                 };
 
-                // Lê o arquivo como array buffer
-                reader.readAsArrayBuffer(file);
-            });
+                // Preenche os campos do HTML com os dados do arquivo Excel
+                fillHTMLFields(worksheet, mappings);
+            };
 
-            // Dispara o evento de clique no input file
-            input.click();
+            // Lê o arquivo como array buffer
+            reader.readAsArrayBuffer(file);
+        });
+
+        // Dispara o evento de clique no input file
+        input.click();
+    }
+
+    function fillHTMLFields(worksheet, mappings) {
+        // Verifica se o objeto worksheet e as correspondências mappings estão definidos
+        if (!worksheet || !mappings) {
+            console.error('Worksheet or mappings object is undefined.');
+            return;
         }
+
+        // Itera sobre as correspondências e preenche os campos HTML correspondentes às células do Excel
+        for (var cell in mappings) {
+            if (mappings.hasOwnProperty(cell)) {
+                var field = document.querySelector(mappings[cell]);
+                if (field) {
+                    var cellValue = worksheet[cell] ? worksheet[cell].v : ''; // Verifica se a célula existe antes de acessar suas propriedades
+                    field.value = cellValue; // Preenche o campo HTML com o valor da célula do Excel
+                }
+            }
+        }
+    }
     </script>
 
-    <script>
-        function fillHTMLFields(data) {
-            // Preenche o título do treino e as observações gerais
-            document.querySelector('.titulo-do-treino').value = data[0][0];
-            document.querySelector('.treino__obs').value = data[1][0];
-
-            // Itera sobre os exercícios e preenche os campos correspondentes
-            var exercicios = document.querySelectorAll('.exercicio-n');
-            data.slice(2).forEach((exercicioData, index) => {
-                var exercicio = exercicios[index];
-                exercicio.querySelector('.exercicio__nome').value = exercicioData[0];
-                exercicio.querySelector('.exercicio__obs').value = exercicioData[1];
-
-                // Preenche os campos de aquecimento
-                var aquecimentoInputs = exercicio.querySelectorAll('.lista__aquecimento__input');
-                for (let i = 0; i < aquecimentoInputs.length; i++) {
-                    aquecimentoInputs[i].value = exercicioData[i + 2];
-                }
-
-                // Preenche os campos da segunda linha
-                var segundaLinhaInputs = exercicio.querySelectorAll('.lista__segunda-linha__input');
-                for (let i = 0; i < segundaLinhaInputs.length; i++) {
-                    segundaLinhaInputs[i].value = exercicioData[i + 5];
-                }
-            });
-        }
-    </script>
 
     <script>
         function searchYouTubeDynamic(sectionId) {
