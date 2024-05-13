@@ -13,6 +13,10 @@
     --paleta-cor-10: #5D0E41;
     --paleta-cor-11: #A0153E;
     --paleta-cor-12: #FF204E;
+    --paleta-cor-13: #EFBC9B;
+    --paleta-cor-14: #FBF3D5;
+    --paleta-cor-15: #D6DAC8;
+    --paleta-cor-16: #9CAFAA;
 
     --fonte-principal: "Montserrat", sans-serif;
     --cor-fonte: #DFD0B8;
@@ -23,8 +27,8 @@
     --cor-fundo-main: #6B728E;
     --cor-fundo-exercicio: #474E68;
     --cor-fundo-select: #DFD0B8;
-    --cor-fundo-input-reps1: white;
-    --cor-fundo-input-reps2: #FFC100;
+    --cor-fundo-input-reps1: #EFBC9B;
+    --cor-fundo-input-reps2: #EFBC9B;
     --cor-fundo-input-kg: #FFC100;
     --cor-fundo-input-rpe1: #FF8A08;
     --cor-fundo-input-rpe2: #c42e2e;
@@ -144,13 +148,14 @@ body {
 
 
 .treino__obs {
+    background-color: var(--paleta-cor-14);
     display: block;
     margin-left: auto;
     margin-right: auto;
     padding: 0.5em;
     border-radius: 4px;
     font-family: var(--fonte-principal);
-    width: 92.5%;
+    width: 90%;
     height: 50px;
     resize: none;
 }
@@ -158,7 +163,7 @@ body {
 .exercicio-n {
     background-color: var(--cor-fundo-exercicio);
     border-radius: 4px;
-    margin: 1.1em 0.5em 0 0.5em;
+    margin: 1.1em 1em 0 1em;
     padding-bottom: 1.1em;
     color: var(--cor-fonte-1);
 }
@@ -215,6 +220,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0.2em;
+    background-color: var(--paleta-cor-14);
     padding: 0.5em;
     border-radius: 4px;
     font-family: var(--fonte-principal);
