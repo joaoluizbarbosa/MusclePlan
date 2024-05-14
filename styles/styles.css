@@ -24,6 +24,7 @@
     --cor-fonte-2: BLACK;
     --cor-fonte-botao: white;
     --cor-fonte-placeholder: rgb(255, 255, 255);
+    --cor-fundo-treino-body: #bdbec5;
     --cor-fundo-main: #bdbec5;
     --cor-fundo-exercicio: #474E68;
     --cor-fundo-select: #DFD0B8;
@@ -38,8 +39,13 @@
     
 }
 
-body {
+.index-body, .treino-body {
+    background-color: var(--cor-fundo-treino-body);
     margin: 0.5em;
+}
+
+.index-body {
+    background-color: white;
 }
 
 .main__treino-blank {
