@@ -23,11 +23,12 @@
     --cor-fonte-1: WHITE;
     --cor-fonte-2: BLACK;
     --cor-fonte-botao: white;
-    --cor-fonte-placeholder: BLACK;
-    --cor-fundo-main: #6B728E;
+    --cor-fonte-placeholder: rgb(255, 255, 255);
+    --cor-fundo-main: #838696;
     --cor-fundo-exercicio: #474E68;
     --cor-fundo-select: #DFD0B8;
-    --cor-fundo-textarea-obs: #FBF3D5;
+    --cor-fundo-treino-obs: #474E68;
+    --cor-fundo-exercicio-obs: #50577A;
     --cor-fundo-input-reps1: #D6DAC8;
     --cor-fundo-input-reps2: #D6DAC8;
     --cor-fundo-input-kg: #FFC100;
@@ -72,6 +73,10 @@ body {
     width: 150px;
     border: 0.5px solid black;
     border-radius: 35px;
+}
+
+.logo2-index {
+    width: 200px;
 }
 
 .titulo-app-index {
@@ -149,15 +154,17 @@ body {
 
 
 .treino__obs {
-    background-color: var(--cor-fundo-textarea-obs);
+    background-color: var(--cor-fundo-treino-obs);
     display: block;
     margin-left: auto;
     margin-right: auto;
     padding: 0.5em;
+    border: 0px;
     border-radius: 4px;
     font-family: var(--fonte-principal);
+    color: var(--cor-fonte);
     width: 92%;
-    height: 50px;
+    overflow: hidden;
     resize: none;
 }
 
@@ -191,7 +198,7 @@ body {
     font-family: var(--fonte-principal);
     font-size: 0.8em;
     font-weight: 500;
-    color: var(--cor-fonte);
+    color: var(--cor-fonte-1);
     width: 95%; 
     height: 18px;
     resize: none; /* Impede o redimensionamento do textarea */
@@ -221,12 +228,14 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0.2em;
-    background-color: var(--cor-fundo-textarea-obs);
+    background-color: var(--cor-fundo-exercicio-obs);
     padding: 0.5em;
+    border: 0px;
     border-radius: 4px;
     font-family: var(--fonte-principal);
+    color: var(--cor-fonte);
     width: 90%;
-    height: 70px;
+    overflow: hidden;
     resize: none;
 }
 

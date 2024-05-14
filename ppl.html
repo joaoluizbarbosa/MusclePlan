@@ -25,14 +25,15 @@
         <ul class="lista__titulo-do-treino">
             <li class="lista__titulo-do-treino__item">
                 <div class="lista__titulo-do-treino__item-div">
-                    <textarea class="titulo-do-treino" placeholder="NOME DO TREINO" maxlength="30" oninput="limitLines(this, 1); updateCounter(this)"></textarea>
+                    <textarea class="titulo-do-treino" placeholder="NOME DO TREINO" maxlength="30" oninput="limitLines(this, 1); updateCounter(this)">dia 1 - pull</textarea>
                     <span class="contador"></span>
                 </div>
                 <a href="index.html" class="back-to-index"><img src="/img/logo.png" class="logo-treino-blank"></a>
             </li>
         </ul>
 
-        <textarea class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="200" oninput="limitLines(this, 10); updateCounter(this)"></textarea>
+        <textarea class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="200" oninput="limitLines(this, 10); updateCounter(this)">
+Fique atento as técnicas de intensidade para a última série (TIPUS).</textarea>
         <span class="contador"></span>
 
         <section class="exercicio-n" id="exercicio-1">
@@ -40,14 +41,19 @@
             <ul class="lista__nome-do-exercicio">
                 <li class="lista__nome-do-exercicio__item">
                     <p class="lista__nome-do-exercicio__numero">1</p>
-                    <textarea class="exercicio__nome" placeholder="Nome do exercício" maxlength="35" oninput="limitLines(this, 1)"></textarea>
+                    <textarea class="exercicio__nome" placeholder="Nome do exercício" maxlength="35" oninput="limitLines(this, 1)">cable lat-focused row</textarea>
                     <button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-1')">></button>
                 </li>     
             </ul>
 
             <div class="video-container" id="video-container-1"></div> <!-- Espaço para o vídeo -->
 
-            <textarea class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="200"  oninput="limitLines(this, 10); updateCounter(this)"></textarea>
+            <textarea class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="200"  oninput="limitLines(this, 10); updateCounter(this)">TIPUS: 30 segundos de alongamento estático.
+
+Movimentar os cotovelos para baixo e para trás, mantendo-os alinhados com o tronco.
+
+DB row
+Half-Kneeling 1-Arm Lat Pulldown</textarea>
             <span class="contador"></span>
 
             <ul class="lista__primeira-linha">
@@ -89,12 +95,31 @@
                     <p class="lista__aquecimento__w">a</p>
                 </li>
                 <li class="lista__aquecimento__item">
-                    <input class="lista__aquecimento__input input-reps1" type="number">
+                    <input class="lista__aquecimento__input input-reps1" type="number" value="4">
                     <p>-</p>
-                    <input class="lista__aquecimento__input input-reps2" type="number">
+                    <input class="lista__aquecimento__input input-reps2" type="number" value="6">
                 </li>
                 <li class="lista__aquecimento__item">
-                    <input class="lista__aquecimento__input input-kg" type="number">
+                    <input class="lista__aquecimento__input input-kg" type="number" value="">
+                </li>
+                <li class="lista__aquecimento__item">
+                </li>
+                <li class="lista__aquecimento__item">
+                    <!-- <button class="remove-list-button" onclick="removeList('lista__aquecimento')"><img class="trash-img" src="img/trash-branca.png"></button> -->
+                </li>
+            </ul>
+
+            <ul class="lista__aquecimento">
+                <li class="lista__aquecimento__item">
+                    <p class="lista__aquecimento__w">a</p>
+                </li>
+                <li class="lista__aquecimento__item">
+                    <input class="lista__aquecimento__input input-reps1" type="number" value="4">
+                    <p>-</p>
+                    <input class="lista__aquecimento__input input-reps2" type="number" value="6">
+                </li>
+                <li class="lista__aquecimento__item">
+                    <input class="lista__aquecimento__input input-kg" type="number" value="">
                 </li>
                 <li class="lista__aquecimento__item">
                 </li>
@@ -109,17 +134,55 @@
                     <p>1</p>
                 </li>
                 <li class="lista__segunda-linha__item">
-                    <input class="lista__segunda-linha__input input-reps1" type="number">
+                    <input class="lista__segunda-linha__input input-reps1" type="number" value="10">
                     <p>-</p>
-                    <input class="lista__segunda-linha__input input-reps2" type="number">
+                    <input class="lista__segunda-linha__input input-reps2" type="number" value="12">
                 </li>
                 <li class="lista__segunda-linha__item">
-                    <input class="lista__segunda-linha__input input-kg" type="number">
+                    <input class="lista__segunda-linha__input input-kg" type="number" value="">
                 </li>
                 <li class="lista__segunda-linha__item">
-                    <input class="lista__segunda-linha__input input-rpe1" type="number">
+                    <input class="lista__segunda-linha__input input-rpe1" type="number" value="9">
                     <p>-</p>
-                    <input class="lista__segunda-linha__input input-rpe2" type="number">
+                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="9">
+                </li>
+            </ul>
+
+            <ul id="myList1" class="lista__segunda-linha">
+                <li class="lista__segunda-linha__item">
+                    <p>1</p>
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-reps1" type="number" value="10">
+                    <p>-</p>
+                    <input class="lista__segunda-linha__input input-reps2" type="number" value="12">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-kg" type="number" value="">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-rpe1" type="number" value="9">
+                    <p>-</p>
+                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="9">
+                </li>
+            </ul>
+
+            <ul id="myList1" class="lista__segunda-linha">
+                <li class="lista__segunda-linha__item">
+                    <p>1</p>
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-reps1" type="number" value="10">
+                    <p>-</p>
+                    <input class="lista__segunda-linha__input input-reps2" type="number" value="12">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-kg" type="number" value="">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-rpe1" type="number" value="9">
+                    <p>-</p>
+                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="10">
                 </li>
             </ul>
 
@@ -132,6 +195,8 @@
             </ul>
             
         </section>
+
+        
 
         <div class="session-buttons">
             <button class="new-session-button" onclick="addSection()">Adicionar exercício</button>
