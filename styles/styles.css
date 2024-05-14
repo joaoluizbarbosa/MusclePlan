@@ -24,7 +24,7 @@
     --cor-fonte-2: BLACK;
     --cor-fonte-botao: white;
     --cor-fonte-placeholder: rgb(255, 255, 255);
-    --cor-fundo-main: #838696;
+    --cor-fundo-main: #bdbec5;
     --cor-fundo-exercicio: #474E68;
     --cor-fundo-select: #DFD0B8;
     --cor-fundo-treino-obs: #474E68;
@@ -50,7 +50,7 @@ body {
     font-family: var(--fonte-principal);
     font-size: 0.9em;
     font-weight: 400;
-    /* border: 1px solid white; */
+    /* border: 1px solid black; */
     border-radius: 5px;
     padding-bottom: 1em;
 }
@@ -70,7 +70,7 @@ body {
 }
 
 .logo-index {
-    width: 150px;
+    width: 120px;
     border: 0.5px solid black;
     border-radius: 35px;
 }
@@ -196,11 +196,11 @@ body {
     background-color: var(--cor-fundo-exercicio);
     border: none;
     font-family: var(--fonte-principal);
-    font-size: 0.8em;
+    font-size: 0.9em;
     font-weight: 500;
     color: var(--cor-fonte-1);
     width: 95%; 
-    height: 18px;
+    height: 20px;
     resize: none; /* Impede o redimensionamento do textarea */
 }
 
@@ -323,6 +323,10 @@ select {
 .input-rpe2 {
     color: var(--cor-fonte-1);
     background-color: var(--cor-fundo-input-rpe2);
+}
+
+.esmaecido {
+    opacity: 0.3; /* ou qualquer outro valor que desejar para esmaecer */
 }
 
 .set-buttons {
