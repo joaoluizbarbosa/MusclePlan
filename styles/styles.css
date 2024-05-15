@@ -24,6 +24,7 @@
     --cor-fonte-2: BLACK;
     --cor-fonte-botao: white;
     --cor-fonte-placeholder: rgb(255, 255, 255);
+    --cor-fonte-menu-link: black;
     --cor-fundo-treino-body: #bdbec5;
     --cor-fundo-main: #bdbec5;
     --cor-fundo-exercicio: #474E68;
@@ -36,7 +37,7 @@
     --cor-fundo-input-rpe1: #FF8A08;
     --cor-fundo-input-rpe2: #c42e2e;
     --cor-fundo-botao: #153448;
-    --cor-fundo-menu-exercicio: #FBF3D5;
+    --cor-fundo-menu-exercicio: #6B728E;
     
 }
 
@@ -200,7 +201,11 @@
 }
 
 .lista-menu__item {
-    margin: 0.5em 0.5em;
+    display: flex;
+    align-items: center;
+    margin: 0em 0.5em;
+    padding: 0.3em 0;
+    gap: 10px;
 }
 
 .youtube-button {
@@ -214,13 +219,25 @@
     border: none;
     width: 26px;
     height: 18px;
-    margin-bottom: 1em;
+}
+
+.clock-button {
+    font-family: var(--fonte-principal);
+    font-size: 0.8em;
+    font-weight: 800;
+    text-align: center;
+    color: var(--cor-fonte-2);
+    background-color: var(--paleta-cor-8);
+    border-radius: 5px;
+    border: none;
+    width: 26px;
+    height: 18px;
 }
 
 .lista-menu__link {
     font-family: var(--fonte-principal);
     text-decoration: none;
-    color: var(--cor-fonte-2);
+    color: var(--cor-fonte-menu-link);
     font-weight: 600;
 }
 
