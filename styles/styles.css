@@ -179,7 +179,7 @@
 .lista__nome-do-exercicio__item {
     position: relative;
     display: grid;
-    grid-template-columns: 2% 90% 5%;
+    grid-template-columns: 2% 88% 5%;
     margin: 1em 0.5em 0.5em 1em;
     align-items: center;
     justify-content: space-between;
