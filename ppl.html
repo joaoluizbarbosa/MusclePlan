@@ -32,7 +32,7 @@
             </li>
         </ul>
 
-        <textarea class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="200" oninput="limitLines(this, 10); updateCounter(this)">
+        <textarea class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="300" oninput="limitLines(this, 10); updateCounter(this)">
 Fique atento as técnicas de intensidade para a última série (TIPUS).</textarea>
         <span class="contador"></span>
 
@@ -42,13 +42,20 @@ Fique atento as técnicas de intensidade para a última série (TIPUS).</textare
                 <li class="lista__nome-do-exercicio__item">
                     <p class="lista__nome-do-exercicio__numero">1</p>
                     <textarea class="exercicio__nome" placeholder="Nome do exercício" maxlength="35" oninput="limitLines(this, 1)">lat-focused cable row</textarea>
-                    <button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-1')">></button>
+                    <input type="checkbox" id="menu-1" class="container__botao">
+                    <label for="menu-1" class="container__rotulo">
+                        <span class="cabecalho__menu-hamburguer container__imagem">...</span>
+                    </label>
+                    <ul class="lista-menu">
+                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-1')">></button><a onclick="searchYouTubeDynamic('exercicio-1')" class="lista-menu__youtube-link">VÍDEO</a></li>
+                        <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-1')">T</button><a onclick="toggleTimer('exercicio-1')" class="lista-menu__clock-link">TIMER</a></li>
+                    </ul>
                 </li>     
             </ul>
 
             <div class="video-container" id="video-container-1"></div> <!-- Espaço para o vídeo -->
 
-            <textarea class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="200"  oninput="limitLines(this, 10); updateCounter(this)">TIPUS: 30 segundos de alongamento estático.
+            <textarea class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)">TIPUS: 30 segundos de alongamento estático.
 
 Movimentar os cotovelos para baixo e para trás, mantendo-os alinhados com o tronco.
 
@@ -58,7 +65,7 @@ Half-Kneeling 1-Arm Lat Pulldown</textarea>
 
             <ul class="lista__primeira-linha">
                 <li>
-                    <p>Set</p>
+                    <!-- <p>Set</p> -->
                 </li>
                 <li>
                     <select class="select-repetitions">
@@ -207,10 +214,21 @@ Half-Kneeling 1-Arm Lat Pulldown</textarea>
 
         
 
+        <div class="timer-org">
+            <div id="timer-container-1" style="display: none;" class="timer-container">
+                <input type="number" id="minutes-1" placeholder="Min" class="timer-container__item">
+                <input type="number" id="seconds-1" placeholder="Seg" class="timer-container__item">
+                <button id="start-button" onclick="startTimer()" class="start-button">Start</button>
+            </div>
+            
+            <div id="timer-1" class="timer">00:00</div>
+        </div>
+
         <div class="session-buttons">
             <button class="new-session-button" onclick="addSection()">Adicionar exercício</button>
             <button class="remove-session-button" onclick="removeLastSection()">Remover exercício</button>
         </div>
+
 
     </main>
     <footer class="rodape">
@@ -218,6 +236,89 @@ Half-Kneeling 1-Arm Lat Pulldown</textarea>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
 
+    
+    <script>
+        let timerInterval;
+        let totalTime;
+        let timerDisplay = document.getElementById('timer-1');
+        let timerContainer = document.getElementById('timer-container-1');
+    
+        function toggleTimer(sectionId) {
+            let timerElement = document.getElementById('timer-1');
+    
+            if (timerContainer.style.display === 'none') {
+                timerContainer.style.display = 'block';
+                timerElement.style.display = 'block';
+            } else {
+                timerContainer.style.display = 'none';
+                timerElement.style.display = 'none';
+            }
+        }
+    
+        function startTimer() {
+            let minutesInput = document.getElementById('minutes-1').value;
+            let secondsInput = document.getElementById('seconds-1').value;
+    
+            // Calcula o tempo total em segundos
+            totalTime = parseInt(minutesInput) * 60 + parseInt(secondsInput);
+            if (isNaN(totalTime) || totalTime <= 0) {
+                alert("Por favor, insira um valor válido para o temporizador.");
+                return;
+            }
+    
+            // Inicia o timer
+            timerInterval = setInterval(updateTimer, 1000);
+            timerContainer.style.display = 'none'; // Esconde o timer-container
+        }
+
+        function playSound() {
+            // Crie um contexto de áudio
+            const audioContext = new AudioContext();
+
+            // Crie um oscilador
+            const oscillator = audioContext.createOscillator();
+
+            // Configure o tipo de forma de onda do oscilador (nesse caso, um beep)
+            oscillator.type = "sine";
+
+            // Conecte o oscilador ao destino de saída de áudio (alto-falantes)
+            oscillator.connect(audioContext.destination);
+
+            // Inicie o oscilador
+            oscillator.start();
+
+            // Defina o tempo de duração do som (em milissegundos)
+            const duration = 1500; // 0.5 segundos
+
+            // Pare o oscilador após a duração especificada
+            setTimeout(() => {
+                oscillator.stop();
+            }, duration);
+        }
+    
+        function updateTimer() {
+            let minutes = Math.floor(totalTime / 60);
+            let seconds = totalTime % 60;
+
+            timerDisplay.textContent = `${formatTime(minutes)}:${formatTime(seconds)}`;
+
+            if (totalTime <= 0) {
+                clearInterval(timerInterval);
+                playSound(); // Emite um sinal sonoro
+                // alert("Tempo esgotado!");
+                timerDisplay.textContent = '00:00';
+                timerDisplay.style.display = 'none'; // Esconde o timer
+            } else {
+                totalTime--;
+            }
+        }
+    
+        function formatTime(time) {
+            return time < 10 ? "0" + time : time;
+        }
+    </script>
+    
+    
     
     <script>
         // Função para exportar o texto para o WhatsApp
@@ -327,18 +428,33 @@ Half-Kneeling 1-Arm Lat Pulldown</textarea>
             section.className = "exercicio-n";
             section.id = "exercicio-" + j;
             section.innerHTML = `
-            <ul class="lista__nome-do-exercicio">
+                <ul class="lista__nome-do-exercicio">
                     <li class="lista__nome-do-exercicio__item">
                         <p class="lista__nome-do-exercicio__numero">${j}</p>
                         <textarea class="exercicio__nome" placeholder="Nome do exercício" maxlength="35" oninput="limitLines(this, 1)"></textarea>
-                        <button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-${j}')">></button>
-                    </li>     
+                        <input type="checkbox" id="menu-${j}" class="container__botao">
+                        <label for="menu-${j}" class="container__rotulo">
+                            <span class="cabecalho__menu-hamburguer container__imagem">...</span>
+                        </label>
+                        <ul class="lista-menu">
+                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-${j}')">></button><a href="#" class="lista-menu__youtube-link">VÍDEO</a></li>
+                        <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-${j}')">T</button><a href="#" class="lista-menu__clock-link">TIMER</a></li>
+                    </ul>
+                    </li>
                 </ul>
-
+                        
                 <div class="video-container" id="video-container-${j}"></div>
 
-                <textarea class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="200"  oninput="limitLines(this, 10); updateCounter(this)"></textarea>
+                <textarea class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)"></textarea>
                 <span class="contador"></span>
+
+                <div id="timer-container-${j}" style="display: none;" class="timer-container">
+                    <input type="number" id="minutes-${j}" placeholder="Min" class="timer-container__item">
+                    <input type="number" id="seconds-${j}" placeholder="Seg" class="timer-container__item">
+                    <button id="start-button" onclick="startTimer()" class="start-button">Start</button>
+                </div>
+                
+                <div id="timer-${j}" class="timer">00:00</div>
 
                 <ul class="lista__primeira-linha">
                     <li>
@@ -428,12 +544,15 @@ Half-Kneeling 1-Arm Lat Pulldown</textarea>
             
             // Encontrar a div "session-buttons"
             let sessionButtons = document.querySelector('.session-buttons');
+            let timerOrg = document.querySelector('.timer-org');
 
             // Inserir a nova sessão antes da div "session-buttons"
             mainTag.insertBefore(section, sessionButtons);
+            mainTag.insertBefore(section, timerOrg);
 
             // Chamar a função para associar a expansão automática aos novos textareas
             expandNewTextarea(section);
+
         }
 
             // Função para associar a expansão automática aos novos textareas
@@ -693,6 +812,7 @@ Half-Kneeling 1-Arm Lat Pulldown</textarea>
             });
         });
     </script>
+
 
 
 </body>
