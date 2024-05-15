@@ -77,7 +77,6 @@
 
 .logo-index {
     width: 120px;
-    border: 0.5px solid black;
     border-radius: 35px;
 }
 
@@ -149,15 +148,9 @@
     margin: 0.5em 0 0 1em;
 }
 
-.back-to-index {
-    margin: 0.7em 0.5em 0.5em auto;
-    width: 40px;
-}
-
 .logo-treino-blank {
-    width: 40px;
+    width: 50px;
 }
-
 
 .treino__obs {
     background-color: var(--cor-fundo-treino-obs);
@@ -381,6 +374,23 @@ select {
     height: 30px;
     text-align: center;
 }
+
+.rodape {
+    text-align: center;
+}
+
+.rodape-back-to-index {
+    font-family: var(--fonte-principal);
+    color: var(--cor-fonte-1);
+    text-decoration: none;
+}
+
+sup {
+    color: var(--paleta-cor-5);
+    vertical-align: super;
+    font-size: smaller;
+}
+
 
 @media (min-width: 700px) {
     .cabecalho {

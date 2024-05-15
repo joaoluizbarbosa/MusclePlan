@@ -28,11 +28,11 @@
                     <textarea class="titulo-do-treino" placeholder="NOME DO TREINO" maxlength="30" oninput="limitLines(this, 1); updateCounter(this)"></textarea>
                     <span class="contador"></span>
                 </div>
-                <a href="index.html" class="back-to-index"><img src="/img/logo.png" class="logo-treino-blank"></a>
+                <a href="index.html" class="back-to-index"><img src="/img/logo-grafico-2.png" class="logo-treino-blank"></a>
             </li>
         </ul>
 
-        <textarea class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="200" oninput="limitLines(this, 10); updateCounter(this)"></textarea>
+        <textarea class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="300" oninput="limitLines(this, 10); updateCounter(this)"></textarea>
         <span class="contador"></span>
 
         <section class="exercicio-n" id="exercicio-1">
@@ -47,7 +47,7 @@
 
             <div class="video-container" id="video-container-1"></div> <!-- Espaço para o vídeo -->
 
-            <textarea class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="200"  oninput="limitLines(this, 10); updateCounter(this)"></textarea>
+            <textarea class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)"></textarea>
             <span class="contador"></span>
 
             <ul class="lista__primeira-linha">
@@ -128,7 +128,7 @@
 
             <ul class="set-buttons">
                 <li class="set-buttons__item">
-                    <button id="button1-add-w" class="add-w-button" onclick="myFunctionWSet('exercicio-1', this.id)">+ a-Set</button>
+                    <button id="button1-add-w" class="add-w-button" onclick="myFunctionWSet('exercicio-1', this.id)">ADD a-Set</button>
                     <button id="button1-add" class="add-button" onclick="myFunction('exercicio-1', this.id)">ADD Set</button>
                     <button id="button1-undo" class="undo-button" onclick="undoFunction('exercicio-1', this.id)">EXC Set</button>
                 </li>
@@ -141,8 +141,11 @@
             <button class="remove-session-button" onclick="removeLastSection()">Remover exercício</button>
         </div>
 
+        
     </main>
+    
     <footer class="rodape">
+        <a href="index.html" class="rodape-back-to-index">Muscle Plan<sup>©</sup></a>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
@@ -266,7 +269,7 @@
 
                 <div class="video-container" id="video-container-${j}"></div>
 
-                <textarea class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="200"  oninput="limitLines(this, 10); updateCounter(this)"></textarea>
+                <textarea class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)"></textarea>
                 <span class="contador"></span>
 
                 <ul class="lista__primeira-linha">
