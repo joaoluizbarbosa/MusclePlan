@@ -190,7 +190,7 @@
     position: absolute;
     padding: 1em;
     top: 20%; /* retirou 20% do menu de cima do checkbox */
-    width: 40vw; /* unidade de medida relativa da largura de tela "viewport width" */
+    width: 100px; /* unidade de medida relativa da largura de tela "viewport width" */
     border-radius: 4px;
     box-shadow: 1px 1px 1px black;
     z-index: 1;
