@@ -174,32 +174,41 @@
         let timerContainer = document.getElementById('timer-container-1');
     
         function toggleTimer(sectionId) {
-            let timerElement = document.getElementById('timer-1');
-    
-            if (timerContainer.style.display === 'none') {
-                timerContainer.style.display = 'block';
-                timerElement.style.display = 'block';
-            } else {
-                timerContainer.style.display = 'none';
-                timerElement.style.display = 'none';
-            }
+    let timerElement = document.getElementById('timer-' + sectionId);
+    let timerContainer = document.getElementById('timer-container-' + sectionId);
+
+    if (timerContainer && timerElement) {
+        if (timerContainer.style.display === 'none') {
+            timerContainer.style.display = 'block';
+            timerElement.style.display = 'block';
+        } else {
+            timerContainer.style.display = 'none';
+            timerElement.style.display = 'none';
         }
+    }
+}
     
-        function startTimer() {
-            let minutesInput = document.getElementById('minutes-1').value;
-            let secondsInput = document.getElementById('seconds-1').value;
-    
-            // Calcula o tempo total em segundos
-            totalTime = parseInt(minutesInput) * 60 + parseInt(secondsInput);
-            if (isNaN(totalTime) || totalTime <= 0) {
-                alert("Por favor, insira um valor válido para o temporizador.");
-                return;
-            }
-    
-            // Inicia o timer
-            timerInterval = setInterval(updateTimer, 1000);
-            timerContainer.style.display = 'none'; // Esconde o timer-container
-        }
+        function startTimer(sectionId) {
+    let minutesInput = document.getElementById('minutes-' + sectionId).value;
+    let secondsInput = document.getElementById('seconds-' + sectionId).value;
+
+    // Calcula o tempo total em segundos
+    totalTime = parseInt(minutesInput) * 60 + parseInt(secondsInput);
+    if (isNaN(totalTime) || totalTime <= 0) {
+        alert("Por favor, insira um valor válido para o temporizador.");
+        return;
+    }
+
+    // Inicia o timer
+    timerInterval = setInterval(function() {
+        updateTimer(sectionId);
+    }, 1000);
+
+    let timerContainer = document.getElementById('timer-container-' + sectionId);
+    if (timerContainer) {
+        timerContainer.style.display = 'none'; // Esconde o timer-container
+    }
+}
 
         function playSound() {
             // Crie um contexto de áudio
@@ -480,6 +489,9 @@
 
             // Chamar a função para associar a expansão automática aos novos textareas
             expandNewTextarea(section);
+
+            // Iniciar o timer para a nova sessão
+            startTimer(j); // 'j' é o ID da nova sessão
 
         }
 
