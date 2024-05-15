@@ -41,8 +41,15 @@
                 <li class="lista__nome-do-exercicio__item">
                     <p class="lista__nome-do-exercicio__numero">1</p>
                     <textarea class="exercicio__nome" placeholder="Nome do exercício" maxlength="35" oninput="limitLines(this, 1)"></textarea>
-                    <button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-1')">></button>
-                </li>     
+                    <input type="checkbox" id="menu" class="container__botao">
+                    <label for="menu" class="container__rotulo">
+                        <span class="cabecalho__menu-hamburguer container__imagem">...</span>
+                    </label>
+                    <ul class="lista-menu">
+                        <button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-1')">></button>
+                        <li class="lista-menu__item"><a href="#" class="lista-menu__link">TIMER</a></li>
+                    </ul>
+                </li>
             </ul>
 
             <div class="video-container" id="video-container-1"></div> <!-- Espaço para o vídeo -->
