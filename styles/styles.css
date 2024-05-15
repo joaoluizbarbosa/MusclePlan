@@ -41,6 +41,45 @@
     
 }
 
+.timer-container {
+    margin-left: 1em;
+    display: none;
+}
+
+.timer-container__item {
+    font-family: var(--fonte-principal);
+    font-size: 0.8em;
+    background-color: var(--cor-fundo-exercicio);
+    width: 15%;
+    padding: 0.5em;
+    border-radius: 4px;
+    border: 1px solid black;
+}
+
+.start-button {
+    font-family: var(--fonte-principal);
+    font-size: 0.8em;
+    color: var(--cor-fonte-botao);
+    background-color: var(--cor-fundo-botao);
+    border: none;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px black;
+    width: 20%;
+    height: 30px;
+}
+
+.timer {
+    font-size: 0.9em;
+    font-family: var(--fonte-principal);
+    padding: 0.4em 0;
+    background-color: var(--cor-fundo-exercicio);
+    border: none;
+    width: 50px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: 1em;
+}
+
 .index-body, .treino-body {
     background-color: var(--cor-fundo-treino-body);
     margin: 0.5em;

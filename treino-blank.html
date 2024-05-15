@@ -47,7 +47,7 @@
                     </label>
                     <ul class="lista-menu">
                         <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-1')">></button><a href="#" class="lista-menu__youtube-link">VÍDEO</a></li>
-                        <li class="lista-menu__item"><button class="clock-button" onclick="searchYouTubeDynamic('exercicio-1')">T</button><a href="#" class="lista-menu__clock-link">TIMER</a></li>
+                        <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimerOptions()">T</button><a href="#" class="lista-menu__clock-link">TIMER</a></li>
                     </ul>
                 </li>
             </ul>
@@ -56,6 +56,14 @@
 
             <textarea class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)"></textarea>
             <span class="contador"></span>
+
+            <div id="timer-container-1" style="display: none;" class="timer-container">
+                <input type="number" id="minutes-1" placeholder="Min" class="timer-container__item">
+                <input type="number" id="seconds-1" placeholder="Seg" class="timer-container__item">
+                <button id="start-button" onclick="startTimer()" class="start-button">Start</button>
+            </div>
+            
+            <div id="timer-1" class="timer">00:00</div>
 
             <ul class="lista__primeira-linha">
                 <li>
@@ -155,8 +163,59 @@
         <a href="index.html" class="rodape-back-to-index">Muscle Plan<sup>©</sup></a>
     </footer>
 
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
 
+    <script>
+        let timerInterval;
+        let totalTime;
+        let timerDisplay = document.getElementById('timer-1');
+
+        function toggleTimerOptions() {
+            let timerContainer = document.getElementById('timer-container-1');
+            if (timerContainer.style.display === 'none') {
+                timerContainer.style.display = 'block';
+            } else {
+                timerContainer.style.display = 'none';
+            }
+        }
+
+        function startTimer() {
+            let minutesInput = document.getElementById('minutes-1').value;
+            let secondsInput = document.getElementById('seconds-1').value;
+
+            let totalSeconds = parseInt(minutesInput) * 60 + parseInt(secondsInput);
+            if (isNaN(totalSeconds) || totalSeconds <= 0) {
+                alert("Por favor, insira um valor válido para o temporizador.");
+                return;
+            }
+
+            totalTime = totalSeconds;
+            timerInterval = setInterval(updateTimer, 1000);
+            toggleTimerOptions();
+        }
+
+        function updateTimer() {
+            let minutes = Math.floor(totalTime / 60);
+            let seconds = totalTime % 60;
+
+            timerDisplay.textContent = `${formatTime(minutes)}:${formatTime(seconds)}`;
+
+            if (totalTime <= 0) {
+                clearInterval(timerInterval);
+                alert("Tempo esgotado!");
+                timerDisplay.textContent = '00:00';
+            } else {
+                totalTime--;
+            }
+        }
+
+        function formatTime(time) {
+            return time < 10 ? "0" + time : time;
+        }
+
+    </script>
     
     <script>
         // Função para exportar o texto para o WhatsApp
