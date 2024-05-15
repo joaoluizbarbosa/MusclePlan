@@ -69,6 +69,7 @@
 }
 
 .timer {
+    display: none;
     font-size: 0.9em;
     font-family: var(--fonte-principal);
     padding: 0.4em 0;
