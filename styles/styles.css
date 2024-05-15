@@ -192,7 +192,7 @@
     position: absolute;
     padding: 0.5em 0;
     top: 100%; /* retirou ??% do menu de cima do checkbox */
-    width: 120px; /* unidade de medida relativa da largura de tela "viewport width" */
+    width: 150px; /* unidade de medida relativa da largura de tela "viewport width" */
     border-radius: 4px;
     box-shadow: 1px 1px 1px black;
     z-index: 1;
@@ -214,6 +214,7 @@
     border: none;
     width: 26px;
     height: 18px;
+    margin-bottom: 1em;
 }
 
 .lista-menu__link {
