@@ -232,13 +232,22 @@
     border: none;
     width: 26px;
     height: 18px;
+    margin-top: 0.5em;
 }
 
-.lista-menu__link {
+.lista-menu__youtube-link {
     font-family: var(--fonte-principal);
     text-decoration: none;
     color: var(--cor-fonte-menu-link);
     font-weight: 600;
+}
+
+.lista-menu__clock-link {
+    font-family: var(--fonte-principal);
+    text-decoration: none;
+    color: var(--cor-fonte-menu-link);
+    font-weight: 600;
+    margin-top: 0.5em;
 }
 
 .container__botao:checked~.lista-menu { /* condicional "se .container__botao estiver marcado (.container__botao:checked), então (~), .lista-menu aparece (display: block)" */
