@@ -351,7 +351,7 @@
 
 .lista__primeira-linha {
     display: grid;
-    grid-template-columns: 11% 35% 14% 35% 4%;
+    grid-template-columns: 8% 35% 14% 35% 8%;
     margin: 1em 0.5em 0.5em 0.5em;
     text-align: center;
     align-items: center;
@@ -391,7 +391,7 @@ select {
 
 .lista__segunda-linha, .lista__aquecimento {
     display: grid;
-    grid-template-columns: 11% 35% 14% 35% 4%;
+    grid-template-columns: 8% 35% 14% 35% 8%;
     margin: 0.4em 0.5em;
     align-items: center;
 }
