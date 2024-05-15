@@ -144,12 +144,38 @@
         </section>
 
         <div class="timer-org">
-            <div id="timer-container-1" style="display: none;" class="timer-container">
-                <input type="number" id="minutes-1" placeholder="Min" class="timer-container__item">
-                <input type="number" id="seconds-1" placeholder="Seg" class="timer-container__item">
-                <button id="start-button" onclick="startTimer()" class="start-button">Start</button>
+            <div id="timer-container-1" class="timer-container">
+                <!-- Lista suspensa para minutos pré-definidos -->
+                <select id="minutes-dropdown" class="timer-container__item">
+                    <option value="0">0 Min</option>
+                    <option value="1">1 Min</option>
+                    <option value="2">2 Min</option>
+                    <option value="3">3 Min</option>
+                    <option value="4">4 Min</option>
+                    <option value="5">5 Min</option>
+                    <option value="10">10 Min</option>
+                </select>
+        
+                <!-- Lista suspensa para segundos pré-definidos -->
+                <select id="seconds-dropdown" class="timer-container__item">
+                    <option value="0">0 Seg</option>
+                    <option value="5">5 Seg</option>
+                    <option value="10">10 Seg</option>
+                    <option value="15">15 Seg</option>
+                    <option value="20">20 Seg</option>
+                    <option value="25">25 Seg</option>
+                    <option value="30">30 Seg</option>
+                    <option value="35">35 Seg</option>
+                    <option value="40">40 Seg</option>
+                    <option value="45">45 Seg</option>
+                    <option value="50">50 Seg</option>
+                    <option value="55">55 Seg</option>
+                </select>
+        
+                <button id="start-pause-button" onclick="startPauseTimer()" class="start-button">Start</button>
+                <button id="reset-button" onclick="resetTimer()" class="reset-button">Reset</button>
             </div>
-            
+        
             <div id="timer-1" class="timer">00:00</div>
         </div>
 
@@ -172,8 +198,12 @@
     <script>
         let timerInterval;
         let totalTime;
+        let remainingTime;
         let timerDisplay = document.getElementById('timer-1');
         let timerContainer = document.getElementById('timer-container-1');
+        let startPauseButton = document.getElementById('start-pause-button');
+    
+        let isTimerRunning = false;
     
         function toggleTimer(sectionId) {
             let timerElement = document.getElementById('timer-1');
@@ -187,41 +217,57 @@
             }
         }
     
-        function startTimer() {
-            let minutesInput = document.getElementById('minutes-1').value;
-            let secondsInput = document.getElementById('seconds-1').value;
+        function startPauseTimer() {
+            if (!isTimerRunning) {
+                let minutesInput = document.getElementById('minutes-dropdown').value;
+                let secondsInput = document.getElementById('seconds-dropdown').value;
     
-            // Calcula o tempo total em segundos
-            totalTime = parseInt(minutesInput) * 60 + parseInt(secondsInput);
-            if (isNaN(totalTime) || totalTime <= 0) {
-                alert("Por favor, insira um valor válido para o temporizador.");
-                return;
+                // Calcula o tempo total em segundos
+                totalTime = parseInt(minutesInput) * 60 + parseInt(secondsInput);
+                if (isNaN(totalTime) || totalTime <= 0) {
+                    alert("Por favor, insira um valor válido para o temporizador.");
+                    return;
+                }
+    
+                remainingTime = remainingTime || totalTime; // Se não houver tempo restante, use o tempo total
+                // Inicia o timer
+                timerInterval = setInterval(updateTimer, 1000);
+                startPauseButton.textContent = 'Pause';
+            } else {
+                clearInterval(timerInterval);
+                startPauseButton.textContent = 'Start';
             }
-    
-            // Inicia o timer
-            timerInterval = setInterval(updateTimer, 1000);
-            timerContainer.style.display = 'none'; // Esconde o timer-container
+            isTimerRunning = !isTimerRunning;
         }
-
+    
+        function resetTimer() {
+            clearInterval(timerInterval);
+            timerDisplay.textContent = '00:00';
+            timerContainer.style.display = 'block'; // Exibe o timer-container
+            isTimerRunning = false;
+            startPauseButton.textContent = 'Start';
+            remainingTime = 0; // Reinicia o tempo restante
+        }
+    
         function playSound() {
             // Crie um contexto de áudio
             const audioContext = new AudioContext();
-
+    
             // Crie um oscilador
             const oscillator = audioContext.createOscillator();
-
+    
             // Configure o tipo de forma de onda do oscilador (nesse caso, um beep)
             oscillator.type = "sine";
-
+    
             // Conecte o oscilador ao destino de saída de áudio (alto-falantes)
             oscillator.connect(audioContext.destination);
-
+    
             // Inicie o oscilador
             oscillator.start();
-
+    
             // Defina o tempo de duração do som (em milissegundos)
             const duration = 1500; // 0.5 segundos
-
+    
             // Pare o oscilador após a duração especificada
             setTimeout(() => {
                 oscillator.stop();
@@ -229,19 +275,20 @@
         }
     
         function updateTimer() {
-            let minutes = Math.floor(totalTime / 60);
-            let seconds = totalTime % 60;
-
+            let minutes = Math.floor(remainingTime / 60);
+            let seconds = remainingTime % 60;
+    
             timerDisplay.textContent = `${formatTime(minutes)}:${formatTime(seconds)}`;
-
-            if (totalTime <= 0) {
+    
+            if (remainingTime <= 0) {
                 clearInterval(timerInterval);
                 playSound(); // Emite um sinal sonoro
                 // alert("Tempo esgotado!");
                 timerDisplay.textContent = '00:00';
                 timerDisplay.style.display = 'none'; // Esconde o timer
+                timerContainer.style.display = 'none'; // Esconde o timer-container
             } else {
-                totalTime--;
+                remainingTime--;
             }
         }
     
@@ -249,6 +296,8 @@
             return time < 10 ? "0" + time : time;
         }
     </script>
+    
+    
     
     
     
@@ -369,8 +418,8 @@
                             <span class="cabecalho__menu-hamburguer container__imagem">...</span>
                         </label>
                         <ul class="lista-menu">
-                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-${j}')">></button><a href="#" class="lista-menu__youtube-link">VÍDEO</a></li>
-                        <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-${j}')">T</button><a href="#" class="lista-menu__clock-link">TIMER</a></li>
+                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-${j}')">></button><a onclick="searchYouTubeDynamic('exercicio-${j}')" class="lista-menu__youtube-link">VÍDEO</a></li>
+                        <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-${j}')">T</button><a onclick="toggleTimer('exercicio-${j}')" class="lista-menu__clock-link">TIMER</a></li>
                     </ul>
                     </li>
                 </ul>
@@ -390,7 +439,7 @@
 
                 <ul class="lista__primeira-linha">
                     <li>
-                        <p>Set</p>
+                        <p></p>
                     </li>
                     <li>
                     <select class="select-repetitions">
