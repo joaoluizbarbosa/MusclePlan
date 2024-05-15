@@ -36,7 +36,7 @@
     --cor-fundo-input-rpe1: #FF8A08;
     --cor-fundo-input-rpe2: #c42e2e;
     --cor-fundo-botao: #153448;
-    --cor-fundo-menu-exercicio: #EFBC9B;
+    --cor-fundo-menu-exercicio: #FBF3D5;
     
 }
 
@@ -177,6 +177,7 @@
 }
 
 .lista__nome-do-exercicio__item {
+    position: relative;
     display: grid;
     grid-template-columns: 2% 90% 5%;
     margin: 1em 0.5em 0.5em 1em;
@@ -190,12 +191,12 @@
     display: none; /* faz desaparecer a lista */
     position: absolute;
     padding: 0.5em 0;
-    top: 20%; /* retirou 20% do menu de cima do checkbox */
+    top: 100%; /* retirou ??% do menu de cima do checkbox */
     width: 120px; /* unidade de medida relativa da largura de tela "viewport width" */
     border-radius: 4px;
     box-shadow: 1px 1px 1px black;
     z-index: 1;
-    left: 64%;
+    right: 0;
 }
 
 .lista-menu__item {
@@ -228,6 +229,7 @@
 
 .container__botao {
     display: none;
+    position: relative;
 }
 
 .lista__nome-do-exercicio__numero {
