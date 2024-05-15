@@ -36,6 +36,7 @@
     --cor-fundo-input-rpe1: #FF8A08;
     --cor-fundo-input-rpe2: #c42e2e;
     --cor-fundo-botao: #153448;
+    --cor-fundo-menu-exercicio: #EFBC9B;
     
 }
 
@@ -184,26 +185,41 @@
 }
 
 .lista-menu {
-    background-color: WHITE;
+    background-color: var(--cor-fundo-menu-exercicio);
     text-align: left;
     display: none; /* faz desaparecer a lista */
     position: absolute;
-    padding: 1em;
+    padding: 0.5em 0;
     top: 20%; /* retirou 20% do menu de cima do checkbox */
-    width: 100px; /* unidade de medida relativa da largura de tela "viewport width" */
+    width: 120px; /* unidade de medida relativa da largura de tela "viewport width" */
     border-radius: 4px;
     box-shadow: 1px 1px 1px black;
     z-index: 1;
+    left: 64%;
 }
 
 .lista-menu__item {
-    margin-top: 0.5em;
+    margin: 0.5em 0.5em;
+}
+
+.youtube-button {
+    font-family: var(--fonte-principal);
+    font-size: 0.8em;
+    font-weight: 800;
+    text-align: center;
+    color: var(--cor-fonte);
+    background-color: var(--paleta-cor-5);
+    border-radius: 5px;
+    border: none;
+    width: 26px;
+    height: 18px;
 }
 
 .lista-menu__link {
     font-family: var(--fonte-principal);
     text-decoration: none;
     color: var(--cor-fonte-2);
+    font-weight: 600;
 }
 
 .container__botao:checked~.lista-menu { /* condicional "se .container__botao estiver marcado (.container__botao:checked), então (~), .lista-menu aparece (display: block)" */
@@ -234,19 +250,6 @@
     height: 20px;
     resize: none; /* Impede o redimensionamento do textarea */
     overflow: hidden;
-}
-
-.youtube-button {
-    font-family: var(--fonte-principal);
-    font-size: 0.8em;
-    font-weight: 800;
-    text-align: center;
-    color: var(--cor-fonte);
-    background-color: var(--paleta-cor-5);
-    border-radius: 2px;
-    border: none;
-    width: 26px;
-    height: 18px;
 }
 
 .video-container {
