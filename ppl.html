@@ -742,8 +742,17 @@ Incline Chest-Supported DB Row</textarea>
             </ul>
         </section>
 
-        
 
+        <div class="session-buttons">
+            <button class="new-session-button" onclick="addSection()">Adicionar exercício</button>
+            <button class="remove-session-button" onclick="removeLastSection()">Remover exercício</button>
+        </div>
+
+
+    </main>
+    
+    <footer class="rodape">
+        
         <div class="timer-org">
             <div id="timer-container-1" class="timer-container">
                 <!-- Lista suspensa para minutos pré-definidos -->
@@ -779,15 +788,8 @@ Incline Chest-Supported DB Row</textarea>
         
             <div id="timer-1" class="timer">00:00</div>
         </div>
-
-        <div class="session-buttons">
-            <button class="new-session-button" onclick="addSection()">Adicionar exercício</button>
-            <button class="remove-session-button" onclick="removeLastSection()">Remover exercício</button>
-        </div>
-
-
-    </main>
-    <footer class="rodape">
+        
+        <a href="index.html" class="rodape-back-to-index">Muscle Plan<sup>©</sup></a>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>

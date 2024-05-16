@@ -469,7 +469,7 @@ select {
 .session-buttons {
     display: flex;
     justify-content: space-around;
-    margin: 1.3em 1em 0.5em 1em;
+    margin: 1.3em 1em 5em 1em;
     gap: 15px;
 }
 
@@ -489,13 +489,20 @@ select {
 }
 
 .rodape {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .rodape-back-to-index {
     font-family: var(--fonte-principal);
     color: var(--cor-fonte-1);
     text-decoration: none;
+    margin: 1em;
 }
 
 sup {
