@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url(styles.css);
+
+:root {
+    --paleta-cor-1: #404258;
+    --paleta-cor-2: #474E68;
+    --paleta-cor-3: #50577A;
+    --paleta-cor-4: #6B728E;
+    --paleta-cor-5: #C40C0C;
+    --paleta-cor-6: #FF6500;
+    --paleta-cor-7: #FF8A08;
+    --paleta-cor-8: #FFC100;
+    --paleta-cor-9: #00224D;
+    --paleta-cor-10: #5D0E41;
+    --paleta-cor-11: #A0153E;
+    --paleta-cor-12: #FF204E;
+    --paleta-cor-13: #EFBC9B;
+    --paleta-cor-14: #FBF3D5;
+    --paleta-cor-15: #D6DAC8;
+    --paleta-cor-16: #9CAFAA;
+
+    --fonte-principal: "Montserrat", sans-serif;
+    --cor-fonte: #DFD0B8;
+    --cor-fonte-1: WHITE;
+    --cor-fonte-2: BLACK;
+    --cor-fonte-botao: white;
+    --cor-fonte-placeholder: rgb(255, 255, 255);
+    --cor-fonte-menu-link: black;
+    --cor-fundo-treino-body: #bdbec5;
+    --cor-fundo-main: #bdbec5;
+    --cor-fundo-exercicio: #474E68;
+    --cor-fundo-select: #DFD0B8;
+    --cor-fundo-treino-obs: #474E68;
+    --cor-fundo-exercicio-obs: #50577A;
+    --cor-fundo-input-reps1: #D6DAC8;
+    --cor-fundo-input-reps2: #D6DAC8;
+    --cor-fundo-input-kg: #FFC100;
+    --cor-fundo-input-rpe1: #FF8A08;
+    --cor-fundo-input-rpe2: #c42e2e;
+    --cor-fundo-botao: #153448;
+    --cor-fundo-menu-exercicio: #6B728E;
+    --cor-fundo-rodape: #153448;
+    
+}
+
+.index-body {
+    background-color: white;
+    margin: 0.5em;
+}
+
+.div-logo-index {
+    height: 90vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: center;
+}
+
+.ancora_index {
+    text-decoration: none;
+    color: var(--cor-fonte-2);
+    margin-top: 10em;
+}
+
+.logo-index {
+    height: 120px;
+}
+
+.logo2-index {
+    height: 120px;
+}
+
+.titulo-index__treino-em-branco, .titulo-index__treino-extppl {
+    font-family: var(--fonte-principal);
+    font-weight: 600;
+    font-size: 1em;
+    margin-top: 1em;
+}
+
+.rodape-index {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 96%;
+    background-color: var(--cor-fundo-rodape);
+    border-radius: 4px;
+    margin-bottom: 0.5em;
+}
+
+.rodape-back-to-index {
+    font-family: var(--fonte-principal);
+    color: var(--cor-fonte-1);
+    text-decoration: none;
+    margin: 1em 0;
+}
+
+sup {
+    color: var(--paleta-cor-5);
+    vertical-align: super;
+    font-size: smaller;
+}

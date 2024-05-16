@@ -42,13 +42,9 @@
     
 }
 
-.index-body, .treino-body {
+.treino-body {
     background-color: var(--cor-fundo-treino-body);
     margin: 0.5em;
-}
-
-.index-body {
-    background-color: white;
 }
 
 .main__treino-blank {
@@ -64,35 +60,6 @@
     padding-bottom: 1em;
 }
 
-.div-logo-index {
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.ancora-index {
-    display: inline-block;
-    border-radius: 35px;
-    overflow: hidden;
-}
-
-.logo-index {
-    width: 120px;
-    border-radius: 35px;
-}
-
-.logo2-index {
-    width: 200px;
-}
-
-.titulo-app-index {
-    font-family: var(--fonte-principal);
-    font-weight: 600;
-    font-size: 1.3em;
-    margin-top: 0.5em;
-}
 
 ::placeholder {
     color: var(--cor-fonte-placeholder);
