@@ -72,7 +72,7 @@
     margin: 1em 0.2em;
 }
 
-.export-whatsapp, .export-excel, .import-excel {
+.export-whatsapp, .export-excel, .save-html, .import-excel, .load-html {
     font-family: var(--fonte-principal);
     font-size: 0.7em;
     color: var(--cor-fonte-botao);
@@ -81,10 +81,10 @@
     border-radius: 4px;
     box-shadow: 1px 1px 1px black;
     width: 33%;
-    height: 30px;
+    height: 40px;
 }
 
-.import-excel {
+.import-excel, .load-html {
     color: var(--cor-fonte-botao);
     background-color: var(--paleta-cor-11);
 }
