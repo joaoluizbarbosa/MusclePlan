@@ -493,7 +493,7 @@ select {
     font-family: var(--fonte-principal);
     font-weight: 600;
     color: var(--paleta-cor-9);
-    padding-top: 1em;
+    padding-top: 0.7em;
     background-color: var(--paleta-cor-8);
     border: 1px solid black;
     border-radius: 4px;
