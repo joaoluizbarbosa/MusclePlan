@@ -689,16 +689,19 @@
             // Encontra o textarea dentro do elemento de exercício para obter o nome do exercício
             var exerciseNameTextarea = exerciseElement.querySelector('.exercicio__nome');
             
-            // Obtém o texto do nome do exercício
+            // Obtém o texto do nome do exercício inserido pelo usuário
             var userKeyword = exerciseNameTextarea.value.trim();
 
-            // Palavra-chave adicional que você quer adicionar
-            var additionalKeyword = "RP";
+            // Lista de palavras-chave adicionais que você quer incluir
+            var additionalKeywords = ["Renaissanse Periodization", "Jeff Nippard", "N1 Education"];
 
             // Verifica se há uma palavra-chave válida inserida pelo usuário
             if (userKeyword) {
-                // Combina a palavra-chave inserida pelo usuário com a palavra-chave adicional
-                var keyword = userKeyword + ' ' + additionalKeyword;
+                // Combina a palavra-chave inserida pelo usuário com as palavras-chave adicionais
+                var keywords = [userKeyword].concat(additionalKeywords);
+
+                // Combina todas as palavras-chave em uma única string separada por espaços
+                var keyword = keywords.join(' ');
 
                 // Substitui os espaços por "+" na palavra-chave para formar a URL de busca
                 keyword = keyword.replace(/\s/g, '+');
