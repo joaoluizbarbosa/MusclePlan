@@ -454,7 +454,7 @@ select {
     display: grid;
     grid-template-columns: 50% 50%;
     text-align: center;
-    margin: 1em 0;
+    margin: 0.5em 0;
 }
 
 .timer-container {
@@ -498,7 +498,7 @@ select {
     border: 1px solid black;
     border-radius: 4px;
     box-shadow: 1px 1px 1px black;
-    height: 90px;
+    height: 80px;
     width: 90%;
     place-self: center;
 }
