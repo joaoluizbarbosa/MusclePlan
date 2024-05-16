@@ -47,8 +47,8 @@ Fique atento as técnicas de intensidade para a última série (TIPUS).</textare
                         <span class="cabecalho__menu-hamburguer container__imagem">...</span>
                     </label>
                     <ul class="lista-menu">
-                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-1')">></button><a onclick="searchYouTubeDynamic('exercicio-1')" class="lista-menu__youtube-link">VÍDEO</a></li>
-                        <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-1')">T</button><a onclick="toggleTimer('exercicio-1')" class="lista-menu__clock-link">TIMER</a></li>
+                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-1')">»</button><a onclick="searchYouTubeDynamic('exercicio-1')" class="lista-menu__youtube-link">VÍDEO</a></li>
+                        <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-1')">Ø</button><a onclick="toggleTimer('exercicio-1')" class="lista-menu__clock-link">TIMER</a></li>
                     </ul>
                 </li>     
             </ul>
@@ -121,9 +121,9 @@ Half-Kneeling 1-Arm Lat Pulldown</textarea>
                     <p class="lista__aquecimento__w">a</p>
                 </li>
                 <li class="lista__aquecimento__item">
-                    <input class="lista__aquecimento__input input-reps1" type="number" value="4">
+                    <input class="lista__aquecimento__input input-reps1" type="number" value="2">
                     <p>-</p>
-                    <input class="lista__aquecimento__input input-reps2" type="number" value="6">
+                    <input class="lista__aquecimento__input input-reps2" type="number" value="4">
                 </li>
                 <li class="lista__aquecimento__item">
                     <input class="lista__aquecimento__input input-kg" type="number" value="">
@@ -223,8 +223,8 @@ Half-Kneeling 1-Arm Lat Pulldown</textarea>
                             <span class="cabecalho__menu-hamburguer container__imagem">...</span>
                         </label>
                         <ul class="lista-menu">
-                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-2')">></button><a onclick="searchYouTubeDynamic('exercicio-2')" class="lista-menu__youtube-link">VÍDEO</a></li>
-                        <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-2')">T</button><a onclick="toggleTimer('exercicio-2')" class="lista-menu__clock-link">TIMER</a></li>
+                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-2')">»</button><a onclick="searchYouTubeDynamic('exercicio-2')" class="lista-menu__youtube-link">VÍDEO</a></li>
+                        <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-2')">Ø</button><a onclick="toggleTimer('exercicio-2')" class="lista-menu__clock-link">TIMER</a></li>
                     </ul>
                 </li>     
             </ul>
@@ -386,22 +386,26 @@ Glute-Ham Raise</textarea>
 
             <ul class="lista__nome-do-exercicio">
                 <li class="lista__nome-do-exercicio__item">
-                    <p class="lista__nome-do-exercicio__numero">3</p>
-                    <textarea class="exercicio__nome" placeholder="Nome do exercício" maxlength="35" oninput="limitLines(this, 1)"></textarea>
+                    <p class="lista__nome-do-exercicio__numero">3a</p>
+                    <textarea class="exercicio__nome" placeholder="Nome do exercício" maxlength="35" oninput="limitLines(this, 1)">chest-supported row</textarea>
                     <input type="checkbox" id="menu-3" class="container__botao">
                     <label for="menu-3" class="container__rotulo">
                         <span class="cabecalho__menu-hamburguer container__imagem">...</span>
                     </label>
                     <ul class="lista-menu">
-                    <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-3')">></button><a onclick="searchYouTubeDynamic('exercicio-3')" class="lista-menu__youtube-link">VÍDEO</a></li>
-                    <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-3')">T</button><a onclick="toggleTimer('exercicio-3')" class="lista-menu__clock-link">TIMER</a></li>
+                    <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-3')">»</button><a onclick="searchYouTubeDynamic('exercicio-3')" class="lista-menu__youtube-link">VÍDEO</a></li>
+                    <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-3')">Ø</button><a onclick="toggleTimer('exercicio-3')" class="lista-menu__clock-link">TIMER</a></li>
                 </ul>
                 </li>
             </ul>
                     
             <div class="video-container" id="video-container-3"></div>
 
-            <textarea class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)"></textarea>
+            <textarea class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)">Super-set, sem intervalo, com Kelso Shrug.
+Utilizar o mesmo equipamento para os dois exercícios.
+        
+Machine Chest-Supported row
+Incline Chest-Supported DB Row</textarea>
             <span class="contador"></span>
 
             <div id="timer-container-3" style="display: none;" class="timer-container">
@@ -451,12 +455,31 @@ Glute-Ham Raise</textarea>
                     <p class="lista__aquecimento__w">a</p>
                 </li>
                 <li class="lista__aquecimento__item">
-                    <input class="lista__aquecimento__input input-reps1" type="number">
+                    <input class="lista__aquecimento__input input-reps1" type="number" value="4">
                     <p>-</p>
-                    <input class="lista__aquecimento__input input-reps2" type="number">
+                    <input class="lista__aquecimento__input input-reps2" type="number" value="6">
                 </li>
                 <li class="lista__aquecimento__item">
-                    <input class="lista__aquecimento__input input-kg" type="number">
+                    <input class="lista__aquecimento__input input-kg" type="number" value="">
+                </li>
+                <li class="lista__aquecimento__item">
+                </li>
+                <li class="lista__aquecimento__item">
+                    <button class="remove-list-button" onclick="removeList('lista__aquecimento-3')"><img class="trash-img" src="img/trash-branca.png">
+                </li>
+            </ul>
+
+            <ul class="lista__aquecimento" id="lista__aquecimento-3">
+                <li class="lista__aquecimento__item">
+                    <p class="lista__aquecimento__w">a</p>
+                </li>
+                <li class="lista__aquecimento__item">
+                    <input class="lista__aquecimento__input input-reps1" type="number" value="2">
+                    <p>-</p>
+                    <input class="lista__aquecimento__input input-reps2" type="number" value="4">
+                </li>
+                <li class="lista__aquecimento__item">
+                    <input class="lista__aquecimento__input input-kg" type="number" value="">
                 </li>
                 <li class="lista__aquecimento__item">
                 </li>
@@ -471,17 +494,61 @@ Glute-Ham Raise</textarea>
                     <p>1</p>
                 </li>
                 <li class="lista__segunda-linha__item">
-                    <input class="lista__segunda-linha__input input-reps1" type="number">
+                    <input class="lista__segunda-linha__input input-reps1" type="number" value="8">
                     <p>-</p>
-                    <input class="lista__segunda-linha__input input-reps2" type="number">
+                    <input class="lista__segunda-linha__input input-reps2" type="number" value="10">
                 </li>
                 <li class="lista__segunda-linha__item">
-                    <input class="lista__segunda-linha__input input-kg" type="number">
+                    <input class="lista__segunda-linha__input input-kg" type="number" value="">
                 </li>
                 <li class="lista__segunda-linha__item">
-                    <input class="lista__segunda-linha__input input-rpe1" type="number">
+                    <input class="lista__segunda-linha__input input-rpe1" type="number" value="9">
                     <p>-</p>
-                    <input class="lista__segunda-linha__input input-rpe2" type="number">
+                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="9">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="input-checkbox" type="checkbox">
+                </li>
+            </ul>
+
+            <ul id="myList3" class="lista__segunda-linha">
+                <li class="lista__segunda-linha__item">
+                    <p>2</p>
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-reps1" type="number" value="8">
+                    <p>-</p>
+                    <input class="lista__segunda-linha__input input-reps2" type="number" value="10">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-kg" type="number" value="">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-rpe1" type="number" value="9">
+                    <p>-</p>
+                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="9">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="input-checkbox" type="checkbox">
+                </li>
+            </ul>
+
+            <ul id="myList3" class="lista__segunda-linha">
+                <li class="lista__segunda-linha__item">
+                    <p>3</p>
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-reps1" type="number" value="8">
+                    <p>-</p>
+                    <input class="lista__segunda-linha__input input-reps2" type="number" value="10">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-kg" type="number" value="">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-rpe1" type="number" value="10">
+                    <p>-</p>
+                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="10">
                 </li>
                 <li class="lista__segunda-linha__item">
                     <input class="input-checkbox" type="checkbox">
@@ -493,6 +560,184 @@ Glute-Ham Raise</textarea>
                     <button id="button3-add-w" class="add-w-button" onclick="myFunctionWSet('exercicio-3', this.id)">ADD a-Set</button>
                     <button id="button3-add" class="add-button" onclick="myFunction('exercicio-3', this.id)">ADD Set</button>
                     <button id="button3-undo" class="undo-button" onclick="undoFunction('exercicio-3', this.id)">EXC Set</button>
+                </li>
+            </ul>
+        </section>
+
+        <section class="exercicio-n" id="exercicio-4">
+
+            <ul class="lista__nome-do-exercicio">
+                <li class="lista__nome-do-exercicio__item">
+                    <p class="lista__nome-do-exercicio__numero">4a</p>
+                    <textarea class="exercicio__nome" placeholder="Nome do exercício" maxlength="35" oninput="limitLines(this, 1)">kelso shrug</textarea>
+                    <input type="checkbox" id="menu-4" class="container__botao">
+                    <label for="menu-4" class="container__rotulo">
+                        <span class="cabecalho__menu-hamburguer container__imagem">...</span>
+                    </label>
+                    <ul class="lista-menu">
+                    <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-4')">»</button><a onclick="searchYouTubeDynamic('exercicio-4')" class="lista-menu__youtube-link">VÍDEO</a></li>
+                    <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-4')">Ø</button><a onclick="toggleTimer('exercicio-4')" class="lista-menu__clock-link">TIMER</a></li>
+                </ul>
+                </li>
+            </ul>
+                    
+            <div class="video-container" id="video-container-4"></div>
+
+            <textarea class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)"></textarea>
+            <span class="contador"></span>
+
+            <div id="timer-container-3" style="display: none;" class="timer-container">
+                <input type="number" id="minutes-4" placeholder="Min" class="timer-container__item">
+                <input type="number" id="seconds-4" placeholder="Seg" class="timer-container__item">
+                <button id="start-button" onclick="startTimer()" class="start-button">Start</button>
+            </div>
+            
+            <div id="timer-4" class="timer">00:00</div>
+
+            <ul class="lista__primeira-linha">
+                <li>
+                    <!-- <p>Set</p> -->
+                </li>
+                <li>
+                <select class="select-repetitions">
+                    <option class="option" value="reps range">Faixa de Repetições</option>
+                    <option value="reps">Repetições</option>
+                    <option value="reps max">Repetições Máximas</option>
+                    <option value="amrap">AMRAP</option>
+                    <option value="time">Tempo</option>
+                    <option value="time range">Faixa de Tempo</option>
+                </select>             
+            </li>
+
+            <li>
+                <select class="select-kg">
+                    <option value="kg">KG</option>
+                    <option value="lb">LB</option>
+                </select>             
+            </li>
+
+            <li>
+                <select class="select-rpe">
+                    <option value="rpe range">Faixa de Int. (PSE)</option>
+                    <option value="rpe">Int. (PSE)</option>
+                    <option value="% of 1rm range">Faixa de % de 1RM</option>
+                    <option value="% of 1rm">% de 1RM</option>
+                </select>             
+            </li>
+
+            </ul>
+
+
+            <ul class="lista__aquecimento" id="lista__aquecimento-4">
+                <li class="lista__aquecimento__item">
+                    <p class="lista__aquecimento__w">a</p>
+                </li>
+                <li class="lista__aquecimento__item">
+                    <input class="lista__aquecimento__input input-reps1" type="number" value="4">
+                    <p>-</p>
+                    <input class="lista__aquecimento__input input-reps2" type="number" value="6">
+                </li>
+                <li class="lista__aquecimento__item">
+                    <input class="lista__aquecimento__input input-kg" type="number" value="">
+                </li>
+                <li class="lista__aquecimento__item">
+                </li>
+                <li class="lista__aquecimento__item">
+                    <button class="remove-list-button" onclick="removeList('lista__aquecimento-3')"><img class="trash-img" src="img/trash-branca.png">
+                </li>
+            </ul>
+
+            <ul class="lista__aquecimento" id="lista__aquecimento-4">
+                <li class="lista__aquecimento__item">
+                    <p class="lista__aquecimento__w">a</p>
+                </li>
+                <li class="lista__aquecimento__item">
+                    <input class="lista__aquecimento__input input-reps1" type="number" value="2">
+                    <p>-</p>
+                    <input class="lista__aquecimento__input input-reps2" type="number" value="4">
+                </li>
+                <li class="lista__aquecimento__item">
+                    <input class="lista__aquecimento__input input-kg" type="number" value="">
+                </li>
+                <li class="lista__aquecimento__item">
+                </li>
+                <li class="lista__aquecimento__item">
+                    <button class="remove-list-button" onclick="removeList('lista__aquecimento-3')"><img class="trash-img" src="img/trash-branca.png">
+                </li>
+            </ul>
+
+
+            <ul id="myList4" class="lista__segunda-linha">
+                <li class="lista__segunda-linha__item">
+                    <p>1</p>
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-reps1" type="number" value="4">
+                    <p>-</p>
+                    <input class="lista__segunda-linha__input input-reps2" type="number" value="6">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-kg" type="number" value="">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-rpe1" type="number" value="9">
+                    <p>-</p>
+                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="9">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="input-checkbox" type="checkbox">
+                </li>
+            </ul>
+
+            <ul id="myList4" class="lista__segunda-linha">
+                <li class="lista__segunda-linha__item">
+                    <p>2</p>
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-reps1" type="number" value="4">
+                    <p>-</p>
+                    <input class="lista__segunda-linha__input input-reps2" type="number" value="6">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-kg" type="number" value="">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-rpe1" type="number" value="9">
+                    <p>-</p>
+                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="9">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="input-checkbox" type="checkbox">
+                </li>
+            </ul>
+
+            <ul id="myList4" class="lista__segunda-linha">
+                <li class="lista__segunda-linha__item">
+                    <p>3</p>
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-reps1" type="number" value="4">
+                    <p>-</p>
+                    <input class="lista__segunda-linha__input input-reps2" type="number" value="6">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-kg" type="number" value="">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-rpe1" type="number" value="10">
+                    <p>-</p>
+                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="10">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="input-checkbox" type="checkbox">
+                </li>
+            </ul>
+
+            <ul class="set-buttons">
+                <li class="set-buttons__item">
+                    <button id="button4-add-w" class="add-w-button" onclick="myFunctionWSet('exercicio-3', this.id)">ADD a-Set</button>
+                    <button id="button4-add" class="add-button" onclick="myFunction('exercicio-3', this.id)">ADD Set</button>
+                    <button id="button4-undo" class="undo-button" onclick="undoFunction('exercicio-3', this.id)">EXC Set</button>
                 </li>
             </ul>
         </section>
@@ -769,8 +1014,8 @@ Glute-Ham Raise</textarea>
                             <span class="cabecalho__menu-hamburguer container__imagem">...</span>
                         </label>
                         <ul class="lista-menu">
-                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-${j}')">></button><a onclick="searchYouTubeDynamic('exercicio-${j}')" class="lista-menu__youtube-link">VÍDEO</a></li>
-                        <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-${j}')">T</button><a onclick="toggleTimer('exercicio-${j}')" class="lista-menu__clock-link">TIMER</a></li>
+                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-${j}')">»</button><a onclick="searchYouTubeDynamic('exercicio-${j}')" class="lista-menu__youtube-link">VÍDEO</a></li>
+                        <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-${j}')">Ø</button><a onclick="toggleTimer('exercicio-${j}')" class="lista-menu__clock-link">TIMER</a></li>
                     </ul>
                     </li>
                 </ul>

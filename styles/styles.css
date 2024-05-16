@@ -232,7 +232,7 @@
 .lista__nome-do-exercicio__item {
     position: relative;
     display: grid;
-    grid-template-columns: 2% 88% 5%;
+    grid-template-columns: 5% 88% 5%;
     margin: 1em 0.5em 0.5em 1em;
     align-items: center;
     justify-content: space-between;
@@ -245,7 +245,7 @@
     position: absolute;
     padding: 0.5em 0;
     top: 100%; /* retirou ??% do menu de cima do checkbox */
-    width: 150px; /* unidade de medida relativa da largura de tela "viewport width" */
+    width: 170px;
     border-radius: 4px;
     box-shadow: 1px 1px 1px black;
     z-index: 1;
@@ -262,28 +262,29 @@
 
 .youtube-button {
     font-family: var(--fonte-principal);
-    font-size: 0.8em;
-    font-weight: 800;
+    font-size: 1.5em;
+    font-weight: 700;
     text-align: center;
     color: var(--cor-fonte);
     background-color: var(--paleta-cor-5);
     border-radius: 5px;
     border: none;
-    width: 26px;
-    height: 18px;
+    width: 50px;
+    height: 25px;
+    padding-bottom: 1.4em;
 }
 
 .clock-button {
     font-family: var(--fonte-principal);
-    font-size: 0.8em;
+    font-size: 1em;
     font-weight: 800;
     text-align: center;
     color: var(--cor-fonte-2);
     background-color: var(--paleta-cor-8);
     border-radius: 5px;
     border: none;
-    width: 26px;
-    height: 18px;
+    width: 50px;
+    height: 31px;
     margin-top: 0.5em;
 }
 
