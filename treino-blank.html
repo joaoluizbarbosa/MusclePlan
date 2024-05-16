@@ -692,8 +692,14 @@
             // Obtém o texto do nome do exercício
             var keyword = exerciseNameTextarea.value.trim();
 
-            // Verifica se há uma palavra-chave válida
-            if (keyword) {
+            // Palavra-chave adicional que você quer adicionar
+            var additionalKeyword = "fitness";
+
+            // Verifica se há uma palavra-chave válida inserida pelo usuário
+            if (userKeyword) {
+                // Combina a palavra-chave inserida pelo usuário com a palavra-chave adicional
+                var keyword = userKeyword + ' ' + additionalKeyword;
+
                 // Substitui os espaços por "+" na palavra-chave para formar a URL de busca
                 keyword = keyword.replace(/\s/g, '+');
 
