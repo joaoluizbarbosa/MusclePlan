@@ -1202,6 +1202,13 @@ Incline Chest-Supported DB Row</textarea>
             element.style.height = (element.scrollHeight) + 'px';
         }
 
+        // Executa a função autoExpandTextarea em todas as textareas com a classe 'auto-expand' ao carregar a página
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.auto-expand').forEach(function(textarea) {
+                autoExpandTextarea(textarea);
+            });
+        });
+
         // MutationObserver para observar adições de novos elementos ao DOM
         const observer = new MutationObserver(function(mutations) {
             mutations.forEach(function(mutation) {
