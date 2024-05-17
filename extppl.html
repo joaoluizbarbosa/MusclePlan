@@ -912,8 +912,10 @@ Incline Chest-Supported DB Row</textarea>
                 playSound(); // Emite um sinal sonoro
                 // alert("Tempo esgotado!");
                 timerDisplay.textContent = '00:00';
-                timerDisplay.style.display = 'none'; // Esconde o timer
-                timerContainer.style.display = 'none'; // Esconde o timer-container
+                timerDisplay.style.display = 'block'; // Esconde o timer 'none'
+                timerContainer.style.display = 'block'; // Esconde o timer-container 'none'
+                startPauseButton.textContent = 'Start'; // Redefine o botão para 'Start'
+                isTimerRunning = false; // Redefine o estado do cronômetro
             } else {
                 remainingTime--;
             }
