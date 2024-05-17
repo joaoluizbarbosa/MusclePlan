@@ -834,7 +834,19 @@ Incline Chest-Supported DB Row</textarea>
     
         function toggleTimer(sectionId) {
             let timerElement = document.getElementById('timer-1');
-    
+            let timerContainer = document.getElementById('timer-container-1');
+
+            // Garantir que os elementos existam
+            if (!timerElement || !timerContainer) {
+                console.error('Timer elements not found');
+                return;
+            }
+
+            // Inicializar o estilo do display se necessário
+            if (timerContainer.style.display === '') {
+                timerContainer.style.display = 'none';
+            }
+
             if (timerContainer.style.display === 'none') {
                 timerContainer.style.display = 'block';
                 timerElement.style.display = 'block';
@@ -879,26 +891,28 @@ Incline Chest-Supported DB Row</textarea>
         function playSound() {
             // Crie um contexto de áudio
             const audioContext = new AudioContext();
-    
-            // Crie um oscilador
-            const oscillator = audioContext.createOscillator();
-    
-            // Configure o tipo de forma de onda do oscilador (nesse caso, um beep)
-            oscillator.type = "sine";
-    
-            // Conecte o oscilador ao destino de saída de áudio (alto-falantes)
-            oscillator.connect(audioContext.destination);
-    
-            // Inicie o oscilador
-            oscillator.start();
-    
-            // Defina o tempo de duração do som (em milissegundos)
-            const duration = 1500; // 0.5 segundos
-    
-            // Pare o oscilador após a duração especificada
-            setTimeout(() => {
-                oscillator.stop();
-            }, duration);
+
+            // Função para tocar um bip
+            function beep() {
+                const oscillator = audioContext.createOscillator();
+                oscillator.type = "sine";
+                oscillator.connect(audioContext.destination);
+                oscillator.start();
+
+                // Defina o tempo de duração do som (em milissegundos)
+                const duration = 500; // 0.5 segundos
+
+                // Pare o oscilador após a duração especificada
+                setTimeout(() => {
+                    oscillator.stop();
+                }, duration);
+            }
+
+            // Toque três bips com intervalos de 500ms entre eles
+            beep();
+            setTimeout(beep, 1000);
+            setTimeout(beep, 2000);
+            setTimeout(beep, 3000);
         }
     
         function updateTimer() {
