@@ -794,7 +794,34 @@ Incline Chest-Supported DB Row</textarea>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
 
-    
+    <script>
+        document.addEventListener('click', function(event) {
+            // Seleciona todas as checkboxes com a classe específica
+            const checkboxes = document.querySelectorAll('.container__botao');
+            checkboxes.forEach(function(checkbox) {
+                // Verifica se o alvo do clique não é a checkbox específica
+                if (checkbox !== event.target) {
+                    checkbox.checked = false;
+                }
+            });
+        });
+
+        // Impede que o clique na checkbox desmarque imediatamente ela mesma
+        document.addEventListener('click', function(event) {
+            if (event.target.classList.contains('container__botao')) {
+                event.stopPropagation();
+            }
+        });
+
+        // Função para adicionar uma nova checkbox dinâmica
+        document.getElementById('addCheckbox').addEventListener('click', function() {
+            const newCheckbox = document.createElement('input');
+            newCheckbox.type = 'checkbox';
+            newCheckbox.className = 'container__botao';
+            document.body.appendChild(newCheckbox);
+        });
+    </script>
+
     <script>
         let timerInterval;
         let totalTime;
@@ -896,6 +923,8 @@ Incline Chest-Supported DB Row</textarea>
             return time < 10 ? "0" + time : time;
         }
     </script>
+    
+    
     
     
     
@@ -1129,24 +1158,9 @@ Incline Chest-Supported DB Row</textarea>
             mainTag.insertBefore(section, sessionButtons);
             mainTag.insertBefore(section, timerOrg);
 
-            // Chamar a função para associar a expansão automática aos novos textareas
-            expandNewTextarea(section);
-
         }
 
-            // Função para associar a expansão automática aos novos textareas
-            function expandNewTextarea(section) {
-                var textareas = section.querySelectorAll('textarea.auto-expand');
-
-                textareas.forEach(function(textarea) {
-                    textarea.addEventListener('input', function() {
-                        expandTextarea(this);
-                    });
-                    // Expandir a textarea inicialmente
-                    expandTextarea(textarea);
-                });
-        }
-
+        
         function removeLastSection() {
             let main = document.querySelector('main');
             let lastSection = main.lastElementChild;
@@ -1159,8 +1173,71 @@ Incline Chest-Supported DB Row</textarea>
             if (lastSection) {
                 lastSection.parentNode.removeChild(lastSection);
             }
-        }    
+        }  
+
+
     </script>
+
+
+    <script>
+        // Função para expandir a textarea automaticamente
+        function autoExpandTextarea(element) {
+            element.style.height = 'auto';
+            element.style.height = (element.scrollHeight) + 'px';
+        }
+
+        // MutationObserver para observar adições de novos elementos ao DOM
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                mutation.addedNodes.forEach(function(node) {
+                    if (node.nodeType === 1 && node.classList.contains('auto-expand')) {
+                        autoExpandTextarea(node);
+                    }
+                });
+            });
+        });
+
+        // Observa mudanças no DOM
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+
+        // Event listener para expandir a textarea quando o conteúdo é alterado
+        document.addEventListener('input', function(event) {
+            if (event.target && event.target.classList.contains('auto-expand')) {
+                autoExpandTextarea(event.target);
+            }
+        });
+
+        // Event listener para adicionar nova textarea dinâmica
+        document.getElementById('addTextarea').addEventListener('click', function() {
+            const newTextarea = document.createElement('textarea');
+            newTextarea.className = 'auto-expand';
+            newTextarea.rows = 1; // Defina o número inicial de linhas conforme necessário
+            document.body.appendChild(newTextarea);
+        });
+    </script>
+
+    <script>
+        // Função para atualizar o contador de caracteres
+        function updateCounter(textarea) {
+            var maxLength = parseInt(textarea.getAttribute('maxlength'));
+            var currentLength = textarea.value.length;
+            var contador = textarea.nextElementSibling;
+
+            contador.textContent = currentLength + '/' + maxLength;
+        }
+
+        // Função para limitar o número de linhas em uma textarea
+        function limitLines(textarea, maxLines) {
+            var lines = textarea.value.split('\n');
+            if (lines.length > maxLines) {
+                textarea.value = lines.slice(0, maxLines).join('\n');
+            }
+        }
+    </script>
+
 
     <script>
         function exportToExcel() {
@@ -1361,47 +1438,6 @@ Incline Chest-Supported DB Row</textarea>
         });
     </script>
 
-    <script>
-        // Função para atualizar o contador de caracteres
-        function updateCounter(textarea) {
-            var maxLength = parseInt(textarea.getAttribute('maxlength'));
-            var currentLength = textarea.value.length;
-            var contador = textarea.nextElementSibling;
-
-            contador.textContent = currentLength + '/' + maxLength;
-        }
-
-        // Função para limitar o número de linhas em uma textarea
-        function limitLines(textarea, maxLines) {
-            var lines = textarea.value.split('\n');
-            if (lines.length > maxLines) {
-                textarea.value = lines.slice(0, maxLines).join('\n');
-            }
-        }
-    </script>
-
-    <script>
-        // Função para fazer a textarea expandir de acordo com o texto
-        function expandTextarea(textarea) {
-            textarea.style.height = 'auto';
-            textarea.style.height = textarea.scrollHeight + 'px';
-        }
-
-        // Adiciona eventos para cada textarea com a classe 'auto-expand'
-        document.addEventListener("DOMContentLoaded", function() {
-            var textareas = document.querySelectorAll('textarea.auto-expand');
-        
-            textareas.forEach(function(textarea) {
-                textarea.addEventListener('input', function() {
-                    expandTextarea(this);
-                });
-                // Expandir a textarea inicialmente
-                expandTextarea(textarea);
-            });
-        });
-    </script>
-
-
-
+    
 </body>
 </html>

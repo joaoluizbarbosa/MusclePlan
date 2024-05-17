@@ -12,9 +12,7 @@
         <div class="export-buttons">
             <button class="export-whatsapp" onclick="exportToWhatsApp()">Exp. WhatsApp</button>
             <button class="export-excel" onclick="exportToExcel()">Exp. Excel</button>
-            <button class="save-html" onclick="saveHTML()">Salvar HTML</button>
             <button class="import-excel" onclick="importFromExcel()">Imp. Excel</button>
-            <button class="load-html" onclick="loadHTML()">Carregar HTML</button>
         </div>
 
     </header>
@@ -188,45 +186,45 @@
                 <button id="start-pause-button" onclick="startPauseTimer()" class="start-button">Start</button>
                 <button id="reset-button" onclick="resetTimer()" class="reset-button">Reset</button>
             </div>
-        
+            
             <div id="timer-1" class="timer">00:00</div>
+            
         </div>
         
         <a href="index.html" class="rodape-back-to-index">Muscle Plan<sup>©</sup></a>
     </footer>
 
 
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
 
     <script>
-        // Função para salvar o HTML preenchido
-        function saveHTML() {
-            // Obter o HTML preenchido
-            let filledHTML = document.documentElement.outerHTML;
-
-            // Salvar o HTML em algum lugar, como Local Storage
-            localStorage.setItem('filledHTML', filledHTML);
-
-            // Ou você pode enviar o HTML para um servidor para armazenamento
-        }
-
-        // Função para carregar o HTML preenchido
-            function loadHTML() {
-                // Recuperar o HTML salvo, por exemplo, do Local Storage
-                let filledHTML = localStorage.getItem('filledHTML');
-
-                // Verificar se o HTML existe
-                if (filledHTML) {
-                    // Carregar o HTML preenchido
-                    document.open();
-                    document.write(filledHTML);
-                    document.close();
+        document.addEventListener('click', function(event) {
+            // Seleciona todas as checkboxes com a classe específica
+            const checkboxes = document.querySelectorAll('.container__botao');
+            checkboxes.forEach(function(checkbox) {
+                // Verifica se o alvo do clique não é a checkbox específica
+                if (checkbox !== event.target) {
+                    checkbox.checked = false;
                 }
-        }
+            });
+        });
 
+        // Impede que o clique na checkbox desmarque imediatamente ela mesma
+        document.addEventListener('click', function(event) {
+            if (event.target.classList.contains('container__botao')) {
+                event.stopPropagation();
+            }
+        });
+
+        // Função para adicionar uma nova checkbox dinâmica
+        document.getElementById('addCheckbox').addEventListener('click', function() {
+            const newCheckbox = document.createElement('input');
+            newCheckbox.type = 'checkbox';
+            newCheckbox.className = 'container__botao';
+            document.body.appendChild(newCheckbox);
+        });
     </script>
-    
+
     <script>
         let timerInterval;
         let totalTime;
@@ -563,24 +561,9 @@
             mainTag.insertBefore(section, sessionButtons);
             mainTag.insertBefore(section, timerOrg);
 
-            // Chamar a função para associar a expansão automática aos novos textareas
-            expandNewTextarea(section);
-
         }
 
-            // Função para associar a expansão automática aos novos textareas
-            function expandNewTextarea(section) {
-                var textareas = section.querySelectorAll('textarea.auto-expand');
-
-                textareas.forEach(function(textarea) {
-                    textarea.addEventListener('input', function() {
-                        expandTextarea(this);
-                    });
-                    // Expandir a textarea inicialmente
-                    expandTextarea(textarea);
-                });
-        }
-
+        
         function removeLastSection() {
             let main = document.querySelector('main');
             let lastSection = main.lastElementChild;
@@ -593,8 +576,71 @@
             if (lastSection) {
                 lastSection.parentNode.removeChild(lastSection);
             }
-        }    
+        }  
+
+
     </script>
+
+
+    <script>
+        // Função para expandir a textarea automaticamente
+        function autoExpandTextarea(element) {
+            element.style.height = 'auto';
+            element.style.height = (element.scrollHeight) + 'px';
+        }
+
+        // MutationObserver para observar adições de novos elementos ao DOM
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                mutation.addedNodes.forEach(function(node) {
+                    if (node.nodeType === 1 && node.classList.contains('auto-expand')) {
+                        autoExpandTextarea(node);
+                    }
+                });
+            });
+        });
+
+        // Observa mudanças no DOM
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+
+        // Event listener para expandir a textarea quando o conteúdo é alterado
+        document.addEventListener('input', function(event) {
+            if (event.target && event.target.classList.contains('auto-expand')) {
+                autoExpandTextarea(event.target);
+            }
+        });
+
+        // Event listener para adicionar nova textarea dinâmica
+        document.getElementById('addTextarea').addEventListener('click', function() {
+            const newTextarea = document.createElement('textarea');
+            newTextarea.className = 'auto-expand';
+            newTextarea.rows = 1; // Defina o número inicial de linhas conforme necessário
+            document.body.appendChild(newTextarea);
+        });
+    </script>
+
+    <script>
+        // Função para atualizar o contador de caracteres
+        function updateCounter(textarea) {
+            var maxLength = parseInt(textarea.getAttribute('maxlength'));
+            var currentLength = textarea.value.length;
+            var contador = textarea.nextElementSibling;
+
+            contador.textContent = currentLength + '/' + maxLength;
+        }
+
+        // Função para limitar o número de linhas em uma textarea
+        function limitLines(textarea, maxLines) {
+            var lines = textarea.value.split('\n');
+            if (lines.length > maxLines) {
+                textarea.value = lines.slice(0, maxLines).join('\n');
+            }
+        }
+    </script>
+
 
     <script>
         function exportToExcel() {
@@ -795,47 +841,6 @@
         });
     </script>
 
-    <script>
-        // Função para atualizar o contador de caracteres
-        function updateCounter(textarea) {
-            var maxLength = parseInt(textarea.getAttribute('maxlength'));
-            var currentLength = textarea.value.length;
-            var contador = textarea.nextElementSibling;
-
-            contador.textContent = currentLength + '/' + maxLength;
-        }
-
-        // Função para limitar o número de linhas em uma textarea
-        function limitLines(textarea, maxLines) {
-            var lines = textarea.value.split('\n');
-            if (lines.length > maxLines) {
-                textarea.value = lines.slice(0, maxLines).join('\n');
-            }
-        }
-    </script>
-
-    <script>
-        // Função para fazer a textarea expandir de acordo com o texto
-        function expandTextarea(textarea) {
-            textarea.style.height = 'auto';
-            textarea.style.height = textarea.scrollHeight + 'px';
-        }
-
-        // Adiciona eventos para cada textarea com a classe 'auto-expand'
-        document.addEventListener("DOMContentLoaded", function() {
-            var textareas = document.querySelectorAll('textarea.auto-expand');
-        
-            textareas.forEach(function(textarea) {
-                textarea.addEventListener('input', function() {
-                    expandTextarea(this);
-                });
-                // Expandir a textarea inicialmente
-                expandTextarea(textarea);
-            });
-        });
-    </script>
-
-
-
+    
 </body>
 </html>
