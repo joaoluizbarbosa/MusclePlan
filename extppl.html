@@ -787,6 +787,9 @@ Incline Chest-Supported DB Row</textarea>
             </div>
         
             <div id="timer-1" class="timer">00:00</div>
+
+            <button id="esc-clock-button-1" class="esc-clock-button" onclick="toggleTimer('exercicio-1')">x</button>
+            
         </div>
         
         <a href="index.html" class="rodape-back-to-index">Muscle Plan<sup>©</sup></a>
@@ -835,9 +838,10 @@ Incline Chest-Supported DB Row</textarea>
         function toggleTimer(sectionId) {
             let timerElement = document.getElementById('timer-1');
             let timerContainer = document.getElementById('timer-container-1');
+            let escClockButton = document.getElementById('esc-clock-button-1'); // Obter o botão de fechar
 
             // Garantir que os elementos existam
-            if (!timerElement || !timerContainer) {
+            if (!timerElement || !timerContainer || !escClockButton) {
                 console.error('Timer elements not found');
                 return;
             }
@@ -850,9 +854,11 @@ Incline Chest-Supported DB Row</textarea>
             if (timerContainer.style.display === 'none') {
                 timerContainer.style.display = 'block';
                 timerElement.style.display = 'block';
+                escClockButton.style.display = 'block'; // Mostrar o botão de fechar
             } else {
                 timerContainer.style.display = 'none';
                 timerElement.style.display = 'none';
+                escClockButton.style.display = 'none'; // Esconder o botão de fechar
             }
         }
     
