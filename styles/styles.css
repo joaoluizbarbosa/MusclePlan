@@ -24,10 +24,14 @@
     --cor-fonte-2: BLACK;
     
     --cor-fonte-placeholder: rgb(255, 255, 255);
+    
     --cor-fonte-menu-link: black;
+    --cor-fundo-menu-exercicio: #6B728E;
+
     --cor-fundo-treino-body: #bdbec5;
     --cor-fundo-main: #bdbec5;
     --cor-fundo-exercicio: #474E68;
+    
     --cor-fundo-select: #DFD0B8;
     
     --cor-fundo-treino-obs: #474E68;
@@ -41,7 +45,7 @@
     
     --cor-fonte-botao: white;
     --cor-fundo-botao: #153448;
-    --cor-fundo-menu-exercicio: #6B728E;
+    
     --cor-fundo-rodape: #153448;
 
     --cor-input-checkbox-fundo: white;
@@ -49,6 +53,9 @@
     --cor-input-checkbox-fundo-ckecked: gray;
     --cor-input-checkbox-border-ckecked: black;
     --cor-input-checkbox-check: black;
+
+    --cor-fundo-escClockButton: #FFC100;
+    --cor-fundo-startResetButton: #A0153E;
     
 }
 
@@ -496,7 +503,7 @@ select {
     font-family: var(--fonte-principal);
     font-size: 0.7em;
     color: var(--cor-fonte-1);
-    background-color: var(--paleta-cor-11);
+    background-color: var(--cor-fundo-startResetButton);
     border: none;
     border-radius: 4px;
     box-shadow: 1px 1px 1px black;
@@ -511,7 +518,7 @@ select {
     font-size: 0.7em;
     font-weight: 700;
     color: var(--cor-fonte-2);
-    background-color: var(--paleta-cor-6);
+    background-color: var(--cor-fundo-escClockButton);
     border: none;
     border-radius: 4px;
     box-shadow: 1px 1px 1px black;
