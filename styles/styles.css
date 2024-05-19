@@ -22,20 +22,24 @@
     --cor-fonte: #DFD0B8;
     --cor-fonte-1: WHITE;
     --cor-fonte-2: BLACK;
-    --cor-fonte-botao: white;
+    
     --cor-fonte-placeholder: rgb(255, 255, 255);
     --cor-fonte-menu-link: black;
     --cor-fundo-treino-body: #bdbec5;
     --cor-fundo-main: #bdbec5;
     --cor-fundo-exercicio: #474E68;
     --cor-fundo-select: #DFD0B8;
+    
     --cor-fundo-treino-obs: #474E68;
-    --cor-fundo-exercicio-obs: #50577A;
+    --cor-fundo-exercicio-obs: #474E68;
+    
     --cor-fundo-input-reps1: #D6DAC8;
     --cor-fundo-input-reps2: #D6DAC8;
     --cor-fundo-input-kg: #FFC100;
     --cor-fundo-input-rpe1: #FF8A08;
     --cor-fundo-input-rpe2: #c42e2e;
+    
+    --cor-fonte-botao: white;
     --cor-fundo-botao: #153448;
     --cor-fundo-menu-exercicio: #6B728E;
     --cor-fundo-rodape: #153448;
@@ -130,6 +134,11 @@ input[type="checkbox"]:checked::before {
     grid-template-columns: 85% 15%;
     align-items: center;
     margin-bottom: 0.5em;
+}
+
+.lista__titulo-do-treino__item-div {
+    display: flex;
+    flex-direction: column;
 }
 
 .titulo-do-treino {
