@@ -22,6 +22,10 @@
     --cor-fonte: #DFD0B8;
     --cor-fonte-1: WHITE;
     --cor-fonte-2: BLACK;
+
+    --cor-fundo-treino-info: #50577A;
+    --cor-fundo-titulo-do-treino: #50577A;
+    --cor-fundo-treino-obs: #50577A;
     
     --cor-fonte-placeholder: rgb(255, 255, 255);
     
@@ -30,11 +34,10 @@
 
     --cor-fundo-treino-body: #bdbec5;
     --cor-fundo-main: #bdbec5;
-    --cor-fundo-exercicio: #474E68;
-    
+        
     --cor-fundo-select: #DFD0B8;
     
-    --cor-fundo-treino-obs: #474E68;
+    --cor-fundo-exercicio: #474E68;
     --cor-fundo-exercicio-obs: #474E68;
     
     --cor-fundo-input-reps1: #D6DAC8;
@@ -136,25 +139,25 @@ input[type="checkbox"]:checked::before {
     background-color: var(--paleta-cor-11);
 }
 
-.lista__titulo-do-treino__item{
-    display: grid;
-    grid-template-columns: 85% 15%;
-    align-items: center;
-    margin-bottom: 0.5em;
+.lista__treino-info {
+    background-color: var(--cor-fundo-treino-info);
+    border-radius: 4px;
+    margin: 1.1em 0.5em 0.5em 0.5em;
 }
 
-.lista__titulo-do-treino__item-div {
+.lista__treino-info__item {
     display: flex;
     flex-direction: column;
+    margin-bottom: 0.5em;
 }
 
 .titulo-do-treino {
     text-transform: uppercase;
     display: block;
-    background-color: var(--cor-fundo-main);
+    background-color: var(--cor-fundo-titulo-do-treino);
     border: none;
     resize: none;
-    width: 94%;
+    width: 92%;
     height: 20px;
     font-family: var(--fonte-principal);
     color: var(--cor-fonte-2);
@@ -162,16 +165,6 @@ input[type="checkbox"]:checked::before {
     font-size: 1.1em;
     margin: 0.5em 0.5em 0 0.5em;
     padding: 0.2em;
-}
-
-.contador {
-    font-size: 0.7em;
-    color: var(--cor-fonte-1);
-    margin: 0.5em 0 0 1em;
-}
-
-.logo-treino-blank {
-    width: 50px;
 }
 
 .treino__obs {
@@ -187,6 +180,12 @@ input[type="checkbox"]:checked::before {
     width: 92%;
     overflow: hidden;
     resize: none;
+}
+
+.contador {
+    font-size: 0.7em;
+    color: var(--cor-fonte-1);
+    margin: 0.5em 0 0 1em;
 }
 
 .exercicio-n {

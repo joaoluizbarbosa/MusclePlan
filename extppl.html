@@ -22,19 +22,21 @@
 
         <!-- <h1 class="titulo__semana-dia">SEMANA <textarea class="titulo__semana">1</textarea> · DIA<textarea class="titulo__dia">1</textarea></h1> -->
 
-        <ul class="lista__titulo-do-treino">
-            <li class="lista__titulo-do-treino__item">
-                <div class="lista__titulo-do-treino__item-div">
-                    <textarea class="titulo-do-treino" placeholder="NOME DO TREINO" maxlength="30" oninput="limitLines(this, 1); updateCounter(this)">dia 1 - pull</textarea>
+        <ul class="lista__treino-info">
+            <li class="lista__treino-info__item">
+                
+                    <textarea id="tituloDoTreino" class="titulo-do-treino" placeholder="NOME DO TREINO" maxlength="30" oninput="limitLines(this, 1); updateCounter(this)">dia 1 - pull</textarea>
                     <span class="contador"></span>
-                </div>
-                <a href="index.html" class="back-to-index"><img src="/img/logo.png" class="logo-treino-blank"></a>
+                
+            </li>
+            <li class="lista__treino-info__item">
+                
+                    <textarea class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="300" oninput="limitLines(this, 10); updateCounter(this)">
+Fique atento as técnicas de intensidade para a última série (TIPUS).</textarea>
+<span class="contador"></span>
+
             </li>
         </ul>
-
-        <textarea class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="300" oninput="limitLines(this, 10); updateCounter(this)">
-Fique atento as técnicas de intensidade para a última série (TIPUS).</textarea>
-        <span class="contador"></span>
 
         <section class="exercicio-n" id="exercicio-1">
 
