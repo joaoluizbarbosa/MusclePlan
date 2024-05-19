@@ -77,8 +77,8 @@ input[type="checkbox"] {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    width: 18px;
-    height: 18px;
+    width: 19px;
+    height: 19px;
     background-color: var(--cor-input-checkbox-fundo);
     border: 1px solid var(--cor-input-checkbox-border);
     border-radius: 10px;
