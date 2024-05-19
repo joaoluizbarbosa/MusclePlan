@@ -39,6 +39,12 @@
     --cor-fundo-botao: #153448;
     --cor-fundo-menu-exercicio: #6B728E;
     --cor-fundo-rodape: #153448;
+
+    --cor-input-checkbox-fundo: white;
+    --cor-input-checkbox-border: gray;
+    --cor-input-checkbox-fundo-ckecked: gray;
+    --cor-input-checkbox-border-ckecked: black;
+    --cor-input-checkbox-check: black;
     
 }
 
@@ -63,6 +69,36 @@
 
 ::placeholder {
     color: var(--cor-fonte-placeholder);
+}
+
+
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 18px;
+    height: 18px;
+    background-color: var(--cor-input-checkbox-fundo);
+    border: 1px solid var(--cor-input-checkbox-border);
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--cor-input-checkbox-fundo-ckecked); /* Cor de fundo quando marcado */
+    border: 1px solid var(--cor-input-checkbox-border-ckecked);
+}
+  
+input[type="checkbox"]:checked::before {
+    content: "✔";
+    font-size: 12px;
+    color: var(--cor-input-checkbox-check); /* Mudança da cor do check para contraste */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .export-buttons {
@@ -309,6 +345,7 @@ select {
     background-color: none;
     background: none;
     border: none;
+    cursor: pointer;
 }
 
 .trash-img {
