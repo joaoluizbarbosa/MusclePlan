@@ -22,7 +22,7 @@
         <ul class="lista__treino-info">
             <li class="lista__treino-info__item">
                 
-                    <textarea id="tituloDoTreino" class="titulo-do-treino" placeholder="NOME DO TREINO" maxlength="35" oninput="limitLines(this, 1)" readonly></textarea>
+                    <textarea id="tituloDoTreino" class="titulo-do-treino" placeholder="NOME DO TREINO" maxlength="32" oninput="limitLines(this, 1)" readonly></textarea>
                     <button class="edit-button" onclick="toggleEdit('tituloDoTreino')">Editar</button>
                 
             </li>
@@ -41,7 +41,7 @@
             <ul class="lista__nome-do-exercicio">
                 <li class="lista__nome-do-exercicio__item">
                     <p class="lista__nome-do-exercicio__numero">1</p>
-                    <textarea id="nomeDoExercicio-1" class="exercicio__nome" placeholder="Nome do exercício" maxlength="35" oninput="limitLines(this, 1)" readonly></textarea>
+                    <textarea id="nomeDoExercicio-1" class="exercicio__nome" placeholder="Nome do exercício" maxlength="32" oninput="limitLines(this, 1)" readonly></textarea>
                     <input type="checkbox" id="menu-1" class="container__botao">
                     <label for="menu-1" class="container__rotulo">
                         <span class="cabecalho__menu-hamburguer container__imagem">...</span>
@@ -506,7 +506,7 @@
                 <ul class="lista__nome-do-exercicio">
                     <li class="lista__nome-do-exercicio__item">
                         <p class="lista__nome-do-exercicio__numero">${j}</p>
-                        <textarea id="nomeDoExercicio-${j}" class="exercicio__nome" placeholder="Nome do exercício" maxlength="35" oninput="limitLines(this, 1)" readonly></textarea>
+                        <textarea id="nomeDoExercicio-${j}" class="exercicio__nome" placeholder="Nome do exercício" maxlength="32" oninput="limitLines(this, 1)" readonly></textarea>
                         <input type="checkbox" id="menu-${j}" class="container__botao">
                         <label for="menu-${j}" class="container__rotulo">
                             <span class="cabecalho__menu-hamburguer container__imagem">...</span>
