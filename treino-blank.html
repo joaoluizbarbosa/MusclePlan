@@ -19,19 +19,18 @@
     
     <main class="main__treino-blank">
 
-        <!-- <h1 class="titulo__semana-dia">SEMANA <textarea class="titulo__semana">1</textarea> · DIA<textarea class="titulo__dia">1</textarea></h1> -->
-
         <ul class="lista__treino-info">
             <li class="lista__treino-info__item">
                 
-                    <textarea id="tituloDoTreino" class="titulo-do-treino" placeholder="NOME DO TREINO" maxlength="35" oninput="limitLines(this, 1); updateCounter(this)"></textarea>
-                    <span class="contador"></span>
+                    <textarea id="tituloDoTreino" class="titulo-do-treino" placeholder="NOME DO TREINO" maxlength="35" oninput="limitLines(this, 1)" readonly></textarea>
+                    <button class="edit-button" onclick="toggleEdit('tituloDoTreino')">Editar</button>
                 
             </li>
+            
             <li class="lista__treino-info__item">
                 
-                    <textarea class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="300" oninput="limitLines(this, 10); updateCounter(this)"></textarea>
-                    <span class="contador"></span>
+                    <textarea id="treinoObs" class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="300" oninput="limitLines(this, 10)" readonly></textarea>
+                    <button class="edit-button" onclick="toggleEdit('treinoObs')">Editar</button>
                 
             </li>
         </ul>
@@ -42,7 +41,7 @@
             <ul class="lista__nome-do-exercicio">
                 <li class="lista__nome-do-exercicio__item">
                     <p class="lista__nome-do-exercicio__numero">1</p>
-                    <textarea class="exercicio__nome" placeholder="Nome do exercício" maxlength="35" oninput="limitLines(this, 1)"></textarea>
+                    <textarea id="nomeDoExercicio-1" class="exercicio__nome" placeholder="Nome do exercício" maxlength="35" oninput="limitLines(this, 1)" readonly></textarea>
                     <input type="checkbox" id="menu-1" class="container__botao">
                     <label for="menu-1" class="container__rotulo">
                         <span class="cabecalho__menu-hamburguer container__imagem">...</span>
@@ -52,12 +51,16 @@
                         <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-1')">Ø</button><a onclick="toggleTimer('exercicio-1')" class="lista-menu__clock-link">TIMER</a></li>
                     </ul>
                 </li>
+                <button class="edit-button" onclick="toggleEdit('nomeDoExercicio-1')">Editar</button>
             </ul>
 
             <div class="video-container" id="video-container-1"></div> <!-- Espaço para o vídeo -->
 
-            <textarea class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)"></textarea>
-            <span class="contador"></span>
+            <div class="exercicioObs-div">
+                <textarea id="exercicioObs-1" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)" readonly></textarea>
+
+                <button class="edit-button" onclick="toggleEdit('exercicioObs-1')">Editar</button>
+            </div>
 
             <ul class="lista__primeira-linha">
                 <li>
@@ -202,6 +205,42 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
 
+    <script>
+        function toggleEdit(textareaId) {
+            const textarea = document.getElementById(textareaId);
+            const isReadOnly = textarea.hasAttribute('readonly');
+            if (isReadOnly) {
+                textarea.removeAttribute('readonly');
+                textarea.focus();
+                textarea.nextElementSibling.textContent = 'Salvar';
+            } else {
+                textarea.setAttribute('readonly', 'readonly');
+                textarea.nextElementSibling.textContent = 'Editar';
+                saveChanges(textarea);
+            }
+        }
+
+        function saveChanges(textarea) {
+            console.log('Changes saved for', textarea.id);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const textareas = document.querySelectorAll('textarea');
+            textareas.forEach(addEditButton);
+            const observer = new MutationObserver(mutations => {
+                mutations.forEach(mutation => {
+                    mutation.addedNodes.forEach(node => {
+                        if (node.tagName === 'TEXTAREA') {
+                            addEditButton(node);
+                        } else if (node.querySelectorAll) {
+                            node.querySelectorAll('textarea').forEach(addEditButton);
+                        }
+                    });
+                });
+            });
+            observer.observe(document.body, { childList: true, subtree: true });
+        });
+    </script>
     
     <script>
         document.addEventListener('click', function(event) {
@@ -324,7 +363,6 @@
             beep();
             setTimeout(beep, 1000);
             setTimeout(beep, 2000);
-            setTimeout(beep, 3000);
         }
 
     
@@ -468,7 +506,7 @@
                 <ul class="lista__nome-do-exercicio">
                     <li class="lista__nome-do-exercicio__item">
                         <p class="lista__nome-do-exercicio__numero">${j}</p>
-                        <textarea class="exercicio__nome" placeholder="Nome do exercício" maxlength="35" oninput="limitLines(this, 1)"></textarea>
+                        <textarea id="nomeDoExercicio-${j}" class="exercicio__nome" placeholder="Nome do exercício" maxlength="35" oninput="limitLines(this, 1)" readonly></textarea>
                         <input type="checkbox" id="menu-${j}" class="container__botao">
                         <label for="menu-${j}" class="container__rotulo">
                             <span class="cabecalho__menu-hamburguer container__imagem">...</span>
@@ -478,12 +516,16 @@
                         <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-${j}')">Ø</button><a onclick="toggleTimer('exercicio-${j}')" class="lista-menu__clock-link">TIMER</a></li>
                     </ul>
                     </li>
+                    <button class="edit-button" onclick="toggleEdit('nomeDoExercicio-${j}')">Editar</button>
                 </ul>
                         
                 <div class="video-container" id="video-container-${j}"></div>
 
-                <textarea class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)"></textarea>
-                <span class="contador"></span>
+                <div class="exercicioObs-div">
+                    <textarea id="exercicioObs-${j}" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10)" readonly></textarea>
+                    
+                    <button class="edit-button" onclick="toggleEdit('exercicioObs-${j}')">Editar</button>
+                </div>
 
                 <div id="timer-container-${j}" style="display: none;" class="timer-container">
                     <input type="number" id="minutes-${j}" placeholder="Min" class="timer-container__item">
@@ -656,14 +698,23 @@
     </script>
 
     <script>
-        // Função para atualizar o contador de caracteres
-        function updateCounter(textarea) {
-            var maxLength = parseInt(textarea.getAttribute('maxlength'));
-            var currentLength = textarea.value.length;
-            var contador = textarea.nextElementSibling;
+        // Adiciona eventos para limitar o número de caracteres em cada textarea
+        document.addEventListener("DOMContentLoaded", function() {
+                    var textareas = document.querySelectorAll('textarea');
+                
+                    textareas.forEach(function(textarea) {
+                        textarea.addEventListener('input', function() {
+                            var maxLength = parseInt(this.getAttribute('maxlength'));
+                            var currentLength = this.value.length;
+                
+                            if (currentLength > maxLength) {
+                                this.value = this.value.slice(0, maxLength);
+                            }
+                        });
+                    });
+                });
 
-            contador.textContent = currentLength + '/' + maxLength;
-        }
+
 
         // Função para limitar o número de linhas em uma textarea
         function limitLines(textarea, maxLines) {
@@ -857,21 +908,7 @@
     </script>
 
     <script>
-        // Adiciona eventos para limitar o número de caracteres em cada textarea
-        document.addEventListener("DOMContentLoaded", function() {
-            var textareas = document.querySelectorAll('textarea');
         
-            textareas.forEach(function(textarea) {
-                textarea.addEventListener('input', function() {
-                    var maxLength = parseInt(this.getAttribute('maxlength'));
-                    var currentLength = this.value.length;
-        
-                    if (currentLength > maxLength) {
-                        this.value = this.value.slice(0, maxLength);
-                    }
-                });
-            });
-        });
     </script>
 
     

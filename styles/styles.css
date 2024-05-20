@@ -59,7 +59,10 @@
 
     --cor-fundo-escClockButton: #FFC100;
     --cor-fundo-startResetButton: #A0153E;
-    
+
+    --cor-fundo-botao-editButton: transparent;
+    --cor-fonte-botao-editButton: #FF8A08;
+        
 }
 
 .treino-body {
@@ -85,7 +88,17 @@
     color: var(--cor-fonte-placeholder);
 }
 
-
+.edit-button {
+    font-family: var(--fonte-principal);
+    font-size: 0.7em;
+    background-color: var(--cor-fundo-botao-editButton);
+    color: var(--cor-fonte-botao-editButton);
+    border: none;
+    width: 50px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 1em;
+}
 
 input[type="checkbox"] {
     appearance: none;
@@ -157,7 +170,7 @@ input[type="checkbox"]:checked::before {
     background-color: var(--cor-fundo-titulo-do-treino);
     border: none;
     resize: none;
-    width: 92%;
+    width: 94.5%;
     height: 20px;
     font-family: var(--fonte-principal);
     color: var(--cor-fonte-2);
@@ -172,12 +185,13 @@ input[type="checkbox"]:checked::before {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding: 0.5em;
+    margin: 0.5em 0.5em 0 0.5em;
+    padding: 0.2em;
     border: 0px;
     border-radius: 4px;
     font-family: var(--fonte-principal);
     color: var(--cor-fonte);
-    width: 92%;
+    width: 95%;
     overflow: hidden;
     resize: none;
 }
@@ -196,11 +210,16 @@ input[type="checkbox"]:checked::before {
     color: var(--cor-fonte-1);
 }
 
+.lista__nome-do-exercicio {
+    display: flex;
+    flex-direction: column;
+}
+
 .lista__nome-do-exercicio__item {
     position: relative;
     display: grid;
     grid-template-columns: 5% 88% 5%;
-    margin: 1em 0.5em 0.5em 1em;
+    margin: 1em 0.5em 0em 1em;
     align-items: center;
     justify-content: space-between;
 }
@@ -307,6 +326,11 @@ input[type="checkbox"]:checked::before {
     justify-content: center;
     margin-top: 0.5em;
     margin-bottom: 1em;
+}
+
+.exercicioObs-div {
+    display: flex;
+    flex-direction: column;
 }
 
 .exercicio__obs {
