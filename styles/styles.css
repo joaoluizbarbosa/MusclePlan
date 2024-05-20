@@ -157,6 +157,7 @@ input[type="checkbox"]:checked::before {
     box-shadow: 1px 1px 1px black;
     width: 33%;
     height: 40px;
+    cursor: pointer;
 }
 
 .import-excel, .load-html {
@@ -270,6 +271,7 @@ input[type="checkbox"]:checked::before {
     height: 30px;
     padding-top: 0.4em;
     padding-bottom: 1.6em;
+    cursor: pointer;
 }
 
 .youtube-button {
@@ -284,6 +286,7 @@ input[type="checkbox"]:checked::before {
     width: 50px;
     height: 25px;
     padding-bottom: 1.4em;
+    cursor: pointer;
 }
 
 .clock-button {
@@ -297,6 +300,7 @@ input[type="checkbox"]:checked::before {
     border: none;
     width: 50px;
     height: 35px;
+    cursor: pointer;
 }
 
 .lista-menu__youtube-link, .lista-menu__clock-link, .lista-menu__exChange {
@@ -305,6 +309,7 @@ input[type="checkbox"]:checked::before {
     color: var(--cor-fonte-menu-link);
     font-size: 0.8em;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .lista-menu__clock-link, .lista-menu__youtube-link {
@@ -475,6 +480,7 @@ select {
     width: 100px;
     height: 30px;
     margin: 1em 0.3em;
+    cursor: pointer;
 }
 
 .add-w-button {
@@ -502,6 +508,7 @@ select {
     width: 50%;
     height: 30px;
     text-align: center;
+    cursor: pointer;
 }
 
 .rodape {
