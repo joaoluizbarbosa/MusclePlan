@@ -57,7 +57,7 @@
             <div class="video-container" id="video-container-1"></div> <!-- Espaço para o vídeo -->
 
             <div class="exercicioObs-div">
-                <textarea id="exercicioObs-1" class="exercicio__obs auto-expand" placeholder="" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)" readonly></textarea>
+                <textarea id="exercicioObs-1" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)" readonly></textarea>
 
                 <button class="edit-button-1" onclick="toggleEdit('exercicioObs-1')">Editar</button>
             </div>
@@ -213,15 +213,36 @@
                 textarea.removeAttribute('readonly');
                 textarea.focus();
                 textarea.nextElementSibling.textContent = 'Salvar';
+
+                // Adiciona o evento de clique ao documento para salvar ao clicar fora
+                document.addEventListener('click', handleClickOutside, true);
             } else {
                 textarea.setAttribute('readonly', 'readonly');
                 textarea.nextElementSibling.textContent = 'Editar';
                 saveChanges(textarea);
+
+                // Remove o evento de clique ao documento
+                document.removeEventListener('click', handleClickOutside, true);
             }
+        }
+
+        function handleClickOutside(event) {
+            const textareas = document.querySelectorAll('textarea[id^="nomeDoExercicio-"]');
+            textareas.forEach(textarea => {
+                if (!textarea.contains(event.target) && event.target !== textarea.nextElementSibling && !textarea.hasAttribute('readonly')) {
+                    textarea.setAttribute('readonly', 'readonly');
+                    textarea.nextElementSibling.textContent = 'Editar';
+                    saveChanges(textarea);
+                }
+            });
+
+            // Remove o evento de clique ao documento após processar
+            document.removeEventListener('click', handleClickOutside, true);
         }
 
         function saveChanges(textarea) {
             console.log('Changes saved for', textarea.id);
+            // Aqui você pode adicionar o código para salvar os dados, por exemplo, enviá-los para um servidor
         }
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -239,7 +260,6 @@
                 });
             });
             observer.observe(document.body, { childList: true, subtree: true });
-            
         });
     </script>
     
@@ -523,7 +543,7 @@
                 <div class="video-container" id="video-container-${j}"></div>
 
                 <div class="exercicioObs-div">
-                    <textarea id="exercicioObs-${j}" class="exercicio__obs auto-expand" placeholder="" maxlength="300"  oninput="limitLines(this, 10)" readonly></textarea>
+                    <textarea id="exercicioObs-${j}" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10)" readonly></textarea>
                     
                     <button class="edit-button-1" onclick="toggleEdit('exercicioObs-${j}')">Editar</button>
                 </div>
