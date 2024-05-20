@@ -268,7 +268,7 @@ input[type="checkbox"]:checked::before {
     border: none;
     width: 50px;
     height: 30px;
-    padding-top: 0.2em;
+    padding-top: 0.3em;
     padding-bottom: 1.2em;
 }
 
