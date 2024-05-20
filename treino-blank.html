@@ -51,7 +51,7 @@
                         <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-1')">Ø</button><a onclick="toggleTimer('exercicio-1')" class="lista-menu__clock-link">TIMER</a></li>
                     </ul>
                 </li>
-                <button class="edit-button" onclick="toggleEdit('nomeDoExercicio-1')">Editar</button>
+                <button class="edit-button-1" onclick="toggleEdit('nomeDoExercicio-1')">Editar</button>
             </ul>
 
             <div class="video-container" id="video-container-1"></div> <!-- Espaço para o vídeo -->
@@ -59,7 +59,7 @@
             <div class="exercicioObs-div">
                 <textarea id="exercicioObs-1" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)" readonly></textarea>
 
-                <button class="edit-button" onclick="toggleEdit('exercicioObs-1')">Editar</button>
+                <button class="edit-button-1" onclick="toggleEdit('exercicioObs-1')">Editar</button>
             </div>
 
             <ul class="lista__primeira-linha">
@@ -516,7 +516,7 @@
                         <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-${j}')">Ø</button><a onclick="toggleTimer('exercicio-${j}')" class="lista-menu__clock-link">TIMER</a></li>
                     </ul>
                     </li>
-                    <button class="edit-button" onclick="toggleEdit('nomeDoExercicio-${j}')">Editar</button>
+                    <button class="edit-button-1" onclick="toggleEdit('nomeDoExercicio-${j}')">Editar</button>
                 </ul>
                         
                 <div class="video-container" id="video-container-${j}"></div>
@@ -524,7 +524,7 @@
                 <div class="exercicioObs-div">
                     <textarea id="exercicioObs-${j}" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10)" readonly></textarea>
                     
-                    <button class="edit-button" onclick="toggleEdit('exercicioObs-${j}')">Editar</button>
+                    <button class="edit-button-1" onclick="toggleEdit('exercicioObs-${j}')">Editar</button>
                 </div>
 
                 <div id="timer-container-${j}" style="display: none;" class="timer-container">
