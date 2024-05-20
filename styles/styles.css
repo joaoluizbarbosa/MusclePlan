@@ -268,13 +268,13 @@ input[type="checkbox"]:checked::before {
     border: none;
     width: 50px;
     height: 30px;
-    padding-top: 0.3em;
-    padding-bottom: 1.2em;
+    padding-top: 0.4em;
+    padding-bottom: 1.6em;
 }
 
 .youtube-button {
     font-family: var(--fonte-principal);
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: 700;
     text-align: center;
     color: var(--cor-fonte);
@@ -283,7 +283,7 @@ input[type="checkbox"]:checked::before {
     border: none;
     width: 50px;
     height: 25px;
-    padding-bottom: 1.6em;
+    padding-bottom: 1.4em;
 }
 
 .clock-button {
@@ -296,7 +296,7 @@ input[type="checkbox"]:checked::before {
     border-radius: 5px;
     border: none;
     width: 50px;
-    height: 31px;
+    height: 35px;
 }
 
 .lista-menu__youtube-link, .lista-menu__clock-link, .lista-menu__exChange {
