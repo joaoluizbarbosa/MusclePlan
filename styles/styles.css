@@ -108,7 +108,7 @@
     border: none;
     width: 50px;
     cursor: pointer;
-    margin-left: 2.8em;
+    margin-left: 1em;
     margin-right: auto;
 }
 
@@ -209,12 +209,6 @@ input[type="checkbox"]:checked::before {
     resize: none;
 }
 
-.contador {
-    font-size: 0.7em;
-    color: var(--cor-fonte-1);
-    margin: 0.5em 0 0 1em;
-}
-
 .exercicio-n {
     background-color: var(--cor-fundo-exercicio);
     border-radius: 4px;
@@ -264,7 +258,7 @@ input[type="checkbox"]:checked::before {
 }
 
 .changeEx-button {font-family: var(--fonte-principal);
-    font-size: 1.1em;
+    font-size: 1.4em;
     font-weight: 700;
     text-align: center;
     color: var(--cor-fonte);
