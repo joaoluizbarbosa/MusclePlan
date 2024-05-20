@@ -257,8 +257,9 @@ input[type="checkbox"]:checked::before {
     gap: 10px;
 }
 
-.changeEx-button {font-family: var(--fonte-principal);
-    font-size: 1.4em;
+.changeEx-button {
+    font-family: var(--fonte-principal);
+    font-size: 1.3em;
     font-weight: 700;
     text-align: center;
     color: var(--cor-fonte);
