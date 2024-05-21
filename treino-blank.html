@@ -535,7 +535,7 @@
     
                 // Montar o texto do exercício
                 textoExercicios += `Exercício ${index + 1}: ${nomeExercicio}\n`;
-                textoExercicios += `Observações: ${obsExercicio}\n\n`;
+                textoExercicios += `Observações: \n${obsExercicio}\n\n`;
     
                 // Adicionar os valores dos aquecimentos
                 textoExercicios += "Aquecimento:\n";
@@ -552,7 +552,7 @@
     
             // Montar o texto completo
             let textoCompleto = `Título do Treino: ${tituloTreino}\n`;
-            textoCompleto += `Observações Gerais: ${obsTreino}\n\n`;
+            textoCompleto += `Observações Gerais: \n${obsTreino}\n\n`;
             textoCompleto += `${textoExercicios}\n`;
     
             // Formatar o texto para o formato de URL do WhatsApp
