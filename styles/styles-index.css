@@ -57,7 +57,7 @@
 .ancora_index {
     text-decoration: none;
     color: var(--cor-fonte-2);
-    margin-top: 2em;
+    margin-top: 15em;
 }
 
 .logo-index {
@@ -66,10 +66,6 @@
 
 .logo2-index {
     height: 120px;
-}
-
-.logo3-index {
-    height: 118px;
 }
 
 .titulo-index__treino-em-branco, .titulo-index__treino-extppl {
