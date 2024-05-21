@@ -19,10 +19,30 @@
     
     <main class="main__treino-blank">
 
+        <ul class="lista__periodizacao">
+            <li class="lista__periodizacao__item">
+                <textarea id="tituloDaPeriodizacao" class="titulo-da-periodizacao" placeholder="TÍTULO DA PERIODIZAÇÃO" maxlength="50" oninput="limitLines(this, 2)" readonly>extended push pull leg training program</textarea>
+                <button class="edit-button-tituloDaPeriodizacao" onclick="toggleEdit('tituloDaPeriodizacao')">Editar</button>
+            </li>
+            <li class="lista__periodizacao__item">
+                <div class="lista__periodizacao__item-semana-dia">
+                    <p class="lista__periodizacao__item-paragrafo">SEMANA</p>
+                    <textarea id="semana" class="semana" placeholder="1" maxlength="10" oninput="limitLines(this, 1)">1</textarea>
+                    <!-- <button class="edit-button-semana" onclick="toggleEdit('semana')">Editar</button> -->
+                    
+                    <p class="lista__periodizacao__item-paragrafo">DIA</p>
+                    <textarea id="dia" class="dia" placeholder="1" maxlength="10" oninput="limitLines(this, 1)">1</textarea>
+                    <!-- <button class="edit-button-dia" onclick="toggleEdit('dia')">Editar</button> -->
+                </div>
+            </li>
+        </ul>
+
         <ul class="lista__treino-info">
             <li class="lista__treino-info__item">
                 
-                    <textarea id="tituloDoTreino" class="titulo-do-treino" placeholder="NOME DO TREINO" maxlength="32" oninput="limitLines(this, 1)" readonly>pull - foco em dorsal</textarea>
+                    <textarea id="tituloDoTreino" class="titulo-do-treino" placeholder="TÍTULO DO TREINO" maxlength="40" oninput="limitLines(this, 2)" readonly>
+_pull [ 1 ]
+com foco em dorsal</textarea>
                     <button class="edit-button" onclick="toggleEdit('tituloDoTreino')">Editar</button>
                 
             </li>

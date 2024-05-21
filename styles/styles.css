@@ -25,6 +25,12 @@
 
     --cor-fundo-main: #bdbec5;
 
+    --cor-fundo-periodizacao: #6B728E;
+    --cor-fundo-titulo-da-periodizacao: #6B728E;
+    --cor-fonte-titulo-da-periodizacao: #FFC470;
+    --cor-fundo-semana-dia:#6B728E;
+    --cor-fonte-semana-dia:white;
+
     --cor-fundo-treino-body: #bdbec5;
     --cor-fundo-treino-info: #50577A;
     --cor-fundo-titulo-do-treino: #50577A;
@@ -171,6 +177,86 @@ input[type="checkbox"]:checked::before {
     background-color: var(--paleta-cor-11);
 }
 
+.lista__periodizacao {
+    background-color: var(--cor-fundo-periodizacao);
+    border-radius: 4px;
+    margin: 1.1em 0.5em 0.5em 0.5em;
+    padding: 0.5em 0 1em 0; 
+}
+
+.titulo-da-periodizacao {
+    text-transform: uppercase;
+    display: block;
+    background-color: var(--cor-fundo-titulo-da-periodizacao);
+    border: none;
+    resize: none;
+    width: 90%;
+    height: 45px;
+    font-family: var(--fonte-principal);
+    color: var(--cor-fonte-titulo-da-periodizacao);
+    font-weight: 600;
+    font-size: 1.2em;
+    margin: 0.5em 0.5em 0 0.5em;
+    padding: 0.5em;
+    text-align: center;
+}
+
+.edit-button-tituloDaPeriodizacao {
+    font-family: var(--fonte-principal);
+    font-size: 0.7em;
+    background-color: var(--cor-fundo-botao-editButton);
+    color: var(--cor-fonte-botao-editButton);
+    border: none;
+    width: 50px;
+    cursor: pointer;
+    margin-left: 1em;
+    margin-right: auto;
+}
+
+.lista__periodizacao__item-semana-dia {
+    display: flex;
+    /* flex-direction: column; */
+    margin: 1em 6em 0 6em;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lista__periodizacao__item-paragrafo {
+    font-family: var(--fonte-principal);
+    font-weight: 400;
+    font-size: 1em;
+    text-align: center;
+    padding: 0;
+}
+
+.semana, .dia {
+    text-transform: uppercase;
+    display: block;
+    background-color: var(--cor-fundo-semana-dia);
+    border: none;
+    resize: none;
+    width: 30px;
+    height: 18px;
+    font-family: var(--fonte-principal);
+    color: var(--cor-fonte-titulo-da-periodizacao);
+    font-weight: 500;
+    font-size: 1em;
+    text-align: center;
+    padding: 0;
+}
+
+.edit-button-semana, .edit-button-dia {
+    font-family: var(--fonte-principal);
+    font-size: 0.7em;
+    background-color: var(--cor-fundo-botao-editButton);
+    color: var(--cor-fonte-botao-editButton);
+    border: none;
+    width: 50px;
+    cursor: pointer;
+    margin-left: 0.5em;
+    margin-right: auto;
+}
+
 .lista__treino-info {
     background-color: var(--cor-fundo-treino-info);
     border-radius: 4px;
@@ -190,14 +276,15 @@ input[type="checkbox"]:checked::before {
     background-color: var(--cor-fundo-titulo-do-treino);
     border: none;
     resize: none;
-    width: 94.5%;
-    height: 20px;
+    width: 90%;
+    height: 40px;
     font-family: var(--fonte-principal);
     color: var(--cor-fonte-2);
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.1em;
     margin: 0.5em 0.5em 0 0.5em;
-    padding: 0.2em;
+    padding: 0.5em;
+    text-align: center;
 }
 
 .treino__obs {
