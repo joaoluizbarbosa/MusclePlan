@@ -23,6 +23,9 @@
     --cor-fonte-1: WHITE;
     --cor-fonte-2: BLACK;
 
+    --cor-fundo-main: #bdbec5;
+
+    --cor-fundo-treino-body: #bdbec5;
     --cor-fundo-treino-info: #50577A;
     --cor-fundo-titulo-do-treino: #50577A;
     --cor-fundo-treino-obs: #50577A;
@@ -31,15 +34,18 @@
     
     --cor-fonte-menu-link: black;
     --cor-fundo-menu-exercicio: #6B728E;
-
-    --cor-fundo-treino-body: #bdbec5;
-    --cor-fundo-main: #bdbec5;
+    --cor-gradiente-color-button:linear-gradient(to right, #4793AF 0%, #4793AF 33%, #FFC470 33%, #FFC470 66%, #DD5746 66%, #DD5746 100%); 
         
     --cor-fundo-select: #DFD0B8;
     
+/* cores do card de exercícios */
+
+    --cor-fundo-sessao: #474E68;
     --cor-fundo-exercicio: #474E68;
     --cor-fundo-exercicio-obs: #474E68;
-    
+
+/* fim - cores do card de exercícios */
+
     --cor-fundo-input-reps1: #D6DAC8;
     --cor-fundo-input-reps2: #D6DAC8;
     --cor-fundo-input-kg: #FFC100;
@@ -211,7 +217,7 @@ input[type="checkbox"]:checked::before {
 }
 
 .exercicio-n {
-    background-color: var(--cor-fundo-exercicio);
+    background-color: var(--cor-fundo-sessao);
     border-radius: 4px;
     margin: 1.1em 0.5em 0.5em 0.5em;
     padding-bottom: 1.1em;
@@ -303,7 +309,21 @@ input[type="checkbox"]:checked::before {
     cursor: pointer;
 }
 
-.lista-menu__youtube-link, .lista-menu__clock-link, .lista-menu__exChange {
+.color-button {
+    font-family: var(--fonte-principal);
+    font-size: 1em;
+    font-weight: 800;
+    text-align: center;
+    color: var(--cor-fonte-2);
+    background: var(--cor-gradiente-color-button);
+    border-radius: 5px;
+    border: none;
+    width: 50px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.lista-menu__youtube-link, .lista-menu__clock-link, .lista-menu__exChange, .lista-menu__color-link {
     font-family: var(--fonte-principal);
     text-decoration: none;
     color: var(--cor-fonte-menu-link);
