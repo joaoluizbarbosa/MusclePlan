@@ -61,7 +61,7 @@
 }
 
 .logo-index {
-    height: 120px;
+    height: 115px;
 }
 
 .logo2-index {
@@ -69,10 +69,10 @@
 }
 
 .logo3-index {
-    height: 110px;
+    height: 105px;
 }
 
-.titulo-index__treino-em-branco, .titulo-index__treino-extppl {
+.titulo-index__treino-em-branco, .titulo-index__treino-extPpl4x, .titulo-index__treino-teTp4x {
     font-family: var(--fonte-principal);
     font-weight: 600;
     font-size: 1em;
