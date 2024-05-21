@@ -68,6 +68,10 @@
     height: 120px;
 }
 
+.logo3-index {
+    height: 118px;
+}
+
 .titulo-index__treino-em-branco, .titulo-index__treino-extppl {
     font-family: var(--fonte-principal);
     font-weight: 600;
