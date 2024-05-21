@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>MusclePlan - Time-Efficient Training Program [4x] - S1D1</title>
+</head>
+<body class="treino-body">
+    <header class="cabecalho">
+        <div class="export-buttons">
+            <button class="export-whatsapp" onclick="exportToWhatsApp()">Exp. WhatsApp</button>
+            <button class="export-excel" onclick="exportToExcel()">Exp. Excel</button>
+            <button class="import-excel" onclick="importFromExcel()">Imp. Excel</button>
+        </div>
+
+    </header>
+    
+    <main class="main__treino-blank">
+
+        <ul class="lista__treino-info">
+            <li class="lista__treino-info__item">
+                
+                    <textarea id="tituloDoTreino" class="titulo-do-treino" placeholder="NOME DO TREINO" maxlength="32" oninput="limitLines(this, 1)" readonly></textarea>
+                    <button class="edit-button" onclick="toggleEdit('tituloDoTreino')">Editar</button>
+                
+            </li>
+            
+            <li class="lista__treino-info__item">
+                
+                    <textarea id="treinoObs" class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="300" oninput="limitLines(this, 10)" readonly></textarea>
+                    <button class="edit-button" onclick="toggleEdit('treinoObs')">Editar</button>
+                
+            </li>
+        </ul>
+
+
+        <section class="exercicio-n" id="exercicio-1">
+
+            <ul class="lista__nome-do-exercicio">
+                <li class="lista__nome-do-exercicio__item">
+                    <p class="lista__nome-do-exercicio__numero">1</p>
+                    <textarea id="nomeDoExercicio-1" class="exercicio__nome" placeholder="Nome do exercício" maxlength="32" oninput="limitLines(this, 1)" readonly></textarea>
+                    <input type="checkbox" id="menu-1" class="container__botao">
+                    <label for="menu-1" class="container__rotulo">
+                        <span class="cabecalho__menu-hamburguer container__imagem">...</span>
+                    </label>
+                    <ul class="lista-menu">
+                        <li class="lista-menu__item"><button class="changeEx-button" onclick="toggleEdit('nomeDoExercicio-1')">˄˅</button><a onclick="toggleEdit('nomeDoExercicio-1')" class="lista-menu__exChange">ALT EXER</a></li>
+                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-1')">»</button><a onclick="searchYouTubeDynamic('exercicio-1')" class="lista-menu__youtube-link">VÍDEO</a></li>
+                        <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-1')">Ø</button><a onclick="toggleTimer('exercicio-1')" class="lista-menu__clock-link">TIMER</a></li>
+                        <li class="lista-menu__item"><button class="color-button" onclick="preventClose(event); changeColor('exercicio-1')"></button><a onclick="preventClose(event); changeColor('exercicio-1')" class="lista-menu__color-link">TEMAS</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="video-container" id="video-container-1"></div> <!-- Espaço para o vídeo -->
+
+            <div class="exercicioObs-div">
+                <textarea id="exercicioObs-1" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)" readonly></textarea>
+
+                <button class="edit-button-1" onclick="toggleEdit('exercicioObs-1')">Editar</button>
+            </div>
+
+            <ul class="lista__primeira-linha">
+                <li>
+                    <!-- <p>Set</p> -->
+                </li>
+                <li>
+                    <select class="select-repetitions">
+                        <option class="option" value="reps range">Faixa de Repetições</option>
+                        <option value="reps">Repetições</option>
+                        <option value="reps max">Repetições Máximas</option>
+                        <option value="amrap">AMRAP</option>
+                        <option value="time">Tempo</option>
+                        <option value="time range">Faixa de Tempo</option>
+                    </select>             
+                </li>
+
+                <li>
+                    <select class="select-kg">
+                        <option value="kg">KG</option>
+                        <option value="lb">LB</option>
+                    </select>             
+                </li>
+
+                <li>
+                    <select class="select-rpe">
+                        <option value="rpe range">Faixa de Int. (PSE)</option>
+                        <option value="rpe">Int. (PSE)</option>
+                        <option value="% of 1rm range">Faixa de % de 1RM</option>
+                        <option value="% of 1rm">% de 1RM</option>
+                    </select>             
+                </li>
+
+            </ul>
+
+
+            <ul class="lista__aquecimento" id="lista__aquecimento-1">
+                <li class="lista__aquecimento__item">
+                    <p class="lista__aquecimento__w">a</p>
+                </li>
+                <li class="lista__aquecimento__item">
+                    <input class="lista__aquecimento__input input-reps1" type="number">
+                    <p>-</p>
+                    <input class="lista__aquecimento__input input-reps2" type="number">
+                </li>
+                <li class="lista__aquecimento__item">
+                    <input class="lista__aquecimento__input input-kg" type="number">
+                </li>
+                <li class="lista__aquecimento__item">
+                </li>
+                <li class="lista__aquecimento__item">
+                    <button class="remove-list-button" onclick="removeList('lista__aquecimento-1')"><img class="trash-img" src="img/trash-branca.png">
+                </li>
+            </ul>
+
+
+            <ul id="myList1" class="lista__segunda-linha">
+                <li class="lista__segunda-linha__item">
+                    <p>1</p>
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-reps1" type="number">
+                    <p>-</p>
+                    <input class="lista__segunda-linha__input input-reps2" type="number">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-kg" type="number">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-rpe1" type="number">
+                    <p>-</p>
+                    <input class="lista__segunda-linha__input input-rpe2" type="number">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="input-checkbox" type="checkbox">
+                </li>
+            </ul>
+
+            <ul class="set-buttons">
+                <li class="set-buttons__item">
+                    <button id="button1-add-w" class="add-w-button" onclick="myFunctionWSet('exercicio-1', this.id)">ADD a-Set</button>
+                    <button id="button1-add" class="add-button" onclick="myFunction('exercicio-1', this.id)">ADD Set</button>
+                    <button id="button1-undo" class="undo-button" onclick="undoFunction('exercicio-1', this.id)">EXC Set</button>
+                </li>
+            </ul>
+            
+        </section>
+
+        
+
+        <div class="session-buttons">
+            <button class="new-session-button" onclick="addSection()">Adicionar exercício</button>
+            <button class="remove-session-button" onclick="removeLastSection()">Remover exercício</button>
+        </div>
+
+        
+    </main>
+    
+    <footer class="rodape">
+        
+        <div class="timer-org">
+            <div id="timer-container-1" class="timer-container">
+                <!-- Lista suspensa para minutos pré-definidos -->
+                <select id="minutes-dropdown" class="timer-container__item">
+                    <option value="0">0 Min</option>
+                    <option value="1">1 Min</option>
+                    <option value="2">2 Min</option>
+                    <option value="3">3 Min</option>
+                    <option value="4">4 Min</option>
+                    <option value="5">5 Min</option>
+                    <option value="10">10 Min</option>
+                </select>
+        
+                <!-- Lista suspensa para segundos pré-definidos -->
+                <select id="seconds-dropdown" class="timer-container__item">
+                    <option value="0">0 Seg</option>
+                    <option value="5">5 Seg</option>
+                    <option value="10">10 Seg</option>
+                    <option value="15">15 Seg</option>
+                    <option value="20">20 Seg</option>
+                    <option value="25">25 Seg</option>
+                    <option value="30">30 Seg</option>
+                    <option value="35">35 Seg</option>
+                    <option value="40">40 Seg</option>
+                    <option value="45">45 Seg</option>
+                    <option value="50">50 Seg</option>
+                    <option value="55">55 Seg</option>
+                </select>
+        
+                <button id="start-pause-button" onclick="startPauseTimer()" class="start-button">Start</button>
+                <button id="reset-button" onclick="resetTimer()" class="reset-button">Reset</button>
+            </div>
+            
+            <div id="timer-1" class="timer">00:00</div>
+
+            <button id="esc-clock-button-1" class="esc-clock-button" onclick="toggleTimer('exercicio-1')">x</button>
+            
+        </div>
+        
+        <a href="index.html" class="rodape-back-to-index">Muscle Plan<sup>©</sup></a>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+
+    <script>
+        const colorCombinations = [
+            {
+                sectionColor: "#474E68",
+                elements: [
+                    { selector: ".exercicio__nome", backgroundColor: "#474E68" },
+                    { selector: ".exercicio__obs", backgroundColor: "#474E68" }
+                ]
+            },
+
+            {
+                sectionColor: "#153448",
+                elements: [
+                    { selector: ".exercicio__nome", backgroundColor: "#153448" },
+                    { selector: ".exercicio__obs", backgroundColor: "#153448" }
+                ]
+            },
+        
+            {
+                sectionColor: "#3C5B6F",
+                elements: [
+                    { selector: ".exercicio__nome", backgroundColor: "#3C5B6F" },
+                    { selector: ".exercicio__obs", backgroundColor: "#3C5B6F" }
+                ]
+            },
+            
+            {
+                sectionColor: "#948979",
+                elements: [
+                    { selector: ".exercicio__nome", backgroundColor: "#948979" },
+                    { selector: ".exercicio__obs", backgroundColor: "#948979" }
+                ]
+            },
+            
+            {
+                sectionColor: "#35374B",
+                elements: [
+                    { selector: ".exercicio__nome", backgroundColor: "#35374B" },
+                    { selector: ".exercicio__obs", backgroundColor: "#35374B" }               
+                ]
+            },
+
+            {
+                sectionColor: "#8B322C",
+                elements: [
+                    { selector: ".exercicio__nome", backgroundColor: "#8B322C" },
+                    { selector: ".exercicio__obs", backgroundColor: "#8B322C" }               
+                ]
+            }
+        ];
+    
+        function changeColor(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (!section) return;
+    
+            // Recuperar o índice atual da cor
+            let currentIndex = parseInt(section.getAttribute('data-color-index')) || 0;
+    
+            // Calcular o próximo índice
+            let nextIndex = (currentIndex + 1) % colorCombinations.length;
+    
+            // Aplicar a nova cor de fundo da seção
+            section.style.backgroundColor = colorCombinations[nextIndex].sectionColor;
+    
+            // Aplicar as cores nos elementos especificados dentro da seção
+            colorCombinations[nextIndex].elements.forEach(item => {
+                const fullSelector = `#${sectionId} ${item.selector}`;
+                document.querySelectorAll(fullSelector).forEach(element => {
+                    if (item.color) {
+                        element.style.color = item.color; // Alterar a cor do texto
+                    }
+                    if (item.backgroundColor) {
+                        element.style.backgroundColor = item.backgroundColor; // Alterar a cor de fundo
+                    }
+                });
+            });
+    
+            // Armazenar o novo índice
+            section.setAttribute('data-color-index', nextIndex);
+        }
+
+        // Função para impedir o fechamento do menu
+        function preventClose(event) {
+            event.stopPropagation();
+        }
+    </script>
+
+    <script>
+        function toggleEdit(textareaId) {
+            const textarea = document.getElementById(textareaId);
+            const isReadOnly = textarea.hasAttribute('readonly');
+            if (isReadOnly) {
+                textarea.removeAttribute('readonly');
+                textarea.focus();
+                textarea.nextElementSibling.textContent = 'Salvar';
+
+                // Adiciona o evento de clique ao documento para salvar ao clicar fora
+                document.addEventListener('click', handleClickOutside, true);
+            } else {
+                textarea.setAttribute('readonly', 'readonly');
+                textarea.nextElementSibling.textContent = 'Editar';
+                saveChanges(textarea);
+
+                // Remove o evento de clique ao documento
+                document.removeEventListener('click', handleClickOutside, true);
+            }
+        }
+
+        function handleClickOutside(event) {
+            const textareas = document.querySelectorAll('textarea[id^="nomeDoExercicio-"]');
+            textareas.forEach(textarea => {
+                if (!textarea.contains(event.target) && event.target !== textarea.nextElementSibling && !textarea.hasAttribute('readonly')) {
+                    textarea.setAttribute('readonly', 'readonly');
+                    textarea.nextElementSibling.textContent = 'Editar';
+                    saveChanges(textarea);
+                }
+            });
+
+            // Remove o evento de clique ao documento após processar
+            document.removeEventListener('click', handleClickOutside, true);
+        }
+
+        function saveChanges(textarea) {
+            console.log('Changes saved for', textarea.id);
+            // Aqui você pode adicionar o código para salvar os dados, por exemplo, enviá-los para um servidor
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const textareas = document.querySelectorAll('textarea');
+            textareas.forEach(addEditButton);
+            const observer = new MutationObserver(mutations => {
+                mutations.forEach(mutation => {
+                    mutation.addedNodes.forEach(node => {
+                        if (node.tagName === 'TEXTAREA') {
+                            addEditButton(node);
+                        } else if (node.querySelectorAll) {
+                            node.querySelectorAll('textarea').forEach(addEditButton);
+                        }
+                    });
+                });
+            });
+            observer.observe(document.body, { childList: true, subtree: true });
+        });
+    </script>
+    
+    <script>
+        // Adiciona evento de clique no documento
+        document.addEventListener('click', function(event) {
+            // Seleciona todas as checkboxes com a classe específica
+            const checkboxes = document.querySelectorAll('.container__botao');
+            checkboxes.forEach(function(checkbox) {
+                // Verifica se o alvo do clique não é a checkbox específica
+                if (checkbox !== event.target) {
+                    checkbox.checked = false;
+                }
+            });
+        });
+
+        // Impede que o clique na checkbox desmarque imediatamente ela mesma
+        document.addEventListener('click', function(event) {
+            if (event.target.classList.contains('container__botao')) {
+                event.stopPropagation();
+            }
+        });
+
+        // Função para adicionar uma nova checkbox dinâmica
+        document.getElementById('addCheckbox').addEventListener('click', function() {
+            const newCheckbox = document.createElement('input');
+            newCheckbox.type = 'checkbox';
+            newCheckbox.className = 'container__botao';
+            document.body.appendChild(newCheckbox);
+        });
+    </script>
+
+    <script>
+        let timerInterval;
+        let totalTime;
+        let remainingTime;
+        let timerDisplay = document.getElementById('timer-1');
+        let timerContainer = document.getElementById('timer-container-1');
+        let startPauseButton = document.getElementById('start-pause-button');
+    
+        let isTimerRunning = false;
+    
+        function toggleTimer(sectionId) {
+            let timerElement = document.getElementById('timer-1');
+            let timerContainer = document.getElementById('timer-container-1');
+            let escClockButton = document.getElementById('esc-clock-button-1'); // Obter o botão de fechar
+
+            // Garantir que os elementos existam
+            if (!timerElement || !timerContainer || !escClockButton) {
+                console.error('Timer elements not found');
+                return;
+            }
+
+            // Inicializar o estilo do display se necessário
+            if (timerContainer.style.display === '') {
+                timerContainer.style.display = 'none';
+            }
+
+            if (timerContainer.style.display === 'none') {
+                timerContainer.style.display = 'block';
+                timerElement.style.display = 'block';
+                escClockButton.style.display = 'block'; // Mostrar o botão de fechar
+            } else {
+                timerContainer.style.display = 'none';
+                timerElement.style.display = 'none';
+                escClockButton.style.display = 'none'; // Esconder o botão de fechar
+            }
+        }
+    
+        function startPauseTimer() {
+            if (!isTimerRunning) {
+                let minutesInput = document.getElementById('minutes-dropdown').value;
+                let secondsInput = document.getElementById('seconds-dropdown').value;
+    
+                // Calcula o tempo total em segundos
+                totalTime = parseInt(minutesInput) * 60 + parseInt(secondsInput);
+                if (isNaN(totalTime) || totalTime <= 0) {
+                    alert("Por favor, insira um valor válido para o temporizador.");
+                    return;
+                }
+    
+                remainingTime = remainingTime || totalTime; // Se não houver tempo restante, use o tempo total
+                // Inicia o timer
+                timerInterval = setInterval(updateTimer, 1000);
+                startPauseButton.textContent = 'Pause';
+            } else {
+                clearInterval(timerInterval);
+                startPauseButton.textContent = 'Start';
+            }
+            isTimerRunning = !isTimerRunning;
+        }
+    
+        function resetTimer() {
+            clearInterval(timerInterval);
+            timerDisplay.textContent = '00:00';
+            timerContainer.style.display = 'block'; // Exibe o timer-container
+            isTimerRunning = false;
+            startPauseButton.textContent = 'Start';
+            remainingTime = 0; // Reinicia o tempo restante
+        }
+    
+        function playSound() {
+            // Crie um contexto de áudio
+            const audioContext = new AudioContext();
+
+            // Função para tocar um bip
+            function beep() {
+                const oscillator = audioContext.createOscillator();
+                oscillator.type = "sine";
+                oscillator.connect(audioContext.destination);
+                oscillator.start();
+
+                // Defina o tempo de duração do som (em milissegundos)
+                const duration = 500; // 0.5 segundos
+
+                // Pare o oscilador após a duração especificada
+                setTimeout(() => {
+                    oscillator.stop();
+                }, duration);
+            }
+
+            // Toque três bips com intervalos de 500ms entre eles
+            beep();
+            setTimeout(beep, 1000);
+            setTimeout(beep, 2000);
+        }
+
+    
+        function updateTimer() {
+            let minutes = Math.floor(remainingTime / 60);
+            let seconds = remainingTime % 60;
+    
+            timerDisplay.textContent = `${formatTime(minutes)}:${formatTime(seconds)}`;
+    
+            if (remainingTime <= 0) {
+                clearInterval(timerInterval);
+                playSound(); // Emite um sinal sonoro
+                // alert("Tempo esgotado!");
+                timerDisplay.textContent = '00:00';
+                timerDisplay.style.display = 'block'; // Esconde o timer 'none'
+                timerContainer.style.display = 'block'; // Esconde o timer-container 'none'
+                startPauseButton.textContent = 'Start'; // Redefine o botão para 'Start'
+                isTimerRunning = false; // Redefine o estado do cronômetro
+            } else {
+                remainingTime--;
+            }
+        }
+    
+        function formatTime(time) {
+            return time < 10 ? "0" + time : time;
+        }
+    </script>
+    
+    
+    
+    
+    
+    <script>
+        // Função para exportar o texto para o WhatsApp
+        function exportToWhatsApp() {
+            // Selecionar os elementos desejados
+            let tituloTreinoInput = document.querySelector('.titulo-do-treino');
+            let obsTreinoInput = document.querySelector('.treino__obs');
+            let exercicios = document.querySelectorAll('.exercicio-n');
+            let textoExercicios = '';
+    
+            // Obter o título do treino em letras maiúsculas
+            let tituloTreino = tituloTreinoInput.value.toUpperCase();
+            let obsTreino = obsTreinoInput.value;
+    
+            // Iterar sobre cada exercício
+            exercicios.forEach((exercicio, index) => {
+                let nomeExercicioInput = exercicio.querySelector('.exercicio__nome');
+                let nomeExercicio = nomeExercicioInput.value.toUpperCase();
+                let obsExercicio = exercicio.querySelector('.exercicio__obs').value;
+                let sets = exercicio.querySelectorAll('.lista__segunda-linha__item');
+                let aquecimentoInputs = exercicio.querySelectorAll('.lista__aquecimento__input');
+                let segundaLinhaInputs = exercicio.querySelectorAll('.lista__segunda-linha__input');
+    
+                // Adicionar uma quebra de linha entre os exercícios, exceto para o primeiro
+                if (index !== 0) {
+                    textoExercicios += '\n\n';
+                }
+    
+                // Montar o texto do exercício
+                textoExercicios += `Exercício ${index + 1}: ${nomeExercicio}\n`;
+                textoExercicios += `Observações: ${obsExercicio}\n\n`;
+    
+                // Adicionar os valores dos aquecimentos
+                textoExercicios += "Aquecimento:\n";
+                for (let i = 0; i < aquecimentoInputs.length; i += 3) {
+                    textoExercicios += `- ${aquecimentoInputs[i].value}-${aquecimentoInputs[i + 1].value} reps ${aquecimentoInputs[i + 2].value}kg\n`;
+                }
+    
+                // Adicionar os valores da segunda linha
+                textoExercicios += "\nSéries efetivas:\n";
+                for (let i = 0; i < segundaLinhaInputs.length; i += 5) {
+                    textoExercicios += `- ${segundaLinhaInputs[i].value}-${segundaLinhaInputs[i + 1].value} reps ${segundaLinhaInputs[i + 2].value}kg @${segundaLinhaInputs[i + 3].value}-${segundaLinhaInputs[i + 4].value}\n`;
+                }
+            });
+    
+            // Montar o texto completo
+            let textoCompleto = `Título do Treino: ${tituloTreino}\n`;
+            textoCompleto += `Observações Gerais: ${obsTreino}\n\n`;
+            textoCompleto += `${textoExercicios}\n`;
+    
+            // Formatar o texto para o formato de URL do WhatsApp
+            let textoWhatsApp = encodeURIComponent(textoCompleto);
+    
+            // Abrir o WhatsApp com o texto formatado
+            window.open(`https://wa.me/?text=${textoWhatsApp}`, '_blank');
+        }
+    </script>
+    
+    
+
+    <script>
+        function myFunction(sectionId, buttonId) {
+            let i = document.getElementById(sectionId).querySelectorAll(".lista__segunda-linha").length + 1;
+            let ul = document.createElement("ul");
+            ul.className = "lista__segunda-linha";
+            ul.innerHTML = '<li class="lista__segunda-linha__item"><p>' + i + '</p></li><li class="lista__segunda-linha__item"><input class="lista__segunda-linha__input input-reps1" type="number"><p>-</p><input class="lista__segunda-linha__input input-reps2" type="number"></li><li class="lista__segunda-linha__item"><input class="lista__segunda-linha__input input-kg" type="number"></li><li class="lista__segunda-linha__item"><input class="lista__segunda-linha__input input-rpe1" type="number"><p>-</p><input class="lista__segunda-linha__input  input-rpe2" type="number"></li><li class="lista__segunda-linha__item"><input class="input-checkbox" type="checkbox"></li>';
+            let setButtons = document.getElementById(sectionId).getElementsByClassName("set-buttons")[0];
+            setButtons.parentNode.insertBefore(ul, setButtons);
+        }
+
+        function myFunctionWSet(sectionId, buttonId) {
+            let ulAquecimento = document.createElement("ul");
+            let setId = Math.random().toString(36).substring(7); // Gerar um ID único
+            ulAquecimento.className = "lista__aquecimento";
+            ulAquecimento.id = "lista__aquecimento_" + setId; // Atribuir um ID único
+            ulAquecimento.innerHTML = '<li class="lista__aquecimento__item"><p class="lista__aquecimento__w">a</p></li><li class="lista__aquecimento__item"><input class="lista__aquecimento__input input-reps1" type="number"><p>-</p><input class="lista__aquecimento__input input-reps2" type="number"></li><li class="lista__aquecimento__item"><input class="lista__aquecimento__input input-kg" type="number"></li><li class="lista__aquecimento__item"></li><li class="lista__aquecimento__item"><button class="remove-list-button" onclick="removeList(\'lista__aquecimento_' + setId + '\')"><img class="trash-img" src="img/trash-branca.png"></button></li>';
+            let setButtons = document.getElementById(sectionId).getElementsByClassName("set-buttons")[0];
+            setButtons.parentNode.insertBefore(ulAquecimento, setButtons);
+
+            // Move a lista__aquecimento para cima da lista__segunda-linha
+            let mainSection = document.getElementById(sectionId);
+            let segundaLinha = mainSection.querySelector(".lista__segunda-linha");
+            mainSection.insertBefore(ulAquecimento, segundaLinha);
+        }
+        
+        function undoFunction(sectionId, buttonId) {
+            let myList = document.getElementById(sectionId);
+            let lastSet = myList.getElementsByClassName("lista__segunda-linha");
+            if (lastSet.length > 1) {
+                lastSet[lastSet.length - 1].remove();
+            }
+        }
+
+        function removeList(listId) {
+            let listToRemove = document.getElementById(listId);
+            if (listToRemove) {
+                listToRemove.parentNode.removeChild(listToRemove);
+            }
+        }        
+    </script>
+
+    <script>
+        function addSection() {
+            let j = document.querySelectorAll('.exercicio-n').length + 1;
+            let mainTag = document.querySelector('main');
+            let section = document.createElement("section");
+            section.className = "exercicio-n";
+            section.id = "exercicio-" + j;
+            section.innerHTML = `
+                <ul class="lista__nome-do-exercicio">
+                    <li class="lista__nome-do-exercicio__item">
+                        <p class="lista__nome-do-exercicio__numero">${j}</p>
+                        <textarea id="nomeDoExercicio-${j}" class="exercicio__nome" placeholder="Nome do exercício" maxlength="32" oninput="limitLines(this, 1)" readonly></textarea>
+                        <input type="checkbox" id="menu-${j}" class="container__botao">
+                        <label for="menu-${j}" class="container__rotulo">
+                            <span class="cabecalho__menu-hamburguer container__imagem">...</span>
+                        </label>
+                        <ul class="lista-menu">
+                            <li class="lista-menu__item"><button class="changeEx-button" onclick="toggleEdit('nomeDoExercicio-${j}')">˄˅</button><a onclick="toggleEdit('nomeDoExercicio-${j}')" class="lista-menu__exChange">ALT EXER</a></li>
+                            <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-${j}')">»</button><a onclick="searchYouTubeDynamic('exercicio-${j}')" class="lista-menu__youtube-link">VÍDEO</a></li>
+                            <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-${j}')">Ø</button><a onclick="toggleTimer('exercicio-${j}')" class="lista-menu__clock-link">TIMER</a></li>
+                            <li class="lista-menu__item"><button class="color-button" onclick="preventClose(event); changeColor('exercicio-${j}')"></button><a onclick="preventClose(event); changeColor('exercicio-${j}')" class="lista-menu__color-link">TEMAS</a></li>  
+                        </ul>
+                    </li>
+                </ul>
+                        
+                <div class="video-container" id="video-container-${j}"></div>
+
+                <div class="exercicioObs-div">
+                    <textarea id="exercicioObs-${j}" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10)" readonly></textarea>
+                    
+                    <button class="edit-button-1" onclick="toggleEdit('exercicioObs-${j}')">Editar</button>
+                </div>
+
+                <div id="timer-container-${j}" style="display: none;" class="timer-container">
+                    <input type="number" id="minutes-${j}" placeholder="Min" class="timer-container__item">
+                    <input type="number" id="seconds-${j}" placeholder="Seg" class="timer-container__item">
+                    <button id="start-button" onclick="startTimer()" class="start-button">Start</button>
+                </div>
+                
+                <div id="timer-${j}" class="timer">00:00</div>
+
+                <ul class="lista__primeira-linha">
+                    <li>
+                        <p></p>
+                    </li>
+                    <li>
+                    <select class="select-repetitions">
+                        <option class="option" value="reps range">Faixa de Repetições</option>
+                        <option value="reps">Repetições</option>
+                        <option value="reps max">Repetições Máximas</option>
+                        <option value="amrap">AMRAP</option>
+                        <option value="time">Tempo</option>
+                        <option value="time range">Faixa de Tempo</option>
+                    </select>             
+                </li>
+
+                <li>
+                    <select class="select-kg">
+                        <option value="kg">KG</option>
+                        <option value="lb">LB</option>
+                    </select>             
+                </li>
+
+                <li>
+                    <select class="select-rpe">
+                        <option value="rpe range">Faixa de Int. (PSE)</option>
+                        <option value="rpe">Int. (PSE)</option>
+                        <option value="% of 1rm range">Faixa de % de 1RM</option>
+                        <option value="% of 1rm">% de 1RM</option>
+                    </select>             
+                </li>
+
+                </ul>
+
+
+                <ul class="lista__aquecimento" id="lista__aquecimento-${j}">
+                    <li class="lista__aquecimento__item">
+                        <p class="lista__aquecimento__w">a</p>
+                    </li>
+                    <li class="lista__aquecimento__item">
+                        <input class="lista__aquecimento__input input-reps1" type="number">
+                        <p>-</p>
+                        <input class="lista__aquecimento__input input-reps2" type="number">
+                    </li>
+                    <li class="lista__aquecimento__item">
+                        <input class="lista__aquecimento__input input-kg" type="number">
+                    </li>
+                    <li class="lista__aquecimento__item">
+                    </li>
+                    <li class="lista__aquecimento__item">
+                        <button class="remove-list-button" onclick="removeList('lista__aquecimento-${j}')"><img class="trash-img" src="img/trash-branca.png">
+                    </li>
+                </ul>
+
+
+                <ul id="myList${j}" class="lista__segunda-linha">
+                    <li class="lista__segunda-linha__item">
+                        <p>1</p>
+                    </li>
+                    <li class="lista__segunda-linha__item">
+                        <input class="lista__segunda-linha__input input-reps1" type="number">
+                        <p>-</p>
+                        <input class="lista__segunda-linha__input input-reps2" type="number">
+                    </li>
+                    <li class="lista__segunda-linha__item">
+                        <input class="lista__segunda-linha__input input-kg" type="number">
+                    </li>
+                    <li class="lista__segunda-linha__item">
+                        <input class="lista__segunda-linha__input input-rpe1" type="number">
+                        <p>-</p>
+                        <input class="lista__segunda-linha__input input-rpe2" type="number">
+                    </li>
+                    <li class="lista__segunda-linha__item">
+                        <input class="input-checkbox" type="checkbox">
+                    </li>
+                </ul>
+
+                <ul class="set-buttons">
+                    <li class="set-buttons__item">
+                        <button id="button${j}-add-w" class="add-w-button" onclick="myFunctionWSet('exercicio-${j}', this.id)">ADD a-Set</button>
+                        <button id="button${j}-add" class="add-button" onclick="myFunction('exercicio-${j}', this.id)">ADD Set</button>
+                        <button id="button${j}-undo" class="undo-button" onclick="undoFunction('exercicio-${j}', this.id)">EXC Set</button>
+                    </li>
+                </ul>
+                
+            `;
+            
+            // Encontrar a div "session-buttons"
+            let sessionButtons = document.querySelector('.session-buttons');
+            let timerOrg = document.querySelector('.timer-org');
+
+            // Inserir a nova sessão antes da div "session-buttons"
+            mainTag.insertBefore(section, sessionButtons);
+            mainTag.insertBefore(section, timerOrg);
+
+        }
+
+        
+        function removeLastSection() {
+            let main = document.querySelector('main');
+            let lastSection = main.lastElementChild;
+            
+            // Verificar se o último elemento filho é um botão ou uma seção
+            while (lastSection && !lastSection.id.startsWith('exercicio-')) {
+                lastSection = lastSection.previousElementSibling;
+            }
+
+            if (lastSection) {
+                lastSection.parentNode.removeChild(lastSection);
+            }
+        }  
+
+
+    </script>
+
+
+    <script>
+        // Função para expandir a textarea automaticamente
+        function autoExpandTextarea(element) {
+            element.style.height = 'auto';
+            element.style.height = (element.scrollHeight) + 'px';
+        }
+
+        // Executa a função autoExpandTextarea em todas as textareas com a classe 'auto-expand' ao carregar a página
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.auto-expand').forEach(function(textarea) {
+                autoExpandTextarea(textarea);
+            });
+        });
+
+        // MutationObserver para observar adições de novos elementos ao DOM
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                mutation.addedNodes.forEach(function(node) {
+                    if (node.nodeType === 1 && node.classList.contains('auto-expand')) {
+                        autoExpandTextarea(node);
+                    }
+                });
+            });
+        });
+
+        // Observa mudanças no DOM
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+
+        // Event listener para expandir a textarea quando o conteúdo é alterado
+        document.addEventListener('input', function(event) {
+            if (event.target && event.target.classList.contains('auto-expand')) {
+                autoExpandTextarea(event.target);
+            }
+        });
+
+        // Event listener para adicionar nova textarea dinâmica
+        document.getElementById('addTextarea').addEventListener('click', function() {
+            const newTextarea = document.createElement('textarea');
+            newTextarea.className = 'auto-expand';
+            newTextarea.rows = 1; // Defina o número inicial de linhas conforme necessário
+            document.body.appendChild(newTextarea);
+        });
+    </script>
+
+    <script>
+        // Adiciona eventos para limitar o número de caracteres em cada textarea
+        document.addEventListener("DOMContentLoaded", function() {
+                    var textareas = document.querySelectorAll('textarea');
+                
+                    textareas.forEach(function(textarea) {
+                        textarea.addEventListener('input', function() {
+                            var maxLength = parseInt(this.getAttribute('maxlength'));
+                            var currentLength = this.value.length;
+                
+                            if (currentLength > maxLength) {
+                                this.value = this.value.slice(0, maxLength);
+                            }
+                        });
+                    });
+                });
+
+
+
+        // Função para limitar o número de linhas em uma textarea
+        function limitLines(textarea, maxLines) {
+            var lines = textarea.value.split('\n');
+            if (lines.length > maxLines) {
+                textarea.value = lines.slice(0, maxLines).join('\n');
+            }
+        }
+    </script>
+
+
+    <script>
+        function exportToExcel() {
+            let data = [];
+
+            // Coleta os dados do título do treino e observações gerais
+            let tituloTreino = document.querySelector('.titulo-do-treino').value;
+            let obsTreino = document.querySelector('.treino__obs').value;
+            data.push([tituloTreino]);
+            data.push([obsTreino]);
+
+            // Coleta os dados de cada exercício
+            let exercicios = document.querySelectorAll('.exercicio-n');
+            exercicios.forEach((exercicio, index) => {
+                let nomeExercicio = exercicio.querySelector('.exercicio__nome').value;
+                let obsExercicio = exercicio.querySelector('.exercicio__obs').value;
+
+                // Coleta e formata os dados do aquecimento
+                let aquecimentoInputs = exercicio.querySelectorAll('.lista__aquecimento__input');
+                let aquecimentoData = [];
+                aquecimentoInputs.forEach((input, i) => {
+                    aquecimentoData.push(input.value);
+                });
+
+                // Coleta e formata os dados da segunda linha
+                let segundaLinhaInputs = exercicio.querySelectorAll('.lista__segunda-linha__input');
+                let segundaLinhaData = [];
+                segundaLinhaInputs.forEach((input, i) => {
+                    segundaLinhaData.push(input.value);
+                });
+
+                // Adiciona os dados do exercício à matriz de dados
+                data.push([nomeExercicio, obsExercicio, ...aquecimentoData, ...segundaLinhaData]);
+                // data.push([]); // Adiciona uma linha em branco entre os exercícios
+            });
+
+            // Cria um novo workbook
+            let wb = XLSX.utils.book_new();
+            let ws = XLSX.utils.aoa_to_sheet(data);
+            XLSX.utils.book_append_sheet(wb, ws, "Dados");
+
+            // Salva o workbook como um arquivo Excel
+            XLSX.writeFile(wb, 'import_model.xlsx');
+        }
+    </script>
+
+
+    <script>
+        function importFromExcel() {
+        // Cria um input do tipo file para permitir ao usuário escolher um arquivo
+        var input = document.createElement('input');
+        input.type = 'file';
+        input.accept = '.xlsx'; // Aceita apenas arquivos Excel
+        input.addEventListener('change', function() {
+            var file = input.files[0];
+            var reader = new FileReader();
+
+            // Ao carregar o arquivo, executa a função para processar os dados
+            reader.onload = function(e) {
+                var data = new Uint8Array(e.target.result);
+                var workbook = XLSX.read(data, {type: 'array'});
+
+                // Obtém a primeira planilha do arquivo Excel
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Defina aqui a correspondência entre as células do Excel e os campos HTML
+                var mappings = {
+                    'A1': ['.titulo-do-treino'],
+                    'A2': ['.treino__obs'],
+                    'A3': ['.exercicio__nome'],
+                    'B3': ['.exercicio__obs'],
+                    'C3': ['.lista__aquecimento__input.input-reps1'],
+                    'D3': ['.lista__aquecimento__input.input-reps2'],
+                    'E3': ['.lista__aquecimento__input.input-kg'],
+
+                    'I3': ['.lista__segunda-linha__input.input-reps1'],
+                    'J3': ['.lista__segunda-linha__input.input-reps2'],
+                    'K3': ['.lista__segunda-linha__input.input-kg'],
+                    'L3': ['.lista__segunda-linha__input.input-rpe1'],
+                    'M3': ['.lista__segunda-linha__input.input-rpe2'],
+                    
+                    // Adicione mais correspondências conforme necessário
+                };
+
+                // Preenche os campos do HTML com os dados do arquivo Excel
+                fillHTMLFields(worksheet, mappings);
+            };
+
+            // Lê o arquivo como array buffer
+            reader.readAsArrayBuffer(file);
+        });
+
+        // Dispara o evento de clique no input file
+        input.click();
+    }
+
+    function fillHTMLFields(worksheet, mappings) {
+        // Verifica se o objeto worksheet e as correspondências mappings estão definidos
+        if (!worksheet || !mappings) {
+            console.error('Worksheet or mappings object is undefined.');
+            return;
+        }
+
+        // Itera sobre as correspondências e preenche os campos HTML correspondentes às células do Excel
+        for (var cell in mappings) {
+            if (mappings.hasOwnProperty(cell)) {
+                var field = document.querySelector(mappings[cell]);
+                if (field) {
+                    var cellValue = worksheet[cell] ? worksheet[cell].v : ''; // Verifica se a célula existe antes de acessar suas propriedades
+                    field.value = cellValue; // Preenche o campo HTML com o valor da célula do Excel
+                }
+            }
+        }
+    }
+    </script>
+
+
+    <script>
+        function searchYouTubeDynamic(sectionId) {
+            // Encontra o elemento de exercício correspondente ao sectionId
+            var exerciseElement = document.getElementById(sectionId);
+            
+            // Encontra o textarea dentro do elemento de exercício para obter o nome do exercício
+            var exerciseNameTextarea = exerciseElement.querySelector('.exercicio__nome');
+            
+            // Obtém o texto do nome do exercício inserido pelo usuário
+            var userKeyword = exerciseNameTextarea.value.trim();
+
+            // Lista de palavras-chave adicionais que você quer incluir
+            var additionalKeywords = ["Eder Personal Trainer", "RP"];
+
+            // Verifica se há uma palavra-chave válida inserida pelo usuário
+            if (userKeyword) {
+                // Combina a palavra-chave inserida pelo usuário com as palavras-chave adicionais
+                var keywords = [userKeyword].concat(additionalKeywords);
+
+                // Combina todas as palavras-chave em uma única string separada por espaços
+                var keyword = keywords.join(' ');
+
+                // Substitui os espaços por "+" na palavra-chave para formar a URL de busca
+                keyword = keyword.replace(/\s/g, '+');
+
+                // URL de busca do YouTube com a palavra-chave inserida e o número máximo de resultados
+                var searchUrl = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=' + keyword + '&key=AIzaSyAak9tSnzEoKqk50Kmz39nFZWAWAV7V4ro';
+
+                // Requisição AJAX para a API do YouTube
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', searchUrl, true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        if (response.items && response.items.length > 0) {
+                            // Obtém o ID do vídeo
+                            var videoId = response.items[0].id.videoId;
+                            
+                            // Cria o iframe para o vídeo incorporado
+                            var iframe = document.createElement('iframe');
+                            iframe.setAttribute('width', '325');
+                            iframe.setAttribute('height', '183');
+                            iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId);
+                            iframe.setAttribute('frameborder', '0');
+                            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                            iframe.setAttribute('allowfullscreen', '');
+
+                            // Encontra o contêiner de vídeo correspondente e o preenche com o iframe
+                            var videoContainer = exerciseElement.querySelector('.video-container');
+                            videoContainer.innerHTML = ''; // Limpa o conteúdo existente
+                            videoContainer.appendChild(iframe);
+                        } else {
+                            alert('Nenhum vídeo encontrado para a palavra-chave inserida.');
+                        }
+                    }
+                };
+                xhr.send();
+            } else {
+                alert('Por favor, insira o nome do exercício.');
+            }
+        }
+
+    </script>
+
+    <script>
+        
+    </script>
+
+    
+</body>
+</html>
