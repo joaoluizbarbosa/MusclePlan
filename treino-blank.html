@@ -63,7 +63,6 @@
             <ul class="lista__nome-do-exercicio">
                 <li class="lista__nome-do-exercicio__item">
                     <p class="lista__nome-do-exercicio__numero">1</p>
-                    <input type="text" id="videoUrl-1" class="video-url" placeholder="Video URL">
                     <textarea id="nomeDoExercicio-1" class="exercicio__nome" placeholder="Nome do exercício" maxlength="32" oninput="limitLines(this, 1)" readonly></textarea>
                     <input type="checkbox" id="menu-1" class="container__botao">
                     <label for="menu-1" class="container__rotulo">
@@ -72,7 +71,7 @@
                     <ul class="lista-menu">
                         <li class="lista-menu__item"><button class="changeEx-button" onclick="toggleEdit('nomeDoExercicio-1')">˄˅</button><a onclick="toggleEdit('nomeDoExercicio-1')" class="lista-menu__exChange">ALT EXER</a></li>
                         
-                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('videoUrl-1')">»</button><a onclick="searchYouTubeDynamic('videoUrl-1')" class="lista-menu__youtube-link">VÍDEO</a></li>
+                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-1')">»</button><a onclick="searchYouTubeDynamic('exercicio-1')" class="lista-menu__youtube-link">VÍDEO</a></li>
                         
                         <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-1')">Ø</button><a onclick="toggleTimer('exercicio-1')" class="lista-menu__clock-link">TIMER</a></li>
                         
@@ -977,87 +976,65 @@
 
     <script>
         function searchYouTubeDynamic(sectionId) {
-    // Encontra o elemento de exercício correspondente ao sectionId
-    var exerciseElement = document.getElementById(sectionId);
-    
-    // Encontra o textarea dentro do elemento de exercício para obter o nome do exercício
-    var exerciseNameTextarea = exerciseElement.querySelector('.exercicio__nome');
-    
-    // Obtém o texto do nome do exercício inserido pelo usuário
-    var userKeyword = exerciseNameTextarea.value.trim();
+            // Encontra o elemento de exercício correspondente ao sectionId
+            var exerciseElement = document.getElementById(sectionId);
+            
+            // Encontra o textarea dentro do elemento de exercício para obter o nome do exercício
+            var exerciseNameTextarea = exerciseElement.querySelector('.exercicio__nome');
+            
+            // Obtém o texto do nome do exercício inserido pelo usuário
+            var userKeyword = exerciseNameTextarea.value.trim();
 
-    // Encontra o campo de URL de vídeo dentro do elemento de exercício
-    var videoUrlInput = exerciseElement.querySelector('.video-url');
-    var videoUrl = videoUrlInput.value.trim();
+            // Lista de palavras-chave adicionais que você quer incluir
+            var additionalKeywords = ["RP", "Jeff Nippard"];
 
-    // Verifica se há um URL de vídeo fornecido
-    if (videoUrl) {
-        // Cria o iframe para o vídeo incorporado
-        var iframe = document.createElement('iframe');
-        iframe.setAttribute('width', '325');
-        iframe.setAttribute('height', '183');
-        iframe.setAttribute('src', videoUrl);
-        iframe.setAttribute('frameborder', '0');
-        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-        iframe.setAttribute('allowfullscreen', '');
+            // Verifica se há uma palavra-chave válida inserida pelo usuário
+            if (userKeyword) {
+                // Combina a palavra-chave inserida pelo usuário com as palavras-chave adicionais
+                var keywords = [userKeyword].concat(additionalKeywords);
 
-        // Encontra o contêiner de vídeo correspondente e o preenche com o iframe
-        var videoContainer = exerciseElement.querySelector('.video-container');
-        videoContainer.innerHTML = ''; // Limpa o conteúdo existente
-        videoContainer.appendChild(iframe);
-    } else {
-        // Lista de palavras-chave adicionais que você quer incluir
-        var additionalKeywords = ["RP", "Jeff Nippard"];
+                // Combina todas as palavras-chave em uma única string separada por espaços
+                var keyword = keywords.join(' ');
 
-        // Verifica se há uma palavra-chave válida inserida pelo usuário
-        if (userKeyword) {
-            // Combina a palavra-chave inserida pelo usuário com as palavras-chave adicionais
-            var keywords = [userKeyword].concat(additionalKeywords);
+                // Substitui os espaços por "+" na palavra-chave para formar a URL de busca
+                keyword = keyword.replace(/\s/g, '+');
 
-            // Combina todas as palavras-chave em uma única string separada por espaços
-            var keyword = keywords.join(' ');
+                // URL de busca do YouTube com a palavra-chave inserida e o número máximo de resultados
+                var searchUrl = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=' + keyword + '&key=AIzaSyAak9tSnzEoKqk50Kmz39nFZWAWAV7V4ro';
 
-            // Substitui os espaços por "+" na palavra-chave para formar a URL de busca
-            keyword = keyword.replace(/\s/g, '+');
+                // Requisição AJAX para a API do YouTube
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', searchUrl, true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        if (response.items && response.items.length > 0) {
+                            // Obtém o ID do vídeo
+                            var videoId = response.items[0].id.videoId;
+                            
+                            // Cria o iframe para o vídeo incorporado
+                            var iframe = document.createElement('iframe');
+                            iframe.setAttribute('width', '325');
+                            iframe.setAttribute('height', '183');
+                            iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId);
+                            iframe.setAttribute('frameborder', '0');
+                            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                            iframe.setAttribute('allowfullscreen', '');
 
-            // URL de busca do YouTube com a palavra-chave inserida e o número máximo de resultados
-            var searchUrl = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=' + keyword + '&key=AIzaSyAak9tSnzEoKqk50Kmz39nFZWAWAV7V4ro';
-
-            // Requisição AJAX para a API do YouTube
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', searchUrl, true);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    var response = JSON.parse(xhr.responseText);
-                    if (response.items && response.items.length > 0) {
-                        // Obtém o ID do vídeo
-                        var videoId = response.items[0].id.videoId;
-                        
-                        // Cria o iframe para o vídeo incorporado
-                        var iframe = document.createElement('iframe');
-                        iframe.setAttribute('width', '325');
-                        iframe.setAttribute('height', '183');
-                        iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId);
-                        iframe.setAttribute('frameborder', '0');
-                        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-                        iframe.setAttribute('allowfullscreen', '');
-
-                        // Encontra o contêiner de vídeo correspondente e o preenche com o iframe
-                        var videoContainer = exerciseElement.querySelector('.video-container');
-                        videoContainer.innerHTML = ''; // Limpa o conteúdo existente
-                        videoContainer.appendChild(iframe);
-                    } else {
-                        alert('Nenhum vídeo encontrado para a palavra-chave inserida.');
+                            // Encontra o contêiner de vídeo correspondente e o preenche com o iframe
+                            var videoContainer = exerciseElement.querySelector('.video-container');
+                            videoContainer.innerHTML = ''; // Limpa o conteúdo existente
+                            videoContainer.appendChild(iframe);
+                        } else {
+                            alert('Nenhum vídeo encontrado para a palavra-chave inserida.');
+                        }
                     }
-                }
-            };
-            xhr.send();
-        } else {
-            alert('Por favor, insira o nome do exercício.');
+                };
+                xhr.send();
+            } else {
+                alert('Por favor, insira o nome do exercício.');
+            }
         }
-    }
-}
-
 
     </script>
 
