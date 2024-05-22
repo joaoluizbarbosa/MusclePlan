@@ -456,7 +456,7 @@ input[type="checkbox"]:checked::before {
 
 .exercicio__nome {
     padding-top: 0.35em;
-    /* text-transform: uppercase; */
+    text-transform: uppercase;
     display: block;
     background-color: var(--cor-fundo-exercicio);
     border: none;
