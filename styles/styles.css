@@ -191,11 +191,11 @@ input[type="checkbox"]:checked::before {
     border: none;
     resize: none;
     width: 90%;
-    height: 45px;
+    height: 50px;
     font-family: var(--fonte-principal);
     color: var(--cor-fonte-titulo-da-periodizacao);
     font-weight: 600;
-    font-size: 1.2em;
+    font-size: 1.4em;
     margin: 0.5em 0.5em 0 0.5em;
     padding: 0.5em;
     text-align: center;
@@ -216,7 +216,7 @@ input[type="checkbox"]:checked::before {
 .lista__periodizacao__item-semana-dia {
     display: flex;
     /* flex-direction: column; */
-    margin: 1em 5em;
+    margin: 1em 1em;
     align-items: baseline;
     justify-content: space-around;
 }
@@ -224,7 +224,7 @@ input[type="checkbox"]:checked::before {
 .lista__periodizacao__item-paragrafo {
     font-family: var(--fonte-principal);
     font-weight: 400;
-    font-size: 1em;
+    font-size: 1.2em;
     text-align: center;
     padding: 0;
 }
@@ -236,7 +236,7 @@ input[type="checkbox"]:checked::before {
     border: none;
     resize: none;
     width: 30px;
-    height: 40px;
+    height: 35px;
     font-family: var(--fonte-principal);
     color: var(--paleta-cor-6);
     font-weight: 500;
@@ -251,6 +251,14 @@ input[type="checkbox"]:checked::before {
     color: var(--paleta-cor-8);
     font-size: 2.5em;
     cursor: pointer;
+}
+
+.dia-anterior {
+    margin-right: 1em;
+}
+
+.proximo-dia {
+    margin-left: 1em;
 }
 
 .edit-button-semana, .edit-button-dia {
