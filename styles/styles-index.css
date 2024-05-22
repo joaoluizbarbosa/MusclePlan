@@ -60,7 +60,7 @@
     margin-top: 2em;
 }
 
-.logo-index {
+.logoGrafico-index {
     height: 115px;
 }
 
@@ -71,6 +71,15 @@
 .logo3-index {
     height: 105px;
 }
+
+.logo-index {
+    height: 105px;
+}
+
+.martina {
+    height: 105px;
+}
+
 
 .titulo-index__treino-em-branco, .titulo-index__treino-extPpl4x, .titulo-index__treino-teTp4x {
     font-family: var(--fonte-principal);
