@@ -484,7 +484,7 @@
                 oscillator.start();
 
                 // Defina o tempo de duração do som (em milissegundos)
-                const duration = 500; // 0.5 segundos
+                const duration = 100; // 0.5 segundos
 
                 // Pare o oscilador após a duração especificada
                 setTimeout(() => {
@@ -494,8 +494,9 @@
 
             // Toque três bips com intervalos de 500ms entre eles
             beep();
+            setTimeout(beep, 500);
             setTimeout(beep, 1000);
-            setTimeout(beep, 2000);
+            setTimeout(beep, 1500);
         }
 
     
