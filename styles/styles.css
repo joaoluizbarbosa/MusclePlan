@@ -77,9 +77,10 @@
     /* cores menu expImp */
     
     --cor-menuExpImp-span: #ECB176;
-    --cor-menuExpImp-fundo: #ECB176;
-    --cor-botoes-menuExp-fundo: #A67B5B;
-    --cor-botoes-menuImp-fundo: #6F4E37;
+    --cor-menuExpImp-fundo: #6F4E37;
+    --cor-botoes-menuExp-fundo: #FED8B1;
+    --cor-botoes-menuEscArq-fundo: #ECB176;
+    --cor-botoes-menuImp-fundo: #A67B5B;
     --cor-botoes-menuExp-fonte: black;
     --cor-botoes-menuImp-fonte: white;
     
@@ -252,8 +253,7 @@ input[type="checkbox"]:checked::before {
 }
 
 .load-file {
-    width: 100px;
-    height: 17px;
+    background-color: var(--cor-botoes-menuEscArq-fundo);
 }
 
 /* fim menu-expImp */
