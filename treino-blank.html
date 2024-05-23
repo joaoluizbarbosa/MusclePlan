@@ -45,11 +45,11 @@
                     <a href="#" class="dia-anterior">«</a>
 
                     <p class="lista__periodizacao__item-paragrafo">SEMANA</p>
-                    <textarea id="semana" class="semana" placeholder="1" maxlength="10" oninput="limitLines(this, 1)"></textarea>
+                    <input type="number" id="semana" class="semana" placeholder="1" maxlength="1" oninput="limitLines(this, 1)">
                     <!-- <button class="edit-button-semana" onclick="toggleEdit('semana')">Editar</button> -->
                     
                     <p class="lista__periodizacao__item-paragrafo">DIA</p>
-                    <textarea id="dia" class="dia" placeholder="1" maxlength="10" oninput="limitLines(this, 1)"></textarea>
+                    <input type="number" id="dia" class="dia" placeholder="1" maxlength="1" oninput="limitLines(this, 1)">
                     <!-- <button class="edit-button-dia" onclick="toggleEdit('dia')">Editar</button> -->
 
                     <a href="#" class="proximo-dia">»</a>
@@ -247,6 +247,8 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+
+    <script src="numberTextareascript.js"></script>
 
     <script>
         const colorCombinations = [

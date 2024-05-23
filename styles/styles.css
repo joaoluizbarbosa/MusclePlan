@@ -340,7 +340,7 @@ input[type="checkbox"]:checked::before {
     background-color: var(--cor-fundo-semana-dia);
     border: none;
     resize: none;
-    width: 30px;
+    width: 50px;
     height: 35px;
     font-family: var(--fonte-principal);
     color: var(--cor-fonte-semana-dia);

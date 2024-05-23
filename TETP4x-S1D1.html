@@ -35,6 +35,28 @@
     
     <main class="main__treino-blank">
 
+        <ul class="lista__periodizacao">
+            <li class="lista__periodizacao__item">
+                <textarea id="tituloDaPeriodizacao" class="titulo-da-periodizacao" placeholder="TÍTULO DA PERIODIZAÇÃO" maxlength="50" oninput="limitLines(this, 2)" readonly></textarea>
+                <button class="edit-button-tituloDaPeriodizacao" onclick="toggleEdit('tituloDaPeriodizacao')">Editar</button>
+            </li>
+            <li class="lista__periodizacao__item">
+                <div class="lista__periodizacao__item-semana-dia">
+                    <a href="#" class="dia-anterior">«</a>
+
+                    <p class="lista__periodizacao__item-paragrafo">SEMANA</p>
+                    <input type="number" id="semana" class="semana" placeholder="1" maxlength="1" oninput="limitLines(this, 1)" value="">
+                    <!-- <button class="edit-button-semana" onclick="toggleEdit('semana')">Editar</button> -->
+                    
+                    <p class="lista__periodizacao__item-paragrafo">DIA</p>
+                    <input type="number" id="dia" class="dia" placeholder="1" maxlength="1" oninput="limitLines(this, 1)" value="">
+                    <!-- <button class="edit-button-dia" onclick="toggleEdit('dia')">Editar</button> -->
+
+                    <a href="#" class="proximo-dia">»</a>
+                </div>
+            </li>
+        </ul>
+
         <ul class="lista__treino-info">
             <li class="lista__treino-info__item">
                 
