@@ -5,18 +5,27 @@
     --paleta-cor-2: #474E68;
     --paleta-cor-3: #50577A;
     --paleta-cor-4: #6B728E;
+
     --paleta-cor-5: #C40C0C;
     --paleta-cor-6: #FF6500;
     --paleta-cor-7: #FF8A08;
     --paleta-cor-8: #FFC100;
+
     --paleta-cor-9: #00224D;
     --paleta-cor-10: #5D0E41;
     --paleta-cor-11: #A0153E;
     --paleta-cor-12: #FF204E;
+
     --paleta-cor-13: #EFBC9B;
     --paleta-cor-14: #FBF3D5;
     --paleta-cor-15: #D6DAC8;
     --paleta-cor-16: #9CAFAA;
+
+    --paleta-cor-17: #6F4E37;
+    --paleta-cor-18: #A67B5B;
+    --paleta-cor-19: #ECB176;
+    --paleta-cor-20: #FED8B1;
+
 
     --fonte-principal: "Montserrat", sans-serif;
     --cor-fonte: #DFD0B8;
@@ -26,11 +35,13 @@
     --cor-fundo-select: #DFD0B8;
     --cor-fonte-placeholder: rgb(255, 255, 255);
 
-    --cor-fundo-main: #bdbec5;
 
-    --cor-fundo-treino-body: #bdbec5;
+    --cor-fundo-treino-body: #6B728E;
+
+    --cor-fundo-main: #6B728E;
 
     --cor-fundo-rodape: #153448;
+
 
     /* cores do card título da periodização */
     --cor-fundo-periodizacao: #404258;
@@ -62,6 +73,15 @@
     --cor-fundo-input-kg: #FFC100;
     --cor-fundo-input-rpe1: #FF8A08;
     --cor-fundo-input-rpe2: #c42e2e;
+
+    /* cores menu expImp */
+    
+    --cor-menuExpImp-span: #ECB176;
+    --cor-menuExpImp-fundo: #ECB176;
+    --cor-botoes-menuExp-fundo: #A67B5B;
+    --cor-botoes-menuImp-fundo: #6F4E37;
+    --cor-botoes-menuExp-fonte: black;
+    --cor-botoes-menuImp-fonte: white;
     
     /* cores dos botões */
     --cor-fonte-botao: white;
@@ -156,8 +176,87 @@ input[type="checkbox"]:checked::before {
 }
 
 .cabecalho {
-    margin: 0.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 96%;
+    margin: 1.5em auto 0.5em auto;
 }
+
+.cabecalho-back-to-index {
+    font-family: var(--fonte-principal);
+    color: var(--cor-fonte-1);
+    text-decoration: none;
+}
+
+
+/* menu-expImp */
+
+.container__botao-expImp:checked~.lista-menu-expImp { /* condicional "se .container__botao estiver marcado (.container__botao:checked), então (~), .lista-menu aparece (display: block)" */
+    display: block;
+}
+
+.container__botao-expImp {
+    display: none;
+    position: relative;
+}
+
+.cabecalho__menu-hamburguer-expImp {
+    font-family: var(--fonte-principal);
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--cor-menuExpImp-span);
+    text-shadow: 1px 1px 1px black;
+}
+
+.lista-menu-expImp {
+    background-color: var(--cor-menuExpImp-fundo);
+    display: none; /* faz desaparecer a lista */
+    position: absolute;
+    padding: 0.5em 0;
+    top: 4%; /* retirou ??% do menu de cima do checkbox */
+    width: 170px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px black;
+    z-index: 1;
+    left: 1;
+    cursor: pointer;
+}
+
+.lista-menu-expImp__item {
+    display: flex;
+    align-items: center;
+    margin: 0em 0.8em;
+    padding: 0.5em 0;
+    gap: 10px;
+}
+
+.export-whatsapp, .export-excel, .import-excel, .export-json, .import-json, .load-file {
+    font-family: var(--fonte-principal);
+    font-size: 0.7em;
+    color: var(--cor-botoes-menuExp-fonte);
+    background-color: var(--cor-botoes-menuExp-fundo);
+    border: none;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px black;
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    text-wrap: wrap;
+}
+
+.import-excel, .import-json {
+    color: var(--cor-botoes-menuImp-fonte);
+    background-color: var(--cor-botoes-menuImp-fundo);
+}
+
+.load-file {
+    width: 100px;
+    height: 17px;
+}
+
+/* fim menu-expImp */
 
 .export-buttons {
     display: grid;
@@ -181,30 +280,6 @@ input[type="checkbox"]:checked::before {
     grid-column: 1 / -1;
     margin-right: 0.5em;
     margin-left: auto;
-}
-
-.export-whatsapp, .export-excel, .import-excel, .export-json, .import-json, .load-file {
-    font-family: var(--fonte-principal);
-    font-size: 0.7em;
-    color: var(--cor-fonte-botao);
-    background-color: var(--cor-fundo-botao);
-    border: none;
-    border-radius: 4px;
-    box-shadow: 1px 1px 1px black;
-    width: 100%;
-    height: 40px;
-    cursor: pointer;
-    text-wrap: wrap;
-}
-
-.import-excel, .import-json {
-    color: var(--cor-fonte-botao);
-    background-color: var(--paleta-cor-11);
-}
-
-.load-file {
-    width: 100px;
-    height: 17px;
 }
 
 .lista__periodizacao {
@@ -763,7 +838,7 @@ sup {
 @media (min-width: 700px) {
     .cabecalho {
         width: 58%;
-        margin: auto;
+        margin: 1.5em auto 0.5em auto;
     }
 
     .main__treino-blank {
@@ -787,7 +862,7 @@ sup {
 @media (min-width: 1024px) {
     .cabecalho {
         width: 41%;
-        margin: auto;
+        margin: 1.5em auto 0.5em auto;
     }
 
     .main__treino-blank {
@@ -811,7 +886,7 @@ sup {
 @media (min-width: 1440px) {
     .cabecalho {
         width: 29%;
-        margin: auto;
+        margin: 1.5em auto 0.5em auto;;
     }
     
     .main__treino-blank {
@@ -827,7 +902,7 @@ sup {
 @media (min-width: 1680px) {
     .cabecalho {
         width: 24%;
-        margin: auto;
+        margin: 1.5em auto 0.5em auto;
     }
     
     .main__treino-blank {
@@ -843,7 +918,7 @@ sup {
 @media (min-width: 1920px) {
     .cabecalho {
         width: 21.5%;
-        margin: auto;
+        margin: 1.5em auto 0.5em auto;
     }
     
     .main__treino-blank {
@@ -867,7 +942,7 @@ sup {
 @media (min-width: 2560px) {
     .cabecalho {
         width: 15.5%;
-        margin: auto;
+        margin: 1.5em auto 0.5em auto;
     }
     
     .main__treino-blank {
@@ -883,7 +958,7 @@ sup {
 @media (min-width: 3370px) {
     .cabecalho {
         width: 12%;
-        margin: auto;
+        margin: 1.5em auto 0.5em auto;
     }
     
     .main__treino-blank {

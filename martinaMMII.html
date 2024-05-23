@@ -8,20 +8,29 @@
     <title>MusclePlan - _martinaAffonso</title>
 </head>
 <body class="treino-body">
-    <<header class="cabecalho">
-        <div class="export-buttons">
-            <button class="export-whatsapp" onclick="exportToWhatsApp()">Exp. WhatsApp</button>
-            <button class="export-excel" onclick="exportToExcel()">Exp. Excel</button>
-                <input type="file" id="inputExcel" style="display: none;" onchange="importFromExcel(event)">
-                <button class="import-excel" onclick="document.getElementById('inputExcel').click()">Imp. Excel</button>
-            <div class="export-buttons__segunda-linha">
-                <button class="export-json" onclick="saveFormData()">Salvar Dados</button>
-                <button class="import-json" onclick="loadFormData()">Carregar Dados</button>
-                <div class="export-buttons__terceira-linha">
-                    <input class="load-file" type="file" id="fileInput" />
-                </div>
-            </div>
-        </div>
+    <header class="cabecalho">
+        
+        <input type="checkbox" id="menu-expImp" class="container__botao-expImp">
+        <label for="menu-expImp" class="container__rotulo-expImp">
+            <span class="cabecalho__menu-hamburguer-expImp container__imagem">_menuˇ</span>
+        </label>
+        <ul class="lista-menu-expImp">
+            <li class="lista-menu-expImp__item"><button class="export-whatsapp" onclick="exportToWhatsApp()">Exportar para WhatsApp</button></li>
+            
+            <li class="lista-menu-expImp__item"><button class="export-excel" onclick="exportToExcel()">Exportar .xlsx</button></li>
+
+            <li class="lista-menu-expImp__item"><button class="export-json" onclick="saveFormData()">Exportar .json</button></li>
+
+            <li class="lista-menu-expImp__item"><input type="file" id="fileInput" class="load-file" /></li>
+
+            <li class="lista-menu-expImp__item"><button class="import-json" onclick="loadFormData()">Carregar .json</button></li>
+
+            <li class="lista-menu-expImp__item"><button class="import-excel" onclick="document.getElementById('inputExcel').click()">Importar .xlsx</button>
+                                                <input type="file" id="inputExcel" style="display: none;" onchange="importFromExcel(event)"></li>
+        </ul>
+
+        <a href="index.html" class="cabecalho-back-to-index">Muscle Plan<sup>©</sup></a>
+
     </header>
     
     <main class="main__treino-blank">
