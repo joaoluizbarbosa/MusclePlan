@@ -12,9 +12,16 @@
         <div class="export-buttons">
             <button class="export-whatsapp" onclick="exportToWhatsApp()">Exp. WhatsApp</button>
             <button class="export-excel" onclick="exportToExcel()">Exp. Excel</button>
-            <button class="import-excel" onclick="importFromExcel()">Imp. Excel</button>
+                <input type="file" id="inputExcel" style="display: none;" onchange="importFromExcel(event)">
+                <button class="import-excel" onclick="document.getElementById('inputExcel').click()">Imp. Excel</button>
+            <div class="export-buttons__segunda-linha">
+                <button class="export-json" onclick="saveFormData()">Salvar Dados</button>
+                <button class="import-json" onclick="loadFormData()">Carregar Dados</button>
+                <div class="export-buttons__terceira-linha">
+                    <input class="load-file" type="file" id="fileInput" />
+                </div>
+            </div>
         </div>
-
     </header>
     
     <main class="main__treino-blank">
@@ -1465,7 +1472,7 @@ Abdominal bicicleta.</textarea>
             window.open(`https://wa.me/?text=${textoWhatsApp}`, '_blank');
         }
     </script>
-
+    
     <script>
         function myFunction(sectionId, buttonId) {
             let i = document.getElementById(sectionId).querySelectorAll(".lista__segunda-linha").length + 1;
@@ -1587,12 +1594,12 @@ Abdominal bicicleta.</textarea>
                         <p class="lista__aquecimento__w">a</p>
                     </li>
                     <li class="lista__aquecimento__item">
-                        <input class="lista__aquecimento__input input-reps1" type="number">
+                        <input class="lista__aquecimento__input input-reps1" type="number" value="">
                         <p>-</p>
-                        <input class="lista__aquecimento__input input-reps2" type="number">
+                        <input class="lista__aquecimento__input input-reps2" type="number" value="">
                     </li>
                     <li class="lista__aquecimento__item">
-                        <input class="lista__aquecimento__input input-kg" type="number">
+                        <input class="lista__aquecimento__input input-kg" type="number" value="">
                     </li>
                     <li class="lista__aquecimento__item">
                     </li>
@@ -1607,17 +1614,17 @@ Abdominal bicicleta.</textarea>
                         <p>1</p>
                     </li>
                     <li class="lista__segunda-linha__item">
-                        <input class="lista__segunda-linha__input input-reps1" type="number">
+                        <input class="lista__segunda-linha__input input-reps1" type="number" value="">
                         <p>-</p>
-                        <input class="lista__segunda-linha__input input-reps2" type="number">
+                        <input class="lista__segunda-linha__input input-reps2" type="number" value="">
                     </li>
                     <li class="lista__segunda-linha__item">
-                        <input class="lista__segunda-linha__input input-kg" type="number">
+                        <input class="lista__segunda-linha__input input-kg" type="number" value="">
                     </li>
                     <li class="lista__segunda-linha__item">
-                        <input class="lista__segunda-linha__input input-rpe1" type="number">
+                        <input class="lista__segunda-linha__input input-rpe1" type="number" value="">
                         <p>-</p>
-                        <input class="lista__segunda-linha__input input-rpe2" type="number">
+                        <input class="lista__segunda-linha__input input-rpe2" type="number" value="">
                     </li>
                     <li class="lista__segunda-linha__item">
                         <input class="input-checkbox" type="checkbox">
@@ -1661,7 +1668,6 @@ Abdominal bicicleta.</textarea>
 
 
     </script>
-
 
     <script>
         // Função para expandir a textarea automaticamente
@@ -1738,10 +1744,17 @@ Abdominal bicicleta.</textarea>
         }
     </script>
 
-
     <script>
         function exportToExcel() {
             let data = [];
+
+            // Coleta os dados do título da periodização, semana e dia
+            let tituloPeriodizacao = document.querySelector('.titulo-da-periodizacao').value;
+            let semana = document.querySelector('.semana').value;
+            let dia = document.querySelector('.dia').value;
+            data.push([tituloPeriodizacao]);
+            data.push([semana]);
+            data.push([dia]);
 
             // Coleta os dados do título do treino e observações gerais
             let tituloTreino = document.querySelector('.titulo-do-treino').value;
@@ -1784,77 +1797,56 @@ Abdominal bicicleta.</textarea>
         }
     </script>
 
-
     <script>
-        function importFromExcel() {
-        // Cria um input do tipo file para permitir ao usuário escolher um arquivo
-        var input = document.createElement('input');
-        input.type = 'file';
-        input.accept = '.xlsx'; // Aceita apenas arquivos Excel
-        input.addEventListener('change', function() {
-            var file = input.files[0];
-            var reader = new FileReader();
+        function importFromExcel(event) {
+            const input = event.target;
+            const reader = new FileReader();
+            reader.onload = function() {
+                const data = new Uint8Array(reader.result);
+                const workbook = XLSX.read(data, { type: 'array' });
 
-            // Ao carregar o arquivo, executa a função para processar os dados
-            reader.onload = function(e) {
-                var data = new Uint8Array(e.target.result);
-                var workbook = XLSX.read(data, {type: 'array'});
+                // Assume the first sheet is the one we want to import
+                const sheetName = workbook.SheetNames[0];
+                const sheet = workbook.Sheets[sheetName];
+                const sheetData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
 
-                // Obtém a primeira planilha do arquivo Excel
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
+                // Index to track the data position
+                let dataIndex = 0;
 
-                // Defina aqui a correspondência entre as células do Excel e os campos HTML
-                var mappings = {
-                    'A1': ['.titulo-do-treino'],
-                    'A2': ['.treino__obs'],
-                    'A3': ['.exercicio__nome'],
-                    'B3': ['.exercicio__obs'],
-                    'C3': ['.lista__aquecimento__input.input-reps1'],
-                    'D3': ['.lista__aquecimento__input.input-reps2'],
-                    'E3': ['.lista__aquecimento__input.input-kg'],
+                // Fill in the data
+                document.querySelector('.titulo-da-periodizacao').value = sheetData[dataIndex++][0];
+                document.querySelector('.semana').value = sheetData[dataIndex++][0];
+                document.querySelector('.dia').value = sheetData[dataIndex++][0];
+                document.querySelector('.titulo-do-treino').value = sheetData[dataIndex++][0];
+                document.querySelector('.treino__obs').value = sheetData[dataIndex++][0];
 
-                    'I3': ['.lista__segunda-linha__input.input-reps1'],
-                    'J3': ['.lista__segunda-linha__input.input-reps2'],
-                    'K3': ['.lista__segunda-linha__input.input-kg'],
-                    'L3': ['.lista__segunda-linha__input.input-rpe1'],
-                    'M3': ['.lista__segunda-linha__input.input-rpe2'],
-                    
-                    // Adicione mais correspondências conforme necessário
-                };
+                // Iterate over each exercise section
+                const exercicios = document.querySelectorAll('.exercicio-n');
+                exercicios.forEach((exercicio, index) => {
+                    if (dataIndex < sheetData.length) {
+                        const [nomeExercicio, obsExercicio, ...restData] = sheetData[dataIndex++];
 
-                // Preenche os campos do HTML com os dados do arquivo Excel
-                fillHTMLFields(worksheet, mappings);
+                        // Fill exercise name and observations
+                        exercicio.querySelector('.exercicio__nome').value = nomeExercicio || '';
+                        exercicio.querySelector('.exercicio__obs').value = obsExercicio || '';
+
+                        // Distribute restData between aquecimento and segunda linha inputs
+                        const aquecimentoInputs = exercicio.querySelectorAll('.lista__aquecimento__input');
+                        const segundaLinhaInputs = exercicio.querySelectorAll('.lista__segunda-linha__input');
+
+                        restData.slice(0, aquecimentoInputs.length).forEach((value, index) => {
+                            aquecimentoInputs[index].value = value || '';
+                        });
+
+                        restData.slice(aquecimentoInputs.length).forEach((value, index) => {
+                            segundaLinhaInputs[index].value = value || '';
+                        });
+                    }
+                });
             };
-
-            // Lê o arquivo como array buffer
-            reader.readAsArrayBuffer(file);
-        });
-
-        // Dispara o evento de clique no input file
-        input.click();
-    }
-
-    function fillHTMLFields(worksheet, mappings) {
-        // Verifica se o objeto worksheet e as correspondências mappings estão definidos
-        if (!worksheet || !mappings) {
-            console.error('Worksheet or mappings object is undefined.');
-            return;
+            reader.readAsArrayBuffer(input.files[0]);
         }
-
-        // Itera sobre as correspondências e preenche os campos HTML correspondentes às células do Excel
-        for (var cell in mappings) {
-            if (mappings.hasOwnProperty(cell)) {
-                var field = document.querySelector(mappings[cell]);
-                if (field) {
-                    var cellValue = worksheet[cell] ? worksheet[cell].v : ''; // Verifica se a célula existe antes de acessar suas propriedades
-                    field.value = cellValue; // Preenche o campo HTML com o valor da célula do Excel
-                }
-            }
-        }
-    }
     </script>
-
 
     <script>
         function searchYouTubeDynamic(sectionId) {
@@ -1868,7 +1860,7 @@ Abdominal bicicleta.</textarea>
             var userKeyword = exerciseNameTextarea.value.trim();
 
             // Lista de palavras-chave adicionais que você quer incluir
-            var additionalKeywords = ["", ""];
+            var additionalKeywords = ["RP", "Jeff Nippard"];
 
             // Verifica se há uma palavra-chave válida inserida pelo usuário
             if (userKeyword) {
@@ -1921,7 +1913,66 @@ Abdominal bicicleta.</textarea>
     </script>
 
     <script>
-        
+        function saveFormData() {
+            const formData = {};
+
+            // Capture todos os inputs, textareas e selects
+            // document.querySelectorAll('input, textarea, select').forEach(element => {
+            //     formData[element.id] = {
+            //         type: element.type,
+            //         value: element.value,
+            //         outerHTML: element.outerHTML
+            //     };
+            // });
+
+            // Capture o HTML completo da página
+            formData['pageHTML'] = document.documentElement.outerHTML;
+
+            // Transforme os dados em JSON e salve em um arquivo
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(formData));
+            const downloadAnchorNode = document.createElement('a');
+            downloadAnchorNode.setAttribute("href", dataStr);
+            downloadAnchorNode.setAttribute("download", "formData.json");
+            document.body.appendChild(downloadAnchorNode); // Required for Firefox
+            downloadAnchorNode.click();
+            downloadAnchorNode.remove();
+        }
+
+        function loadFormData() {
+            const input = document.getElementById('fileInput');
+            const file = input.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const formData = JSON.parse(event.target.result);
+
+                    // Carregue o HTML completo da página
+                    if (formData['pageHTML']) {
+                        document.documentElement.innerHTML = formData['pageHTML'];
+                    }
+
+                    // Preencha os inputs com os dados do JSON
+                    for (const key in formData) {
+                        if (key !== 'pageHTML' && formData.hasOwnProperty(key)) {
+                            const elementData = formData[key];
+                            const element = document.getElementById(key);
+
+                            if (element) {
+                                element.value = elementData.value;
+                            } else {
+                                // Se o elemento não existir, recrie-o
+                                const tempSection = document.createElement('section');
+                                tempDiv.innerHTML = elementData.outerHTML;
+                                document.body.appendChild(tempSection.firstChild);
+                                document.getElementById(key).value = elementData.value;
+                            }
+                        }
+                    }
+                };
+                reader.readAsText(file);
+            }
+        }
     </script>
 
     

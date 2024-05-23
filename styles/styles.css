@@ -78,8 +78,6 @@
     --cor-input-checkbox-border-ckecked: black;
     --cor-input-checkbox-check: black;
 
- 
-        
 }
 
 .treino-body {
@@ -130,9 +128,9 @@
 }
 
 input[type="checkbox"] {
-    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;
     width: 19px;
     height: 19px;
     background-color: var(--cor-input-checkbox-fundo);
@@ -157,14 +155,35 @@ input[type="checkbox"]:checked::before {
     transform: translate(-50%, -50%);
 }
 
-.export-buttons {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    margin: 1em 0.2em;
+.cabecalho {
+    margin: 0.5em;
 }
 
-.export-whatsapp, .export-excel, .save-html, .import-excel, .load-html {
+.export-buttons {
+    display: grid;
+    grid-template-columns: 30.5% 30.5% 30.5%;
+    grid-template-rows: auto;
+    gap: 1em;
+}
+
+.export-buttons__segunda-linha {
+    display: grid;
+    grid-template-columns: 66% 30%;
+    grid-template-rows: auto;
+    grid-column: 1 / -1;
+    gap: 0.2em 1em;
+}
+
+.export-buttons__terceira-linha {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-column: 1 / -1;
+    margin-right: 0.5em;
+    margin-left: auto;
+}
+
+.export-whatsapp, .export-excel, .import-excel, .export-json, .import-json, .load-file {
     font-family: var(--fonte-principal);
     font-size: 0.7em;
     color: var(--cor-fonte-botao);
@@ -172,14 +191,20 @@ input[type="checkbox"]:checked::before {
     border: none;
     border-radius: 4px;
     box-shadow: 1px 1px 1px black;
-    width: 33%;
+    width: 100%;
     height: 40px;
     cursor: pointer;
+    text-wrap: wrap;
 }
 
-.import-excel, .load-html {
+.import-excel, .import-json {
     color: var(--cor-fonte-botao);
     background-color: var(--paleta-cor-11);
+}
+
+.load-file {
+    width: 100px;
+    height: 17px;
 }
 
 .lista__periodizacao {
@@ -737,7 +762,7 @@ sup {
 
 @media (min-width: 700px) {
     .cabecalho {
-        width: 60%;
+        width: 58%;
         margin: auto;
     }
 
@@ -761,7 +786,7 @@ sup {
 
 @media (min-width: 1024px) {
     .cabecalho {
-        width: 42%;
+        width: 41%;
         margin: auto;
     }
 
@@ -785,7 +810,7 @@ sup {
 
 @media (min-width: 1440px) {
     .cabecalho {
-        width: 30%;
+        width: 29%;
         margin: auto;
     }
     
@@ -801,7 +826,7 @@ sup {
 
 @media (min-width: 1680px) {
     .cabecalho {
-        width: 25%;
+        width: 24%;
         margin: auto;
     }
     
@@ -817,7 +842,7 @@ sup {
 
 @media (min-width: 1920px) {
     .cabecalho {
-        width: 22%;
+        width: 21.5%;
         margin: auto;
     }
     
@@ -841,7 +866,7 @@ sup {
 
 @media (min-width: 2560px) {
     .cabecalho {
-        width: 16%;
+        width: 15.5%;
         margin: auto;
     }
     
@@ -857,7 +882,7 @@ sup {
 
 @media (min-width: 3370px) {
     .cabecalho {
-        width: 12.5%;
+        width: 12%;
         margin: auto;
     }
     
