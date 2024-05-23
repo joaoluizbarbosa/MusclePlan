@@ -21,7 +21,8 @@
 
             <li class="lista-menu-expImp__item"><button class="export-json" onclick="saveFormData()">Exportar .json</button></li>
 
-            <li class="lista-menu-expImp__item"><input type="file" id="fileInput" class="load-file" /></li>
+            <li class="lista-menu-expImp__item"><button id="fileInputButton" class="load-file">Escolher .json</button>
+                                                <input type="file" id="fileInput" style="display: none;" class="load-file" /></li>
 
             <li class="lista-menu-expImp__item"><button class="import-json" onclick="loadFormData()">Carregar .json</button></li>
 
@@ -1326,6 +1327,13 @@ Bent-Over Reverse DB Flye.</textarea>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+
+    <script>
+        // script para esconder o input file "escolher arquivo" .json
+        document.getElementById('fileInputButton').addEventListener('click', function() {
+            document.getElementById('fileInput').click();
+        });
+    </script>
 
     <script>
         const colorCombinations = [
