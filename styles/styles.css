@@ -215,7 +215,7 @@ input[type="checkbox"]:checked::before {
     display: none; /* faz desaparecer a lista */
     position: absolute;
     padding: 0.5em 0;
-    top: 4%; /* retirou ??% do menu de cima do checkbox */
+    top: 7%; /* retirou ??% do menu de cima do checkbox */
     width: 170px;
     border-radius: 4px;
     box-shadow: 1px 1px 1px black;
