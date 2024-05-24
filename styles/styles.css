@@ -286,7 +286,8 @@ input[type="checkbox"]:checked::before {
     background-color: var(--cor-fundo-periodizacao);
     border-radius: 4px;
     margin: 1em 0.5em 0.5em 0.5em;
-    padding: 0.5em 0 1em 0; 
+    padding: 0.5em 0 1em 0;
+    box-shadow: 1px 1px 5px black;
 }
 
 .titulo-da-periodizacao {
@@ -382,7 +383,8 @@ input[type="checkbox"]:checked::before {
     background-color: var(--cor-fundo-treino-info);
     border-radius: 4px;
     margin: 0.5em 0.5em 0.5em 0.5em;
-    padding: 0.5em 0 1em 0; 
+    padding: 0.5em 0 1em 0;
+    box-shadow: 1px 1px 5px black;
 }
 
 .lista__treino-info__item {
@@ -430,6 +432,7 @@ input[type="checkbox"]:checked::before {
     margin: 1.1em 0.5em 0.5em 0.5em;
     padding-bottom: 1.1em;
     color: var(--cor-fonte-1);
+    box-shadow: 1px 1px 5px black;
 }
 
 .lista__nome-do-exercicio {
