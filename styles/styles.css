@@ -205,10 +205,19 @@ input[type="checkbox"]:checked::before {
 
 .cabecalho__menu-hamburguer-expImp {
     font-family: var(--fonte-principal);
-    font-size: 1em;
+    font-size: 1.1em;
     font-weight: 500;
     color: var(--cor-menuExpImp-span);
     text-shadow: 1px 1px 1px black;
+    cursor: pointer;
+}
+
+.hamburger-expImp {
+    font-size: 0.9em;
+    display: inline-block; /* Necessário para que a transformação funcione corretamente */
+    transform: scale(1.9, 1.4);
+    padding-left: 0.3em;
+    padding-right: 0.3em;
 }
 
 .lista-menu-expImp {
@@ -452,7 +461,8 @@ input[type="checkbox"]:checked::before {
 .cabecalho__menu-hamburguer {
     font-size: 1.4em;
     display: inline-block; /* Necessário para que a transformação funcione corretamente */
-    transform: scaleX(1.5); /* 1.2 alonga a fonte em 20% */
+    transform: scale(1.7,1.4);
+    cursor: pointer;
 }
 
 .lista-menu {
