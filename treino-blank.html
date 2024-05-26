@@ -46,12 +46,10 @@
                     <a href="#" class="dia-anterior">«</a>
 
                     <p class="lista__periodizacao__item-paragrafo">SEMANA</p>
-                    <input type="number" id="semana" class="semana" placeholder="1" maxlength="1" oninput="limitLines(this, 1)">
-                    <!-- <button class="edit-button-semana" onclick="toggleEdit('semana')">Editar</button> -->
+                    <input type="number" id="semana" class="semana" placeholder="1">
                     
                     <p class="lista__periodizacao__item-paragrafo">DIA</p>
-                    <input type="number" id="dia" class="dia" placeholder="1" maxlength="1" oninput="limitLines(this, 1)">
-                    <!-- <button class="edit-button-dia" onclick="toggleEdit('dia')">Editar</button> -->
+                    <input type="number" id="dia" class="dia" placeholder="1">
 
                     <a href="#" class="proximo-dia">»</a>
                 </div>
@@ -249,16 +247,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
 
-    <script src="numberTextareascript.js"></script>
-
-    <script>
-        // script para esconder o input file "escolher arquivo" .json
-        document.getElementById('fileInputButton').addEventListener('click', function() {
-            document.getElementById('fileInput').click();
-        });
-    </script>
-
-    <script>
+    <script> // Script para alterar cor da sessão + textarea nome do exercicio + textarea obs do exercicio
         const colorCombinations = [
             {
                 sectionColor: "#474E68",
@@ -345,65 +334,7 @@
         }
     </script>
 
-    <script>
-        function toggleEdit(textareaId) {
-            const textarea = document.getElementById(textareaId);
-            const isReadOnly = textarea.hasAttribute('readonly');
-            if (isReadOnly) {
-                textarea.removeAttribute('readonly');
-                textarea.focus();
-                textarea.nextElementSibling.textContent = 'Salvar';
-
-                // Adiciona o evento de clique ao documento para salvar ao clicar fora
-                document.addEventListener('click', handleClickOutside, true);
-            } else {
-                textarea.setAttribute('readonly', 'readonly');
-                textarea.nextElementSibling.textContent = 'Editar';
-                saveChanges(textarea);
-
-                // Remove o evento de clique ao documento
-                document.removeEventListener('click', handleClickOutside, true);
-            }
-        }
-
-        function handleClickOutside(event) {
-            const textareas = document.querySelectorAll('textarea[id^="nomeDoExercicio-"]');
-            textareas.forEach(textarea => {
-                if (!textarea.contains(event.target) && event.target !== textarea.nextElementSibling && !textarea.hasAttribute('readonly')) {
-                    textarea.setAttribute('readonly', 'readonly');
-                    textarea.nextElementSibling.textContent = 'Editar';
-                    saveChanges(textarea);
-                }
-            });
-
-            // Remove o evento de clique ao documento após processar
-            document.removeEventListener('click', handleClickOutside, true);
-        }
-
-        function saveChanges(textarea) {
-            console.log('Changes saved for', textarea.id);
-            // Aqui você pode adicionar o código para salvar os dados, por exemplo, enviá-los para um servidor
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const textareas = document.querySelectorAll('textarea');
-            textareas.forEach(addEditButton);
-            const observer = new MutationObserver(mutations => {
-                mutations.forEach(mutation => {
-                    mutation.addedNodes.forEach(node => {
-                        if (node.tagName === 'TEXTAREA') {
-                            addEditButton(node);
-                        } else if (node.querySelectorAll) {
-                            node.querySelectorAll('textarea').forEach(addEditButton);
-                        }
-                    });
-                });
-            });
-            observer.observe(document.body, { childList: true, subtree: true });
-        });
-    </script>
-    
-    <script>
+    <script> // Script para eventos de clique na checkbox .container__botao do menu de exercícios
         // Adiciona evento de clique no documento
         document.addEventListener('click', function(event) {
             // Seleciona todas as checkboxes com a classe específica
@@ -432,7 +363,7 @@
         });
     </script>
 
-    <script>
+    <script> // Script com funções do timer
         let timerInterval;
         let totalTime;
         let remainingTime;
@@ -554,7 +485,7 @@
         }
     </script>
     
-    <script>
+    <script> // Script para exportar treino para o WhatsApp
         // Função para exportar o texto para o WhatsApp
         function exportToWhatsApp() {
             // Selecionar os elementos desejados
@@ -610,8 +541,181 @@
             window.open(`https://wa.me/?text=${textoWhatsApp}`, '_blank');
         }
     </script>
+
+    <script> // Script para exportar para o Excel
+        function exportToExcel() {
+            let data = [];
+
+            // Coleta os dados do título da periodização, semana e dia
+            let tituloPeriodizacao = document.querySelector('.titulo-da-periodizacao').value;
+            let semana = document.querySelector('.semana').value;
+            let dia = document.querySelector('.dia').value;
+            data.push([tituloPeriodizacao]);
+            data.push([semana]);
+            data.push([dia]);
+
+            // Coleta os dados do título do treino e observações gerais
+            let tituloTreino = document.querySelector('.titulo-do-treino').value;
+            let obsTreino = document.querySelector('.treino__obs').value;
+            data.push([tituloTreino]);
+            data.push([obsTreino]);
+
+            // Coleta os dados de cada exercício
+            let exercicios = document.querySelectorAll('.exercicio-n');
+            exercicios.forEach((exercicio, index) => {
+                let nomeExercicio = exercicio.querySelector('.exercicio__nome').value;
+                let obsExercicio = exercicio.querySelector('.exercicio__obs').value;
+
+                // Coleta e formata os dados do aquecimento
+                let aquecimentoInputs = exercicio.querySelectorAll('.lista__aquecimento__input');
+                let aquecimentoData = [];
+                aquecimentoInputs.forEach((input, i) => {
+                    aquecimentoData.push(input.value);
+                });
+
+                // Coleta e formata os dados da segunda linha
+                let segundaLinhaInputs = exercicio.querySelectorAll('.lista__segunda-linha__input');
+                let segundaLinhaData = [];
+                segundaLinhaInputs.forEach((input, i) => {
+                    segundaLinhaData.push(input.value);
+                });
+
+                // Adiciona os dados do exercício à matriz de dados
+                data.push([nomeExercicio, obsExercicio, ...aquecimentoData, ...segundaLinhaData]);
+                // data.push([]); // Adiciona uma linha em branco entre os exercícios
+            });
+
+            // Cria um novo workbook
+            let wb = XLSX.utils.book_new();
+            let ws = XLSX.utils.aoa_to_sheet(data);
+            XLSX.utils.book_append_sheet(wb, ws, "Dados");
+
+            // Salva o workbook como um arquivo Excel
+            XLSX.writeFile(wb, 'import_model.xlsx');
+        }
+    </script>
+
+    <script> // Script para importar do Excel
+        function importFromExcel(event) {
+            const input = event.target;
+            const reader = new FileReader();
+            reader.onload = function() {
+                const data = new Uint8Array(reader.result);
+                const workbook = XLSX.read(data, { type: 'array' });
+
+                // Assume the first sheet is the one we want to import
+                const sheetName = workbook.SheetNames[0];
+                const sheet = workbook.Sheets[sheetName];
+                const sheetData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+
+                // Index to track the data position
+                let dataIndex = 0;
+
+                // Fill in the data
+                document.querySelector('.titulo-da-periodizacao').value = sheetData[dataIndex++][0];
+                document.querySelector('.semana').value = sheetData[dataIndex++][0];
+                document.querySelector('.dia').value = sheetData[dataIndex++][0];
+                document.querySelector('.titulo-do-treino').value = sheetData[dataIndex++][0];
+                document.querySelector('.treino__obs').value = sheetData[dataIndex++][0];
+
+                // Iterate over each exercise section
+                const exercicios = document.querySelectorAll('.exercicio-n');
+                exercicios.forEach((exercicio, index) => {
+                    if (dataIndex < sheetData.length) {
+                        const [nomeExercicio, obsExercicio, ...restData] = sheetData[dataIndex++];
+
+                        // Fill exercise name and observations
+                        exercicio.querySelector('.exercicio__nome').value = nomeExercicio || '';
+                        exercicio.querySelector('.exercicio__obs').value = obsExercicio || '';
+
+                        // Distribute restData between aquecimento and segunda linha inputs
+                        const aquecimentoInputs = exercicio.querySelectorAll('.lista__aquecimento__input');
+                        const segundaLinhaInputs = exercicio.querySelectorAll('.lista__segunda-linha__input');
+
+                        restData.slice(0, aquecimentoInputs.length).forEach((value, index) => {
+                            aquecimentoInputs[index].value = value || '';
+                        });
+
+                        restData.slice(aquecimentoInputs.length).forEach((value, index) => {
+                            segundaLinhaInputs[index].value = value || '';
+                        });
+                    }
+                });
+            };
+            reader.readAsArrayBuffer(input.files[0]);
+        }
+    </script>
+
+    <script> // Script para exportar e importar arquivo .json
+        function saveFormData() {
+            const formData = {};
+
+            // Capture todos os inputs, textareas e selects
+            // document.querySelectorAll('input, textarea, select').forEach(element => {
+            //     formData[element.id] = {
+            //         type: element.type,
+            //         value: element.value,
+            //         outerHTML: element.outerHTML
+            //     };
+            // });
+
+            // Capture o HTML completo da página
+            formData['pageHTML'] = document.documentElement.outerHTML;
+
+            // Transforme os dados em JSON e salve em um arquivo
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(formData));
+            const downloadAnchorNode = document.createElement('a');
+            downloadAnchorNode.setAttribute("href", dataStr);
+            downloadAnchorNode.setAttribute("download", "formData.json");
+            document.body.appendChild(downloadAnchorNode); // Required for Firefox
+            downloadAnchorNode.click();
+            downloadAnchorNode.remove();
+        }
+
+        function loadFormData() {
+            const input = document.getElementById('fileInput');
+            const file = input.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const formData = JSON.parse(event.target.result);
+
+                    // Carregue o HTML completo da página
+                    if (formData['pageHTML']) {
+                        document.documentElement.innerHTML = formData['pageHTML'];
+                    }
+
+                    // Preencha os inputs com os dados do JSON
+                    for (const key in formData) {
+                        if (key !== 'pageHTML' && formData.hasOwnProperty(key)) {
+                            const elementData = formData[key];
+                            const element = document.getElementById(key);
+
+                            if (element) {
+                                element.value = elementData.value;
+                            } else {
+                                // Se o elemento não existir, recrie-o
+                                const tempSection = document.createElement('section');
+                                tempDiv.innerHTML = elementData.outerHTML;
+                                document.body.appendChild(tempSection.firstChild);
+                                document.getElementById(key).value = elementData.value;
+                            }
+                        }
+                    }
+                };
+                reader.readAsText(file);
+            }
+        }
+    </script>
+
+    <script> // Script para esconder o input file "escolher arquivo" .json
+        document.getElementById('fileInputButton').addEventListener('click', function() {
+            document.getElementById('fileInput').click();
+        });
+    </script>
     
-    <script>
+    <script> // Script para criação e remoção das linhas de aquecimento e exercício e onde elas serão inseridas
         function myFunction(sectionId, buttonId) {
             let i = document.getElementById(sectionId).querySelectorAll(".lista__segunda-linha").length + 1;
             let ul = document.createElement("ul");
@@ -652,7 +756,7 @@
         }        
     </script>
 
-    <script>
+    <script> // Script para adicionar o card de um novo exercício, remove-lo e onde esse card será inserido no código
         function addSection() {
             let j = document.querySelectorAll('.exercicio-n').length + 1;
             let mainTag = document.querySelector('main');
@@ -807,7 +911,7 @@
 
     </script>
 
-    <script>
+    <script> // Script para textareas: expandir com o texto e carregar a função para textareas criadas dinamicamente
         // Função para expandir a textarea automaticamente
         function autoExpandTextarea(element) {
             element.style.height = 'auto';
@@ -854,7 +958,7 @@
         });
     </script>
 
-    <script>
+    <script> // Script para textareas: Limitar o número de caracteres e de parágrafos
         // Adiciona eventos para limitar o número de caracteres em cada textarea
         document.addEventListener("DOMContentLoaded", function() {
                     var textareas = document.querySelectorAll('textarea');
@@ -882,111 +986,65 @@
         }
     </script>
 
-    <script>
-        function exportToExcel() {
-            let data = [];
+    <script> // Script para textareas: editar, salvar e bloquear
+        function toggleEdit(textareaId) {
+            const textarea = document.getElementById(textareaId);
+            const isReadOnly = textarea.hasAttribute('readonly');
+            if (isReadOnly) {
+                textarea.removeAttribute('readonly');
+                textarea.focus();
+                textarea.nextElementSibling.textContent = 'Salvar';
 
-            // Coleta os dados do título da periodização, semana e dia
-            let tituloPeriodizacao = document.querySelector('.titulo-da-periodizacao').value;
-            let semana = document.querySelector('.semana').value;
-            let dia = document.querySelector('.dia').value;
-            data.push([tituloPeriodizacao]);
-            data.push([semana]);
-            data.push([dia]);
+                // Adiciona o evento de clique ao documento para salvar ao clicar fora
+                document.addEventListener('click', handleClickOutside, true);
+            } else {
+                textarea.setAttribute('readonly', 'readonly');
+                textarea.nextElementSibling.textContent = 'Editar';
+                saveChanges(textarea);
 
-            // Coleta os dados do título do treino e observações gerais
-            let tituloTreino = document.querySelector('.titulo-do-treino').value;
-            let obsTreino = document.querySelector('.treino__obs').value;
-            data.push([tituloTreino]);
-            data.push([obsTreino]);
+                // Remove o evento de clique ao documento
+                document.removeEventListener('click', handleClickOutside, true);
+            }
+        }
 
-            // Coleta os dados de cada exercício
-            let exercicios = document.querySelectorAll('.exercicio-n');
-            exercicios.forEach((exercicio, index) => {
-                let nomeExercicio = exercicio.querySelector('.exercicio__nome').value;
-                let obsExercicio = exercicio.querySelector('.exercicio__obs').value;
-
-                // Coleta e formata os dados do aquecimento
-                let aquecimentoInputs = exercicio.querySelectorAll('.lista__aquecimento__input');
-                let aquecimentoData = [];
-                aquecimentoInputs.forEach((input, i) => {
-                    aquecimentoData.push(input.value);
-                });
-
-                // Coleta e formata os dados da segunda linha
-                let segundaLinhaInputs = exercicio.querySelectorAll('.lista__segunda-linha__input');
-                let segundaLinhaData = [];
-                segundaLinhaInputs.forEach((input, i) => {
-                    segundaLinhaData.push(input.value);
-                });
-
-                // Adiciona os dados do exercício à matriz de dados
-                data.push([nomeExercicio, obsExercicio, ...aquecimentoData, ...segundaLinhaData]);
-                // data.push([]); // Adiciona uma linha em branco entre os exercícios
+        function handleClickOutside(event) {
+            const textareas = document.querySelectorAll('textarea[id^="nomeDoExercicio-"]');
+            textareas.forEach(textarea => {
+                if (!textarea.contains(event.target) && event.target !== textarea.nextElementSibling && !textarea.hasAttribute('readonly')) {
+                    textarea.setAttribute('readonly', 'readonly');
+                    textarea.nextElementSibling.textContent = 'Editar';
+                    saveChanges(textarea);
+                }
             });
 
-            // Cria um novo workbook
-            let wb = XLSX.utils.book_new();
-            let ws = XLSX.utils.aoa_to_sheet(data);
-            XLSX.utils.book_append_sheet(wb, ws, "Dados");
-
-            // Salva o workbook como um arquivo Excel
-            XLSX.writeFile(wb, 'import_model.xlsx');
+            // Remove o evento de clique ao documento após processar
+            document.removeEventListener('click', handleClickOutside, true);
         }
-    </script>
 
-    <script>
-        function importFromExcel(event) {
-            const input = event.target;
-            const reader = new FileReader();
-            reader.onload = function() {
-                const data = new Uint8Array(reader.result);
-                const workbook = XLSX.read(data, { type: 'array' });
+        function saveChanges(textarea) {
+            console.log('Changes saved for', textarea.id);
+            // Aqui você pode adicionar o código para salvar os dados, por exemplo, enviá-los para um servidor
+        }
 
-                // Assume the first sheet is the one we want to import
-                const sheetName = workbook.SheetNames[0];
-                const sheet = workbook.Sheets[sheetName];
-                const sheetData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-
-                // Index to track the data position
-                let dataIndex = 0;
-
-                // Fill in the data
-                document.querySelector('.titulo-da-periodizacao').value = sheetData[dataIndex++][0];
-                document.querySelector('.semana').value = sheetData[dataIndex++][0];
-                document.querySelector('.dia').value = sheetData[dataIndex++][0];
-                document.querySelector('.titulo-do-treino').value = sheetData[dataIndex++][0];
-                document.querySelector('.treino__obs').value = sheetData[dataIndex++][0];
-
-                // Iterate over each exercise section
-                const exercicios = document.querySelectorAll('.exercicio-n');
-                exercicios.forEach((exercicio, index) => {
-                    if (dataIndex < sheetData.length) {
-                        const [nomeExercicio, obsExercicio, ...restData] = sheetData[dataIndex++];
-
-                        // Fill exercise name and observations
-                        exercicio.querySelector('.exercicio__nome').value = nomeExercicio || '';
-                        exercicio.querySelector('.exercicio__obs').value = obsExercicio || '';
-
-                        // Distribute restData between aquecimento and segunda linha inputs
-                        const aquecimentoInputs = exercicio.querySelectorAll('.lista__aquecimento__input');
-                        const segundaLinhaInputs = exercicio.querySelectorAll('.lista__segunda-linha__input');
-
-                        restData.slice(0, aquecimentoInputs.length).forEach((value, index) => {
-                            aquecimentoInputs[index].value = value || '';
-                        });
-
-                        restData.slice(aquecimentoInputs.length).forEach((value, index) => {
-                            segundaLinhaInputs[index].value = value || '';
-                        });
-                    }
+        document.addEventListener('DOMContentLoaded', function() {
+            const textareas = document.querySelectorAll('textarea');
+            textareas.forEach(addEditButton);
+            const observer = new MutationObserver(mutations => {
+                mutations.forEach(mutation => {
+                    mutation.addedNodes.forEach(node => {
+                        if (node.tagName === 'TEXTAREA') {
+                            addEditButton(node);
+                        } else if (node.querySelectorAll) {
+                            node.querySelectorAll('textarea').forEach(addEditButton);
+                        }
+                    });
                 });
-            };
-            reader.readAsArrayBuffer(input.files[0]);
-        }
+            });
+            observer.observe(document.body, { childList: true, subtree: true });
+        });
     </script>
 
-    <script>
+    <script> // Script do YouTube
         function searchYouTubeDynamic(sectionId) {
             // Encontra o elemento de exercício correspondente ao sectionId
             var exerciseElement = document.getElementById(sectionId);
@@ -1048,69 +1106,6 @@
             }
         }
 
-    </script>
-
-    <script>
-        function saveFormData() {
-            const formData = {};
-
-            // Capture todos os inputs, textareas e selects
-            // document.querySelectorAll('input, textarea, select').forEach(element => {
-            //     formData[element.id] = {
-            //         type: element.type,
-            //         value: element.value,
-            //         outerHTML: element.outerHTML
-            //     };
-            // });
-
-            // Capture o HTML completo da página
-            formData['pageHTML'] = document.documentElement.outerHTML;
-
-            // Transforme os dados em JSON e salve em um arquivo
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(formData));
-            const downloadAnchorNode = document.createElement('a');
-            downloadAnchorNode.setAttribute("href", dataStr);
-            downloadAnchorNode.setAttribute("download", "formData.json");
-            document.body.appendChild(downloadAnchorNode); // Required for Firefox
-            downloadAnchorNode.click();
-            downloadAnchorNode.remove();
-        }
-
-        function loadFormData() {
-            const input = document.getElementById('fileInput');
-            const file = input.files[0];
-
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    const formData = JSON.parse(event.target.result);
-
-                    // Carregue o HTML completo da página
-                    if (formData['pageHTML']) {
-                        document.documentElement.innerHTML = formData['pageHTML'];
-                    }
-
-                    // Preencha os inputs com os dados do JSON
-                    for (const key in formData) {
-                        if (key !== 'pageHTML' && formData.hasOwnProperty(key)) {
-                            const elementData = formData[key];
-                            const element = document.getElementById(key);
-
-                            if (element) {
-                                element.value = elementData.value;
-                            } else {
-                                // Se o elemento não existir, recrie-o
-                                const tempSection = document.createElement('section');
-                                tempDiv.innerHTML = elementData.outerHTML;
-                                document.body.appendChild(tempSection.firstChild);
-                                document.getElementById(key).value = elementData.value;
-                            }
-                        }
-                    }
-                };
-                reader.readAsText(file);
-            }
-        }
     </script>
 
 </body>
