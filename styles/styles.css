@@ -497,7 +497,7 @@ input[type="checkbox"]:checked::before {
 .clock-button {
     font-family: var(--fonte-principal);
     font-size: 1em;
-    font-weight: 800;
+    font-weight: 700;
     text-align: center;
     color: var(--cor-fonte-2);
     background-color: var(--paleta-cor-8);
@@ -511,7 +511,7 @@ input[type="checkbox"]:checked::before {
 .color-button {
     font-family: var(--fonte-principal);
     font-size: 1em;
-    font-weight: 800;
+    font-weight: 700;
     text-align: center;
     color: var(--cor-fonte-2);
     background: var(--cor-gradiente-color-button);
@@ -525,7 +525,7 @@ input[type="checkbox"]:checked::before {
 .delete-section-button {
     font-family: var(--fonte-principal);
     font-size: 1em;
-    font-weight: 800;
+    font-weight: 700;
     text-align: center;
     color: var(--cor-fonte-2);
     background: var(--paleta-cor-6);
