@@ -18,7 +18,8 @@
                     <li class="lista-menu__item"><button class="changeEx-button" onclick="toggleEdit('nomeDoExercicio-${j}')">˄˅</button><a onclick="toggleEdit('nomeDoExercicio-${j}')" class="lista-menu__exChange">ALT EXER</a></li>
                     <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-${j}')">»</button><a onclick="searchYouTubeDynamic('exercicio-${j}')" class="lista-menu__youtube-link">VÍDEO</a></li>
                     <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-${j}')">Ø</button><a onclick="toggleTimer('exercicio-${j}')" class="lista-menu__clock-link">TIMER</a></li>
-                    <li class="lista-menu__item"><button class="color-button" onclick="preventClose(event); changeColor('exercicio-${j}')"></button><a onclick="preventClose(event); changeColor('exercicio-${j}')" class="lista-menu__color-link">TEMAS</a></li>  
+                    <li class="lista-menu__item"><button class="color-button" onclick="preventClose(event); changeColor('exercicio-${j}')"></button><a onclick="preventClose(event); changeColor('exercicio-${j}')" class="lista-menu__color-link">TEMAS</a></li>
+                    <li class="lista-menu__item"><button class="delete-section-button" onclick="removeSection('exercicio-${j}')">✖</button><a onclick="removeSection('exercicio-${j}')" class="lista-menu__delete-link">EXCLUIR</a></li>
                 </ul>
             </li>
         </ul>
@@ -150,3 +151,45 @@ function removeLastSection() {
     }
 }  
 
+function removeSection(sectionId) {
+    let section = document.getElementById(sectionId);
+    if (section) {
+        section.parentNode.removeChild(section);
+        
+        // Atualizar IDs e números das seções subsequentes
+        let sections = document.querySelectorAll('.exercicio-n');
+
+        sections.forEach((sec, index) => {
+            sec.id = `exercicio-${index + 1}`;
+            sec.querySelector('.lista__nome-do-exercicio__numero').textContent = index + 1;
+            sec.querySelector('textarea').id = `nomeDoExercicio-${index + 1}`;
+            sec.querySelector('input[type="checkbox"]').id = `menu-${index + 1}`;
+            sec.querySelector('label').setAttribute('for', `menu-${index + 1}`);
+            
+            let buttons = sec.querySelectorAll('button');
+            buttons[0].setAttribute('onclick', `toggleEdit('nomeDoExercicio-${index + 1}')`);
+            buttons[1].setAttribute('onclick', `searchYouTubeDynamic('exercicio-${index + 1}')`);
+            buttons[2].setAttribute('onclick', `toggleTimer('exercicio-${index + 1}')`);
+            buttons[3].setAttribute('onclick', `preventClose(event); changeColor('exercicio-${index + 1}')`);
+            buttons[4].setAttribute('onclick', `removeSection('exercicio-${index + 1}')`);
+            
+            sec.querySelector('.video-container').id = `video-container-${index + 1}`;
+            sec.querySelector('.exercicioObs-div textarea').id = `exercicioObs-${index + 1}`;
+            sec.querySelector('.exercicioObs-div button').setAttribute('onclick', `toggleEdit('exercicioObs-${index + 1}')`);
+            sec.querySelector('.timer-container').id = `timer-container-${index + 1}`;
+            sec.querySelector('.timer-container input:nth-child(1)').id = `minutes-${index + 1}`;
+            sec.querySelector('.timer-container input:nth-child(2)').id = `seconds-${index + 1}`;
+            sec.querySelector('.timer').id = `timer-${index + 1}`;
+            sec.querySelector('.lista__aquecimento').id = `lista__aquecimento-${index + 1}`;
+            sec.querySelector('.lista__aquecimento .remove-list-button').setAttribute('onclick', `removeList('lista__aquecimento-${index + 1}')`);
+            sec.querySelector('.lista__segunda-linha').id = `myList${index + 1}`;
+            let setButtons = sec.querySelector('.set-buttons');
+            setButtons.querySelector('.add-w-button').id = `button${index + 1}-add-w`;
+            setButtons.querySelector('.add-button').id = `button${index + 1}-add`;
+            setButtons.querySelector('.undo-button').id = `button${index + 1}-undo`;
+            setButtons.querySelector('.add-w-button').setAttribute('onclick', `myFunctionWSet('exercicio-${index + 1}', this.id)`);
+            setButtons.querySelector('.add-button').setAttribute('onclick', `myFunction('exercicio-${index + 1}', this.id)`);
+            setButtons.querySelector('.undo-button').setAttribute('onclick', `undoFunction('exercicio-${index + 1}', this.id)`);
+        });
+    }
+}

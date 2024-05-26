@@ -267,30 +267,6 @@ input[type="checkbox"]:checked::before {
 
 /* fim menu-expImp */
 
-.export-buttons {
-    display: grid;
-    grid-template-columns: 30.5% 30.5% 30.5%;
-    grid-template-rows: auto;
-    gap: 1em;
-}
-
-.export-buttons__segunda-linha {
-    display: grid;
-    grid-template-columns: 66% 30%;
-    grid-template-rows: auto;
-    grid-column: 1 / -1;
-    gap: 0.2em 1em;
-}
-
-.export-buttons__terceira-linha {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: auto;
-    grid-column: 1 / -1;
-    margin-right: 0.5em;
-    margin-left: auto;
-}
-
 .lista__periodizacao {
     background-color: var(--cor-fundo-periodizacao);
     border-radius: 4px;
@@ -489,7 +465,7 @@ input[type="checkbox"]:checked::before {
 
 .changeEx-button {
     font-family: var(--fonte-principal);
-    font-size: 1.3em;
+    font-size: 1em;
     font-weight: 700;
     text-align: center;
     color: var(--cor-fonte);
@@ -497,15 +473,15 @@ input[type="checkbox"]:checked::before {
     border-radius: 5px;
     border: none;
     width: 50px;
-    height: 30px;
-    padding-top: 0.4em;
-    padding-bottom: 1.6em;
+    height: 25px;
+    /* padding-top: 0.4em; */
+    /* padding-bottom: 1.6em; */
     cursor: pointer;
 }
 
 .youtube-button {
     font-family: var(--fonte-principal);
-    font-size: 1.8em;
+    font-size: 1em;
     font-weight: 700;
     text-align: center;
     color: var(--cor-fonte);
@@ -514,7 +490,7 @@ input[type="checkbox"]:checked::before {
     border: none;
     width: 50px;
     height: 25px;
-    padding-bottom: 1.4em;
+    /* padding-bottom: 1.4em; */
     cursor: pointer;
 }
 
@@ -528,7 +504,7 @@ input[type="checkbox"]:checked::before {
     border-radius: 5px;
     border: none;
     width: 50px;
-    height: 35px;
+    height: 25px;
     cursor: pointer;
 }
 
@@ -542,11 +518,25 @@ input[type="checkbox"]:checked::before {
     border-radius: 5px;
     border: none;
     width: 50px;
-    height: 35px;
+    height: 25px;
     cursor: pointer;
 }
 
-.lista-menu__youtube-link, .lista-menu__clock-link, .lista-menu__exChange, .lista-menu__color-link {
+.delete-section-button {
+    font-family: var(--fonte-principal);
+    font-size: 1em;
+    font-weight: 800;
+    text-align: center;
+    color: var(--cor-fonte-2);
+    background: var(--paleta-cor-6);
+    border-radius: 5px;
+    border: none;
+    width: 50px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.lista-menu__youtube-link, .lista-menu__clock-link, .lista-menu__exChange, .lista-menu__color-link, .lista-menu__delete-link {
     font-family: var(--fonte-principal);
     text-decoration: none;
     color: var(--cor-fonte-menu-link);
