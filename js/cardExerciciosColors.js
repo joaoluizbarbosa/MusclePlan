@@ -1,14 +1,6 @@
  // Script para alterar cor da sessão + textarea nome do exercicio + textarea obs do exercicio
  const colorCombinations = [
     {
-        sectionColor: "#474E68",
-        elements: [
-            { selector: ".exercicio__nome", backgroundColor: "#474E68" },
-            { selector: ".exercicio__obs", backgroundColor: "#474E68" }
-        ]
-    },
-
-    {
         sectionColor: "#153448",
         elements: [
             { selector: ".exercicio__nome", backgroundColor: "#153448" },
@@ -17,36 +9,30 @@
     },
 
     {
-        sectionColor: "#3C5B6F",
-        elements: [
-            { selector: ".exercicio__nome", backgroundColor: "#3C5B6F" },
-            { selector: ".exercicio__obs", backgroundColor: "#3C5B6F" }
-        ]
-    },
-    
-    {
-        sectionColor: "#948979",
-        elements: [
-            { selector: ".exercicio__nome", backgroundColor: "#948979" },
-            { selector: ".exercicio__obs", backgroundColor: "#948979" }
-        ]
-    },
-    
-    {
         sectionColor: "#35374B",
         elements: [
             { selector: ".exercicio__nome", backgroundColor: "#35374B" },
-            { selector: ".exercicio__obs", backgroundColor: "#35374B" }               
+            { selector: ".exercicio__obs", backgroundColor: "#35374B" }
         ]
     },
 
     {
-        sectionColor: "#8B322C",
+        sectionColor: "#6F4E37",
         elements: [
-            { selector: ".exercicio__nome", backgroundColor: "#8B322C" },
-            { selector: ".exercicio__obs", backgroundColor: "#8B322C" }               
+            { selector: ".exercicio__nome", backgroundColor: "#6F4E37" },
+            { selector: ".exercicio__obs", backgroundColor: "#6F4E37" }
+        ]
+    },
+
+    {
+        sectionColor: "#BE3144",
+        elements: [
+            { selector: ".exercicio__nome", backgroundColor: "#BE3144" },
+            { selector: ".exercicio__obs", backgroundColor: "#BE3144" },
+            { selector: ".input-rpe2", backgroundColor: "#872341" }
         ]
     }
+    
 ];
 
 function changeColor(sectionId) {

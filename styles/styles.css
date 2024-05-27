@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
+
+    --card1: #153448;
+    --card2: #35374B;
+    --card3: ;
+
+
+
+
     --paleta-cor-1: #404258;
     --paleta-cor-2: #474E68;
     --paleta-cor-3: #50577A;
