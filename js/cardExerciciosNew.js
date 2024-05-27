@@ -15,11 +15,11 @@
                     <span class="cabecalho__menu-hamburguer container__imagem">≡</span>
                 </label>
                 <ul class="lista-menu">
-                    <li class="lista-menu__item"><button class="changeEx-button" onclick="toggleEdit('nomeDoExercicio-${j}')">˄˅</button><a onclick="toggleEdit('nomeDoExercicio-${j}')" class="lista-menu__exChange">ALT EXER</a></li>
-                    <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-${j}')">»</button><a onclick="searchYouTubeDynamic('exercicio-${j}')" class="lista-menu__youtube-link">VÍDEO</a></li>
-                    <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-${j}')">Ø</button><a onclick="toggleTimer('exercicio-${j}')" class="lista-menu__clock-link">TIMER</a></li>
-                    <li class="lista-menu__item"><button class="color-button" onclick="preventClose(event); changeColor('exercicio-${j}')"></button><a onclick="preventClose(event); changeColor('exercicio-${j}')" class="lista-menu__color-link">TEMAS</a></li>
-                    <li class="lista-menu__item"><button class="delete-section-button" onclick="removeSection('exercicio-${j}')">✖</button><a onclick="removeSection('exercicio-${j}')" class="lista-menu__delete-link">EXCLUIR</a></li>
+                    <li class="lista-menu__item"><button class="changeEx-button" onclick="toggleEdit('nomeDoExercicio-${j}')">˄˅ _alt exer</button></li>
+                    <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-${j}')">» _vídeo</button></li>
+                    <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-${j}')">Ø _timer</button></li>
+                    <li class="lista-menu__item"><button class="color-button" onclick="preventClose(event); changeColor('exercicio-${j}')">_cores</button></li>
+                    <li class="lista-menu__item"><button class="delete-section-button" onclick="removeSection('exercicio-${j}')">✖ _excluir</button></li>
                 </ul>
             </li>
         </ul>
