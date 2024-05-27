@@ -4,7 +4,8 @@
         sectionColor: "#153448",
         elements: [
             { selector: ".exercicio__nome", backgroundColor: "#153448" },
-            { selector: ".exercicio__obs", backgroundColor: "#153448" }
+            { selector: ".exercicio__obs", backgroundColor: "#153448" },
+            { selector: ".input-rpe2", backgroundColor: "#C42E2E" }
         ]
     },
 
@@ -12,7 +13,8 @@
         sectionColor: "#35374B",
         elements: [
             { selector: ".exercicio__nome", backgroundColor: "#35374B" },
-            { selector: ".exercicio__obs", backgroundColor: "#35374B" }
+            { selector: ".exercicio__obs", backgroundColor: "#35374B" },
+            { selector: ".input-rpe2", backgroundColor: "#C42E2E" }
         ]
     },
 
@@ -20,7 +22,8 @@
         sectionColor: "#6F4E37",
         elements: [
             { selector: ".exercicio__nome", backgroundColor: "#6F4E37" },
-            { selector: ".exercicio__obs", backgroundColor: "#6F4E37" }
+            { selector: ".exercicio__obs", backgroundColor: "#6F4E37" },
+            { selector: ".input-rpe2", backgroundColor: "#C42E2E" }
         ]
     },
 

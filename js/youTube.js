@@ -10,7 +10,7 @@
     var userKeyword = exerciseNameTextarea.value.trim();
 
     // Lista de palavras-chave adicionais que você quer incluir
-    var additionalKeywords = ["RP", "Jeff Nippard"];
+    var additionalKeywords = ["RP", "Ricardo Cipolli"];
 
     // Verifica se há uma palavra-chave válida inserida pelo usuário
     if (userKeyword) {
