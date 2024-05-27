@@ -34,6 +34,15 @@
             { selector: ".exercicio__obs", backgroundColor: "#BE3144" },
             { selector: ".input-rpe2", backgroundColor: "#872341" }
         ]
+    },
+
+    {
+        sectionColor: "#5D9989",
+        elements: [
+            { selector: ".exercicio__nome", backgroundColor: "#5D9989" },
+            { selector: ".exercicio__obs", backgroundColor: "#5D9989" },
+            { selector: ".input-rpe2", backgroundColor: "#C42E2E" }
+        ]
     }
     
 ];

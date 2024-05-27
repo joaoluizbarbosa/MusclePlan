@@ -1,14 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-
-    --card1: #153448;
-    --card2: #35374B;
-    --card3: ;
-
-
-
-
     --paleta-cor-1: #404258;
     --paleta-cor-2: #474E68;
     --paleta-cor-3: #50577A;
@@ -57,38 +49,38 @@
 
 
     /* cores do card título da periodização */
-    --cor-fundo-periodizacao: #404258;
-    --cor-fundo-titulo-da-periodizacao: #404258;
+    --cor-fundo-periodizacao: #1C1D1F;
+    --cor-fundo-titulo-da-periodizacao: #1C1D1F;
+    --cor-fundo-semana-dia:#1C1D1F;
     --cor-fonte-titulo-da-periodizacao: #FFC470;
-    --cor-fundo-semana-dia:#404258;
     --cor-fonte-semana-dia:#F05941;
     --cor-fonte-semana-dia-paragrafo:#DFD0B8;
     --cor-fonte-anteriorProximo: #FFC470;
 
     /* cores do card título do treino */
-    --cor-fundo-treino-info: #404258;
-    --cor-fundo-titulo-do-treino: #404258;
+    --cor-fundo-treino-info: #1C1D1F;
+    --cor-fundo-titulo-do-treino: #1C1D1F;
     --cor-fonte-tituloDoTreino: #FFC470;
-    --cor-fundo-treino-obs: #404258;
+    --cor-fundo-treino-obs: #1C1D1F;
     
     /* cores do menu do card de exercícios */
     --cor-fonte-menu-link: black;
-    --cor-fundo-menu-exercicio: #6B728E;
+    --cor-fundo-menu-exercicio: #8E8E8F;
     --cor-gradiente-color-button:linear-gradient(to right, #22092C 0%, #22092C 25%, #872341 25%, #872341 50%, #BE3144 50%, #BE3144 75%, #F05941 75%, #F05941 100%); 
-        
+    --box-shadow-menu-botoes: 1px 1px 1px black;
+    
     /* cores do card de exercícios */
-    --cor-fundo-sessao: #474E68;
-    --cor-fundo-exercicio: #474E68;
-    --cor-fundo-exercicio-obs: #474E68;
+    --cor-fundo-sessao: #1C1D1F;
+    --cor-fundo-exercicio: #1C1D1F;
+    --cor-fundo-exercicio-obs: #1C1D1F;
 
     --cor-fundo-input-reps1: #D6DAC8;
     --cor-fundo-input-reps2: #D6DAC8;
     --cor-fundo-input-kg: #FFC100;
     --cor-fundo-input-rpe1: #FF8A08;
-    --cor-fundo-input-rpe2: #c42e2e;
+    --cor-fundo-input-rpe2: #C42E2E;
 
     /* cores menu expImp */
-    
     --cor-menuExpImp-span: #ECB176;
     --cor-menuExpImp-fundo: #6F4E37;
     --cor-botoes-menuExp-fundo: #FED8B1;
@@ -482,7 +474,7 @@ input[type="checkbox"]:checked::before {
     color: var(--cor-fonte-1);
     background-color: var(--paleta-cor-9);
     border-radius: 5px;
-    box-shadow: 1px 1px 1px black;
+    box-shadow: var(--box-shadow-menu-botoes);
     border: none;
     width: 100%;
     height: 35px;
@@ -497,7 +489,7 @@ input[type="checkbox"]:checked::before {
     color: var(--cor-fonte-1);
     background-color: var(--paleta-cor-5);
     border-radius: 5px;
-    box-shadow: 1px 1px 1px black;
+    box-shadow: var(--box-shadow-menu-botoes);
     border: none;
     width: 100%;
     height: 35px;
@@ -512,7 +504,7 @@ input[type="checkbox"]:checked::before {
     color: var(--cor-fonte-2);
     background-color: var(--paleta-cor-8);
     border-radius: 5px;
-    box-shadow: 1px 1px 1px black;
+    box-shadow: var(--box-shadow-menu-botoes);
     border: none;
     width: 100%;
     height: 35px;
@@ -527,7 +519,7 @@ input[type="checkbox"]:checked::before {
     color: var(--cor-fonte-1);
     background: var(--cor-gradiente-color-button);
     border-radius: 5px;
-    box-shadow: 1px 1px 1px black;
+    box-shadow: var(--box-shadow-menu-botoes);
     border: none;
     width: 100%;
     height: 35px;
@@ -542,7 +534,7 @@ input[type="checkbox"]:checked::before {
     color: var(--cor-fonte-2);
     background: var(--paleta-cor-6);
     border-radius: 5px;
-    box-shadow: 1px 1px 1px black;
+    box-shadow: var(--box-shadow-menu-botoes);
     border: none;
     width: 100%;
     height: 35px;
