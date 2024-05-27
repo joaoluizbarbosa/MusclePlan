@@ -49,13 +49,15 @@
                     var videoContainer = exerciseElement.querySelector('.video-container');
                     videoContainer.innerHTML = ''; // Limpa o conteúdo existente
                     videoContainer.appendChild(iframe);
-                } else {
-                    alert('Nenhum vídeo encontrado para a palavra-chave inserida.');
-                }
 
                     // Após carregar o vídeo com sucesso, exibe o botão de fechar
                     var closeVideoButton = videoContainer.querySelector('.close-video-button');
                     closeVideoButton.style.display = 'block';
+
+                } else {
+                    alert('Nenhum vídeo encontrado para a palavra-chave inserida.');
+                }
+
             }
         };
         xhr.send();
@@ -67,6 +69,7 @@
 function closeVideoContainer(containerId) {
     var videoContainer = document.getElementById(containerId);
     if (videoContainer) {
-        videoContainer.style.display = 'none';
+        // Remove o conteúdo do contêiner
+        videoContainer.innerHTML = '';
     }
 }
