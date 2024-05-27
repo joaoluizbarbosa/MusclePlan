@@ -592,6 +592,10 @@ input[type="checkbox"]:checked::before {
     margin-bottom: 1em;
 }
 
+.close-video-button {
+    display: none;
+}
+
 .exercicioObs-div {
     display: flex;
     flex-direction: column;

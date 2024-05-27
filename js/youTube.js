@@ -52,10 +52,21 @@
                 } else {
                     alert('Nenhum vídeo encontrado para a palavra-chave inserida.');
                 }
+
+                    // Após carregar o vídeo com sucesso, exibe o botão de fechar
+                    var closeVideoButton = videoContainer.querySelector('.close-video-button');
+                    closeVideoButton.style.display = 'block';
             }
         };
         xhr.send();
     } else {
         alert('Por favor, insira o nome do exercício.');
+    }
+}
+
+function closeVideoContainer(containerId) {
+    var videoContainer = document.getElementById(containerId);
+    if (videoContainer) {
+        videoContainer.style.display = 'none';
     }
 }
