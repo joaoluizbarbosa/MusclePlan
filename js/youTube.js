@@ -47,7 +47,7 @@
 
                     // Encontra o contêiner de vídeo correspondente e o preenche com o iframe
                     var videoContainer = exerciseElement.querySelector('.video-container');
-                    videoContainer.innerHTML = ''; // Limpa o conteúdo existente
+                    // videoContainer.innerHTML = '';
                     videoContainer.appendChild(iframe);
 
                     // Após carregar o vídeo com sucesso, exibe o botão de fechar
