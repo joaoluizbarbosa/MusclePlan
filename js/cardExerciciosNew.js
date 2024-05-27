@@ -142,13 +142,15 @@ function removeSection(sectionId) {
     if (section) {
         section.parentNode.removeChild(section);
         
-        // Atualizar IDs e números das seções subsequentes
+        // Selecionar todas as seções restantes
         let sections = document.querySelectorAll('.exercicio-n');
+        
+        // Atualizar IDs e números das seções subsequentes
         sections.forEach((sec, index) => {
             let newIndex = index + 1;
             sec.id = `exercicio-${newIndex}`;
             sec.querySelector('.lista__nome-do-exercicio__numero').textContent = newIndex;
-            sec.querySelector('textarea').id = `nomeDoExercicio-${newIndex}`;
+            sec.querySelector('textarea.exercicio__nome').id = `nomeDoExercicio-${newIndex}`;
             sec.querySelector('input[type="checkbox"]').id = `menu-${newIndex}`;
             sec.querySelector('label').setAttribute('for', `menu-${newIndex}`);
             
@@ -168,13 +170,9 @@ function removeSection(sectionId) {
                     button.setAttribute('onclick', `toggleEdit('exercicioObs-${newIndex}')`);
                 }
             });
-            
+
             sec.querySelector('.video-container').id = `video-container-${newIndex}`;
             sec.querySelector('.exercicioObs-div textarea').id = `exercicioObs-${newIndex}`;
-            sec.querySelector('.timer-container').id = `timer-container-${newIndex}`;
-            sec.querySelector('.timer-container input:nth-child(1)').id = `minutes-${newIndex}`;
-            sec.querySelector('.timer-container input:nth-child(2)').id = `seconds-${newIndex}`;
-            sec.querySelector('.timer').id = `timer-${newIndex}`;
             sec.querySelector('.lista__aquecimento').id = `lista__aquecimento-${newIndex}`;
             sec.querySelector('.lista__aquecimento .remove-list-button').setAttribute('onclick', `removeList('lista__aquecimento-${newIndex}')`);
             sec.querySelector('.lista__segunda-linha').id = `myList${newIndex}`;
