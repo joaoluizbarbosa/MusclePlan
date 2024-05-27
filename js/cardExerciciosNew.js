@@ -32,14 +32,6 @@
             <button class="edit-button-1" onclick="toggleEdit('exercicioObs-${j}')">Editar</button>
         </div>
 
-        <div id="timer-container-${j}" style="display: none;" class="timer-container">
-            <input type="number" id="minutes-${j}" placeholder="Min" class="timer-container__item">
-            <input type="number" id="seconds-${j}" placeholder="Seg" class="timer-container__item">
-            <button id="start-button" onclick="startTimer()" class="start-button">Start</button>
-        </div>
-        
-        <div id="timer-${j}" class="timer">00:00</div>
-
         <ul class="lista__primeira-linha">
             <li>
                 <p></p>
