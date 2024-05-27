@@ -47,12 +47,8 @@
 
                     // Encontra o contêiner de vídeo correspondente e o preenche com o iframe
                     var videoContainer = exerciseElement.querySelector('.video-container');
-                    // videoContainer.innerHTML = '';
+                    videoContainer.innerHTML = '';
                     videoContainer.appendChild(iframe);
-
-                    // Após carregar o vídeo com sucesso, exibe o botão de fechar
-                    var closeVideoButton = videoContainer.querySelector('.close-video-button');
-                    closeVideoButton.style.display = 'block';
 
                 } else {
                     alert('Nenhum vídeo encontrado para a palavra-chave inserida.');
@@ -63,13 +59,5 @@
         xhr.send();
     } else {
         alert('Por favor, insira o nome do exercício.');
-    }
-}
-
-function closeVideoContainer(containerId) {
-    var videoContainer = document.getElementById(containerId);
-    if (videoContainer) {
-        // Remove o conteúdo do contêiner
-        videoContainer.innerHTML = '';
     }
 }
