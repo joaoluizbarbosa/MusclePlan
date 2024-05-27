@@ -5,6 +5,10 @@
     let section = document.createElement("section");
     section.className = "exercicio-n";
     section.id = "exercicio-" + j;
+    section.draggable = true; // Adicionando o atributo draggable
+    section.addEventListener('dragstart', function(event) {
+        drag(event);
+    });
     section.innerHTML = `
         <ul class="lista__nome-do-exercicio">
             <li class="lista__nome-do-exercicio__item">
@@ -111,6 +115,10 @@
         </ul>
         
     `;
+
+    // Adiciona manipuladores de eventos de arrastar e soltar à nova sessão
+    section.addEventListener('dragover', allowDrop);
+    section.addEventListener('drop', drop);
     
     // Encontrar a div "session-buttons"
     let sessionButtons = document.querySelector('.session-buttons');
