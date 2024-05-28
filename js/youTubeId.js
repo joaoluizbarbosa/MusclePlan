@@ -12,7 +12,7 @@ const muscleGroups = {
     ombros: [
         { name: "Elevação Lateral com Halteres", videoId: "ot9nwSC1JnA" },
         { name: "Desenvolvimento de Ombros com Halteres", videoId: "5I7ogOjvdnc" },
-        { name: "Elevação Lateral na CPolia", videoId: "dgpts8LHOLc" }
+        { name: "Elevação Lateral na Polia", videoId: "dgpts8LHOLc" }
     ],
     costas: [
         { name: "Puxada Frontal", videoId: "klmn2425" },
