@@ -166,25 +166,20 @@ function exportToWhatsApp() {
 }
 
 
-
-
-
-
  // Script para exportar e importar arquivo .json
  function saveFormData() {
     const formData = {};
 
-    // Capture todos os inputs, textareas e selects
-    // document.querySelectorAll('input, textarea, select').forEach(element => {
-    //     formData[element.id] = {
-    //         type: element.type,
-    //         value: element.value,
-    //         outerHTML: element.outerHTML
-    //     };
-    // });
-
     // Capture o HTML completo da página
     formData['pageHTML'] = document.documentElement.outerHTML;
+
+    // Capture estados dos checkboxes no divPrincipal-group
+    document.querySelectorAll('.divPrincipal-group .checkbox-group').forEach(element => {
+        formData[element.id] = {
+            type: element.type,
+            checked: element.checked
+        };
+    });
 
     // Transforme os dados em JSON e salve em um arquivo
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(formData));
@@ -217,13 +212,24 @@ function loadFormData() {
                     const element = document.getElementById(key);
 
                     if (element) {
-                        element.value = elementData.value;
+                        if (elementData.type === 'checkbox') {
+                            element.checked = elementData.checked;
+                        } else {
+                            element.value = elementData.value;
+                        }
                     } else {
                         // Se o elemento não existir, recrie-o
                         const tempSection = document.createElement('section');
-                        tempDiv.innerHTML = elementData.outerHTML;
+                        tempSection.innerHTML = elementData.outerHTML;
                         document.body.appendChild(tempSection.firstChild);
-                        document.getElementById(key).value = elementData.value;
+                        const newElement = document.getElementById(key);
+                        if (newElement) {
+                            if (elementData.type === 'checkbox') {
+                                newElement.checked = elementData.checked;
+                            } else {
+                                newElement.value = elementData.value;
+                            }
+                        }
                     }
                 }
             }
