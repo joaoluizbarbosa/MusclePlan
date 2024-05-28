@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>MusclePlan - BLANK</title>
+</head>
+<body class="treino-body">
+    <header class="cabecalho">
+        <input type="checkbox" id="menu-expImp" class="container__botao-expImp">
+        <label for="menu-expImp" class="container__rotulo-expImp">
+            <span class="cabecalho__menu-hamburguer-expImp container__imagem"><span class="hamburger-expImp">≡ </span>  menuˇ</span>
+        </label>
+        <ul class="lista-menu-expImp">
+            <li class="lista-menu-expImp__item"><button class="export-whatsapp" onclick="exportToWhatsApp()">Exportar para WhatsApp</button></li>
+            <li class="lista-menu-expImp__item"><button class="export-excel" onclick="exportToExcel()">Exportar .xlsx</button></li>
+            <li class="lista-menu-expImp__item"><button class="export-json" onclick="saveFormData()">Exportar .json</button></li>
+            <li class="lista-menu-expImp__item"><button id="fileInputButton" class="load-file">Escolher .json</button>
+                                                <input type="file" id="fileInput" style="display: none;" class="load-file" /></li>
+            <li class="lista-menu-expImp__item"><button class="import-json" onclick="loadFormData()">Carregar .json</button></li>
+            <li class="lista-menu-expImp__item"><button class="import-excel" onclick="document.getElementById('inputExcel').click()">Importar .xlsx</button>
+                                                <input type="file" id="inputExcel" style="display: none;" onchange="importFromExcel(event)"></li>
+        </ul>
+        <a href="index.html" class="cabecalho-back-to-index">Muscle Plan<sup>©</sup></a>
+    </header>
+    
+    <main class="main__treino-blank">
+        <ul class="lista__periodizacao">
+            <li class="lista__periodizacao__item">
+                <textarea id="tituloDaPeriodizacao" class="titulo-da-periodizacao" placeholder="TÍTULO DA PERIODIZAÇÃO" maxlength="50" oninput="limitLines(this, 2)" readonly></textarea>
+                <button class="edit-button-tituloDaPeriodizacao" onclick="toggleEdit('tituloDaPeriodizacao')">Editar</button>
+            </li>
+            <li class="lista__periodizacao__item">
+                <div class="lista__periodizacao__item-semana-dia">
+                    <a href="#" class="dia-anterior">«</a>
+                    <p class="lista__periodizacao__item-paragrafo">SEMANA</p>
+                    <input type="number" id="semana" class="semana" placeholder="1">
+                    <p class="lista__periodizacao__item-paragrafo">DIA</p>
+                    <input type="number" id="dia" class="dia" placeholder="1">
+                    <a href="#" class="proximo-dia">»</a>
+                </div>
+            </li>
+        </ul>
+        
+        <ul class="lista__treino-info">
+            
+            <li class="lista__treino-info__item">
+                <textarea id="tituloDoTreino" class="titulo-do-treino" placeholder="TÍTULO DO TREINO" maxlength="40" oninput="limitLines(this, 2)" readonly></textarea>
+                <button class="edit-button" onclick="toggleEdit('tituloDoTreino')">Editar</button>
+            </li>
+            
+            <li class="lista__treino-info__item">
+                <textarea id="treinoObs" class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="300" oninput="limitLines(this, 10)" readonly></textarea>
+                <button class="edit-button" onclick="toggleEdit('treinoObs')">Editar</button>
+            </li>
+            
+            <li class="lista__treino-info__item">
+                <label class="lista__treino-info__item-labelTitulo">Agrupamentos Musculares:</label>
+                <div class="lista__treino-info__item-divPrincipal">
+                    <div class="itens-div">
+                        <input type="checkbox" id="triceps" name="group" value="triceps">
+                        <label for="triceps">Tríceps</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="ombros" name="group" value="ombros">
+                        <label for="triceps">Ombros</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="biceps" name="group" value="biceps">
+                        <label for="biceps">Bíceps</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="peito" name="group" value="peito">
+                        <label for="peito">Peito</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="costas" name="group" value="costas">
+                        <label for="costas">Costas</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="coxa" name="group" value="coxa">
+                        <label for="coxa">Coxa</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="panturrilha" name="group" value="panturrilha">
+                        <label for="panturrilha">Panturrilha</label>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+
+        <!-- <section class="exercicio-n" id="exercicio-1" draggable="true" ondragstart="drag(event)">
+            <ul class="lista__nome-do-exercicio">
+                <li class="lista__nome-do-exercicio__item">
+                    <p class="lista__nome-do-exercicio__numero">1</p>
+                    
+                    
+                    
+                    <select id="nomeDoExercicio-1" class="exercicio__nome">
+                        <option value="" disabled selected>Selecione um exercício</option>
+                    </select>
+                    
+                    
+                    <input type="checkbox" id="menu-1" class="container__botao">
+                    <label for="menu-1" class="container__rotulo">
+                        <span class="cabecalho__menu-hamburguer container__imagem">≡</span>
+                    </label>
+                    <ul class="lista-menu">
+                        <li class="lista-menu__item"><button class="changeEx-button" onclick="toggleEdit('nomeDoExercicio-1')">˄˅ _alt exer</button></li>
+                        <li class="lista-menu__item"><button class="youtube-button" onclick="showYouTubeVideo('exercicio-1')">» _vídeo</button></li>
+                        <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-1')">Ø _timer</button></li>
+                        <li class="lista-menu__item"><button class="color-button" onclick="preventClose(event); changeColor('exercicio-1')">_cores</button></li>
+                        <li class="lista-menu__item"><button class="delete-section-button" onclick="removeSection('exercicio-1')">✖ _excluir</button></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="lista-secButtons">
+                <li class="lista-secButtons__item"><button class="lista-secButtons__changeEx-button" onclick="toggleEdit('nomeDoExercicio-1')">˄˅</button></li>
+                <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="showYouTubeVideo('exercicio-1')">»</button></li>
+                <li class="lista-secButtons__item"><button class="lista-secButtons__clock-button" onclick="toggleTimer('exercicio-1')">Ø</button></li>
+                <li class="lista-secButtons__item"><button class="lista-secButtons__color-button" onclick="preventClose(event); changeColor('exercicio-1')">_</button></li>
+            </ul>
+            <div class="video-container" id="video-container-1"></div>
+            <div class="exercicioObs-div">
+                <textarea id="exercicioObs-1" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)" readonly></textarea>
+                <button class="edit-button-1" onclick="toggleEdit('exercicioObs-1')">Editar</button>
+            </div>
+            <ul class="lista__primeira-linha">
+                <li></li>
+                <li>
+                    <select class="select-repetitions">
+                        <option class="option" value="reps range">Faixa de Repetições</option>
+                        <option value="reps">Repetições</option>
+                        <option value="reps max">Repetições Máximas</option>
+                        <option value="amrap">AMRAP</option>
+                        <option value="time">Tempo</option>
+                        <option value="time range">Faixa de Tempo</option>
+                    </select>             
+                </li>
+                <li>
+                    <select class="select-kg">
+                        <option value="kg">KG</option>
+                        <option value="lb">LB</option>
+                    </select>             
+                </li>
+                <li>
+                    <select class="select-rpe">
+                        <option value="rpe range">Faixa de Int. (PSE)</option>
+                        <option value="rpe">Int. (PSE)</option>
+                        <option value="% of 1rm range">Faixa de % de 1RM</option>
+                        <option value="% of 1rm">% de 1RM</option>
+                    </select>             
+                </li>
+            </ul>
+            <ul class="lista__aquecimento" id="lista__aquecimento-1">
+                <li class="lista__aquecimento__item">
+                    <p class="lista__aquecimento__w">a</p>
+                </li>
+                <li class="lista__aquecimento__item">
+                    <input class="lista__aquecimento__input input-reps1" type="number" value="">
+                    <p>-</p>
+                    <input class="lista__aquecimento__input input-reps2" type="number" value="">
+                </li>
+                <li class="lista__aquecimento__item">
+                    <input class="lista__aquecimento__input input-kg" type="number" value="">
+                </li>
+                <li class="lista__aquecimento__item">
+                </li>
+                <li class="lista__aquecimento__item">
+                    <button class="remove-list-button" onclick="removeList('lista__aquecimento-1')"><img class="trash-img" src="img/trash-branca.png">
+                </li>
+            </ul>
+            <ul id="myList1" class="lista__segunda-linha">
+                <li class="lista__segunda-linha__item">
+                    <p>1</p>
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-reps1" type="number" value="">
+                    <p>-</p>
+                    <input class="lista__segunda-linha__input input-reps2" type="number" value="">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-kg" type="number" value="">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-rpe1" type="number" value="">
+                    <p>-</p>
+                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="input-checkbox" type="checkbox">
+                </li>
+            </ul>
+            <ul class="set-buttons">
+                <li class="set-buttons__item">
+                    <button id="button1-add-w" class="add-w-button" onclick="myFunctionWSet('exercicio-1', this.id)">ADD a-Set</button>
+                    <button id="button1-add" class="add-button" onclick="myFunction('exercicio-1', this.id)">ADD Set</button>
+                    <button id="button1-undo" class="undo-button" onclick="undoFunction('exercicio-1', this.id)">EXC Set</button>
+                </li>
+            </ul>
+        </section> -->
+
+        
+
+        <div class="session-buttons">
+            <button class="new-session-button" onclick="addSection()">Adicionar exercício</button>
+            <button class="remove-session-button" onclick="removeLastSection()">Remover exercício</button>
+        </div>
+ 
+    </main>
+
+    <footer class="rodape">
+        <div class="timer-org">
+            <div id="timer-container-1" class="timer-container">
+                <!-- Lista suspensa para minutos pré-definidos -->
+                <select id="minutes-dropdown" class="timer-container__item">
+                    <option value="0">0 Min</option>
+                    <option value="1">1 Min</option>
+                    <option value="2">2 Min</option>
+                    <option value="3">3 Min</option>
+                    <option value="4">4 Min</option>
+                    <option value="5">5 Min</option>
+                    <option value="10">10 Min</option>
+                </select>
+                <!-- Lista suspensa para segundos pré-definidos -->
+                <select id="seconds-dropdown" class="timer-container__item">
+                    <option value="0">0 Seg</option>
+                    <option value="5">5 Seg</option>
+                    <option value="10">10 Seg</option>
+                    <option value="15">15 Seg</option>
+                    <option value="20">20 Seg</option>
+                    <option value="25">25 Seg</option>
+                    <option value="30">30 Seg</option>
+                    <option value="35">35 Seg</option>
+                    <option value="40">40 Seg</option>
+                    <option value="45">45 Seg</option>
+                    <option value="50">50 Seg</option>
+                    <option value="55">55 Seg</option>
+                </select>
+                <button id="start-pause-button" onclick="startPauseTimer()" class="start-button">Start</button>
+                <button id="reset-button" onclick="resetTimer()" class="reset-button">Reset</button>
+            </div>
+            <div id="timer-1" class="timer">00:00</div>
+            <button id="esc-clock-button-1" class="esc-clock-button" onclick="toggleTimer('exercicio-1')">x</button>
+        </div>
+        <a href="index.html" class="rodape-back-to-index">Muscle Plan<sup>©</sup></a>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+
+    <script src="/js/dragDrop.js"></script>
+
+    <script src="/js/cardExerciciosColors.js"></script>
+
+    <script src="/js/timer.js"></script>
+
+    <script src="/js/textarea.js"></script>
+
+    <!-- <script src="/js/youTube.js"></script> -->
+
+    <script src="/js/fileHandle.js"></script>
+
+    <script src="js/cardExerciciosMenu.js"></script>
+    
+    <script src="/js/cardExerciciosLinhas.js"></script>
+
+    <!-- <script src="/js/cardExerciciosNew.js"></script> -->
+
+    <script src="/js/youTubeId.js"></script>
+
+    <script src="/js/cardExerciciosNew-NOVO.js"></script>
+
+</body>
+</html>

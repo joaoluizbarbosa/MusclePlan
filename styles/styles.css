@@ -415,6 +415,30 @@ input[type="checkbox"]:checked::before {
     resize: none;
 }
 
+.lista__treino-info__item-divPrincipal {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto;
+    justify-content: space-around;
+    margin: 1em;
+    gap: 1em;
+}
+
+.lista__treino-info__item-labelTitulo {
+    margin: 1em;
+    color: white;
+    text-align: center;
+}
+
+.itens-div {
+    display: flex;
+    align-items: center;
+}
+
+.itens-div label {
+    margin-left: 0.5em;
+}
+
 .exercicio-n {
     background-color: var(--cor-fundo-sessao);
     border-radius: 4px;
@@ -574,12 +598,13 @@ input[type="checkbox"]:checked::before {
     display: block;
     background-color: var(--cor-fundo-exercicio);
     border: none;
+    box-shadow: none;
     font-family: var(--fonte-principal);
     font-size: 0.9em;
     font-weight: 400;
     color: var(--cor-fonte-1);
     width: 97%; 
-    height: 20px;
+    height: 30px;
     resize: none; /* Impede o redimensionamento do textarea */
     overflow: hidden;
 }
