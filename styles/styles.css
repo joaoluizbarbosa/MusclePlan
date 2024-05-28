@@ -415,28 +415,50 @@ input[type="checkbox"]:checked::before {
     resize: none;
 }
 
-.lista__treino-info__item-divPrincipal {
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: auto;
-    justify-content: space-around;
-    margin: 1em;
-    gap: 1em;
-}
+/* CARD Agrupamento musculares */
 
-.lista__treino-info__item-labelTitulo {
-    margin: 1em;
+.labelTitulo-group {
+    margin: 1.5em 1em 1em 1em;
     color: white;
     text-align: center;
 }
 
+.divPrincipal-group {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: auto;
+    justify-content: space-around;
+    margin: 1em 1em 0 1em;
+    gap: 1em;
+}
+
 .itens-div {
     display: flex;
+    background-color: #DFD0B8;
     align-items: center;
+    border: 1px solid white;
+    border-radius: 15px;
 }
 
 .itens-div label {
-    margin-left: 0.5em;
+    margin-left: 0.2em;
+    font-size: 0.8em;
+    color: black;
+}
+
+input[type="checkbox"].checkbox-group {
+    width: 18px;
+    height: 18px;
+}
+
+input[type="checkbox"].checkbox-group:checked::before {
+    content: "✖";
+    font-size: 10px;
+    color: var(--cor-input-checkbox-check); /* Mudança da cor do check para contraste */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .exercicio-n {
@@ -487,21 +509,6 @@ input[type="checkbox"]:checked::before {
     align-items: center;
     margin: 0em 0.8em;
     padding: 0.5em 0;
-}
-
-.changeEx-button {
-    font-family: var(--fonte-principal);
-    font-size: 0.8em;
-    font-weight: 400;
-    text-align: center;
-    color: var(--cor-fonte-1);
-    background-color: var(--paleta-cor-9);
-    border-radius: 5px;
-    box-shadow: var(--box-shadow-menu-botoes);
-    border: none;
-    width: 100%;
-    height: 35px;
-    cursor: pointer;
 }
 
 .youtube-button {
@@ -564,19 +571,6 @@ input[type="checkbox"]:checked::before {
     cursor: pointer;
 }
 
-.lista-menu__youtube-link, .lista-menu__clock-link, .lista-menu__exChange, .lista-menu__color-link, .lista-menu__delete-link {
-    font-family: var(--fonte-principal);
-    text-decoration: none;
-    color: var(--cor-fonte-menu-link);
-    font-size: 0.8em;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.lista-menu__clock-link, .lista-menu__youtube-link {
-    margin-top: 0.5em;
-}
-
 .container__botao:checked~.lista-menu { /* condicional "se .container__botao estiver marcado (.container__botao:checked), então (~), .lista-menu aparece (display: block)" */
     display: block;
 }
@@ -593,7 +587,6 @@ input[type="checkbox"]:checked::before {
 }
 
 .exercicio__nome {
-    padding-top: 0.35em;
     text-transform: uppercase;
     display: block;
     background-color: var(--cor-fundo-exercicio);
@@ -604,7 +597,7 @@ input[type="checkbox"]:checked::before {
     font-weight: 400;
     color: var(--cor-fonte-1);
     width: 97%; 
-    height: 30px;
+    height: 40px;
     resize: none; /* Impede o redimensionamento do textarea */
     overflow: hidden;
 }
@@ -613,26 +606,11 @@ input[type="checkbox"]:checked::before {
 
 .lista-secButtons {
     display: grid;
-    grid-template-columns: 15% 15% 15% 15%;
+    grid-template-columns: 15% 15% 15% 15% 15% 15%;
     grid-template-rows: auto;
     justify-content: space-around;
-    margin: 1.5em 0.5em;
+    margin: 1.5em 1em;
     gap: 1em;
-}
-
-.lista-secButtons__changeEx-button {
-    font-family: var(--fonte-principal);
-    font-size: 0.8em;
-    font-weight: 400;
-    text-align: center;
-    color: var(--cor-fonte-1);
-    background-color: var(--paleta-cor-9);
-    border-radius: 5px;
-    box-shadow: var(--box-shadow-lista-secButtons);
-    border: none;
-    width: 100%;
-    height: 20px;
-    cursor: pointer;
 }
 
 .lista-secButtons__youtube-button {

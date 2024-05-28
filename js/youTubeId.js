@@ -1,4 +1,9 @@
 const muscleGroups = {
+    peito: [
+        { name: "Supino Reto", videoId: "yzab1819" },
+        { name: "Supino Inclinado", videoId: "cdef2021" },
+        { name: "Crucifixo", videoId: "ghij2223" }
+    ],
     triceps: [
         { name: "Tríceps Pulley com barra reta", videoId: "M88Bt4MMpkI" },
         { name: "Tríceps Testa", videoId: "40Cx-IfJhA0" },
@@ -9,25 +14,34 @@ const muscleGroups = {
         { name: "Desenvolvimento de Ombros com Halteres", videoId: "5I7ogOjvdnc" },
         { name: "Elevação Lateral na CPolia", videoId: "dgpts8LHOLc" }
     ],
-    biceps: [
-        { name: "Rosca Direta", videoId: "mnop1123" },
-        { name: "Rosca Martelo", videoId: "qrst1415" },
-        { name: "Rosca Scott", videoId: "uvwx1617" }
-    ],
-    peito: [
-        { name: "Supino Reto", videoId: "yzab1819" },
-        { name: "Supino Inclinado", videoId: "cdef2021" },
-        { name: "Crucifixo", videoId: "ghij2223" }
-    ],
     costas: [
         { name: "Puxada Frontal", videoId: "klmn2425" },
         { name: "Remada Curvada", videoId: "opqr2627" },
         { name: "Levantamento Terra", videoId: "stuv2829" }
     ],
-    coxa: [
-        { name: "Agachamento", videoId: "wxyz3031" },
-        { name: "Leg Press", videoId: "abcd3233" },
-        { name: "Extensão de Perna", videoId: "efgh3435" }
+    biceps: [
+        { name: "Rosca Direta", videoId: "mnop1123" },
+        { name: "Rosca Martelo", videoId: "qrst1415" },
+        { name: "Rosca Scott", videoId: "uvwx1617" }
+    ],
+    trapezio: [
+        { name: "DB Kelso Shrug", videoId: "t6QJTiz35dc" }
+    ],
+    antebraco: [
+        { name: "Exercício 1", videoId: "t6QJTiz35dc" }
+    ],
+    gluteos: [
+        { name: "Elevação Pélvica", videoId: "t6QJTiz35dc" },
+        { name: "DB RDL - Levantamento Terra Romeno", videoId: "WIcpu2UkJoY" }
+    ],
+    quadriceps: [
+        { name: "Cadeira Extensora", videoId: "t6QJTiz35dc" }
+    ],
+    isquiotibiais: [
+        { name: "DB RDL - Levantamento Terra Romeno", videoId: "WIcpu2UkJoY" }
+    ],
+    adutores: [
+        { name: "Cadeira Adutora", videoId: "qrst4041" }
     ],
     panturrilha: [
         { name: "Elevação de Panturrilha", videoId: "ijkl3637" },
