@@ -27,15 +27,17 @@
                 </ul>
             </li>
         </ul>
-                
+        <ul class="lista-secButtons">
+            <li class="lista-secButtons__item"><button class="lista-secButtons__changeEx-button" onclick="toggleEdit('nomeDoExercicio-${j}')">˄˅</button></li>
+            <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="searchYouTubeDynamic('exercicio-${j}')">»</button></li>
+            <li class="lista-secButtons__item"><button class="lista-secButtons__clock-button" onclick="toggleTimer('exercicio-${j}')">Ø</button></li>
+            <li class="lista-secButtons__item"><button class="lista-secButtons__color-button" onclick="preventClose(event); changeColor('exercicio-${j}')">_</button></li>
+        </ul>  
         <div class="video-container" id="video-container-${j}"></div>
-
         <div class="exercicioObs-div">
             <textarea id="exercicioObs-${j}" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10)" readonly></textarea>
-            
             <button class="edit-button-1" onclick="toggleEdit('exercicioObs-${j}')">Editar</button>
         </div>
-
         <ul class="lista__primeira-linha">
             <li></li>
             <li>

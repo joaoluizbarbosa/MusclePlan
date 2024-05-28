@@ -50,7 +50,7 @@ function renumberSessions() {
         session.querySelector('.lista__nome-do-exercicio__numero').textContent = index + 1;
 
         // Obtém todos os elementos dentro da sessão
-        var elements = session.querySelectorAll('[id^="nomeDoExercicio-"], [id^="exercicioObs-"], [id^="video-container-"], [id^="lista__aquecimento-"], [id^="myList"], [id^="button"], [id^="menu-"], [id^="button"], [id^="myList"], label[class^="container__rotulo"], button[class^="changeEx-button"], button[class^="youtube-button"], button[class^="clock-button"], button[class^="color-button"], button[class^="delete-section-button"]');
+        var elements = session.querySelectorAll('[id^="nomeDoExercicio-"], [id^="exercicioObs-"], [id^="video-container-"], [id^="lista__aquecimento-"], [id^="myList"], [id^="button"], [id^="menu-"], [id^="button"], [id^="myList"], label[class^="container__rotulo"], button[class^="changeEx-button"], button[class^="youtube-button"], button[class^="clock-button"], button[class^="color-button"], button[class^="delete-section-button"], button[class^="lista-secButtons__changeEx-button"], button[class^="lista-secButtons__youtube-button"], button[class^="lista-secButtons__clock-button"], button[class^="lista-secButtons__color-button"], button[class^="lista-secButtons__delete-section-button"]');
 
         // Loop através de todos os elementos dentro da sessão e atualiza suas IDs e outros atributos
         elements.forEach(element => {
