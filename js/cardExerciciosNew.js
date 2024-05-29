@@ -21,7 +21,7 @@
                     <span class="cabecalho__menu-hamburguer container__imagem">≡</span>
                 </label>
                 <ul class="lista-menu">
-                    <li class="lista-menu__item"><button class="youtube-button" onclick="showYouTubeVideo('exercicio-${j}')">» _vídeo</button></li>
+                    <li class="lista-menu__item"><button class="youtube-button" onclick="toggleYouTubeVideo('exercicio-${j}')">» _vídeo</button></li>
                     <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-${j}')">Ø _timer</button></li>
                     <li class="lista-menu__item"><button class="color-button" onclick="preventClose(event); changeColor('exercicio-${j}')">_cores</button></li>
                     <li class="lista-menu__item"><button class="delete-section-button" onclick="removeSection('exercicio-${j}')">✖ _excluir</button></li>
@@ -29,7 +29,7 @@
             </li>
         </ul>
         <ul class="lista-secButtons">
-            <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="showYouTubeVideo('exercicio-${j}')">»</button></li>
+            <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="toggleYouTubeVideo('exercicio-${j}')">»</button></li>
             <li class="lista-secButtons__item"><button class="lista-secButtons__clock-button" onclick="toggleTimer('exercicio-${j}')">Ø</button></li>
             <li class="lista-secButtons__item"><button class="lista-secButtons__color-button" onclick="preventClose(event); changeColor('exercicio-${j}')">_</button></li>
         </ul>  

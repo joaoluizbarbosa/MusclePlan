@@ -75,27 +75,32 @@ document.querySelectorAll('input[name="group"]').forEach(checkbox => {
     });
 });
 
-// Função para mostrar o vídeo do YouTube com base no ID especificado
-function showYouTubeVideo(sectionId) {
+// Função para mostrar ou esconder o vídeo do YouTube com base no ID especificado
+function toggleYouTubeVideo(sectionId) {
     const exerciseElement = document.getElementById(sectionId);
     const selectElement = exerciseElement.querySelector('.exercicio__nome');
     const selectedOption = selectElement.options[selectElement.selectedIndex];
     const videoId = selectedOption ? selectedOption.getAttribute('data-video-id') : '';
+    const videoContainer = exerciseElement.querySelector('.video-container');
 
-    if (videoId) {
-        const iframe = document.createElement('iframe');
-        iframe.setAttribute('width', '325');
-        iframe.setAttribute('height', '183');
-        iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId);
-        iframe.setAttribute('frameborder', '0');
-        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-        iframe.setAttribute('allowfullscreen', '');
-
-        const videoContainer = exerciseElement.querySelector('.video-container');
+    if (videoContainer.innerHTML) {
+        // Se o vídeo já estiver sendo exibido, remova-o
         videoContainer.innerHTML = '';
-        videoContainer.appendChild(iframe);
     } else {
-        alert('Por favor, selecione um exercício.');
+        // Se o vídeo não estiver sendo exibido, adicione-o
+        if (videoId) {
+            const iframe = document.createElement('iframe');
+            iframe.setAttribute('width', '325');
+            iframe.setAttribute('height', '183');
+            iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId);
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+            iframe.setAttribute('allowfullscreen', '');
+
+            videoContainer.appendChild(iframe);
+        } else {
+            alert('Por favor, selecione um exercício.');
+        }
     }
 }
 
