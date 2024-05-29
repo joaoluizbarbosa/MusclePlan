@@ -33,13 +33,15 @@ const muscleGroups = {
     ],
     gluteos: [
         { name: "Elevação Pélvica", videoId: "t6QJTiz35dc" },
-        { name: "DB RDL - Levantamento Terra Romeno", videoId: "WIcpu2UkJoY" }
+        { name: "Levantamento Terra Romeno com Halteres - DB Romanian Deadlift", videoId: "xAL7lHwj30E" }
     ],
     quadriceps: [
-        { name: "Cadeira Extensora", videoId: "t6QJTiz35dc" }
+        { name: "Cadeira Extensora - Leg Extension", videoId: "m0FOpMEgero" }
     ],
     isquiotibiais: [
-        { name: "DB RDL - Levantamento Terra Romeno", videoId: "WIcpu2UkJoY" }
+        { name: "Levantamento Terra Romeno com Halteres - DB Romanian Deadlift", videoId: "xAL7lHwj30E" },
+        { name: "Mesa Flexora - Lying Leg Curl", videoId: "SbSNUXPRkc8" },
+        { name: "Cadeira Flexora - Seated Leg Curl", videoId: "Orxowest56U" }
     ],
     adutores: [
         { name: "Cadeira Adutora", videoId: "qrst4041" }
@@ -50,7 +52,11 @@ const muscleGroups = {
         { name: "Panturrilha em Pé", videoId: "qrst4041" }
     ],
     atualizar: [
-        { name: "Atualizar", videoId: "qrst4041" }
+        { name: "Atualizar", videoId: "qrst4041" },
+        { name: "", videoId: "" },
+        { name: "", videoId: "" },
+        { name: "", videoId: "" },
+        { name: "", videoId: "" }
     ]
 };
 
