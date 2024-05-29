@@ -25,7 +25,6 @@
         </ul>
         <a href="index.html" class="cabecalho-back-to-index">Muscle Plan<sup>©</sup></a>
     </header>
-    
     <main class="main__treino-blank">
         <ul class="lista__periodizacao">
             <li class="lista__periodizacao__item">
@@ -43,18 +42,15 @@
                 </div>
             </li>
         </ul>
-        
         <ul class="lista__treino-info">
             <li class="lista__treino-info__item">
                 <textarea id="tituloDoTreino" class="titulo-do-treino" placeholder="TÍTULO DO TREINO" maxlength="40" oninput="limitLines(this, 2)" readonly></textarea>
                 <button class="edit-button" onclick="toggleEdit('tituloDoTreino')">Editar</button>
             </li>
-            
             <li class="lista__treino-info__item">
                 <textarea id="treinoObs" class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="300" oninput="limitLines(this, 10)" readonly></textarea>
                 <button class="edit-button" onclick="toggleEdit('treinoObs')">Editar</button>
             </li>
-            
             <li class="lista__treino-info__item">
                 <label class="labelTitulo-group">Agrupamentos Musculares:</label>
                 <div class="divPrincipal-group">
@@ -109,8 +105,6 @@
                 </div>
             </li>
         </ul>
-
-
         <!-- <section class="exercicio-n" id="exercicio-1" draggable="true" ondragstart="drag(event)">
             <ul class="lista__nome-do-exercicio">
                 <li class="lista__nome-do-exercicio__item">
@@ -214,9 +208,6 @@
                 </li>
             </ul>
         </section> -->
-
-        
-
         <div class="session-buttons">
             <button class="new-session-button" onclick="addSection()">Adicionar exercício</button>
             <button class="remove-session-button" onclick="removeLastSection()">Remover exercício</button>
@@ -262,23 +253,14 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
-
     <script src="/js/dragDrop.js"></script>
-
     <script src="/js/cardExerciciosColors.js"></script>
-
     <script src="/js/timer.js"></script>
-
     <script src="/js/textarea.js"></script>
-
     <script src="/js/youTubeId.js"></script>
-
     <script src="/js/fileHandle.js"></script>
-
     <script src="js/cardExerciciosMenu.js"></script>
-    
     <script src="/js/cardExerciciosLinhas.js"></script>
-
     <script src="/js/cardExerciciosNew.js"></script>
 
 </body>

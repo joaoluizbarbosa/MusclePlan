@@ -166,13 +166,15 @@ function removeSection(sectionId) {
             
             let buttons = sec.querySelectorAll('button');
             buttons.forEach(button => {
-                if (button.classList.contains('changeEx-button')) {
-                    button.setAttribute('onclick', `toggleEdit('nomeDoExercicio-${newIndex}')`);
-                } else if (button.classList.contains('youtube-button')) {
-                    button.setAttribute('onclick', `showYouTubeVideo('exercicio-${newIndex}')`);
+                if (button.classList.contains('youtube-button')) {
+                    button.setAttribute('onclick', `toggleYouTubeVideo('exercicio-${newIndex}')`);
+                } else if (button.classList.contains('lista-secButtons__youtube-button')) {
+                    button.setAttribute('onclick', `toggleYouTubeVideo('exercicio-${newIndex}')`);
                 } else if (button.classList.contains('clock-button')) {
                     button.setAttribute('onclick', `toggleTimer('exercicio-${newIndex}')`);
                 } else if (button.classList.contains('color-button')) {
+                    button.setAttribute('onclick', `preventClose(event); changeColor('exercicio-${newIndex}')`);
+                } else if (button.classList.contains('lista-secButtons__color-button')) {
                     button.setAttribute('onclick', `preventClose(event); changeColor('exercicio-${newIndex}')`);
                 } else if (button.classList.contains('delete-section-button')) {
                     button.setAttribute('onclick', `removeSection('exercicio-${newIndex}')`);
@@ -180,7 +182,7 @@ function removeSection(sectionId) {
                     button.setAttribute('onclick', `toggleEdit('exercicioObs-${newIndex}')`);
                 }
             });
-
+            
             sec.querySelector('.video-container').id = `video-container-${newIndex}`;
             sec.querySelector('.exercicioObs-div textarea').id = `exercicioObs-${newIndex}`;
             sec.querySelector('.lista__aquecimento').id = `lista__aquecimento-${newIndex}`;
