@@ -47,6 +47,9 @@ const muscleGroups = {
         { name: "Elevação de Panturrilha", videoId: "ijkl3637" },
         { name: "Panturrilha Sentado", videoId: "mnop3839" },
         { name: "Panturrilha em Pé", videoId: "qrst4041" }
+    ],
+    atualizar: [
+        { name: "Atualizar", videoId: "qrst4041" }
     ]
 };
 
