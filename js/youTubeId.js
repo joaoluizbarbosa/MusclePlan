@@ -1,8 +1,9 @@
 const muscleGroups = {
     peito: [
-        { name: "Supino Reto", videoId: "yzab1819" },
-        { name: "Supino Inclinado", videoId: "cdef2021" },
-        { name: "Crucifixo", videoId: "ghij2223" }
+        { name: "Supino Reto com Barra - Barbell Bench Press", videoId: "SCVCLChPQFY" },
+        { name: "Supino Reto com Halteres - Dumbbell Bench Press", videoId: "YQ2s_Y7g5Qk" },
+        { name: "Supino Inclinado com Barra - Incline Barbell Bench Press", videoId: "2jFFCy8JBU8" },
+        { name: "Low Incline Dumbbell Press", videoId: "ADl1Ac2ADHQ" }
     ],
     triceps: [
         { name: "Tríceps Pulley com barra reta", videoId: "M88Bt4MMpkI" },
