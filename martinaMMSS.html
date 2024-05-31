@@ -62,26 +62,79 @@ _MMSS</textarea>
             
             <li class="lista__treino-info__item">
                 
-                    <textarea id="treinoObs" class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="300" oninput="limitLines(this, 10)" readonly>As cargas são guias apenas. Podem e devem ser alteradas de acordo com a faixa de intensidade estipulada para cada exercício.</textarea>
+                    <textarea id="treinoObs" class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="300" oninput="limitLines(this, 10)" readonly>As cargas servem apenas como guia. Elas podem e devem ser ajustadas de acordo com a intensidade estipulada para cada exercício.</textarea>
                     <button class="edit-button" onclick="toggleEdit('treinoObs')">Editar</button>
                 
             </li>
+
+            <li class="lista__treino-info__item">
+                <label class="labelTitulo-group">Agrupamentos Musculares:</label>
+                <div class="divPrincipal-group">
+                    <div class="itens-div">
+                        <input type="checkbox" id="peito" name="group" value="peito" class="checkbox-group" checked>
+                        <label for="peito" class="label-group">Peito</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="triceps" name="group" value="triceps" class="checkbox-group" checked>
+                        <label for="triceps" class="label-group">Tríceps</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="ombros" name="group" value="ombros" class="checkbox-group" checked>
+                        <label for="ombros" class="label-group">Ombros</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="costas" name="group" value="costas" class="checkbox-group" checked>
+                        <label for="costas" class="label-group">Costas</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="biceps" name="group" value="biceps" class="checkbox-group" checked>
+                        <label for="biceps" class="label-group">Bíceps</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="trapezio" name="group" value="trapezio" class="checkbox-group">
+                        <label for="trapezio" class="label-group">Trapézio</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="antebraco" name="group" value="antebraco" class="checkbox-group">
+                        <label for="antebraco" class="label-group">Antebraço</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="gluteos" name="group" value="gluteos" class="checkbox-group">
+                        <label for="gluteos" class="label-group">Glúteos</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="quadriceps" name="group" value="quadriceps" class="checkbox-group">
+                        <label for="quadriceps" class="label-group">Quadríceps</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="isquiotibiais" name="group" value="isquiotibiais" class="checkbox-group">
+                        <label for="isquiotibiais" class="label-group">Isquiotibiais</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="adutores" name="group" value="adutores" class="checkbox-group">
+                        <label for="adutores" class="label-group">Adutores</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="panturrilha" name="group" value="panturrilha" class="checkbox-group">
+                        <label for="panturrilha" class="label-group">Panturrilha</label>
+                    </div>
+                </div>
+            </li>
         </ul>
-
-
         <section class="exercicio-n" id="exercicio-1" draggable="true" ondragstart="drag(event)">
-
             <ul class="lista__nome-do-exercicio">
                 <li class="lista__nome-do-exercicio__item">
                     <p class="lista__nome-do-exercicio__numero">1</p>
-                    <textarea id="nomeDoExercicio-1" class="exercicio__nome" placeholder="Nome do exercício" maxlength="32" oninput="limitLines(this, 1)" readonly>remada baixa puxador anatômico n2</textarea>
+                    <select id="nomeDoExercicio-1" class="exercicio__nome">
+                        <option value="Remada Baixa no Cabo - Seated Cable Row" data-video-id="UCXxvVItLoM">Remada Baixa no Cabo - Seated Cable Row</option>
+                        <option value="Remada Unilateral com Halter - Single Arm Supported Dumbbell Row" data-video-id="DMo3HJoawrU">Remada Unilateral com Halter - Single Arm Supported Dumbbell Row</option>
+                    </select>
                     <input type="checkbox" id="menu-1" class="container__botao">
                     <label for="menu-1" class="container__rotulo">
                         <span class="cabecalho__menu-hamburguer container__imagem">≡</span>
                     </label>
                     <ul class="lista-menu">
-                        <li class="lista-menu__item"><button class="changeEx-button" onclick="toggleEdit('nomeDoExercicio-1')">˄˅ _alt exer</button></li>
-                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-1')">» _vídeo</button></li>
+                        <li class="lista-menu__item"><button class="youtube-button" onclick="toggleYouTubeVideo('exercicio-1')">» _vídeo</button></li>
                         <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-1')">Ø _timer</button></li>
                         <li class="lista-menu__item"><button class="color-button" onclick="preventClose(event); changeColor('exercicio-1')">_cores</button></li>
                         <li class="lista-menu__item"><button class="delete-section-button" onclick="removeSection('exercicio-1')">✖ _excluir</button></li>
@@ -89,21 +142,15 @@ _MMSS</textarea>
                 </li>
             </ul>
             <ul class="lista-secButtons">
-                <li class="lista-secButtons__item"><button class="lista-secButtons__changeEx-button" onclick="toggleEdit('nomeDoExercicio-1')">˄˅</button></li>
-                <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="searchYouTubeDynamic('exercicio-1')">»</button></li>
+                <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="toggleYouTubeVideo('exercicio-1')">»</button></li>
                 <li class="lista-secButtons__item"><button class="lista-secButtons__clock-button" onclick="toggleTimer('exercicio-1')">Ø</button></li>
                 <li class="lista-secButtons__item"><button class="lista-secButtons__color-button" onclick="preventClose(event); changeColor('exercicio-1')">_</button></li>
             </ul>
             <div class="video-container" id="video-container-1"></div> <!-- Espaço para o vídeo -->
 
             <div class="exercicioObs-div">
-                <textarea id="exercicioObs-1" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)" readonly>Movimente os cotovelos para baixo e para trás, mantendo-os alinhados ao tronco.
-
-Pegada pronada (palma da mão na diagonal pra baixo).
-
-Alternativos:
-Serrote;
-Half-Kneeling 1-Arm Lat Pulldown.</textarea>
+                <textarea id="exercicioObs-1" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)" readonly>Alternativos:
+Remada Unilateral com Halter</textarea>
 
                 <button class="edit-button-1" onclick="toggleEdit('exercicioObs-1')">Editar</button>
             </div>
@@ -266,14 +313,17 @@ Half-Kneeling 1-Arm Lat Pulldown.</textarea>
             <ul class="lista__nome-do-exercicio">
                 <li class="lista__nome-do-exercicio__item">
                     <p class="lista__nome-do-exercicio__numero">2</p>
-                    <textarea id="nomeDoExercicio-2" class="exercicio__nome" placeholder="Nome do exercício" maxlength="32" oninput="limitLines(this, 1)" readonly>desenvolv. de ombros com halteres</textarea>
+                    <select id="nomeDoExercicio-1" class="exercicio__nome">
+                        <option value="Desenvolvimento de Ombros Sentado com Halteres - Seated Dumbbell Shoulder Press" data-video-id="SSXS4Z8OkCg">Desenvolvimento de Ombros Sentado com Halteres - Seated Dumbbell Shoulder Press</option>
+                        <option value="Desenvolvimento de Ombros na Máquina - Machine Shoulder Press" data-video-id="WvLMauqrnK8">Desenvolvimento de Ombros na Máquina - Machine Shoulder Press</option>
+                        <option value="Desenvolvimento de Ombros em Pé com Barra - Standing Barbell Shoulder Press" data-video-id="G2qpTG1Eh40">Desenvolvimento de Ombros em Pé com Barra - Standing Barbell Shoulder Press</option>
+                    </select>
                     <input type="checkbox" id="menu-2" class="container__botao">
                     <label for="menu-2" class="container__rotulo">
                         <span class="cabecalho__menu-hamburguer container__imagem">≡</span>
                     </label>
                     <ul class="lista-menu">
-                        <li class="lista-menu__item"><button class="changeEx-button" onclick="toggleEdit('nomeDoExercicio-2')">˄˅ _alt exer</button></li>
-                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-2')">» _vídeo</button></li>
+                        <li class="lista-menu__item"><button class="youtube-button" onclick="toggleYouTubeVideo('exercicio-2')">» _vídeo</button></li>
                         <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-2')">Ø _timer</button></li>
                         <li class="lista-menu__item"><button class="color-button" onclick="preventClose(event); changeColor('exercicio-2')">_cores</button></li>
                         <li class="lista-menu__item"><button class="delete-section-button" onclick="removeSection('exercicio-2')">✖ _excluir</button></li>
@@ -281,8 +331,7 @@ Half-Kneeling 1-Arm Lat Pulldown.</textarea>
                 </li>
             </ul>
             <ul class="lista-secButtons">
-                <li class="lista-secButtons__item"><button class="lista-secButtons__changeEx-button" onclick="toggleEdit('nomeDoExercicio-2')">˄˅</button></li>
-                <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="searchYouTubeDynamic('exercicio-2')">»</button></li>
+                <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="toggleYouTubeVideo('exercicio-2')">»</button></li>
                 <li class="lista-secButtons__item"><button class="lista-secButtons__clock-button" onclick="toggleTimer('exercicio-2')">Ø</button></li>
                 <li class="lista-secButtons__item"><button class="lista-secButtons__color-button" onclick="preventClose(event); changeColor('exercicio-2')">_</button></li>
             </ul>
@@ -292,8 +341,8 @@ Half-Kneeling 1-Arm Lat Pulldown.</textarea>
                 <textarea id="exercicioObs-2" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)" readonly>Movimentos completos. Da altura do ombro até a extensão completa de cotovelos.
 
 Alternativos:
-Desenvolvimento de ombros na máquina;
-Desenvolvimento de ombros com barra.</textarea>
+Desenvolvimento de Ombros na Máquina;
+Desenvolvimento de Ombros em Pé com Barra.</textarea>
 
                 <button class="edit-button-1" onclick="toggleEdit('exercicioObs-2')">Editar</button>
             </div>
@@ -460,8 +509,7 @@ Desenvolvimento de ombros com barra.</textarea>
                     <span class="cabecalho__menu-hamburguer container__imagem">≡</span>
                 </label>
                 <ul class="lista-menu">
-                    <li class="lista-menu__item"><button class="changeEx-button" onclick="toggleEdit('nomeDoExercicio-3')">˄˅ _alt exer</button></li>
-                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-3')">» _vídeo</button></li>
+                        <li class="lista-menu__item"><button class="youtube-button" onclick="toggleYouTubeVideo('exercicio-3')">» _vídeo</button></li>
                         <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-3')">Ø _timer</button></li>
                         <li class="lista-menu__item"><button class="color-button" onclick="preventClose(event); changeColor('exercicio-3')">_cores</button></li>
                         <li class="lista-menu__item"><button class="delete-section-button" onclick="removeSection('exercicio-3')">✖ _excluir</button></li>
@@ -469,8 +517,7 @@ Desenvolvimento de ombros com barra.</textarea>
             </li>
         </ul>
         <ul class="lista-secButtons">
-            <li class="lista-secButtons__item"><button class="lista-secButtons__changeEx-button" onclick="toggleEdit('nomeDoExercicio-3')">˄˅</button></li>
-            <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="searchYouTubeDynamic('exercicio-3')">»</button></li>
+            <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="toggleYouTubeVideo('exercicio-3')">»</button></li>
             <li class="lista-secButtons__item"><button class="lista-secButtons__clock-button" onclick="toggleTimer('exercicio-3')">Ø</button></li>
             <li class="lista-secButtons__item"><button class="lista-secButtons__color-button" onclick="preventClose(event); changeColor('exercicio-3')">_</button></li>
         </ul>
@@ -630,8 +677,7 @@ Tríceps com barra "v".</textarea>
                     <span class="cabecalho__menu-hamburguer container__imagem">≡</span>
                 </label>
                 <ul class="lista-menu">
-                    <li class="lista-menu__item"><button class="changeEx-button" onclick="toggleEdit('nomeDoExercicio-4')">˄˅ _alt exer</button></li>
-                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-4')">» _vídeo</button></li>
+                        <li class="lista-menu__item"><button class="youtube-button" onclick="toggleYouTubeVideo('exercicio-4')">» _vídeo</button></li>
                         <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-4')">Ø _timer</button></li>
                         <li class="lista-menu__item"><button class="color-button" onclick="preventClose(event); changeColor('exercicio-4')">_cores</button></li>
                         <li class="lista-menu__item"><button class="delete-section-button" onclick="removeSection('exercicio-4')">✖ _excluir</button></li>
@@ -639,8 +685,7 @@ Tríceps com barra "v".</textarea>
             </li>
         </ul>
         <ul class="lista-secButtons">
-            <li class="lista-secButtons__item"><button class="lista-secButtons__changeEx-button" onclick="toggleEdit('nomeDoExercicio-4')">˄˅</button></li>
-            <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="searchYouTubeDynamic('exercicio-4')">»</button></li>
+            <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="toggleYouTubeVideo('exercicio-4')">»</button></li>
             <li class="lista-secButtons__item"><button class="lista-secButtons__clock-button" onclick="toggleTimer('exercicio-4')">Ø</button></li>
             <li class="lista-secButtons__item"><button class="lista-secButtons__color-button" onclick="preventClose(event); changeColor('exercicio-4')">_</button></li>
         </ul>
@@ -797,8 +842,7 @@ Rosco martelo.</textarea>
                     <span class="cabecalho__menu-hamburguer container__imagem">≡</span>
                 </label>
                 <ul class="lista-menu">
-                    <li class="lista-menu__item"><button class="changeEx-button" onclick="toggleEdit('nomeDoExercicio-5')">˄˅ _alt exer</button></li>
-                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-5')">» _vídeo</button></li>
+                        <li class="lista-menu__item"><button class="youtube-button" onclick="toggleYouTubeVideo('exercicio-5')">» _vídeo</button></li>
                         <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-5')">Ø _timer</button></li>
                         <li class="lista-menu__item"><button class="color-button" onclick="preventClose(event); changeColor('exercicio-5')">_cores</button></li>
                         <li class="lista-menu__item"><button class="delete-section-button" onclick="removeSection('exercicio-5')">✖ _excluir</button></li>
@@ -806,8 +850,7 @@ Rosco martelo.</textarea>
             </li>
         </ul>
         <ul class="lista-secButtons">
-            <li class="lista-secButtons__item"><button class="lista-secButtons__changeEx-button" onclick="toggleEdit('nomeDoExercicio-5')">˄˅</button></li>
-            <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="searchYouTubeDynamic('exercicio-5')">»</button></li>
+            <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="toggleYouTubeVideo('exercicio-5')">»</button></li>
             <li class="lista-secButtons__item"><button class="lista-secButtons__clock-button" onclick="toggleTimer('exercicio-5')">Ø</button></li>
             <li class="lista-secButtons__item"><button class="lista-secButtons__color-button" onclick="preventClose(event); changeColor('exercicio-5')">_</button></li>
         </ul>
@@ -964,8 +1007,7 @@ Crucifixo invertido no cabo (Crossover).</textarea>
                     <span class="cabecalho__menu-hamburguer container__imagem">≡</span>
                 </label>
                 <ul class="lista-menu">
-                    <li class="lista-menu__item"><button class="changeEx-button" onclick="toggleEdit('nomeDoExercicio-6')">˄˅ _alt exer</button></li>
-                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-6')">» _vídeo</button></li>
+                        <li class="lista-menu__item"><button class="youtube-button" onclick="toggleYouTubeVideo('exercicio-6')">» _vídeo</button></li>
                         <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-6')">Ø _timer</button></li>
                         <li class="lista-menu__item"><button class="color-button" onclick="preventClose(event); changeColor('exercicio-6')">_cores</button></li>
                         <li class="lista-menu__item"><button class="delete-section-button" onclick="removeSection('exercicio-6')">✖ _excluir</button></li>
@@ -973,8 +1015,7 @@ Crucifixo invertido no cabo (Crossover).</textarea>
             </li>
         </ul>
         <ul class="lista-secButtons">
-            <li class="lista-secButtons__item"><button class="lista-secButtons__changeEx-button" onclick="toggleEdit('nomeDoExercicio-6')">˄˅</button></li>
-            <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="searchYouTubeDynamic('exercicio-6')">»</button></li>
+            <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="toggleYouTubeVideo('exercicio-6')">»</button></li>
             <li class="lista-secButtons__item"><button class="lista-secButtons__clock-button" onclick="toggleTimer('exercicio-6')">Ø</button></li>
             <li class="lista-secButtons__item"><button class="lista-secButtons__color-button" onclick="preventClose(event); changeColor('exercicio-6')">_</button></li>
         </ul>
@@ -1161,7 +1202,7 @@ Abdominal bicicleta.</textarea>
 
     <script src="/js/textarea.js"></script>
 
-    <script src="/js/youTube.js"></script>
+    <script src="/js/youTubeId.js"></script>
 
     <script src="/js/fileHandle.js"></script>
 

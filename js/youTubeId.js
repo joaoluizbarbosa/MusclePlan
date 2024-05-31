@@ -11,14 +11,13 @@ const muscleGroups = {
         { name: "Tríceps Francês", videoId: "_dtPoiFWZT4" }
     ],
     ombros: [
-        { name: "Elevação Lateral com Halteres", videoId: "ot9nwSC1JnA" },
-        { name: "Desenvolvimento de Ombros com Halteres", videoId: "5I7ogOjvdnc" },
-        { name: "Elevação Lateral na Polia", videoId: "dgpts8LHOLc" }
+        { name: "Desenvolvimento de Ombros Sentado com Halteres - Seated Dumbbell Shoulder Press", videoId: "SSXS4Z8OkCg" },
+        { name: "Desenvolvimento de Ombros na Máquina - Machine Shoulder Press", videoId: "WvLMauqrnK8" },
+        { name: "Desenvolvimento de Ombros em Pé com Barra - Standing Barbell Shoulder Press", videoId: "G2qpTG1Eh40" }
     ],
     costas: [
-        { name: "Remada Baixa Puxador Anatômico N2 - ", videoId: "klmn2425" },
-        { name: "Remada Curvada", videoId: "opqr2627" },
-        { name: "Levantamento Terra", videoId: "stuv2829" }
+        { name: "Remada Baixa no Cabo - Seated Cable Row", videoId: "UCXxvVItLoM" },
+        { name: "Remada Unilateral com Halter - Single Arm Supported Dumbbell Row", videoId: "DMo3HJoawrU" }
     ],
     biceps: [
         { name: "Rosca Direta", videoId: "mnop1123" },
