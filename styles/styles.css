@@ -597,7 +597,7 @@ input[type="checkbox"].checkbox-group:checked::before {
     font-weight: 400;
     color: var(--cor-fonte-1);
     width: 96%; 
-    height: 40px;
+    height: 55px;
     resize: none; /* Impede o redimensionamento do textarea */
     overflow: hidden;
 }

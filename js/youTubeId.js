@@ -33,7 +33,8 @@ const muscleGroups = {
         { name: "Encolhimento Kelso na Máquina - Machine Kelso Shrug", videoId: "aWeUsSDuHbs"}
     ],
     antebraco: [
-        { name: "Extensão de Punhos com Halteres - Dumbbell Wrist Extension", videoId: "sCaQ7OZZ1MY" }
+        { name: "Extensão de Punhos com Halteres - Dumbbell Wrist Extension", videoId: "sCaQ7OZZ1MY" },
+        { name: "Flexão de Punhos com Halteres - Dumbbell Wrist Flexion", videoId: "3VLTzIrnb5g" }
     ],
     gluteos: [
         { name: "Cadeira Abdutora - Seated Hip Abductor Machine", videoId: "G_8LItOiZ0Q" },
