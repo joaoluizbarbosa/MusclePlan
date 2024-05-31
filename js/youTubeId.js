@@ -63,6 +63,9 @@ const muscleGroups = {
         { name: "Abdominal Canivete - V Up", videoId: "7UVgs18Y1P4" },
         { name: "Abdominal Bicicleta - Bicycle Crunch", videoId: "cbKIDZ_XyjY" },
         { name: "Elevação de Joelhos Pendurado - Hanging Knee Raise", videoId: "RD_A-Z15ER4" }
+    ],
+    ativarDesativar: [
+        { name: "", videoId: "" }
     ]
 };
 
@@ -154,9 +157,9 @@ function restoreExerciseSelections(selectedExercises) {
     });
 }
 
+// Função para ativar/desativar o checkbox e disparar o evento de mudança
 function ativarDesativarCheckbox(checkboxId) {
-    var checkbox = document.getElementById(checkboxId);
-    var estadoAtual = checkbox.checked;
-  
-    checkbox.checked = !estadoAtual;
-  }
+    const checkbox = document.getElementById(checkboxId);
+    checkbox.checked = !checkbox.checked;
+    checkbox.dispatchEvent(new Event('change'));
+}

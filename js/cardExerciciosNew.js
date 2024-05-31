@@ -29,6 +29,7 @@
             </li>
         </ul>
         <ul class="lista-secButtons">
+            <li class="lista-secButtons__item"><button class="lista-secButtons__ativarDesativar-button" onclick="ativarDesativarCheckbox('ativarDesativar')">∞</button></li>
             <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="toggleYouTubeVideo('exercicio-${j}')">»</button></li>
             <li class="lista-secButtons__item"><button class="lista-secButtons__clock-button" onclick="toggleTimer('exercicio-${j}')">Ø</button></li>
             <li class="lista-secButtons__item"><button class="lista-secButtons__color-button" onclick="preventClose(event); changeColor('exercicio-${j}')">_</button></li>

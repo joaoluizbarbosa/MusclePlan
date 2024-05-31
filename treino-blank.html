@@ -102,6 +102,14 @@
                         <input type="checkbox" id="panturrilha" name="group" value="panturrilha" class="checkbox-group">
                         <label for="panturrilha" class="label-group">Panturrilha</label>
                     </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="abdomen" name="group" value="abdomen" class="checkbox-group">
+                        <label for="abdomen" class="label-group">Abdomen</label>
+                    </div>
+                    <div class="itens-div-oculto">
+                        <input type="checkbox" id="ativarDesativar" name="group" value="ativarDesativar" class="checkbox-group-oculto">
+                        <label for="ativarDesativar" class="label-group-oculto">AtivarDesativar</label>
+                    </div>
                 </div>
             </li>
         </ul>
@@ -125,6 +133,7 @@
                 </li>
             </ul>
             <ul class="lista-secButtons">
+                <li class="lista-secButtons__item"><button class="lista-secButtons__ativarDesativar-button" onclick="ativarDesativarCheckbox('ativarDesativar')">∞</button></li>
                 <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="toggleYouTubeVideo('exercicio-1')">»</button></li>
                 <li class="lista-secButtons__item"><button class="lista-secButtons__clock-button" onclick="toggleTimer('exercicio-1')">Ø</button></li>
                 <li class="lista-secButtons__item"><button class="lista-secButtons__color-button" onclick="preventClose(event); changeColor('exercicio-1')">_</button></li>

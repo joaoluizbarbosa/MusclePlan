@@ -66,6 +66,67 @@ _MMII</textarea>
                     <button class="edit-button" onclick="toggleEdit('treinoObs')">Editar</button>
                 
             </li>
+            <li class="lista__treino-info__item">
+                <label class="labelTitulo-group">Agrupamentos Musculares:</label>
+                <div class="divPrincipal-group">
+                    <div class="itens-div">
+                        <input type="checkbox" id="peito" name="group" value="peito" class="checkbox-group">
+                        <label for="peito" class="label-group">Peito</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="triceps" name="group" value="triceps" class="checkbox-group">
+                        <label for="triceps" class="label-group">Tríceps</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="ombros" name="group" value="ombros" class="checkbox-group">
+                        <label for="ombros" class="label-group">Ombros</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="costas" name="group" value="costas" class="checkbox-group">
+                        <label for="costas" class="label-group">Costas</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="biceps" name="group" value="biceps" class="checkbox-group">
+                        <label for="biceps" class="label-group">Bíceps</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="trapezio" name="group" value="trapezio" class="checkbox-group">
+                        <label for="trapezio" class="label-group">Trapézio</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="antebraco" name="group" value="antebraco" class="checkbox-group">
+                        <label for="antebraco" class="label-group">Antebraço</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="gluteos" name="group" value="gluteos" class="checkbox-group" checked>
+                        <label for="gluteos" class="label-group">Glúteos</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="quadriceps" name="group" value="quadriceps" class="checkbox-group" checked>
+                        <label for="quadriceps" class="label-group">Quadríceps</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="isquiotibiais" name="group" value="isquiotibiais" class="checkbox-group" checked>
+                        <label for="isquiotibiais" class="label-group">Isquiotibiais</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="adutores" name="group" value="adutores" class="checkbox-group" checked>
+                        <label for="adutores" class="label-group">Adutores</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="panturrilha" name="group" value="panturrilha" class="checkbox-group" checked>
+                        <label for="panturrilha" class="label-group">Panturrilha</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="abdomen" name="group" value="abdomen" class="checkbox-group">
+                        <label for="abdomen" class="label-group">Abdomen</label>
+                    </div>
+                    <div class="itens-div-oculto">
+                        <input type="checkbox" id="ativarDesativar" name="group" value="ativarDesativar" class="checkbox-group-oculto">
+                        <label for="ativarDesativar" class="label-group-oculto">AtivarDesativar</label>
+                    </div>
+                </div>
+            </li>
         </ul>
 
 
@@ -74,14 +135,16 @@ _MMII</textarea>
             <ul class="lista__nome-do-exercicio">
                 <li class="lista__nome-do-exercicio__item">
                     <p class="lista__nome-do-exercicio__numero">1</p>
-                    <textarea id="nomeDoExercicio-1" class="exercicio__nome" placeholder="Nome do exercício" maxlength="32" oninput="limitLines(this, 1)" readonly>dumbbell romanian deadlift</textarea>
+                    <select id="nomeDoExercicio-1" class="exercicio__nome">
+                        <option value="DB RDL - Levantamento Terra Romeno" selected>DB RDL - Levantamento Terra Romeno</option>
+                    </select>
                     <input type="checkbox" id="menu-1" class="container__botao">
                     <label for="menu-1" class="container__rotulo">
                         <span class="cabecalho__menu-hamburguer container__imagem">≡</span>
                     </label>
                     <ul class="lista-menu">
-                        <li class="lista-menu__item"><button class="changeEx-button" onclick="toggleEdit('nomeDoExercicio-1')">˄˅ _alt exer</button></li>
-                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-1')">» _vídeo</button></li>
+
+                        <li class="lista-menu__item"><button class="youtube-button" onclick="toggleYouTubeVideo('exercicio-1')">» _vídeo</button></li>
                         <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-1')">Ø _timer</button></li>
                         <li class="lista-menu__item"><button class="color-button" onclick="preventClose(event); changeColor('exercicio-1')">_cores</button></li>
                         <li class="lista-menu__item"><button class="delete-section-button" onclick="removeSection('exercicio-1')">✖ _excluir</button></li>
@@ -89,8 +152,8 @@ _MMII</textarea>
                 </li>
             </ul>
             <ul class="lista-secButtons">
-                <li class="lista-secButtons__item"><button class="lista-secButtons__changeEx-button" onclick="toggleEdit('nomeDoExercicio-1')">˄˅</button></li>
-                <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="searchYouTubeDynamic('exercicio-1')">»</button></li>
+                <li class="lista-secButtons__item"><button class="lista-secButtons__ativarDesativar-button" onclick="ativarDesativarCheckbox('ativarDesativar')">∞</button></li>
+                <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="toggleYouTubeVideo('exercicio-1')">»</button></li>
                 <li class="lista-secButtons__item"><button class="lista-secButtons__clock-button" onclick="toggleTimer('exercicio-1')">Ø</button></li>
                 <li class="lista-secButtons__item"><button class="lista-secButtons__color-button" onclick="preventClose(event); changeColor('exercicio-1')">_</button></li>
             </ul>
@@ -264,14 +327,15 @@ Sttif Leg Deadlift.</textarea>
             <ul class="lista__nome-do-exercicio">
                 <li class="lista__nome-do-exercicio__item">
                     <p class="lista__nome-do-exercicio__numero">2</p>
-                    <textarea id="nomeDoExercicio-2" class="exercicio__nome" placeholder="Nome do exercício" maxlength="32" oninput="limitLines(this, 1)" readonly>leg press 45°</textarea>
-                    <input type="checkbox" id="menu-2" class="container__botao">
+                    <select id="nomeDoExercicio-2" class="exercicio__nome">
+                    <option value="" disabled selected>Selecione um exercício</option>
+                </select>         <input type="checkbox" id="menu-2" class="container__botao">
                     <label for="menu-2" class="container__rotulo">
                         <span class="cabecalho__menu-hamburguer container__imagem">≡</span>
                     </label>
                     <ul class="lista-menu">
-                        <li class="lista-menu__item"><button class="changeEx-button" onclick="toggleEdit('nomeDoExercicio-2')">˄˅ _alt exer</button></li>
-                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-2')">» _vídeo</button></li>
+
+                        <li class="lista-menu__item"><button class="youtube-button" onclick="showYouTubeVideo('exercicio-2')">» _vídeo</button></li>
                         <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-2')">Ø _timer</button></li>
                         <li class="lista-menu__item"><button class="color-button" onclick="preventClose(event); changeColor('exercicio-2')">_cores</button></li>
                         <li class="lista-menu__item"><button class="delete-section-button" onclick="removeSection('exercicio-2')">✖ _excluir</button></li>
@@ -279,8 +343,7 @@ Sttif Leg Deadlift.</textarea>
                 </li>
             </ul>
             <ul class="lista-secButtons">
-                <li class="lista-secButtons__item"><button class="lista-secButtons__changeEx-button" onclick="toggleEdit('nomeDoExercicio-2')">˄˅</button></li>
-                <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="searchYouTubeDynamic('exercicio-2')">»</button></li>
+                <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="showYouTubeVideo('exercicio-2')">»</button></li>
                 <li class="lista-secButtons__item"><button class="lista-secButtons__clock-button" onclick="toggleTimer('exercicio-2')">Ø</button></li>
                 <li class="lista-secButtons__item"><button class="lista-secButtons__color-button" onclick="preventClose(event); changeColor('exercicio-2')">_</button></li>
             </ul>
@@ -448,14 +511,14 @@ Step Up.</textarea>
         <ul class="lista__nome-do-exercicio">
             <li class="lista__nome-do-exercicio__item">
                 <p class="lista__nome-do-exercicio__numero">3</p>
-                <textarea id="nomeDoExercicio-3" class="exercicio__nome" placeholder="Nome do exercício" maxlength="32" oninput="limitLines(this, 1)" readonly>mesa flexora</textarea>
-                <input type="checkbox" id="menu-3" class="container__botao">
+                <select id="nomeDoExercicio-3" class="exercicio__nome">
+                    <option value="" disabled selected>Selecione um exercício</option>
+                </select>    <input type="checkbox" id="menu-3" class="container__botao">
                 <label for="menu-3" class="container__rotulo">
                     <span class="cabecalho__menu-hamburguer container__imagem">≡</span>
                 </label>
                 <ul class="lista-menu">
-                    <li class="lista-menu__item"><button class="changeEx-button" onclick="toggleEdit('nomeDoExercicio-3')">˄˅ _alt exer</button></li>
-                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-3')">» _vídeo</button></li>
+                        <li class="lista-menu__item"><button class="youtube-button" onclick="showYouTubeVideo('exercicio-3')">» _vídeo</button></li>
                         <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-3')">Ø _timer</button></li>
                         <li class="lista-menu__item"><button class="color-button" onclick="preventClose(event); changeColor('exercicio-3')">_cores</button></li>
                         <li class="lista-menu__item"><button class="delete-section-button" onclick="removeSection('exercicio-3')">✖ _excluir</button></li>
@@ -463,8 +526,7 @@ Step Up.</textarea>
             </li>
         </ul>
         <ul class="lista-secButtons">
-            <li class="lista-secButtons__item"><button class="lista-secButtons__changeEx-button" onclick="toggleEdit('nomeDoExercicio-3')">˄˅</button></li>
-            <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="searchYouTubeDynamic('exercicio-3')">»</button></li>
+            <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="showYouTubeVideo('exercicio-3')">»</button></li>
             <li class="lista-secButtons__item"><button class="lista-secButtons__clock-button" onclick="toggleTimer('exercicio-3')">Ø</button></li>
             <li class="lista-secButtons__item"><button class="lista-secButtons__color-button" onclick="preventClose(event); changeColor('exercicio-3')">_</button></li>
         </ul>
@@ -659,14 +721,15 @@ Flexão de joelhos com bola.</textarea>
         <ul class="lista__nome-do-exercicio">
             <li class="lista__nome-do-exercicio__item">
                 <p class="lista__nome-do-exercicio__numero">4</p>
-                <textarea id="nomeDoExercicio-4" class="exercicio__nome" placeholder="Nome do exercício" maxlength="32" oninput="limitLines(this, 1)" readonly style="background-color: rgb(21, 52, 72);">cadeira adutora</textarea>
+                <select id="nomeDoExercicio-4" class="exercicio__nome"  style="background-color: rgb(21, 52, 72);">
+                    <option value="" disabled selected>Selecione um exercício</option>
+                </select>
                 <input type="checkbox" id="menu-4" class="container__botao">
                 <label for="menu-4" class="container__rotulo">
                     <span class="cabecalho__menu-hamburguer container__imagem">≡</span>
                 </label>
                 <ul class="lista-menu">
-                    <li class="lista-menu__item"><button class="changeEx-button" onclick="toggleEdit('nomeDoExercicio-4')">˄˅ _alt exer</button></li>
-                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-4')">» _vídeo</button></li>
+                        <li class="lista-menu__item"><button class="youtube-button" onclick="showYouTubeVideo('exercicio-4')">» _vídeo</button></li>
                         <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-4')">Ø _timer</button></li>
                         <li class="lista-menu__item"><button class="color-button" onclick="preventClose(event); changeColor('exercicio-4')">_cores</button></li>
                         <li class="lista-menu__item"><button class="delete-section-button" onclick="removeSection('exercicio-4')">✖ _excluir</button></li>
@@ -674,8 +737,7 @@ Flexão de joelhos com bola.</textarea>
             </li>
         </ul>
         <ul class="lista-secButtons">
-            <li class="lista-secButtons__item"><button class="lista-secButtons__changeEx-button" onclick="toggleEdit('nomeDoExercicio-4')">˄˅</button></li>
-            <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="searchYouTubeDynamic('exercicio-4')">»</button></li>
+            <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="showYouTubeVideo('exercicio-4')">»</button></li>
             <li class="lista-secButtons__item"><button class="lista-secButtons__clock-button" onclick="toggleTimer('exercicio-4')">Ø</button></li>
             <li class="lista-secButtons__item"><button class="lista-secButtons__color-button" onclick="preventClose(event); changeColor('exercicio-4')">_</button></li>
         </ul>
@@ -824,14 +886,15 @@ Flexão de joelhos com bola.</textarea>
         <ul class="lista__nome-do-exercicio">
             <li class="lista__nome-do-exercicio__item">
                 <p class="lista__nome-do-exercicio__numero">5</p>
-                <textarea id="nomeDoExercicio-5" class="exercicio__nome" placeholder="Nome do exercício" maxlength="32" oninput="limitLines(this, 1)" readonly style="background-color: rgb(21, 52, 72);">cadeira abdutora</textarea>
+                <select id="nomeDoExercicio-5" class="exercicio__nome"  style="background-color: rgb(21, 52, 72);">
+                    <option value="" disabled selected>Selecione um exercício</option>
+                </select>
                 <input type="checkbox" id="menu-5" class="container__botao">
                 <label for="menu-5" class="container__rotulo">
                     <span class="cabecalho__menu-hamburguer container__imagem">≡</span>
                 </label>
                 <ul class="lista-menu">
-                    <li class="lista-menu__item"><button class="changeEx-button" onclick="toggleEdit('nomeDoExercicio-5')">˄˅ _alt exer</button></li>
-                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-5')">» _vídeo</button></li>
+                        <li class="lista-menu__item"><button class="youtube-button" onclick="showYouTubeVideo('exercicio-5')">» _vídeo</button></li>
                         <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-5')">Ø _timer</button></li>
                         <li class="lista-menu__item"><button class="color-button" onclick="preventClose(event); changeColor('exercicio-5')">_cores</button></li>
                         <li class="lista-menu__item"><button class="delete-section-button" onclick="removeSection('exercicio-5')">✖ _excluir</button></li>
@@ -839,8 +902,7 @@ Flexão de joelhos com bola.</textarea>
             </li>
         </ul>
         <ul class="lista-secButtons">
-            <li class="lista-secButtons__item"><button class="lista-secButtons__changeEx-button" onclick="toggleEdit('nomeDoExercicio-5')">˄˅</button></li>
-            <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="searchYouTubeDynamic('exercicio-5')">»</button></li>
+            <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="showYouTubeVideo('exercicio-5')">»</button></li>
             <li class="lista-secButtons__item"><button class="lista-secButtons__clock-button" onclick="toggleTimer('exercicio-5')">Ø</button></li>
             <li class="lista-secButtons__item"><button class="lista-secButtons__color-button" onclick="preventClose(event); changeColor('exercicio-5')">_</button></li>
         </ul>
@@ -989,14 +1051,15 @@ Flexão de joelhos com bola.</textarea>
         <ul class="lista__nome-do-exercicio">
             <li class="lista__nome-do-exercicio__item">
                 <p class="lista__nome-do-exercicio__numero">6</p>
-                <textarea id="nomeDoExercicio-6" class="exercicio__nome" placeholder="Nome do exercício" maxlength="32" oninput="limitLines(this, 1)" readonly>panturrilha no hack squat</textarea>
+                <select id="nomeDoExercicio-6" class="exercicio__nome">
+                    <option value="" disabled selected>Selecione um exercício</option>
+                </select>
                 <input type="checkbox" id="menu-6" class="container__botao">
                 <label for="menu-6" class="container__rotulo">
                     <span class="cabecalho__menu-hamburguer container__imagem">≡</span>
                 </label>
                 <ul class="lista-menu">
-                    <li class="lista-menu__item"><button class="changeEx-button" onclick="toggleEdit('nomeDoExercicio-6')">˄˅ _alt exer</button></li>
-                        <li class="lista-menu__item"><button class="youtube-button" onclick="searchYouTubeDynamic('exercicio-6')">» _vídeo</button></li>
+                        <li class="lista-menu__item"><button class="youtube-button" onclick="showYouTubeVideo('exercicio-6')">» _vídeo</button></li>
                         <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-6')">Ø _timer</button></li>
                         <li class="lista-menu__item"><button class="color-button" onclick="preventClose(event); changeColor('exercicio-6')">_cores</button></li>
                         <li class="lista-menu__item"><button class="delete-section-button" onclick="removeSection('exercicio-6')">✖ _excluir</button></li>
@@ -1004,8 +1067,7 @@ Flexão de joelhos com bola.</textarea>
             </li>
         </ul>
         <ul class="lista-secButtons">
-            <li class="lista-secButtons__item"><button class="lista-secButtons__changeEx-button" onclick="toggleEdit('nomeDoExercicio-6')">˄˅</button></li>
-            <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="searchYouTubeDynamic('exercicio-6')">»</button></li>
+            <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="showYouTubeVideo('exercicio-6')">»</button></li>
             <li class="lista-secButtons__item"><button class="lista-secButtons__clock-button" onclick="toggleTimer('exercicio-6')">Ø</button></li>
             <li class="lista-secButtons__item"><button class="lista-secButtons__color-button" onclick="preventClose(event); changeColor('exercicio-6')">_</button></li>
         </ul>
@@ -1212,7 +1274,7 @@ Soleador.</textarea>
 
     <script src="/js/textarea.js"></script>
 
-    <script src="/js/youTube.js"></script>
+    <script src="/js/youTubeId.js"></script>
 
     <script src="/js/fileHandle.js"></script>
 
