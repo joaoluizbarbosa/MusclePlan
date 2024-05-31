@@ -146,7 +146,11 @@
     height: 105px;
 }
 
-.titulo-index__treino-em-branco, .titulo-index__treino-extPpl4x, .titulo-index__treino-teTp4x {
+.gabriela {
+    height: 105px;
+}
+
+.titulo-index__treino-em-branco, .titulo-index__treino-extPpl4x, .titulo-index__treino-teTp4x, .titulo-index__treino-martina, .titulo-index__treino-gabriela {
     font-family: var(--fonte-principal);
     font-weight: 600;
     font-size: 1em;

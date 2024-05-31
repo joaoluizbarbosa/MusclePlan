@@ -16,7 +16,7 @@ const muscleGroups = {
         { name: "Elevação Lateral na Polia", videoId: "dgpts8LHOLc" }
     ],
     costas: [
-        { name: "Puxada Frontal", videoId: "klmn2425" },
+        { name: "Remada Baixa Puxador Anatômico N2 - ", videoId: "klmn2425" },
         { name: "Remada Curvada", videoId: "opqr2627" },
         { name: "Levantamento Terra", videoId: "stuv2829" }
     ],
@@ -32,8 +32,9 @@ const muscleGroups = {
         { name: "Exercício 1", videoId: "t6QJTiz35dc" }
     ],
     gluteos: [
-        { name: "Elevação Pélvica", videoId: "t6QJTiz35dc" },
-        { name: "Levantamento Terra Romeno com Halteres - DB Romanian Deadlift", videoId: "xAL7lHwj30E" }
+        { name: "Cadeira Abdutora - Seated Hip Abductor Machine", videoId: "G_8LItOiZ0Q" },
+        { name: "Levantamento Terra Romeno com Halteres - DB Romanian Deadlift", videoId: "xAL7lHwj30E" },
+        { name: "Elevação Pélvica com Barra - Barbell Hip Thrust", videoId: "EF7jXP17DPE" }
     ],
     quadriceps: [
         { name: "Cadeira Extensora - Leg Extension", videoId: "m0FOpMEgero" }
@@ -44,19 +45,12 @@ const muscleGroups = {
         { name: "Cadeira Flexora - Seated Leg Curl", videoId: "Orxowest56U" }
     ],
     adutores: [
-        { name: "Cadeira Adutora", videoId: "qrst4041" }
+        { name: "Cadeira Adutora - Seated Hip Adduction Machine", videoId: "CjAVezAggkI" }
     ],
     panturrilha: [
         { name: "Elevação de Panturrilha", videoId: "ijkl3637" },
         { name: "Panturrilha Sentado", videoId: "mnop3839" },
         { name: "Panturrilha em Pé", videoId: "qrst4041" }
-    ],
-    atualizar: [
-        { name: "Atualizar", videoId: "qrst4041" },
-        { name: "", videoId: "" },
-        { name: "", videoId: "" },
-        { name: "", videoId: "" },
-        { name: "", videoId: "" }
     ]
 };
 
@@ -147,3 +141,10 @@ function restoreExerciseSelections(selectedExercises) {
         }
     });
 }
+
+function ativarDesativarCheckbox(checkboxId) {
+    var checkbox = document.getElementById(checkboxId);
+    var estadoAtual = checkbox.checked;
+  
+    checkbox.checked = !estadoAtual;
+  }

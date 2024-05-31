@@ -478,7 +478,7 @@ input[type="checkbox"].checkbox-group:checked::before {
 .lista__nome-do-exercicio__item {
     position: relative;
     display: grid;
-    grid-template-columns: 5% 88% 5%;
+    grid-template-columns: 5% 88% 6%;
     margin: 1em 0.5em 0em 1em;
     align-items: center;
     justify-content: space-between;
@@ -596,7 +596,7 @@ input[type="checkbox"].checkbox-group:checked::before {
     font-size: 0.9em;
     font-weight: 400;
     color: var(--cor-fonte-1);
-    width: 97%; 
+    width: 96%; 
     height: 40px;
     resize: none; /* Impede o redimensionamento do textarea */
     overflow: hidden;
