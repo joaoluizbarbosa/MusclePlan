@@ -111,6 +111,7 @@
                     <p class="lista__nome-do-exercicio__numero">1</p>
                     <select id="nomeDoExercicio-1" class="exercicio__nome">
                         <option value="Mesa Flexora - Lying Leg Curl" data-video-id="SbSNUXPRkc8">Mesa Flexora - Lying Leg Curl</option>
+                        <option value="Cadeira Flexora - Seated Leg Curl" data-video-id="Orxowest56U">Cadeira Flexora - Seated Leg Curl</option>
                     </select>
                     <input type="checkbox" id="menu-1" class="container__botao">
                     <label for="menu-1" class="container__rotulo">
@@ -131,7 +132,8 @@
             </ul>
             <div class="video-container" id="video-container-1"></div>
             <div class="exercicioObs-div">
-                <textarea id="exercicioObs-1" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)" readonly></textarea>
+                <textarea id="exercicioObs-1" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)" readonly>Alternativo:
+Cadeira Flexora - Seated Leg Curl</textarea>
                 <button class="edit-button-1" onclick="toggleEdit('exercicioObs-1')">Editar</button>
             </div>
             <ul class="lista__primeira-linha">
@@ -294,7 +296,7 @@
             </ul>
             <div class="video-container" id="video-container-2"></div>
             <div class="exercicioObs-div">
-                <textarea id="exercicioObs-2" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)" readonly></textarea>
+                <textarea id="exercicioObs-2" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)" readonly>As últimas duas séries são unilaterais.</textarea>
                 <button class="edit-button-1" onclick="toggleEdit('exercicioObs-2')">Editar</button>
             </div>
             <ul class="lista__primeira-linha">
@@ -423,6 +425,48 @@
                     <input class="input-checkbox" type="checkbox">
                 </li>
             </ul>
+            <ul id="myList2" class="lista__segunda-linha">
+                <li class="lista__segunda-linha__item">
+                    <p>3</p>
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-reps1" type="number" value="10">
+                    <p>-</p>
+                    <input class="lista__segunda-linha__input input-reps2" type="number" value="12">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-kg" type="number" value="12">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-rpe1" type="number" value="10">
+                    <p>-</p>
+                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="10">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="input-checkbox" type="checkbox">
+                </li>
+            </ul>
+            <ul id="myList2" class="lista__segunda-linha">
+                <li class="lista__segunda-linha__item">
+                    <p>3</p>
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-reps1" type="number" value="10">
+                    <p>-</p>
+                    <input class="lista__segunda-linha__input input-reps2" type="number" value="12">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-kg" type="number" value="12">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="lista__segunda-linha__input input-rpe1" type="number" value="10">
+                    <p>-</p>
+                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="10">
+                </li>
+                <li class="lista__segunda-linha__item">
+                    <input class="input-checkbox" type="checkbox">
+                </li>
+            </ul>
             <ul class="set-buttons">
                 <li class="set-buttons__item">
                     <button id="button1-add-w" class="add-w-button" onclick="myFunctionWSet('exercicio-2', this.id)">ADD a-Set</button>
@@ -431,11 +475,11 @@
                 </li>
             </ul>
         </section>
-        <section class="exercicio-n" id="exercicio-3" draggable="true" ondragstart="drag(event)">
+        <section class="exercicio-n" id="exercicio-3" draggable="true" ondragstart="drag(event)" style="background-color: #BE3144;">
             <ul class="lista__nome-do-exercicio">
                 <li class="lista__nome-do-exercicio__item">
                     <p class="lista__nome-do-exercicio__numero">3</p>
-                    <select id="nomeDoExercicio-1" class="exercicio__nome">
+                    <select id="nomeDoExercicio-1" class="exercicio__nome" style="background-color: #BE3144;">
                         <option value="Cadeira Abdutora - Seated Hip Abductor Machine" data-video-id="G_8LItOiZ0Q">Cadeira Abdutora - Seated Hip Abductor Machine</option>
                     </select>
                     <input type="checkbox" id="menu-3" class="container__botao">
@@ -457,7 +501,8 @@
             </ul>
             <div class="video-container" id="video-container-3"></div>
             <div class="exercicioObs-div">
-                <textarea id="exercicioObs-3" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)" readonly></textarea>
+                <textarea id="exercicioObs-3" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)" readonly style="background-color: #BE3144;">Super-set com:
+Levantamento Terra Romeno com Halteres - DB Romanian Deadlift</textarea>
                 <button class="edit-button-1" onclick="toggleEdit('exercicioObs-3')">Editar</button>
             </div>
             <ul class="lista__primeira-linha">
@@ -520,7 +565,7 @@
                 <li class="lista__segunda-linha__item">
                     <input class="lista__segunda-linha__input input-rpe1" type="number" value="9">
                     <p>-</p>
-                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="10">
+                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="10" style="background-color: #872341";>
                 </li>
                 <li class="lista__segunda-linha__item">
                     <input class="input-checkbox" type="checkbox">
@@ -541,7 +586,7 @@
                 <li class="lista__segunda-linha__item">
                     <input class="lista__segunda-linha__input input-rpe1" type="number" value="9">
                     <p>-</p>
-                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="10">
+                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="10" style="background-color: #872341";>
                 </li>
                 <li class="lista__segunda-linha__item">
                     <input class="input-checkbox" type="checkbox">
@@ -562,7 +607,7 @@
                 <li class="lista__segunda-linha__item">
                     <input class="lista__segunda-linha__input input-rpe1" type="number" value="9">
                     <p>-</p>
-                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="10">
+                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="10" style="background-color: #872341";>
                 </li>
                 <li class="lista__segunda-linha__item">
                     <input class="input-checkbox" type="checkbox">
@@ -576,11 +621,11 @@
                 </li>
             </ul>
         </section>
-        <section class="exercicio-n" id="exercicio-4" draggable="true" ondragstart="drag(event)">
+        <section class="exercicio-n" id="exercicio-4" draggable="true" ondragstart="drag(event)" style="background-color: #BE3144;">
             <ul class="lista__nome-do-exercicio">
                 <li class="lista__nome-do-exercicio__item">
                     <p class="lista__nome-do-exercicio__numero">4</p>
-                    <select id="nomeDoExercicio-1" class="exercicio__nome">
+                    <select id="nomeDoExercicio-1" class="exercicio__nome" style="background-color: #BE3144;">
                         <option value="Levantamento Terra Romeno com Halteres - DB Romanian Deadlift" data-video-id="xAL7lHwj30E">Levantamento Terra Romeno com Halteres - DB Romanian Deadlift</option>
                     </select>
                     <input type="checkbox" id="menu-4" class="container__botao">
@@ -602,7 +647,7 @@
             </ul>
             <div class="video-container" id="video-container-4"></div>
             <div class="exercicioObs-div">
-                <textarea id="exercicioObs-4" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)" readonly></textarea>
+                <textarea id="exercicioObs-4" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)" readonly style="background-color: #BE3144;"></textarea>
                 <button class="edit-button-1" onclick="toggleEdit('exercicioObs-4')">Editar</button>
             </div>
             <ul class="lista__primeira-linha">
@@ -683,7 +728,7 @@
                 <li class="lista__segunda-linha__item">
                     <input class="lista__segunda-linha__input input-rpe1" type="number" value="8">
                     <p>-</p>
-                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="9">
+                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="9" style="background-color: #872341";>
                 </li>
                 <li class="lista__segunda-linha__item">
                     <input class="input-checkbox" type="checkbox">
@@ -704,7 +749,7 @@
                 <li class="lista__segunda-linha__item">
                     <input class="lista__segunda-linha__input input-rpe1" type="number" value="8">
                     <p>-</p>
-                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="9">
+                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="9" style="background-color: #872341";>
                 </li>
                 <li class="lista__segunda-linha__item">
                     <input class="input-checkbox" type="checkbox">
@@ -725,7 +770,7 @@
                 <li class="lista__segunda-linha__item">
                     <input class="lista__segunda-linha__input input-rpe1" type="number" value="8">
                     <p>-</p>
-                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="9">
+                    <input class="lista__segunda-linha__input input-rpe2" type="number" value="9" style="background-color: #872341";>
                 </li>
                 <li class="lista__segunda-linha__item">
                     <input class="input-checkbox" type="checkbox">
@@ -745,6 +790,7 @@
                     <p class="lista__nome-do-exercicio__numero">5</p>
                     <select id="nomeDoExercicio-1" class="exercicio__nome">
                         <option value="Elevação Pélvica com Barra - Barbell Hip Thrust" data-video-id="EF7jXP17DPE">Elevação Pélvica com Barra - Barbell Hip Thrust</option>
+                        <option value="Elevação Pélvica com Peso Corporal - Bodyweight Hip Thrust" data-video-id="7XuNzi5rcj4">Elevação Pélvica com Peso Corporal - Bodyweight Hip Thrust</option>
                     </select>
                     <input type="checkbox" id="menu-5" class="container__botao">
                     <label for="menu-5" class="container__rotulo">
@@ -765,7 +811,8 @@
             </ul>
             <div class="video-container" id="video-container-5"></div>
             <div class="exercicioObs-div">
-                <textarea id="exercicioObs-5" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)" readonly></textarea>
+                <textarea id="exercicioObs-5" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)" readonly>Alternativo:
+Elevação Pélvica com Peso Corporal - Bodyweight Hip Thrust</textarea>
                 <button class="edit-button-1" onclick="toggleEdit('exercicioObs-5')">Editar</button>
             </div>
             <ul class="lista__primeira-linha">
