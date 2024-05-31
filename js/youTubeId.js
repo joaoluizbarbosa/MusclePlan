@@ -6,9 +6,8 @@ const muscleGroups = {
         { name: "Low Incline Dumbbell Press", videoId: "ADl1Ac2ADHQ" }
     ],
     triceps: [
-        { name: "Tríceps Pulley com barra reta", videoId: "M88Bt4MMpkI" },
-        { name: "Tríceps Testa", videoId: "40Cx-IfJhA0" },
-        { name: "Tríceps Francês", videoId: "_dtPoiFWZT4" }
+        { name: "Tríceps na Polia com Barra Reta - Cable Triceps Pushdown", videoId: "6Fzep104f0s" },
+        { name: "Tríceps na Polia com Corda - Rope Pushdown", videoId:"-xa-6cQaZKY" }
     ],
     ombros: [
         { name: "Desenvolvimento de Ombros Sentado com Halteres - Seated Dumbbell Shoulder Press", videoId: "SSXS4Z8OkCg" },
@@ -17,18 +16,24 @@ const muscleGroups = {
     ],
     costas: [
         { name: "Remada Baixa no Cabo - Seated Cable Row", videoId: "UCXxvVItLoM" },
-        { name: "Remada Unilateral com Halter - Single Arm Supported Dumbbell Row", videoId: "DMo3HJoawrU" }
+        { name: "Remada Unilateral com Halter - Single Arm Supported Dumbbell Row", videoId: "DMo3HJoawrU" },
+        { name: "Crucifixo Invertido no Pec Deck - Machine Reverse Flye", videoId: "5YK4bgzXDp0" },
+        { name: "Crucifixo Invertido com Halteres - Bent Over Reverse Dumbbell Flye", videoId: "hf7jnF45N_I" },
+        { name: "Crucifixo Invertido no Cabo - Rear Delt Cable Flye", videoId: "er15V96hG5U" }
     ],
     biceps: [
-        { name: "Rosca Direta", videoId: "mnop1123" },
-        { name: "Rosca Martelo", videoId: "qrst1415" },
-        { name: "Rosca Scott", videoId: "uvwx1617" }
+        { name: "Rosca Bíceps com Barra W - EZ Bar Curl", videoId: "-gSM-kqNlUw" },
+        { name: "Rosca Bíceps com Halteres - Dumbbell Bicep Curl", videoIde: "HnHuhf4hEWY" },
+        { name: "Rosca Martelo com Halteres - Dumbbell Hammer Curl", videoId: "CFBZ4jN1CMI" },
+        { name: "Rosca Scott com Barra W - EZ Bar Preacher Curl", videoId: "sxA__DoLsgo" },
+        { name: "Rosca Scott na Máquina - Machine Preacher Curl", videoId: "Ja6ZlIDONac" }
     ],
     trapezio: [
-        { name: "DB Kelso Shrug", videoId: "t6QJTiz35dc" }
+        { name: "Encolhimento Kelso com Halteres - DB Kelso Shrug", videoId: "qKCuWRx-hKk" },
+        { name: "Encolhimento Kelso na Máquina - Machine Kelso Shrug", videoId: "aWeUsSDuHbs"}
     ],
     antebraco: [
-        { name: "Exercício 1", videoId: "t6QJTiz35dc" }
+        { name: "Extensão de Punhos com Halteres - Dumbbell Wrist Extension", videoId: "sCaQ7OZZ1MY" }
     ],
     gluteos: [
         { name: "Cadeira Abdutora - Seated Hip Abductor Machine", videoId: "G_8LItOiZ0Q" },
@@ -48,9 +53,15 @@ const muscleGroups = {
         { name: "Cadeira Adutora - Seated Hip Adduction Machine", videoId: "CjAVezAggkI" }
     ],
     panturrilha: [
-        { name: "Elevação de Panturrilha", videoId: "ijkl3637" },
-        { name: "Panturrilha Sentado", videoId: "mnop3839" },
-        { name: "Panturrilha em Pé", videoId: "qrst4041" }
+        { name: "Panturrilha no Hack de Agachamento - Hack Squat Calf Raise", videoId: "V_9E0TNBA5w" },
+        { name: "Panturrilha com peso corporal - Bodyweight Calf Raise", videoId: "c5Kv6-fnTj8" },
+        { name: "Cadeira Solear - Seated Calf Raise", videoId: "NL897yzS30g" }
+    ],
+    abdomen: [
+        { name: "Abdominal Remador - Tuck Up", videoId: "vb6DC9_NDcE" },
+        { name: "Abdominal Canivete - V Up", videoId: "7UVgs18Y1P4" },
+        { name: "Abdominal Bicicleta - Bicycle Crunch", videoId: "cbKIDZ_XyjY" },
+        { name: "Elevação de Joelhos Pendurado - Hanging Knee Raise", videoId: "RD_A-Z15ER4" }
     ]
 };
 
