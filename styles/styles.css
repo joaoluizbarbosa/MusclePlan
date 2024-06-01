@@ -443,22 +443,14 @@ input[type="checkbox"]:checked::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    outline: none; /* Adiciona isso para remover o contorno */
+    -webkit-tap-highlight-color: transparent; /* Remove o destaque em dispositivos móveis */
 }
 
 .labelTitulo-group .infinit {
     margin-right: 0.5em;
     transition: transform 0.7s ease;
     font-size: 1.5em;
-    outline: none; /* Adiciona isso para remover o contorno */
-}
-
-.labelTitulo-group:focus {
-    outline: none; /* Remove o contorno quando focado */
-}
-
-.labelTitulo-group .infinit:focus {
-    outline: none; /* Remove o contorno quando focado */
+    -webkit-tap-highlight-color: transparent; /* Remove o destaque em dispositivos móveis */
 }
 
 .divPrincipal-group {
