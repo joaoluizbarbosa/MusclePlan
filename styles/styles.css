@@ -62,6 +62,10 @@
     --cor-fundo-titulo-do-treino: #1C1D1F;
     --cor-fonte-tituloDoTreino: #FFC470;
     --cor-fundo-treino-obs: #1C1D1F;
+
+    /* card agrupamentos musculares */
+
+    --cor-fonte-titulo-agrupMusc: #FFC470;
     
     /* cores do menu do card de exercícios */
     --cor-fonte-menu-link: black;
@@ -417,10 +421,34 @@ input[type="checkbox"]:checked::before {
 
 /* CARD Agrupamento musculares */
 
+.lista__agrupamentosMusculares {
+    background-color: var(--cor-fundo-treino-info);
+    border-radius: 4px;
+    margin: 0.5em;
+    padding: 0.5em 0 1em 0;
+    box-shadow: 1px 1px 5px black;
+}
+
+.lista__agrupamentosMusculares__item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5em;
+}
+
 .labelTitulo-group {
-    margin: 1.5em 1em 1em 1em;
-    color: white;
+    margin: 1em;
+    color: var(--cor-fonte-titulo-agrupMusc);
     text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.labelTitulo-group .infinit {
+    margin-right: 0.5em;
+    transition: transform 0.7s ease;
+    font-size: 1.5em;
 }
 
 .divPrincipal-group {
@@ -430,6 +458,17 @@ input[type="checkbox"]:checked::before {
     justify-content: space-around;
     margin: 1em 1em 0 1em;
     gap: 1em;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.lista__agrupamentosMusculares__item.expanded .divPrincipal-group {
+    max-height: 500px; /* ajuste conforme necessário */
+}
+
+.lista__agrupamentosMusculares__item.expanded .infinit {
+    transform: rotate(540deg);
 }
 
 .itens-div {
@@ -630,6 +669,11 @@ input[type="checkbox"].checkbox-group:checked::before {
     width: 100%;
     height: 20px;
     cursor: pointer;
+    transition: transform 0.9s ease;
+}
+
+.lista-secButtons__ativarDesativar-button:active {
+    transform: rotate(540deg);
 }
 
 .lista-secButtons__youtube-button {
