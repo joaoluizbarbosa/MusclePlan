@@ -59,13 +59,13 @@ com foco em dorsal</textarea>
             </li>
             
             <li class="lista__treino-info__item">
-                
-                    <textarea id="treinoObs" class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="300" oninput="limitLines(this, 10)" readonly>Fique atento as técnicas de intensidade para a última séria (TIPUS).</textarea>
-                    <button class="edit-button" onclick="toggleEdit('treinoObs')">Editar</button>
-                
+                <textarea id="treinoObs" class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="300" oninput="limitLines(this, 10)" readonly>Fique atento as técnicas de intensidade para a última séria (TIPUS).</textarea>
+                <button class="edit-button" onclick="toggleEdit('treinoObs')">Editar</button>
             </li>
-            <li class="lista__treino-info__item">
-                <label class="labelTitulo-group">Agrupamentos Musculares:</label>
+        </ul>
+        <ul class="lista__agrupamentosMusculares">
+            <li class="lista__agrupamentosMusculares__item">
+                <label class="labelTitulo-group"><span class="infinit">∞</span>Agrupamentos Musculares:</label>
                 <div class="divPrincipal-group">
                     <div class="itens-div">
                         <input type="checkbox" id="peito" name="group" value="peito" class="checkbox-group">
@@ -126,8 +126,6 @@ com foco em dorsal</textarea>
                 </div>
             </li>
         </ul>
-
-
         <section class="exercicio-n" id="exercicio-1" draggable="true" ondragstart="drag(event)">
 
             <ul class="lista__nome-do-exercicio">
@@ -1409,24 +1407,16 @@ Bent-Over Reverse DB Flye.</textarea>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
-
     <script src="/js/dragDrop.js"></script>
-
     <script src="/js/cardExerciciosColors.js"></script>
-
     <script src="/js/timer.js"></script>
-
     <script src="/js/textarea.js"></script>
-
     <script src="/js/youTubeId.js"></script>
-
     <script src="/js/fileHandle.js"></script>
-
     <script src="js/cardExerciciosMenu.js"></script>
-    
     <script src="/js/cardExerciciosLinhas.js"></script>
-
     <script src="/js/cardExerciciosNew.js"></script>
+    <script src="/js/cardAgrupMusc.js"></script>
 
 </body>
 </html>

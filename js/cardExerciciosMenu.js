@@ -12,13 +12,6 @@ document.addEventListener('click', function(event) {
     });
 });
 
-// Impede que o clique na checkbox desmarque imediatamente ela mesma
-document.addEventListener('click', function(event) {
-    if (event.target.classList.contains('container__botao')) {
-        event.stopPropagation();
-    }
-});
-
 // Função para adicionar uma nova checkbox dinâmica
 document.getElementById('addCheckbox').addEventListener('click', function() {
     const newCheckbox = document.createElement('input');

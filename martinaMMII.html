@@ -61,13 +61,13 @@ _MMII</textarea>
             </li>
             
             <li class="lista__treino-info__item">
-                
-                    <textarea id="treinoObs" class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="300" oninput="limitLines(this, 10)" readonly>As cargas são guias apenas. Podem e devem ser alteradas de acordo com a faixa de intensidade estipulada para cada exercício.</textarea>
-                    <button class="edit-button" onclick="toggleEdit('treinoObs')">Editar</button>
-                
+                <textarea id="treinoObs" class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="300" oninput="limitLines(this, 10)" readonly>As cargas são guias apenas. Podem e devem ser alteradas de acordo com a faixa de intensidade estipulada para cada exercício.</textarea>
+                <button class="edit-button" onclick="toggleEdit('treinoObs')">Editar</button>
             </li>
-            <li class="lista__treino-info__item">
-                <label class="labelTitulo-group">Agrupamentos Musculares:</label>
+        </ul>
+        <ul class="lista__agrupamentosMusculares">
+            <li class="lista__agrupamentosMusculares__item">
+                <label class="labelTitulo-group"><span class="infinit">∞</span>Agrupamentos Musculares:</label>
                 <div class="divPrincipal-group">
                     <div class="itens-div">
                         <input type="checkbox" id="peito" name="group" value="peito" class="checkbox-group">
@@ -128,15 +128,15 @@ _MMII</textarea>
                 </div>
             </li>
         </ul>
-
-
         <section class="exercicio-n" id="exercicio-1" draggable="true" ondragstart="drag(event)">
 
             <ul class="lista__nome-do-exercicio">
                 <li class="lista__nome-do-exercicio__item">
                     <p class="lista__nome-do-exercicio__numero">1</p>
                     <select id="nomeDoExercicio-1" class="exercicio__nome">
-                        <option value="DB RDL - Levantamento Terra Romeno" selected>DB RDL - Levantamento Terra Romeno</option>
+                        <option value="Levantamento Terra Romeno com Halteres - DB Romanian Deadlift" data-video-id="xAL7lHwj30E">Levantamento Terra Romeno com Halteres - DB Romanian Deadlift</option>
+                        <option value="" data-video-id=""></option>
+                        <option value="" data-video-id=""></option>
                     </select>
                     <input type="checkbox" id="menu-1" class="container__botao">
                     <label for="menu-1" class="container__rotulo">
@@ -1271,24 +1271,16 @@ Soleador.</textarea>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
-
     <script src="/js/dragDrop.js"></script>
-
     <script src="/js/cardExerciciosColors.js"></script>
-
     <script src="/js/timer.js"></script>
-
     <script src="/js/textarea.js"></script>
-
     <script src="/js/youTubeId.js"></script>
-
     <script src="/js/fileHandle.js"></script>
-
     <script src="js/cardExerciciosMenu.js"></script>
-    
     <script src="/js/cardExerciciosLinhas.js"></script>
-
     <script src="/js/cardExerciciosNew.js"></script>
+    <script src="/js/cardAgrupMusc.js"></script>
     
 </body>
 </html>

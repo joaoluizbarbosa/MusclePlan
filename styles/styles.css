@@ -207,6 +207,8 @@ input[type="checkbox"]:checked::before {
 
 .container__botao-expImp:checked~.lista-menu-expImp { /* condicional "se .container__botao estiver marcado (.container__botao:checked), então (~), .lista-menu aparece (display: block)" */
     display: block;
+    max-height: 500px; /* altura final, ajustável conforme o conteúdo */
+    opacity: 1; /* opacidade final */
 }
 
 .container__botao-expImp {
@@ -233,7 +235,7 @@ input[type="checkbox"]:checked::before {
 
 .lista-menu-expImp {
     background-color: var(--cor-menuExpImp-fundo);
-    display: none; /* faz desaparecer a lista */
+    /* display: none; faz desaparecer a lista */
     position: absolute;
     padding: 0.5em 0;
     top: 7%; /* retirou ??% do menu de cima do checkbox */
@@ -243,6 +245,10 @@ input[type="checkbox"]:checked::before {
     z-index: 1;
     left: 1;
     cursor: pointer;
+    max-height: 0; /* altura inicial */
+    opacity: 0; /* opacidade inicial */
+    overflow: hidden; /* para evitar que o conteúdo fique visível antes da animação */
+    transition: max-height 0.5s ease, opacity 0.5s ease; /* animação suave */
 }
 
 .lista-menu-expImp__item {
@@ -537,7 +543,7 @@ input[type="checkbox"].checkbox-group:checked::before {
 
 .lista-menu {
     background-color: var(--cor-fundo-menu-exercicio);
-    display: none; /* faz desaparecer a lista */
+    /* display: none; essa opção deve estar inativa para funcionar o menu suave */
     position: absolute;
     padding: 0.5em 0;
     top: 100%; /* retirou ??% do menu de cima do checkbox */
@@ -546,6 +552,10 @@ input[type="checkbox"].checkbox-group:checked::before {
     box-shadow: 1px 1px 1px black;
     z-index: 1;
     right: 0;
+    max-height: 0; /* altura inicial */
+    opacity: 0; /* opacidade inicial */
+    overflow: hidden; /* para evitar que o conteúdo fique visível antes da animação */
+    transition: max-height 0.5s ease, opacity 0.5s ease; /* animação suave */
 }
 
 .lista-menu__item {
@@ -617,6 +627,8 @@ input[type="checkbox"].checkbox-group:checked::before {
 
 .container__botao:checked~.lista-menu { /* condicional "se .container__botao estiver marcado (.container__botao:checked), então (~), .lista-menu aparece (display: block)" */
     display: block;
+    max-height: 500px; /* altura final, ajustável conforme o conteúdo */
+    opacity: 1; /* opacidade final */
 }
 
 .container__botao {
