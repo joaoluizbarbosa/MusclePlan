@@ -114,6 +114,7 @@
 .treino-body {
     background-color: var(--cor-fundo-treino-body);
     margin: 0.5em;
+    -webkit-tap-highlight-color: transparent; /* Remove o destaque em dispositivos móveis */
 }
 
 .main__treino-blank {
