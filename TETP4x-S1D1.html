@@ -47,12 +47,10 @@
                 <textarea id="tituloDoTreino" class="titulo-do-treino" placeholder="TÍTULO DO TREINO" maxlength="40" oninput="limitLines(this, 2)" readonly></textarea>
                 <button class="edit-button" onclick="toggleEdit('tituloDoTreino')">Editar</button>
             </li>
-            <li class="lista__treino-info__item">
-                <textarea id="treinoObs" class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="300" oninput="limitLines(this, 10)" readonly></textarea>
-                <button class="edit-button" onclick="toggleEdit('treinoObs')">Editar</button>
-            </li>
-            <li class="lista__treino-info__item">
-                <label class="labelTitulo-group">Agrupamentos Musculares:</label>
+        </ul>
+        <ul class="lista__agrupamentosMusculares">
+            <li class="lista__agrupamentosMusculares__item">
+                <label class="labelTitulo-group"><span class="infinit">∞</span>Agrupamentos Musculares:</label>
                 <div class="divPrincipal-group">
                     <div class="itens-div">
                         <input type="checkbox" id="peito" name="group" value="peito" class="checkbox-group">
@@ -271,6 +269,7 @@
     <script src="js/cardExerciciosMenu.js"></script>
     <script src="/js/cardExerciciosLinhas.js"></script>
     <script src="/js/cardExerciciosNew.js"></script>
+    <script src="/js/cardAgrupMusc.js"></script>
 
 </body>
 </html>

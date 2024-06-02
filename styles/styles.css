@@ -444,14 +444,12 @@ input[type="checkbox"]:checked::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    -webkit-tap-highlight-color: transparent; /* Remove o destaque em dispositivos móveis */
 }
 
 .labelTitulo-group .infinit {
     margin-right: 0.5em;
     transition: transform 0.7s ease;
     font-size: 1.5em;
-    -webkit-tap-highlight-color: transparent; /* Remove o destaque em dispositivos móveis */
 }
 
 .divPrincipal-group {
