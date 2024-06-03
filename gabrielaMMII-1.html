@@ -35,9 +35,9 @@
                 <div class="lista__periodizacao__item-semana-dia">
                     <a href="#" class="dia-anterior">«</a>
                     <p class="lista__periodizacao__item-paragrafo">SEMANA</p>
-                    <input type="number" id="semana" class="semana" placeholder="1">
+                    <input type="number" id="semana" class="semana" placeholder="1" value="1">
                     <p class="lista__periodizacao__item-paragrafo">DIA</p>
-                    <input type="number" id="dia" class="dia" placeholder="1">
+                    <input type="number" id="dia" class="dia" placeholder="1" value="1">
                     <a href="#" class="proximo-dia">»</a>
                 </div>
             </li>
@@ -46,6 +46,10 @@
             <li class="lista__treino-info__item">
                 <textarea id="tituloDoTreino" class="titulo-do-treino" placeholder="TÍTULO DO TREINO" maxlength="40" oninput="limitLines(this, 2)" readonly>_MMII [ 1 ]</textarea>
                 <button class="edit-button" onclick="toggleEdit('tituloDoTreino')">Editar</button>
+            </li>
+            <li class="lista__treino-info__item">
+                <textarea id="treinoObs" class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="300" oninput="limitLines(this, 10)" readonly>As cargas servem apenas como guia. Elas podem e devem ser ajustadas de acordo com a intensidade estipulada para cada exercício.</textarea>
+                <button class="edit-button" onclick="toggleEdit('treinoObs')">Editar</button>
             </li>
         </ul>
         <ul class="lista__agrupamentosMusculares">
