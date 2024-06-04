@@ -651,6 +651,7 @@ input[type="checkbox"].checkbox-group:checked::before {
     font-size: 0.9em;
     font-weight: 400;
     color: #153448;
+    text-wrap: wrap;
     width: 96%; 
     height: 55px;
     resize: none; /* Impede o redimensionamento do textarea */
