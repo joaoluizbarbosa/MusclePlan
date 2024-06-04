@@ -11,25 +11,28 @@
     --paleta-cor-7: #FF8A08;
     --paleta-cor-8: #FFC100;
 
-    --paleta-cor-9: #00224D;
-    --paleta-cor-10: #5D0E41;
-    --paleta-cor-11: #A0153E;
-    --paleta-cor-12: #FF204E;
-
     --paleta-cor-13: #EFBC9B;
     --paleta-cor-14: #FBF3D5;
     --paleta-cor-15: #D6DAC8;
-    --paleta-cor-16: #9CAFAA;
 
     --paleta-cor-17: #6F4E37;
     --paleta-cor-18: #A67B5B;
     --paleta-cor-19: #ECB176;
     --paleta-cor-20: #FED8B1;
 
+
+
+    
+    --paleta-cor-16: #9CAFAA;
     --paleta-cor-21: #22092C;
     --paleta-cor-22: #872341;
     --paleta-cor-23: #BE3144;
     --paleta-cor-24: #F05941;
+    --paleta-cor-25: #153448;
+    --paleta-cor-26: #3C5B6F;
+    --paleta-cor-27: #948979;
+    --paleta-cor-28: #DFD0B8;
+
 
 
     --fonte-principal: "Montserrat", sans-serif;
@@ -69,21 +72,21 @@
     
     /* cores do menu do card de exercícios */
     --cor-fonte-menu-link: black;
-    --cor-fundo-menu-exercicio: #8E8E8F;
+    --cor-fundo-menu-exercicio: #153448;
     --cor-gradiente-color-button:linear-gradient(to right, #22092C 0%, #22092C 25%, #872341 25%, #872341 50%, #BE3144 50%, #BE3144 75%, #F05941 75%, #F05941 100%); 
     --box-shadow-menu-botoes: 1px 1px 1px black;
     --box-shadow-lista-secButtons: 2px 2px 5px rgb(20, 19, 19); 
     
     /* cores do card de exercícios */
-    --cor-fundo-sessao: #1C1D1F;
-    --cor-fundo-exercicio: #1C1D1F;
-    --cor-fundo-exercicio-obs: #1C1D1F;
+    --cor-fundo-sessao: #DFD0B8;
+    --cor-fundo-exercicio: #DFD0B8;
+    --cor-fundo-exercicio-obs: #DFD0B8;
 
-    --cor-fundo-input-reps1: #D6DAC8;
-    --cor-fundo-input-reps2: #D6DAC8;
-    --cor-fundo-input-kg: #FFC100;
-    --cor-fundo-input-rpe1: #FF8A08;
-    --cor-fundo-input-rpe2: #C42E2E;
+    --cor-fundo-input-reps1: #948979;
+    --cor-fundo-input-reps2: #948979;
+    --cor-fundo-input-kg: #3C5B6F;
+    --cor-fundo-input-rpe1: #153448;
+    --cor-fundo-input-rpe2: #153448;
 
     /* cores menu expImp */
     --cor-menuExpImp-span: #ECB176;
@@ -95,12 +98,12 @@
     --cor-botoes-menuImp-fonte: white;
     
     /* cores dos botões */
-    --cor-fonte-botao: white;
-    --cor-fundo-botao: #153448;
+    --cor-fonte-botao: black;
+    --cor-fundo-botao: #9CAFAA;
     --cor-fundo-escClockButton: #FFC100;
     --cor-fundo-startResetButton: #A0153E;
     --cor-fundo-botao-editButton: transparent;
-    --cor-fonte-botao-editButton: #FF8A08;
+    --cor-fonte-botao-editButton: #F05941;
  
     /* cores checkbox exercícios */
     --cor-input-checkbox-fundo: white;
@@ -516,7 +519,7 @@ input[type="checkbox"].checkbox-group:checked::before {
     border-radius: 4px;
     margin: 1.1em 0.5em 0.5em 0.5em;
     padding-bottom: 1.1em;
-    color: var(--cor-fonte-1);
+    color: #153448;
     box-shadow: 1px 1px 5px black;
 }
 
@@ -547,7 +550,7 @@ input[type="checkbox"].checkbox-group:checked::before {
     position: absolute;
     padding: 0.5em 0;
     top: 100%; /* retirou ??% do menu de cima do checkbox */
-    width: 150px;
+    width: 140px;
     border-radius: 4px;
     box-shadow: 1px 1px 1px black;
     z-index: 1;
@@ -560,68 +563,69 @@ input[type="checkbox"].checkbox-group:checked::before {
 
 .lista-menu__item {
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin: 0em 0.8em;
+    margin: 0em 0.5em;
     padding: 0.5em 0;
 }
 
 .youtube-button {
     font-family: var(--fonte-principal);
     font-size: 0.8em;
-    font-weight: 400;
+    font-weight: 300;
     text-align: center;
     color: var(--cor-fonte-1);
-    background-color: var(--paleta-cor-5);
+    background-color: #3C5B6F;
     border-radius: 5px;
     box-shadow: var(--box-shadow-menu-botoes);
     border: none;
-    width: 100%;
-    height: 35px;
+    width: 95%;
+    height: 30px;
     cursor: pointer;
 }
 
 .clock-button {
     font-family: var(--fonte-principal);
     font-size: 0.8em;
-    font-weight: 400;
+    font-weight: 300;
     text-align: center;
-    color: var(--cor-fonte-2);
-    background-color: var(--paleta-cor-8);
+    color: var(--cor-fonte-1);
+    background-color: #3C5B6F;
     border-radius: 5px;
     box-shadow: var(--box-shadow-menu-botoes);
     border: none;
-    width: 100%;
-    height: 35px;
+    width: 95%;
+    height: 30px;
     cursor: pointer;
 }
 
 .color-button {
     font-family: var(--fonte-principal);
     font-size: 0.8em;
-    font-weight: 400;
+    font-weight: 300;
     text-align: center;
     color: var(--cor-fonte-1);
     background: var(--cor-gradiente-color-button);
     border-radius: 5px;
     box-shadow: var(--box-shadow-menu-botoes);
     border: none;
-    width: 100%;
-    height: 35px;
+    width: 95%;
+    height: 30px;
     cursor: pointer;
 }
 
 .delete-section-button {
     font-family: var(--fonte-principal);
     font-size: 0.8em;
-    font-weight: 400;
+    font-weight: 300;
     text-align: center;
-    color: var(--cor-fonte-2);
-    background: var(--paleta-cor-6);
+    color: var(--cor-fonte-1);
+    background: #3C5B6F;
     border-radius: 5px;
     box-shadow: var(--box-shadow-menu-botoes);
     border: none;
-    width: 100%;
-    height: 35px;
+    width: 95%;
+    height: 30px;
     cursor: pointer;
 }
 
@@ -638,7 +642,7 @@ input[type="checkbox"].checkbox-group:checked::before {
 
 .lista__nome-do-exercicio__numero {
     font-size: 1em;
-    color: var(--paleta-cor-6);
+    color: #153448;
     font-weight: 600;
 }
 
@@ -651,7 +655,7 @@ input[type="checkbox"].checkbox-group:checked::before {
     font-family: var(--fonte-principal);
     font-size: 0.9em;
     font-weight: 400;
-    color: var(--cor-fonte-1);
+    color: #153448;
     width: 96%; 
     height: 55px;
     resize: none; /* Impede o redimensionamento do textarea */
@@ -674,8 +678,8 @@ input[type="checkbox"].checkbox-group:checked::before {
     font-weight: 400;
     text-align: center;
     color: var(--cor-fonte-2);
-    background-color: var(--paleta-cor-7);
-    border-radius: 5px;
+    background-color: var(--paleta-cor-16);
+    border-radius: 4px;
     box-shadow: var(--box-shadow-lista-secButtons);
     border: none;
     width: 100%;
@@ -694,12 +698,12 @@ input[type="checkbox"].checkbox-group:checked::before {
 
 .lista-secButtons__youtube-button {
     font-family: var(--fonte-principal);
-    font-size: 0.8em;
+    font-size: 1em;
     font-weight: 400;
     text-align: center;
-    color: var(--cor-fonte-1);
-    background-color: var(--paleta-cor-5);
-    border-radius: 5px;
+    color: var(--cor-fonte-2);
+    background-color: var(--paleta-cor-16);
+    border-radius: 4px;
     box-shadow: var(--box-shadow-lista-secButtons);
     border: none;
     width: 100%;
@@ -713,8 +717,8 @@ input[type="checkbox"].checkbox-group:checked::before {
     font-weight: 400;
     text-align: center;
     color: var(--cor-fonte-2);
-    background-color: var(--paleta-cor-8);
-    border-radius: 5px;
+    background-color: var(--paleta-cor-16);
+    border-radius: 4px;
     box-shadow: var(--box-shadow-lista-secButtons);
     border: none;
     width: 100%;
@@ -729,7 +733,7 @@ input[type="checkbox"].checkbox-group:checked::before {
     text-align: center;
     color: var(--cor-fonte-1);
     background: var(--cor-gradiente-color-button);
-    border-radius: 5px;
+    border-radius: 4px;
     box-shadow: var(--box-shadow-lista-secButtons);
     border: none;
     width: 100%;
@@ -759,7 +763,7 @@ input[type="checkbox"].checkbox-group:checked::before {
     border: none;
     border-radius: 4px;
     font-family: var(--fonte-principal);
-    color: var(--cor-fonte);
+    color: #153448;
     width: 90%;
     overflow: hidden;
     resize: none;
@@ -792,7 +796,7 @@ select {
 }
 
 .lista__aquecimento__w {
-    color: var(--paleta-cor-7);
+    color: var(--paleta-cor-24);
 }
 
 .remove-list-button {
@@ -836,7 +840,7 @@ select {
 .input-kg {
     width: 90%;
     border: none;
-    color: var(--cor-fonte-2);
+    color: var(--cor-fonte-1);
     background-color: var(--cor-fundo-input-kg);
 }
 
@@ -854,28 +858,28 @@ select {
     opacity: 0.3; /* ou qualquer outro valor que desejar para esmaecer */
 }
 
-.set-buttons {
+.set-buttons__item {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    margin: 2em 1em 0.5em 1em;
 }
 
 .add-button, .undo-button, .add-w-button {
     font-family: var(--fonte-principal);
     color: var(--cor-fonte-botao);
-    font-size: 0.9em;
+    font-size: 0.8em;
     background-color: var(--cor-fundo-botao);
     border: none;
     box-shadow: 1px 1px 1px black;
     border-radius: 4px;
-    width: 100px;
-    height: 30px;
-    margin: 1em 0.3em;
+    width: 90px;
+    height: 25px;
     cursor: pointer;
 }
 
 .add-w-button {
-    color: var(--cor-fonte-2);
-    background-color: var(--paleta-cor-6);
+    background-color: var(--paleta-cor-24);
+    color: var(--cor-fonte-1);
 }
 
 .session-buttons {
@@ -890,13 +894,14 @@ select {
     justify-content: center;
     align-items: center;
     font-family: var(--fonte-principal);
+    font-size: 0.8em;
     color: var(--cor-fonte-botao);
     background-color: var(--cor-fundo-botao);
     border: none;
     box-shadow: 1px 1px 1px black;
     border-radius: 4px;
     width: 50%;
-    height: 30px;
+    height: 25px;
     text-align: center;
     cursor: pointer;
 }

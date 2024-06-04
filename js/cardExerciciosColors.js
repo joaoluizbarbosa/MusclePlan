@@ -1,59 +1,32 @@
  // Script para alterar cor da sessão + textarea nome do exercicio + textarea obs do exercicio
  const colorCombinations = [
     {
-        sectionColor: "#153448",
+        sectionColor: "#DFD0B8",
         elements: [
-            { selector: ".exercicio__nome", backgroundColor: "#153448" },
-            { selector: ".exercicio__obs", backgroundColor: "#153448" },
-            { selector: ".input-rpe2", backgroundColor: "#C42E2E" }
+            { selector: ".exercicio__nome", backgroundColor: "#DFD0B8" },
+            { selector: ".exercicio__obs", backgroundColor: "#DFD0B8" },
+            { selector: ".input-reps1", backgroundColor: "#948979" },
+            { selector: ".input-reps2", backgroundColor: "#948979" }
         ]
     },
-
     {
-        sectionColor: "#35374B",
+        sectionColor: "#948979",
         elements: [
-            { selector: ".exercicio__nome", backgroundColor: "#35374B" },
-            { selector: ".exercicio__obs", backgroundColor: "#35374B" },
-            { selector: ".input-rpe2", backgroundColor: "#C42E2E" }
+            { selector: ".exercicio__nome", backgroundColor: "#948979" },
+            { selector: ".exercicio__obs", backgroundColor: "#948979" },
+            { selector: ".input-reps1", backgroundColor: "#DFD0B8" },
+            { selector: ".input-reps2", backgroundColor: "#DFD0B8" }
         ]
     },
-
-    {
-        sectionColor: "#6F4E37",
-        elements: [
-            { selector: ".exercicio__nome", backgroundColor: "#6F4E37" },
-            { selector: ".exercicio__obs", backgroundColor: "#6F4E37" },
-            { selector: ".input-rpe2", backgroundColor: "#C42E2E" }
-        ]
-    },
-
     {
         sectionColor: "#BE3144",
         elements: [
             { selector: ".exercicio__nome", backgroundColor: "#BE3144" },
             { selector: ".exercicio__obs", backgroundColor: "#BE3144" },
-            { selector: ".input-rpe2", backgroundColor: "#872341" }
+            { selector: ".input-reps1", backgroundColor: "#DFD0B8" },
+            { selector: ".input-reps2", backgroundColor: "#DFD0B8" }
         ]
-    },
-
-    {
-        sectionColor: "#5D9989",
-        elements: [
-            { selector: ".exercicio__nome", backgroundColor: "#5D9989" },
-            { selector: ".exercicio__obs", backgroundColor: "#5D9989" },
-            { selector: ".input-rpe2", backgroundColor: "#C42E2E" }
-        ]
-    },
-
-    {
-        sectionColor: "#1C1D1F",
-        elements: [
-            { selector: ".exercicio__nome", backgroundColor: "#1C1D1F" },
-            { selector: ".exercicio__obs", backgroundColor: "#1C1D1F" },
-            { selector: ".input-rpe2", backgroundColor: "#C42E2E" }
-        ]
-    }
-    
+    }    
 ];
 
 function changeColor(sectionId) {
