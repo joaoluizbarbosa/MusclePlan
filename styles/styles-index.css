@@ -108,7 +108,7 @@
 
 .index-body {
     background-color: white;
-    margin: 0;
+    margin: 0 0 100px 0;
     padding: 0.5em;
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent; /* Remove o destaque em dispositivos móveis */
