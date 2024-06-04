@@ -32,6 +32,7 @@
     --paleta-cor-26: #3C5B6F;
     --paleta-cor-27: #948979;
     --paleta-cor-28: #DFD0B8;
+    --paleta-cor-29: #FFC470;
 
 
 
@@ -40,7 +41,7 @@
     --cor-fonte-1: WHITE;
     --cor-fonte-2: BLACK;
 
-    --cor-fundo-select: #DFD0B8;
+    --cor-fundo-select: #948979;
     --cor-fonte-placeholder: rgb(255, 255, 255);
 
 
@@ -72,7 +73,10 @@
     
     /* cores do menu do card de exercícios */
     --cor-fonte-menu-link: black;
-    --cor-fundo-menu-exercicio: #153448;
+    --cor-fundo-menu-exercicio: #3C5B6F;
+    --cor-fundo-youtube-button: #153448;
+    --cor-fundo-clock-button: #153448;
+    --cor-fundo-delete-button: #153448;
     --cor-gradiente-color-button:linear-gradient(to right, #22092C 0%, #22092C 25%, #872341 25%, #872341 50%, #BE3144 50%, #BE3144 75%, #F05941 75%, #F05941 100%); 
     --box-shadow-menu-botoes: 1px 1px 1px black;
     --box-shadow-lista-secButtons: 2px 2px 5px rgb(20, 19, 19); 
@@ -90,12 +94,12 @@
 
     /* cores menu expImp */
     --cor-menuExpImp-span: #ECB176;
-    --cor-menuExpImp-fundo: #6F4E37;
-    --cor-botoes-menuExp-fundo: #FED8B1;
-    --cor-botoes-menuEscArq-fundo: #ECB176;
-    --cor-botoes-menuImp-fundo: #A67B5B;
-    --cor-botoes-menuExp-fonte: black;
-    --cor-botoes-menuImp-fonte: white;
+    --cor-menuExpImp-fundo: #153448;
+    --cor-botoes-menuExp-fundo: #3C5B6F;
+    --cor-botoes-menuEscArq-fundo: #948979;
+    --cor-botoes-menuImp-fundo: #DFD0B8;
+    --cor-botoes-menuExp-fonte: white;
+    --cor-botoes-menuImp-fonte: black;
     
     /* cores dos botões */
     --cor-fonte-botao: black;
@@ -141,18 +145,20 @@
 .edit-button {
     font-family: var(--fonte-principal);
     font-size: 0.7em;
+    font-weight: 600;
     background-color: var(--cor-fundo-botao-editButton);
     color: var(--cor-fonte-botao-editButton);
     border: none;
     width: 50px;
     cursor: pointer;
-    margin-left: auto;
-    margin-right: 1em;
+    margin-left: 1em;
+    margin-right: auto;
 }
 
 .edit-button-1 {
     font-family: var(--fonte-principal);
     font-size: 0.7em;
+    font-weight: 600;
     background-color: var(--cor-fundo-botao-editButton);
     color: var(--cor-fonte-botao-editButton);
     border: none;
@@ -313,6 +319,7 @@ input[type="checkbox"]:checked::before {
 .edit-button-tituloDaPeriodizacao {
     font-family: var(--fonte-principal);
     font-size: 0.7em;
+    font-weight: 600;
     background-color: var(--cor-fundo-botao-editButton);
     color: var(--cor-fonte-botao-editButton);
     border: none;
@@ -368,18 +375,6 @@ input[type="checkbox"]:checked::before {
 
 .proximo-dia {
     margin-left: 1em;
-}
-
-.edit-button-semana, .edit-button-dia {
-    font-family: var(--fonte-principal);
-    font-size: 0.7em;
-    background-color: var(--cor-fundo-botao-editButton);
-    color: var(--cor-fonte-botao-editButton);
-    border: none;
-    width: 50px;
-    cursor: pointer;
-    margin-left: 0.5em;
-    margin-right: auto;
 }
 
 .lista__treino-info {
@@ -575,7 +570,7 @@ input[type="checkbox"].checkbox-group:checked::before {
     font-weight: 300;
     text-align: center;
     color: var(--cor-fonte-1);
-    background-color: #3C5B6F;
+    background-color: var(--cor-fundo-youtube-button);
     border-radius: 5px;
     box-shadow: var(--box-shadow-menu-botoes);
     border: none;
@@ -590,7 +585,7 @@ input[type="checkbox"].checkbox-group:checked::before {
     font-weight: 300;
     text-align: center;
     color: var(--cor-fonte-1);
-    background-color: #3C5B6F;
+    background-color: var(--cor-fundo-clock-button);
     border-radius: 5px;
     box-shadow: var(--box-shadow-menu-botoes);
     border: none;
@@ -620,7 +615,7 @@ input[type="checkbox"].checkbox-group:checked::before {
     font-weight: 300;
     text-align: center;
     color: var(--cor-fonte-1);
-    background: #3C5B6F;
+    background: var(--cor-fundo-delete-button);
     border-radius: 5px;
     box-shadow: var(--box-shadow-menu-botoes);
     border: none;
@@ -777,7 +772,9 @@ input[type="checkbox"].checkbox-group:checked::before {
     align-items: center;
 }
 
-select {
+.select-repetitions,
+.select-kg,
+.select-rpe {
     background-color: var(--cor-fundo-select);
     text-align: left;
     height: 40px;
@@ -1013,7 +1010,8 @@ sup {
         margin: auto;
     }
 
-    select {
+    .select-repetitions,
+    .select-rpe {
         width: 80%;
     }
     
@@ -1033,7 +1031,8 @@ sup {
         margin: auto;
     }
 
-    select {
+    .select-repetitions,
+    .select-rpe {
         width: 80.4%;
     }
     
@@ -1077,7 +1076,8 @@ sup {
         margin: auto;
     }
 
-    select {
+    .select-repetitions,
+    .select-rpe {
         width: 79%;
     }
     
@@ -1109,7 +1109,8 @@ sup {
         margin: auto;
     }
 
-    select {
+    .select-repetitions,
+    .select-rpe {
         width: 79%;
     }
     

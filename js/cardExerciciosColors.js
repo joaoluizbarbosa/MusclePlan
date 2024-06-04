@@ -5,6 +5,9 @@
         elements: [
             { selector: ".exercicio__nome", backgroundColor: "#DFD0B8" },
             { selector: ".exercicio__obs", backgroundColor: "#DFD0B8" },
+            { selector: ".select-repetitions", backgroundColor: "#948979" },
+            { selector: ".select-kg", backgroundColor: "#948979" },
+            { selector: ".select-rpe", backgroundColor: "#948979" },
             { selector: ".input-reps1", backgroundColor: "#948979" },
             { selector: ".input-reps2", backgroundColor: "#948979" }
         ]
@@ -14,19 +17,13 @@
         elements: [
             { selector: ".exercicio__nome", backgroundColor: "#948979" },
             { selector: ".exercicio__obs", backgroundColor: "#948979" },
+            { selector: ".select-repetitions", backgroundColor: "#DFD0B8" },
+            { selector: ".select-kg", backgroundColor: "#DFD0B8" },
+            { selector: ".select-rpe", backgroundColor: "#DFD0B8" },
             { selector: ".input-reps1", backgroundColor: "#DFD0B8" },
             { selector: ".input-reps2", backgroundColor: "#DFD0B8" }
         ]
-    },
-    {
-        sectionColor: "#BE3144",
-        elements: [
-            { selector: ".exercicio__nome", backgroundColor: "#BE3144" },
-            { selector: ".exercicio__obs", backgroundColor: "#BE3144" },
-            { selector: ".input-reps1", backgroundColor: "#DFD0B8" },
-            { selector: ".input-reps2", backgroundColor: "#DFD0B8" }
-        ]
-    }    
+    }   
 ];
 
 function changeColor(sectionId) {
