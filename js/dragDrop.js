@@ -72,7 +72,20 @@ function renumberSessions() {
                 element.setAttribute('onclick', newOnclickAttr);
             }
         });
+        
+        // Atualiza o onclick dos botões de deletar lista de aquecimento
+        var warmupLists = session.querySelectorAll('.lista__aquecimento');
+        warmupLists.forEach((warmupList, warmupIndex) => {
+            var warmupId = `${newId}-${warmupIndex + 1}`;
+            warmupList.id = warmupId;
+
+            var removeButton = warmupList.querySelector('.remove-list-button');
+            if (removeButton) {
+                removeButton.setAttribute('onclick', `removeList('${warmupId}')`);
+            }
+        });
     });
+
 }
 
 // Adicione os manipuladores de eventos de arrastar e soltar à lista de periodização
