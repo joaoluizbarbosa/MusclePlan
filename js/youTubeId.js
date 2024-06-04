@@ -38,20 +38,42 @@ const muscleGroups = {
     ],
     gluteos: [
         { name: "Cadeira Abdutora - Seated Hip Abductor Machine", videoId: "G_8LItOiZ0Q" },
+        { name: "Levantamento Terra Romeno com Barra - Barbell Romanian Deadlift", videoId: "LURGDIX3adY" },
         { name: "Levantamento Terra Romeno com Halteres - DB Romanian Deadlift", videoId: "xAL7lHwj30E" },
+        { name: "Barbell Stiff Legged Deadlift", videoId: "CN_7cz3P-1U" },
         { name: "Elevação Pélvica com Barra - Barbell Hip Thrust", videoId: "EF7jXP17DPE" },
-        { name: "Elevação Pélvica com Peso Corporal - Bodyweight Hip Thrust", videoId: "7XuNzi5rcj4" }
+        { name: "Elevação Pélvica com Peso Corporal - Bodyweight Hip Thrust", videoId: "7XuNzi5rcj4" },
+        { name: "Leg Press 45°", videoId: "3KJKb1aN6HA" },
+        { name: "Agachamento Búlgaro - Bulgarian Split Squat", videoId: "vgn7bSXkgkA" },
+        { name: "Passada Afundo com Halteres - Dumbbell Walking Lunge", videoId:"eFWCn5iEbTU" },
+        { name: "Passada Afundo - Walking Lunge", videoId: "L8fvypPrzzs" },
+        { name: "Agachamento com Peso Corporal - Air Squat", videoId: "rMvwVtlqjTE" },
+        { name: "Agachamento com Barra nas Costas - Barbell Back Squat", videoId: "rrJIyZGlK8c" }
     ],
     quadriceps: [
-        { name: "Cadeira Extensora - Leg Extension", videoId: "m0FOpMEgero" }
+        { name: "Cadeira Extensora - Leg Extension", videoId: "m0FOpMEgero" },
+        { name: "Agachamento Sissy - Sissy Squat", name: "FTmbNjUu7CI" },
+        { name: "Flexão Nórdica Reversa - Reverse Nordic Curl", name: "GbpDfXXKuk0" },
+        { name: "Leg Press 45°", videoId: "3KJKb1aN6HA" },
+        { name: "Agachamento Búlgaro - Bulgarian Split Squat", videoId: "vgn7bSXkgkA" },
+        { name: "Passada Afundo com Halteres - Dumbbell Walking Lunge", videoId:"eFWCn5iEbTU" },
+        { name: "Passada Afundo - Walking Lunge", videoId: "L8fvypPrzzs" },
+        { name: "Agachamento com Peso Corporal - Air Squat", videoId: "rMvwVtlqjTE" },
+        { name: "Agachamento com Barra nas Costas - Barbell Back Squat", videoId: "rrJIyZGlK8c" }
     ],
     isquiotibiais: [
-        { name: "Levantamento Terra Romeno com Halteres - DB Romanian Deadlift", videoId: "xAL7lHwj30E" },
         { name: "Mesa Flexora - Lying Leg Curl", videoId: "SbSNUXPRkc8" },
-        { name: "Cadeira Flexora - Seated Leg Curl", videoId: "Orxowest56U" }
+        { name: "Cadeira Flexora - Seated Leg Curl", videoId: "Orxowest56U" },
+        { name: "Flexão Nórdica - Nordic Hamstring Curl", videoId: "kjv4WQXWl_A" },
+        { name: "Levantamento Terra Romeno com Barra - Barbell Romanian Deadlift", videoId: "LURGDIX3adY" },
+        { name: "Levantamento Terra Romeno com Halteres - DB Romanian Deadlift", videoId: "xAL7lHwj30E" },
+        { name: "Barbell Stiff Legged Deadlift", videoId: "CN_7cz3P-1U" },
+        { name: "Flexão de Joelhos na Bola Suíça - Swiss Ball Hamstring Curl", videoId: "Kk8dpH4ZPos" }
     ],
     adutores: [
-        { name: "Cadeira Adutora - Seated Hip Adduction Machine", videoId: "CjAVezAggkI" }
+        { name: "Cadeira Adutora - Seated Hip Adduction Machine", videoId: "CjAVezAggkI" },
+        { name: "Adução de Quadril Copenhague - Copenhagen Hip Adduction", videoId: "KZMIND6LvRY" },
+        { name: "Adução de Quadril Unilateral com Elástico - Single Leg Banded Hip Adduction", videoId: "GMCTJvMB-is" }
     ],
     panturrilha: [
         { name: "Panturrilha no Hack de Agachamento - Hack Squat Calf Raise", videoId: "V_9E0TNBA5w" },
