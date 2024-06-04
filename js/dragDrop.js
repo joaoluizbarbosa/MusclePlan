@@ -2,8 +2,40 @@ function allowDrop(ev) {
     ev.preventDefault();
 }
 
+var dragStartX, dragStartY;
+var dragThreshold = 10; // Defina aqui a distância mínima de arrastar antes que o movimento seja considerado um arrastar
+
 function drag(ev) {
+    dragStartX = ev.clientX;
+    dragStartY = ev.clientY;
     ev.dataTransfer.setData("text", ev.target.id);
+
+    // Adiciona eventos para detectar o movimento do mouse durante o arrastar
+    document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("mouseup", onMouseUp);
+}
+
+function onMouseMove(ev) {
+    // Calcula a distância percorrida pelo mouse desde o início do arrastar
+    var deltaX = Math.abs(ev.clientX - dragStartX);
+    var deltaY = Math.abs(ev.clientY - dragStartY);
+
+    // Se a distância for maior que o limiar, considera-se um arrastar válido
+    if (deltaX > dragThreshold || deltaY > dragThreshold) {
+        // Remove os eventos de movimento e soltura do mouse
+        document.removeEventListener("mousemove", onMouseMove);
+        document.removeEventListener("mouseup", onMouseUp);
+
+        // Inicia o arrastar
+        ev.dataTransfer.effectAllowed = "move";
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+}
+
+function onMouseUp(ev) {
+    // Remove os eventos de movimento e soltura do mouse
+    document.removeEventListener("mousemove", onMouseMove);
+    document.removeEventListener("mouseup", onMouseUp);
 }
 
 function drop(ev) {
@@ -92,4 +124,19 @@ function renumberSessions() {
 document.querySelectorAll('.exercicio-n').forEach(item => {
     item.addEventListener('dragover', allowDrop);
     item.addEventListener('drop', drop);
+
+    // Adiciona eventos de scroll para permitir o scroll durante o arrastar
+item.addEventListener("dragenter", function (event) {
+    if (event.target.classList.contains("exercicio-n")) {
+        event.target.style.border = "2px dashed blue"; // Adicione um estilo de feedback visual
+    }
+    event.preventDefault();
+});
+
+item.addEventListener("dragleave", function (event) {
+    if (event.target.classList.contains("exercicio-n")) {
+        event.target.style.border = ""; // Remove o estilo de feedback visual
+    }
+    event.preventDefault();
+});
 });
