@@ -5,6 +5,10 @@
         elements: [
             { selector: ".exercicio__nome", color: "#153448", backgroundColor: "#DFD0B8" },
             { selector: ".cabecalho__menu-hamburguer", color: "#F05941" },
+            { selector: ".lista-menu", backgroundColor: "#3C5B6F" },
+            { selector: ".youtube-button", backgroundColor: "#153448" },
+            { selector: ".clock-button", backgroundColor: "#153448" },
+            { selector: ".delete-section-button", backgroundColor: "#153448" },
             { selector: ".exercicio__obs", color:"#153448", backgroundColor: "#DFD0B8" },
             { selector: ".edit-button-1", color: "#F05941" },
             { selector: ".select-repetitions", backgroundColor: "#948979" },
@@ -22,6 +26,10 @@
         elements: [
             { selector: ".exercicio__nome", color: "#153448", backgroundColor: "#948979" },
             { selector: ".cabecalho__menu-hamburguer", color: "#153448" },
+            { selector: ".lista-menu", backgroundColor: "#3C5B6F" },
+            { selector: ".youtube-button", backgroundColor: "#153448" },
+            { selector: ".clock-button", backgroundColor: "#153448" },
+            { selector: ".delete-section-button", backgroundColor: "#153448" },
             { selector: ".exercicio__obs", color:"#153448", backgroundColor: "#948979" },
             { selector: ".edit-button-1", color: "#153448" },
             { selector: ".select-repetitions", backgroundColor: "#DFD0B8" },
@@ -39,6 +47,10 @@
         elements: [
             { selector: ".exercicio__nome", color: "#F05941", backgroundColor: "#3C5B6F" },
             { selector: ".cabecalho__menu-hamburguer", color: "#F05941" },
+            { selector: ".lista-menu", backgroundColor: "#153448" },
+            { selector: ".youtube-button", backgroundColor: "#3C5B6F" },
+            { selector: ".clock-button", backgroundColor: "#3C5B6F" },
+            { selector: ".delete-section-button", backgroundColor: "#3C5B6F" },
             { selector: ".exercicio__obs", color:"#DFD0B8", backgroundColor: "#3C5B6F" },
             { selector: ".edit-button-1", color: "#F05941" },
             { selector: ".select-repetitions", backgroundColor: "#DFD0B8" },
