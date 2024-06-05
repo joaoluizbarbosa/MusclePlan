@@ -4,6 +4,7 @@
         sectionColor: "#DFD0B8",
         elements: [
             { selector: ".exercicio__nome", backgroundColor: "#DFD0B8" },
+            { selector: ".cabecalho__menu-hamburguer", color: "#F05941" },
             { selector: ".exercicio__obs", backgroundColor: "#DFD0B8" },
             { selector: ".edit-button-1", color: "#F05941" },
             { selector: ".select-repetitions", backgroundColor: "#948979" },
@@ -18,6 +19,7 @@
         sectionColor: "#948979",
         elements: [
             { selector: ".exercicio__nome", backgroundColor: "#948979" },
+            { selector: ".cabecalho__menu-hamburguer", color: "#153448" },
             { selector: ".exercicio__obs", backgroundColor: "#948979" },
             { selector: ".edit-button-1", color: "#153448" },
             { selector: ".select-repetitions", backgroundColor: "#DFD0B8" },

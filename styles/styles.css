@@ -53,25 +53,31 @@
 
 
     /* cores do card título da periodização */
-    --cor-fundo-periodizacao: #1C1D1F;
-    --cor-fundo-titulo-da-periodizacao: #1C1D1F;
-    --cor-fundo-semana-dia:#1C1D1F;
-    --cor-fonte-titulo-da-periodizacao: #FFC470;
+    --cor-fundo-periodizacao: #DFD0B8;
+    --cor-fundo-titulo-da-periodizacao: #DFD0B8;
+    --cor-fundo-semana-dia:#DFD0B8;
+    --cor-fonte-titulo-da-periodizacao: #153448;
     --cor-fonte-semana-dia:#F05941;
-    --cor-fonte-semana-dia-paragrafo:#DFD0B8;
-    --cor-fonte-anteriorProximo: #FFC470;
+    --cor-fonte-semana-dia-paragrafo:#153448;
+    --cor-fonte-anteriorProximo: #F05941;
 
     /* cores do card título do treino */
-    --cor-fundo-treino-info: #1C1D1F;
-    --cor-fundo-titulo-do-treino: #1C1D1F;
-    --cor-fonte-tituloDoTreino: #FFC470;
-    --cor-fundo-treino-obs: #1C1D1F;
+    --cor-fundo-treino-info: #DFD0B8;
+    --cor-fundo-titulo-do-treino: #DFD0B8;
+    --cor-fonte-tituloDoTreino: #153448;
+    --cor-fonte-obsDoTreino: #153448;
+    --cor-fundo-treino-obs: #DFD0B8;
 
     /* card agrupamentos musculares */
 
-    --cor-fonte-titulo-agrupMusc: #FFC470;
+    --cor-fonte-titulo-agrupMusc: #153448;
+    --cor-fundo-agrupMusc:  #DFD0B8;
+    --cor-fundo-preenchimento-textoInput: #DFD0B8;
+    --cor-fundo-preenchimento-textoInput-border: 1px solid #153448;
+    --cor-texto-agrupMusc: #153448;
     
     /* cores do menu do card de exercícios */
+    --cor-menu-hamburguer: #F05941; 
     --cor-fonte-menu-link: black;
     --cor-fundo-menu-exercicio: #3C5B6F;
     --cor-fundo-youtube-button: #153448;
@@ -96,7 +102,7 @@
     --cor-fundo-input-rpe2: #153448;
 
     /* cores menu expImp */
-    --cor-menuExpImp-span: #ECB176;
+    --cor-menuExpImp-span: #F05941;
     --cor-menuExpImp-fundo: #153448;
     --cor-botoes-menuExp-fundo: #3C5B6F;
     --cor-botoes-menuEscArq-fundo: #948979;
@@ -115,7 +121,7 @@
     /* cores checkbox exercícios */
     --cor-input-checkbox-fundo: white;
     --cor-input-checkbox-border: gray;
-    --cor-input-checkbox-fundo-ckecked: gray;
+    --cor-input-checkbox-fundo-ckecked: #F05941;
     --cor-input-checkbox-border-ckecked: black;
     --cor-input-checkbox-check: black;
 
@@ -421,7 +427,7 @@ input[type="checkbox"]:checked::before {
     border: none;
     border-radius: 4px;
     font-family: var(--fonte-principal);
-    color: var(--cor-fonte);
+    color: var(--cor-fonte-obsDoTreino);
     width: 90%;
     overflow: hidden;
     resize: none;
@@ -430,7 +436,7 @@ input[type="checkbox"]:checked::before {
 /* CARD Agrupamento musculares */
 
 .lista__agrupamentosMusculares {
-    background-color: var(--cor-fundo-treino-info);
+    background-color: var(--cor-fundo-agrupMusc);
     border-radius: 4px;
     margin: 0.5em;
     padding: 0.5em 0 1em 0;
@@ -446,6 +452,7 @@ input[type="checkbox"]:checked::before {
 .labelTitulo-group {
     margin: 1em;
     color: var(--cor-fonte-titulo-agrupMusc);
+    font-weight: 500;
     text-align: center;
     cursor: pointer;
     display: flex;
@@ -481,16 +488,16 @@ input[type="checkbox"]:checked::before {
 
 .itens-div {
     display: flex;
-    background-color: #DFD0B8;
+    background-color: var(--cor-fundo-preenchimento-textoInput);
     align-items: center;
-    border: 1px solid white;
+    border: var(--cor-fundo-preenchimento-textoInput-border);
     border-radius: 15px;
 }
 
 .itens-div label {
     margin-left: 0.2em;
     font-size: 0.7em;
-    color: black;
+    color: var(--cor-texto-agrupMusc);
 }
 
 input[type="checkbox"].checkbox-group {
@@ -537,6 +544,7 @@ input[type="checkbox"].checkbox-group:checked::before {
 
 .cabecalho__menu-hamburguer {
     font-size: 1.4em;
+    color: var(--cor-menu-hamburguer);
     display: inline-block; /* Necessário para que a transformação funcione corretamente */
     transform: scale(1.7,1.4);
     cursor: pointer;
