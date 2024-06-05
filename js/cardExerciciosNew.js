@@ -87,7 +87,7 @@
         </ul>
         <ul id="myList${j}" class="lista__segunda-linha">
             <li class="lista__segunda-linha__item">
-                <p>1</p>
+                <p class="lista__segunda-linha__item__numero">1</p>
             </li>
             <li class="lista__segunda-linha__item">
                 <input class="lista__segunda-linha__input input-reps1" type="number" value="">

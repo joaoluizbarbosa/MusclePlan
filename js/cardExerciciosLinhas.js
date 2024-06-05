@@ -4,7 +4,7 @@
     let i = document.getElementById(sectionId).querySelectorAll(".lista__segunda-linha").length + 1;
     let ul = document.createElement("ul");
     ul.className = "lista__segunda-linha";
-    ul.innerHTML = '<li class="lista__segunda-linha__item"><p>' + i + '</p></li><li class="lista__segunda-linha__item"><input class="lista__segunda-linha__input input-reps1" type="number"><p>-</p><input class="lista__segunda-linha__input input-reps2" type="number"></li><li class="lista__segunda-linha__item"><input class="lista__segunda-linha__input input-kg" type="number"></li><li class="lista__segunda-linha__item"><input class="lista__segunda-linha__input input-rpe1" type="number"><p>-</p><input class="lista__segunda-linha__input  input-rpe2" type="number"></li><li class="lista__segunda-linha__item"><input class="input-checkbox" type="checkbox"></li>';
+    ul.innerHTML = '<li class="lista__segunda-linha__item"><p class="lista__segunda-linha__item__numero">' + i + '</p></li><li class="lista__segunda-linha__item"><input class="lista__segunda-linha__input input-reps1" type="number"><p>-</p><input class="lista__segunda-linha__input input-reps2" type="number"></li><li class="lista__segunda-linha__item"><input class="lista__segunda-linha__input input-kg" type="number"></li><li class="lista__segunda-linha__item"><input class="lista__segunda-linha__input input-rpe1" type="number"><p>-</p><input class="lista__segunda-linha__input  input-rpe2" type="number"></li><li class="lista__segunda-linha__item"><input class="input-checkbox" type="checkbox"></li>';
     let setButtons = document.getElementById(sectionId).getElementsByClassName("set-buttons")[0];
     setButtons.parentNode.insertBefore(ul, setButtons);
 }

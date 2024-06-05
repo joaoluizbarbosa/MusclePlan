@@ -801,6 +801,10 @@ input[type="checkbox"].checkbox-group:checked::before {
     font-weight: 600;
 }
 
+.lista__segunda-linha__item__numero {
+    font-weight: 600;
+}
+
 .remove-list-button {
     background-color: none;
     background: none;
