@@ -119,6 +119,14 @@ _push [ 1 ]
                         <input type="checkbox" id="abdomen" name="group" value="abdomen" class="checkbox-group">
                         <label for="abdomen" class="label-group">Abdomen</label>
                     </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="cardio" name="group" value="cardio" class="checkbox-group">
+                        <label for="cardio" class="label-group">Cárdio</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="lpo" name="group" value="lpo" class="checkbox-group">
+                        <label for="lpo" class="label-group">LPO</label>
+                    </div>
                     <div class="itens-div-oculto">
                         <input type="checkbox" id="ativarDesativar" name="group" value="ativarDesativar" class="checkbox-group-oculto">
                         <label for="ativarDesativar" class="label-group-oculto">AtivarDesativar</label>
@@ -165,29 +173,26 @@ Half-Kneeling 1-Arm Lat Pulldown.</textarea>
 
                 <button class="edit-button-1" onclick="toggleEdit('exercicioObs-1')">Editar</button>
             </div>
-
             <ul class="lista__primeira-linha">
-                <li>
-                    <!-- <p>Set</p> -->
-                </li>
+                <li></li>
                 <li>
                     <select class="select-repetitions">
                         <option class="option" value="reps range">Faixa de Repetições</option>
                         <option value="reps">Repetições</option>
                         <option value="reps max">Repetições Máximas</option>
                         <option value="amrap">AMRAP</option>
-                        <option value="time">Tempo</option>
+                        <option value="time">Tempo (min)</option>
+                        <option value="time">Tempo (seg)</option>
                         <option value="time range">Faixa de Tempo</option>
                     </select>             
                 </li>
-
                 <li>
                     <select class="select-kg">
                         <option value="kg">KG</option>
                         <option value="lb">LB</option>
+                        <option value="-">-</option>
                     </select>             
                 </li>
-
                 <li>
                     <select class="select-rpe">
                         <option value="rpe range">Faixa de Int. (PSE)</option>
@@ -196,10 +201,7 @@ Half-Kneeling 1-Arm Lat Pulldown.</textarea>
                         <option value="% of 1rm">% de 1RM</option>
                     </select>             
                 </li>
-
             </ul>
-
-
             <ul class="lista__aquecimento" id="lista__aquecimento-1">
                 <li class="lista__aquecimento__item">
                     <p class="lista__aquecimento__w">a</p>
@@ -355,29 +357,26 @@ Glute-Ham Raise.</textarea>
 
                 <button class="edit-button-1" onclick="toggleEdit('exercicioObs-2')">Editar</button>
             </div>
-
             <ul class="lista__primeira-linha">
-                <li>
-                    <!-- <p>Set</p> -->
-                </li>
+                <li></li>
                 <li>
                     <select class="select-repetitions">
                         <option class="option" value="reps range">Faixa de Repetições</option>
                         <option value="reps">Repetições</option>
                         <option value="reps max">Repetições Máximas</option>
                         <option value="amrap">AMRAP</option>
-                        <option value="time">Tempo</option>
+                        <option value="time">Tempo (min)</option>
+                        <option value="time">Tempo (seg)</option>
                         <option value="time range">Faixa de Tempo</option>
                     </select>             
                 </li>
-
                 <li>
                     <select class="select-kg">
                         <option value="kg">KG</option>
                         <option value="lb">LB</option>
+                        <option value="-">-</option>
                     </select>             
                 </li>
-
                 <li>
                     <select class="select-rpe">
                         <option value="rpe range">Faixa de Int. (PSE)</option>
@@ -386,10 +385,7 @@ Glute-Ham Raise.</textarea>
                         <option value="% of 1rm">% de 1RM</option>
                     </select>             
                 </li>
-
             </ul>
-
-
             <ul class="lista__aquecimento" id="lista__aquecimento-2">
                 <li class="lista__aquecimento__item">
                     <p class="lista__aquecimento__w">a</p>
@@ -541,29 +537,26 @@ Incline Chest-Supported DB Row.</textarea>
 
             <button class="edit-button-1" onclick="toggleEdit('exercicioObs-3')">Editar</button>
         </div>
-
         <ul class="lista__primeira-linha">
-            <li>
-                <!-- <p>Set</p> -->
-            </li>
+            <li></li>
             <li>
                 <select class="select-repetitions">
                     <option class="option" value="reps range">Faixa de Repetições</option>
                     <option value="reps">Repetições</option>
                     <option value="reps max">Repetições Máximas</option>
                     <option value="amrap">AMRAP</option>
-                    <option value="time">Tempo</option>
+                    <option value="time">Tempo (min)</option>
+                    <option value="time">Tempo (seg)</option>
                     <option value="time range">Faixa de Tempo</option>
                 </select>             
             </li>
-
             <li>
                 <select class="select-kg">
                     <option value="kg">KG</option>
                     <option value="lb">LB</option>
+                    <option value="-">-</option>
                 </select>             
             </li>
-
             <li>
                 <select class="select-rpe">
                     <option value="rpe range">Faixa de Int. (PSE)</option>
@@ -572,10 +565,7 @@ Incline Chest-Supported DB Row.</textarea>
                     <option value="% of 1rm">% de 1RM</option>
                 </select>             
             </li>
-
         </ul>
-
-
         <ul class="lista__aquecimento" id="lista__aquecimento-3">
             <li class="lista__aquecimento__item">
                 <p class="lista__aquecimento__w">a</p>
@@ -724,29 +714,26 @@ Incline Chest-Supported DB Row.</textarea>
 
             <button class="edit-button-1" onclick="toggleEdit('exercicioObs-4')">Editar</button>
         </div>
-
         <ul class="lista__primeira-linha">
-            <li>
-                <!-- <p>Set</p> -->
-            </li>
+            <li></li>
             <li>
                 <select class="select-repetitions">
                     <option class="option" value="reps range">Faixa de Repetições</option>
                     <option value="reps">Repetições</option>
                     <option value="reps max">Repetições Máximas</option>
                     <option value="amrap">AMRAP</option>
-                    <option value="time">Tempo</option>
+                    <option value="time">Tempo (min)</option>
+                    <option value="time">Tempo (seg)</option>
                     <option value="time range">Faixa de Tempo</option>
                 </select>             
             </li>
-
             <li>
                 <select class="select-kg">
                     <option value="kg">KG</option>
                     <option value="lb">LB</option>
+                    <option value="-">-</option>
                 </select>             
             </li>
-
             <li>
                 <select class="select-rpe">
                     <option value="rpe range">Faixa de Int. (PSE)</option>
@@ -755,10 +742,7 @@ Incline Chest-Supported DB Row.</textarea>
                     <option value="% of 1rm">% de 1RM</option>
                 </select>             
             </li>
-
         </ul>
-
-
         <ul class="lista__aquecimento" id="lista__aquecimento-4">
             <li class="lista__aquecimento__item">
                 <p class="lista__aquecimento__w">a</p>
@@ -911,29 +895,26 @@ Wide-Grip Band-Assisted Pull-Up.</textarea>
 
             <button class="edit-button-1" onclick="toggleEdit('exercicioObs-5')">Editar</button>
         </div>
-
         <ul class="lista__primeira-linha">
-            <li>
-                <!-- <p>Set</p> -->
-            </li>
+            <li></li>
             <li>
                 <select class="select-repetitions">
                     <option class="option" value="reps range">Faixa de Repetições</option>
                     <option value="reps">Repetições</option>
                     <option value="reps max">Repetições Máximas</option>
                     <option value="amrap">AMRAP</option>
-                    <option value="time">Tempo</option>
+                    <option value="time">Tempo (min)</option>
+                    <option value="time">Tempo (seg)</option>
                     <option value="time range">Faixa de Tempo</option>
                 </select>             
             </li>
-
             <li>
                 <select class="select-kg">
                     <option value="kg">KG</option>
                     <option value="lb">LB</option>
+                    <option value="-">-</option>
                 </select>             
             </li>
-
             <li>
                 <select class="select-rpe">
                     <option value="rpe range">Faixa de Int. (PSE)</option>
@@ -942,10 +923,7 @@ Wide-Grip Band-Assisted Pull-Up.</textarea>
                     <option value="% of 1rm">% de 1RM</option>
                 </select>             
             </li>
-
         </ul>
-
-
         <ul class="lista__aquecimento" id="lista__aquecimento-5">
             <li class="lista__aquecimento__item">
                 <p class="lista__aquecimento__w">a</p>
@@ -1057,29 +1035,26 @@ DB Preacher Curl.</textarea>
 
             <button class="edit-button-1" onclick="toggleEdit('exercicioObs-6')">Editar</button>
         </div>
-
         <ul class="lista__primeira-linha">
-            <li>
-                <!-- <p>Set</p> -->
-            </li>
+            <li></li>
             <li>
                 <select class="select-repetitions">
                     <option class="option" value="reps range">Faixa de Repetições</option>
                     <option value="reps">Repetições</option>
                     <option value="reps max">Repetições Máximas</option>
                     <option value="amrap">AMRAP</option>
-                    <option value="time">Tempo</option>
+                    <option value="time">Tempo (min)</option>
+                    <option value="time">Tempo (seg)</option>
                     <option value="time range">Faixa de Tempo</option>
                 </select>             
             </li>
-
             <li>
                 <select class="select-kg">
                     <option value="kg">KG</option>
                     <option value="lb">LB</option>
+                    <option value="-">-</option>
                 </select>             
             </li>
-
             <li>
                 <select class="select-rpe">
                     <option value="rpe range">Faixa de Int. (PSE)</option>
@@ -1088,10 +1063,7 @@ DB Preacher Curl.</textarea>
                     <option value="% of 1rm">% de 1RM</option>
                 </select>             
             </li>
-
         </ul>
-
-
         <ul class="lista__aquecimento" id="lista__aquecimento-6">
             <li class="lista__aquecimento__item">
                 <p class="lista__aquecimento__w">a</p>
@@ -1225,29 +1197,26 @@ Bent-Over Reverse DB Flye.</textarea>
 
             <button class="edit-button-1" onclick="toggleEdit('exercicioObs-7')">Editar</button>
         </div>
-
         <ul class="lista__primeira-linha">
-            <li>
-                <!-- <p>Set</p> -->
-            </li>
+            <li></li>
             <li>
                 <select class="select-repetitions">
                     <option class="option" value="reps range">Faixa de Repetições</option>
                     <option value="reps">Repetições</option>
                     <option value="reps max">Repetições Máximas</option>
                     <option value="amrap">AMRAP</option>
-                    <option value="time">Tempo</option>
+                    <option value="time">Tempo (min)</option>
+                    <option value="time">Tempo (seg)</option>
                     <option value="time range">Faixa de Tempo</option>
                 </select>             
             </li>
-
             <li>
                 <select class="select-kg">
                     <option value="kg">KG</option>
                     <option value="lb">LB</option>
+                    <option value="-">-</option>
                 </select>             
             </li>
-
             <li>
                 <select class="select-rpe">
                     <option value="rpe range">Faixa de Int. (PSE)</option>
@@ -1256,10 +1225,7 @@ Bent-Over Reverse DB Flye.</textarea>
                     <option value="% of 1rm">% de 1RM</option>
                 </select>             
             </li>
-
         </ul>
-
-
         <ul class="lista__aquecimento" id="lista__aquecimento-7">
             <li class="lista__aquecimento__item">
                 <p class="lista__aquecimento__w">a</p>

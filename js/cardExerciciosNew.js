@@ -47,7 +47,8 @@
                     <option value="reps">Repetições</option>
                     <option value="reps max">Repetições Máximas</option>
                     <option value="amrap">AMRAP</option>
-                    <option value="time">Tempo</option>
+                    <option value="time">Tempo (min)</option>
+                    <option value="time">Tempo (seg)</option>
                     <option value="time range">Faixa de Tempo</option>
                 </select>             
             </li>
@@ -55,6 +56,7 @@
                 <select class="select-kg">
                     <option value="kg">KG</option>
                     <option value="lb">LB</option>
+                    <option value="-">-</option>
                 </select>             
             </li>
             <li>
@@ -66,7 +68,6 @@
                 </select>             
             </li>
         </ul>
-
         <ul class="lista__aquecimento" id="lista__aquecimento-${j}">
             <li class="lista__aquecimento__item">
                 <p class="lista__aquecimento__w">a</p>
