@@ -82,7 +82,7 @@
             <li class="lista__aquecimento__item">
             </li>
             <li class="lista__aquecimento__item">
-                <button class="remove-list-button" onclick="removeList('lista__aquecimento-${j}')"><img class="trash-img" src="img/trash-branca.png">
+                <button class="remove-list-button" onclick="removeList('lista__aquecimento-${j}')"><img class="trash-img" src="img/trash.png">
             </li>
         </ul>
 
