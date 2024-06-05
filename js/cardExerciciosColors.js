@@ -3,31 +3,52 @@
     {
         sectionColor: "#DFD0B8",
         elements: [
-            { selector: ".exercicio__nome", backgroundColor: "#DFD0B8" },
+            { selector: ".exercicio__nome", color: "#153448", backgroundColor: "#DFD0B8" },
             { selector: ".cabecalho__menu-hamburguer", color: "#F05941" },
-            { selector: ".exercicio__obs", backgroundColor: "#DFD0B8" },
+            { selector: ".exercicio__obs", color:"#153448", backgroundColor: "#DFD0B8" },
             { selector: ".edit-button-1", color: "#F05941" },
             { selector: ".select-repetitions", backgroundColor: "#948979" },
             { selector: ".select-kg", backgroundColor: "#948979" },
             { selector: ".select-rpe", backgroundColor: "#948979" },
             { selector: ".lista__aquecimento__w", color: "#F05941" },
+            { selector: ".lista__segunda-linha__item__numero", color: "#153448" },
             { selector: ".input-reps1", backgroundColor: "#948979" },
-            { selector: ".input-reps2", backgroundColor: "#948979" }
+            { selector: ".input-reps2", backgroundColor: "#948979" },
+            { selector: ".input-kg", backgroundColor: "#3C5B6F" }
         ]
     },
     {
         sectionColor: "#948979",
         elements: [
-            { selector: ".exercicio__nome", backgroundColor: "#948979" },
+            { selector: ".exercicio__nome", color: "#153448", backgroundColor: "#948979" },
             { selector: ".cabecalho__menu-hamburguer", color: "#153448" },
-            { selector: ".exercicio__obs", backgroundColor: "#948979" },
+            { selector: ".exercicio__obs", color:"#153448", backgroundColor: "#948979" },
             { selector: ".edit-button-1", color: "#153448" },
             { selector: ".select-repetitions", backgroundColor: "#DFD0B8" },
             { selector: ".select-kg", backgroundColor: "#DFD0B8" },
             { selector: ".select-rpe", backgroundColor: "#DFD0B8" },
             { selector: ".lista__aquecimento__w", color: "#153448" },
+            { selector: ".lista__segunda-linha__item__numero", color: "#153448" },
             { selector: ".input-reps1", backgroundColor: "#DFD0B8" },
-            { selector: ".input-reps2", backgroundColor: "#DFD0B8" }
+            { selector: ".input-reps2", backgroundColor: "#DFD0B8" },
+            { selector: ".input-kg", backgroundColor: "#3C5B6F" }
+        ]
+    },
+    {
+        sectionColor: "#3C5B6F",
+        elements: [
+            { selector: ".exercicio__nome", color: "#F05941", backgroundColor: "#3C5B6F" },
+            { selector: ".cabecalho__menu-hamburguer", color: "#F05941" },
+            { selector: ".exercicio__obs", color:"#DFD0B8", backgroundColor: "#3C5B6F" },
+            { selector: ".edit-button-1", color: "#F05941" },
+            { selector: ".select-repetitions", backgroundColor: "#DFD0B8" },
+            { selector: ".select-kg", backgroundColor: "#DFD0B8" },
+            { selector: ".select-rpe", backgroundColor: "#DFD0B8" },
+            { selector: ".lista__aquecimento__w", color: "#F05941" },
+            { selector: ".lista__segunda-linha__item__numero", color: "#F05941" },
+            { selector: ".input-reps1", backgroundColor: "#DFD0B8" },
+            { selector: ".input-reps2", backgroundColor: "#DFD0B8" },
+            { selector: ".input-kg", backgroundColor: "#948979" }
         ]
     }   
 ];
