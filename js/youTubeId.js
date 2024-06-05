@@ -86,6 +86,15 @@ const muscleGroups = {
         { name: "Abdominal Bicicleta - Bicycle Crunch", videoId: "cbKIDZ_XyjY" },
         { name: "Elevação de Joelhos Pendurado - Hanging Knee Raise", videoId: "RD_A-Z15ER4" }
     ],
+    cardio: [
+        { name: "Esteira - Treadmill", videoId: "" },
+        { name: "Elíptico - Elliptical", videoId: "" },
+        { name: "Simulador de Escada - Climbmill", videoId: "" }
+    ],
+    lpo: [
+        { name: "", videoId: "" },
+        { name: "", videoId: "" }
+    ],
     ativarDesativar: [
         { name: "", videoId: "" }
     ]
