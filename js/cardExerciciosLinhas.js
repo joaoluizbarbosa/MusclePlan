@@ -14,7 +14,7 @@ function myFunctionWSet(sectionId, buttonId) {
     let setId = Math.random().toString(36).substring(7); // Gerar um ID único
     ulAquecimento.className = "lista__aquecimento";
     ulAquecimento.id = "lista__aquecimento_" + setId; // Atribuir um ID único
-    ulAquecimento.innerHTML = '<li class="lista__aquecimento__item"><p class="lista__aquecimento__w">a</p></li><li class="lista__aquecimento__item"><input class="lista__aquecimento__input input-reps1" type="number"><p>-</p><input class="lista__aquecimento__input input-reps2" type="number"></li><li class="lista__aquecimento__item"><input class="lista__aquecimento__input input-kg" type="number"></li><li class="lista__aquecimento__item"></li><li class="lista__aquecimento__item"><button class="remove-list-button" onclick="removeList(\'lista__aquecimento_' + setId + '\')"><img class="trash-img" src="img/trash-branca.png"></button></li>';
+    ulAquecimento.innerHTML = '<li class="lista__aquecimento__item"><p class="lista__aquecimento__w">a</p></li><li class="lista__aquecimento__item"><input class="lista__aquecimento__input input-reps1" type="number"><p>-</p><input class="lista__aquecimento__input input-reps2" type="number"></li><li class="lista__aquecimento__item"><input class="lista__aquecimento__input input-kg" type="number"></li><li class="lista__aquecimento__item"></li><li class="lista__aquecimento__item"><button class="remove-list-button" onclick="removeList(\'lista__aquecimento_' + setId + '\')"><img class="trash-img" src="img/trash.png"></button></li>';
     let setButtons = document.getElementById(sectionId).getElementsByClassName("set-buttons")[0];
     setButtons.parentNode.insertBefore(ulAquecimento, setButtons);
 

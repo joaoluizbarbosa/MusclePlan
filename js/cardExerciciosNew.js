@@ -85,8 +85,6 @@
                 <button class="remove-list-button" onclick="removeList('lista__aquecimento-${j}')"><img class="trash-img" src="img/trash.png">
             </li>
         </ul>
-
-
         <ul id="myList${j}" class="lista__segunda-linha">
             <li class="lista__segunda-linha__item">
                 <p>1</p>

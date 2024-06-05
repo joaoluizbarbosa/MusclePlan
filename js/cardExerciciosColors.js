@@ -5,9 +5,11 @@
         elements: [
             { selector: ".exercicio__nome", backgroundColor: "#DFD0B8" },
             { selector: ".exercicio__obs", backgroundColor: "#DFD0B8" },
+            { selector: ".edit-button-1", color: "#F05941" },
             { selector: ".select-repetitions", backgroundColor: "#948979" },
             { selector: ".select-kg", backgroundColor: "#948979" },
             { selector: ".select-rpe", backgroundColor: "#948979" },
+            { selector: ".lista__aquecimento__w", color: "#F05941" },
             { selector: ".input-reps1", backgroundColor: "#948979" },
             { selector: ".input-reps2", backgroundColor: "#948979" }
         ]
@@ -17,9 +19,11 @@
         elements: [
             { selector: ".exercicio__nome", backgroundColor: "#948979" },
             { selector: ".exercicio__obs", backgroundColor: "#948979" },
+            { selector: ".edit-button-1", color: "#153448" },
             { selector: ".select-repetitions", backgroundColor: "#DFD0B8" },
             { selector: ".select-kg", backgroundColor: "#DFD0B8" },
             { selector: ".select-rpe", backgroundColor: "#DFD0B8" },
+            { selector: ".lista__aquecimento__w", color: "#153448" },
             { selector: ".input-reps1", backgroundColor: "#DFD0B8" },
             { selector: ".input-reps2", backgroundColor: "#DFD0B8" }
         ]
