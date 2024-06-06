@@ -950,12 +950,12 @@ input[type="checkbox"].checkbox-group:checked::before {
     font-size: 0.7em;
     color: var(--cor-fonte-1);
     background-color: var(--paleta-cor-4);
-    width: 90%;
+    width: 43.6%;
     height: 30px;
-    padding: 0.5em;
+    /* padding: 0.5em; */
     border-radius: 4px;
     border: 1px solid black;
-    margin: 0.3em;
+    /* margin: 0.3em; */
 }
 
 .start-button, .reset-button {
@@ -981,23 +981,23 @@ input[type="checkbox"].checkbox-group:checked::before {
     border: none;
     border-radius: 4px;
     box-shadow: 1px 1px 1px black;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     padding: 0 0 1px 0;
 }
 
 .timer {
     display: none;
-    font-size: 2em;
+    font-size: 1.5em;
     font-family: var(--fonte-principal);
     font-weight: 600;
     color: var(--paleta-cor-9);
-    padding-top: 1em;
+    padding-top: 0.7em;
     background-color: var(--paleta-cor-8);
     border: 1px solid black;
     border-radius: 4px;
     box-shadow: 1px 1px 1px black;
-    height: 65px;
+    height: 40px;
     width: 80%;
     place-self: center;
 }
