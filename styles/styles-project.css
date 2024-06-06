@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+    --fonte-principal: "Montserrat", sans-serif;
+    --cor-fonte-primaria: #DFD0B8;
+    --cor-fonte-secundaria: WHITE;
+    --cor-fonte-terciaria: BLACK;
+
+    --paleta-cor-1: #872341;
+    --paleta-cor-2: #BE3144;
+    --paleta-cor-3: #F05941;
+    --paleta-cor-4: #FFC470;
+    --paleta-cor-5: #153448;
+    --paleta-cor-6: #3C5B6F;
+    --paleta-cor-7: #60738D;
+    --paleta-cor-8: #948979;
+    --paleta-cor-9: #DFD0B8;
+    --paleta-cor-10: #9CAFAA;
+
+    /* corpo */
+    --cor-fundo-body: gray;
+
+    /* cores link back_to_index */
+    --cor-ancora: #DFD0B8;
+    --cor-sobrescrito: #872341;
+}
+
+.corpo {
+    -webkit-tap-highlight-color: transparent; /* Remove o destaque em dispositivos móveis */
+    background-color: var(--cor-fundo-body);
+    margin: 1em;
+}
+
+/* Cabeçalho */
+
+.cabecalho {
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.back_to_index {
+    font-family: var(--fonte-principal);
+    color: var(--cor-ancora);
+    text-decoration: none;
+    margin-bottom: 1.5em;
+}
+
+.sobrescrito {
+    color: var(--cor-sobrescrito);
+    vertical-align: super;
+    font-size: smaller;
+}
+
+/* Main */
+
+.main {
+    font-family: var(--fonte-principal);
+}
+
+/* Lista Paleta de Cores */
+
+.lista_paletaDeCores__item {
+    margin: 0.5em;
+}
+
+.button1,
+.button2,
+.button3,
+.button4,
+.button5,
+.button6,
+.button7,
+.button8,
+.button9,
+.button10 {
+    width: 50%;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    font-family: var(--fonte-principal);
+    font-size: 0.9em;
+}
+
+.button1 {
+    background-color: #872341;
+    color: var(--cor-fonte-secundaria);
+}
+
+.button2 {
+    background-color: #BE3144;
+}
+
+.button3 {
+    background-color: #F05941;
+}
+
+.button4 {
+    background-color: #FFC470;
+}
+
+.button5 {
+    background-color: #153448;
+    color: var(--cor-fonte-secundaria);
+}
+
+.button6 {
+    background-color: #3C5B6F;
+    color: var(--cor-fonte-secundaria);
+}
+
+.button7 {
+    background-color: #60738D;
+}
+
+.button8 {
+    background-color: #948979;
+}
+
+.button9 {
+    background-color: #DFD0B8;
+}
+
+.button10 {
+    background-color: #9CAFAA;
+}
