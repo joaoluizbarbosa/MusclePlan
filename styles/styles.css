@@ -871,7 +871,7 @@ input[type="checkbox"].checkbox-group:checked::before {
 .session-buttons {
     display: flex;
     justify-content: space-around;
-    margin: 1.3em 1em 15em 1em;
+    margin: 1.3em 1em 10em 1em;
     gap: 15px;
 }
 
