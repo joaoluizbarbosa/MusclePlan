@@ -92,6 +92,7 @@
     --cor-input-checkbox-check: black;
 
     /* Cores MusclePlan Logo */
+    --logoMusclePlan-texto: #DFD0B8;
     --logoMusclePlan-sobrescrito: black;
 
     /* Cores Rodapé e Timer*/
@@ -191,7 +192,7 @@ input[type="checkbox"]:checked::before {
 
 .cabecalho-back-to-index {
     font-family: var(--fonte-principal);
-    color: var(--cor-fonte-1);
+    color: var(--logoMusclePlan-texto);
     text-decoration: none;
 }
 
@@ -974,7 +975,7 @@ input[type="checkbox"].checkbox-group:checked::before {
 
 .rodape-back-to-index {
     font-family: var(--fonte-principal);
-    color: var(--cor-fonte-1);
+    color: var(--logoMusclePlan-texto);
     text-decoration: none;
     margin-bottom: 1.5em;
 }
