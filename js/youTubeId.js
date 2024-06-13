@@ -52,8 +52,8 @@ const muscleGroups = {
     ],
     quadriceps: [
         { name: "Cadeira Extensora - Leg Extension", videoId: "m0FOpMEgero" },
-        { name: "Agachamento Sissy - Sissy Squat", name: "FTmbNjUu7CI" },
-        { name: "Flexão Nórdica Reversa - Reverse Nordic Curl", name: "GbpDfXXKuk0" },
+        { name: "Agachamento Sissy - Sissy Squat", videoId: "FTmbNjUu7CI" },
+        { name: "Flexão Nórdica Reversa - Reverse Nordic Curl", videoId: "GbpDfXXKuk0" },
         { name: "Leg Press 45°", videoId: "3KJKb1aN6HA" },
         { name: "Agachamento Búlgaro - Bulgarian Split Squat", videoId: "vgn7bSXkgkA" },
         { name: "Passada Afundo com Halteres - Dumbbell Walking Lunge", videoId:"eFWCn5iEbTU" },
