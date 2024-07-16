@@ -21,6 +21,8 @@ const muscleGroups = {
     ],
     costas: [
         { name: "Remada Baixa no Cabo - Seated Cable Row", videoId: "UCXxvVItLoM" },
+        { name: "Remada Inclinada com Peito Apoiado com Halteres - Incline Chest-Supported Dumbbell Row", videoId: "tZUYS7X50so" },
+        { name: "Remada com Peito Apoiado Pegada T - Chest-Supported T-Bar Row", videoId: "0UBRfiO4zDs" },
         { name: "Remada Unilateral com Halter - Single Arm Supported Dumbbell Row", videoId: "DMo3HJoawrU" },
         { name: "Crucifixo Invertido no Pec Deck - Machine Reverse Flye", videoId: "5YK4bgzXDp0" },
         { name: "Crucifixo Invertido com Halteres - Bent Over Reverse Dumbbell Flye", videoId: "hf7jnF45N_I" },

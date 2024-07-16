@@ -583,6 +583,156 @@ _MMSS-1</textarea>
             </li>
         </ul>
     </section>
+    <section class="exercicio-n" id="exercicio-4" draggable="true" ondragstart="drag(event)">
+        <ul class="lista__nome-do-exercicio">
+            <li class="lista__nome-do-exercicio__item">
+                <p class="lista__nome-do-exercicio__numero">4</p>
+                <select id="nomeDoExercicio-4" class="exercicio__nome">
+                    <option value="Remada Baixa no Cabo - Seated Cable Row" data-video-id="UCXxvVItLoM">Remada Baixa no Cabo - Seated Cable Row</option>
+                    <option value="Remada Inclinada com Peito Apoiado com Halteres - Incline Chest-Supported Dumbbell Row" data-video-id="tZUYS7X50so">Remada Inclinada com Peito Apoiado com Halteres - Incline Chest-Supported Dumbbell Row</option>
+                    <option value="Remada com Peito Apoiado Pegada T - Chest-Supported T-Bar Row" data-video-id="0UBRfiO4zDs">Remada com Peito Apoiado Pegada T - Chest-Supported T-Bar Row</option>
+                </select>
+                <input type="checkbox" id="menu-4" class="container__botao">
+                <label for="menu-4" class="container__rotulo">
+                    <span class="cabecalho__menu-hamburguer container__imagem">≡</span>
+                </label>
+                <ul class="lista-menu">
+                    <li class="lista-menu__item"><button class="youtube-button" onclick="toggleYouTubeVideo('exercicio-4')">» _vídeo</button></li>
+                    <li class="lista-menu__item"><button class="clock-button" onclick="toggleTimer('exercicio-4')">Ø _timer</button></li>
+                    <li class="lista-menu__item"><button class="color-button" onclick="preventClose(event); changeColor('exercicio-4')">_cores</button></li>
+                    <li class="lista-menu__item"><button class="delete-section-button" onclick="removeSection('exercicio-4')">✖ _excluir</button></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="lista-secButtons">
+            <li class="lista-secButtons__item"><button class="lista-secButtons__ativarDesativar-button" onclick="ativarDesativarCheckbox('ativarDesativar')"><span class="infinit2">∞</span></button></li>
+            <li class="lista-secButtons__item"><button class="lista-secButtons__youtube-button" onclick="toggleYouTubeVideo('exercicio-4')">»</button></li>
+            <li class="lista-secButtons__item"><button class="lista-secButtons__clock-button" onclick="toggleTimer('exercicio-4')">Ø</button></li>
+            <li class="lista-secButtons__item"><button class="lista-secButtons__color-button" onclick="preventClose(event); changeColor('exercicio-4')">_</button></li>
+        </ul>
+        <div class="video-container" id="video-container-4"></div> <!-- Espaço para o vídeo -->
+        <div class="exercicioObs-div">
+            <textarea id="exercicioObs-4" class="exercicio__obs auto-expand" placeholder="Observações sobre o exercício" maxlength="300"  oninput="limitLines(this, 10); updateCounter(this)" readonly>Drop-Set na segunda série.</textarea>
+            <button class="edit-button-1" onclick="toggleEdit('exercicioObs-4')">Editar</button>
+        </div>
+        <ul class="lista__primeira-linha">
+            <li>
+                <!-- <p>Set</p> -->
+            </li>
+            <li>
+                <select class="select-repetitions">
+                    <option class="option" value="reps range">Faixa de Repetições</option>
+                    <option value="reps">Repetições</option>
+                    <option value="reps max">Repetições Máximas</option>
+                    <option value="amrap">AMRAP</option>
+                    <option value="time">Tempo</option>
+                    <option value="time range">Faixa de Tempo</option>
+                </select>             
+            </li>
+            <li>
+                <select class="select-kg">
+                    <option value="kg">KG</option>
+                    <option value="lb">LB</option>
+                </select>             
+            </li>
+            <li>
+                <select class="select-rpe">
+                    <option value="rpe range">Faixa de Int. (PSE)</option>
+                    <option value="rpe">Int. (PSE)</option>
+                    <option value="% of 1rm range">Faixa de % de 1RM</option>
+                    <option value="% of 1rm">% de 1RM</option>
+                </select>             
+            </li>
+        </ul>
+        <ul class="lista__aquecimento" id="lista__aquecimento-4">
+            <li class="lista__aquecimento__item">
+                <p class="lista__aquecimento__w">a</p>
+            </li>
+            <li class="lista__aquecimento__item">
+                <input class="lista__aquecimento__input input-reps1" type="number" value="">
+                <p>-</p>
+                <input class="lista__aquecimento__input input-reps2" type="number" value="6">
+            </li>
+            <li class="lista__aquecimento__item">
+                <input class="lista__aquecimento__input input-kg" type="number" value="25">
+            </li>
+            <li class="lista__aquecimento__item">
+            </li>
+            <li class="lista__aquecimento__item">
+                <button class="remove-list-button" onclick="removeList('lista__aquecimento-4')"><img class="trash-img" src="img/trash.png">
+            </li>
+        </ul>
+        <ul id="myList4" class="lista__segunda-linha">
+            <li class="lista__segunda-linha__item">
+                <p class="lista__segunda-linha__item__numero">1</p>
+            </li>
+            <li class="lista__segunda-linha__item">
+                <input class="lista__segunda-linha__input input-reps1" type="number" value="10">
+                <p>-</p>
+                <input class="lista__segunda-linha__input input-reps2" type="number" value="12">
+            </li>
+            <li class="lista__segunda-linha__item">
+                <input class="lista__segunda-linha__input input-kg" type="number" value="35">
+            </li>
+            <li class="lista__segunda-linha__item">
+                <input class="lista__segunda-linha__input input-rpe1" type="number" value="9">
+                <p>-</p>
+                <input class="lista__segunda-linha__input input-rpe2" type="number" value="10">
+            </li>
+            <li class="lista__segunda-linha__item">
+                <input class="input-checkbox" type="checkbox">
+            </li>
+        </ul>
+        <ul id="myList4" class="lista__segunda-linha">
+            <li class="lista__segunda-linha__item">
+                <p class="lista__segunda-linha__item__numero">2</p>
+            </li>
+            <li class="lista__segunda-linha__item">
+                <input class="lista__segunda-linha__input input-reps1" type="number" value="10">
+                <p>-</p>
+                <input class="lista__segunda-linha__input input-reps2" type="number" value="12">
+            </li>
+            <li class="lista__segunda-linha__item">
+                <input class="lista__segunda-linha__input input-kg" type="number" value="35">
+            </li>
+            <li class="lista__segunda-linha__item">
+                <input class="lista__segunda-linha__input input-rpe1" type="number" value="9">
+                <p>-</p>
+                <input class="lista__segunda-linha__input input-rpe2" type="number" value="10">
+            </li>
+            <li class="lista__segunda-linha__item">
+                <input class="input-checkbox" type="checkbox">
+            </li>
+        </ul>
+        <ul id="myList4" class="lista__segunda-linha">
+            <li class="lista__segunda-linha__item">
+                <p class="lista__segunda-linha__item__numero">3</p>
+            </li>
+            <li class="lista__segunda-linha__item">
+                <input class="lista__segunda-linha__input input-reps1" type="number" value="10">
+                <p>-</p>
+                <input class="lista__segunda-linha__input input-reps2" type="number" value="">
+            </li>
+            <li class="lista__segunda-linha__item">
+                <input class="lista__segunda-linha__input input-kg" type="number" value="25">
+            </li>
+            <li class="lista__segunda-linha__item">
+                <input class="lista__segunda-linha__input input-rpe1" type="number" value="10">
+                <p>-</p>
+                <input class="lista__segunda-linha__input input-rpe2" type="number" value="10">
+            </li>
+            <li class="lista__segunda-linha__item">
+                <input class="input-checkbox" type="checkbox">
+            </li>
+        </ul>
+        <ul class="set-buttons">
+            <li class="set-buttons__item">
+                <button id="button1-add-w" class="add-w-button" onclick="myFunctionWSet('exercicio-4', this.id)">ADD a-Set</button>
+                <button id="button1-add" class="add-button" onclick="myFunction('exercicio-4', this.id)">ADD Set</button>
+                <button id="button1-undo" class="undo-button" onclick="undoFunction('exercicio-4', this.id)">EXC Set</button>
+            </li>
+        </ul>
+    </section>
 
 
         <div class="session-buttons">
