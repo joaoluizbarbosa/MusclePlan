@@ -12,14 +12,20 @@ const muscleGroups = {
     ombros: [
         { name: "Desenvolvimento de Ombros Sentado com Halteres - Seated Dumbbell Shoulder Press", videoId: "SSXS4Z8OkCg" },
         { name: "Desenvolvimento de Ombros na Máquina - Machine Shoulder Press", videoId: "WvLMauqrnK8" },
-        { name: "Desenvolvimento de Ombros em Pé com Barra - Standing Barbell Shoulder Press", videoId: "G2qpTG1Eh40" }
+        { name: "Desenvolvimento de Ombros em Pé com Barra - Standing Barbell Shoulder Press", videoId: "G2qpTG1Eh40" },
+        { name: "Elevação Lateral com Halteres - Dumbbell Lateral Raise", videoId: "XPPfnSEATJA"},
+        { name: "Elevação Lateral no Cabo - Cable Lateral Raise", videoId: "Z5FA9aq3L6A"},
+        { name: "Elevação Lateral na Máquina - Machine Lateral Raise", videoId: "0yEX5In9YTg"}
     ],
     costas: [
         { name: "Remada Baixa no Cabo - Seated Cable Row", videoId: "UCXxvVItLoM" },
         { name: "Remada Unilateral com Halter - Single Arm Supported Dumbbell Row", videoId: "DMo3HJoawrU" },
         { name: "Crucifixo Invertido no Pec Deck - Machine Reverse Flye", videoId: "5YK4bgzXDp0" },
         { name: "Crucifixo Invertido com Halteres - Bent Over Reverse Dumbbell Flye", videoId: "hf7jnF45N_I" },
-        { name: "Crucifixo Invertido no Cabo - Rear Delt Cable Flye", videoId: "er15V96hG5U" }
+        { name: "Crucifixo Invertido no Cabo - Rear Delt Cable Flye", videoId: "er15V96hG5U" },
+        { name: "Puxada Frente com Puxador Anatômico N3 - Lat Pulldown N3", videoId: "JyTjbMnwDHw" },
+        { name: "Puxada Frente Pegada Aberta Pronada - Overhand Lat Pulldown", videoId: "EUIri47Epcg" },
+        { name: "Puxada Frente com Pegada Neutra - Neutral Grip Lat Pulldown", videoId: "kxeklf1Tkhw" }
     ],
     biceps: [
         { name: "Rosca Bíceps com Barra W - EZ Bar Curl", videoId: "-gSM-kqNlUw" },
