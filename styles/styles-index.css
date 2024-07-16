@@ -143,15 +143,10 @@
     height: 105px;
 }
 
-.martina {
-    height: 105px;
-}
-
-.gabriela {
-    height: 105px;
-}
-
-.manu {
+.martina,
+.gabriela,
+.manu,
+.edson {
     height: 105px;
 }
 
@@ -160,7 +155,8 @@
 .titulo-index__treino-teTp4x,
 .titulo-index__treino-martina,
 .titulo-index__treino-gabriela,
-.titulo-index__treino-manu {
+.titulo-index__treino-manu,
+.titulo-index__treino-edson {
     font-family: var(--fonte-principal);
     font-weight: 600;
     font-size: 1em;

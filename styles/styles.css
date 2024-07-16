@@ -92,7 +92,6 @@
     --cor-input-checkbox-check: black;
 
     /* Cores MusclePlan Logo */
-    --logoMusclePlan-texto: #DFD0B8;
     --logoMusclePlan-sobrescrito: black;
 
     /* Cores Rodapé e Timer*/
@@ -192,7 +191,7 @@ input[type="checkbox"]:checked::before {
 
 .cabecalho-back-to-index {
     font-family: var(--fonte-principal);
-    color: var(--logoMusclePlan-texto);
+    color: var(--cor-fonte-1);
     text-decoration: none;
 }
 
@@ -871,7 +870,7 @@ input[type="checkbox"].checkbox-group:checked::before {
 .session-buttons {
     display: flex;
     justify-content: space-around;
-    margin: 1.3em 1em 9em 1em;
+    margin: 1.3em 1em 15em 1em;
     gap: 15px;
 }
 
@@ -892,7 +891,6 @@ input[type="checkbox"].checkbox-group:checked::before {
     cursor: pointer;
 }
 
-/* Itens do Rodapé */
 .rodape {
     display: flex;
     flex-direction: column;
@@ -910,7 +908,7 @@ input[type="checkbox"].checkbox-group:checked::before {
     display: grid;
     grid-template-columns: 46% 46% 10%;
     text-align: center;
-    margin: 0.5em 0 0 0;
+    margin: 0.5em 0;
 }
 
 .timer-container {
@@ -928,8 +926,6 @@ input[type="checkbox"].checkbox-group:checked::before {
     box-shadow: 1px 1px 1px black;
     border-radius: 4px;
     border: none;
-    margin-top: 0.5em;
-    cursor: pointer;
 }
 
 .start-button, .reset-button {
@@ -943,24 +939,6 @@ input[type="checkbox"].checkbox-group:checked::before {
     width: 43.6%;
     height: 25px;
     margin-top: 0.3em;
-    cursor: pointer;
-}
-
-.timer {
-    display: none;
-    font-size: 1.5em;
-    font-family: var(--fonte-principal);
-    font-weight: 600;
-    color: var(--cor-fonte-timer);
-    padding-top: 0.6em;
-    margin-top: 0.2em;
-    background-color: var(--cor-fundo-timer);
-    border: none;
-    border-radius: 4px;
-    box-shadow: 1px 1px 1px black;
-    height: 38px;
-    width: 80%;
-    place-self: center;
 }
 
 .esc-clock-button {
@@ -976,15 +954,29 @@ input[type="checkbox"].checkbox-group:checked::before {
     width: 15px;
     height: 15px;
     padding: 0 0 1px 0;
-    margin-top: 0.5em;
-    cursor: pointer;
+}
+
+.timer {
+    display: none;
+    font-size: 1.5em;
+    font-family: var(--fonte-principal);
+    font-weight: 600;
+    color: var(--cor-fonte-timer);
+    padding-top: 0.6em;
+    background-color: var(--cor-fundo-timer);
+    border: none;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px black;
+    height: 38px;
+    width: 80%;
+    place-self: center;
 }
 
 .rodape-back-to-index {
     font-family: var(--fonte-principal);
-    color: var(--logoMusclePlan-texto);
+    color: var(--cor-fonte-1);
     text-decoration: none;
-    margin: 0.5em 0 1em 0;
+    margin-bottom: 1.5em;
 }
 
 .sobrescrito {

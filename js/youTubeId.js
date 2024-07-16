@@ -3,7 +3,9 @@ const muscleGroups = {
         { name: "Supino Reto com Barra - Barbell Bench Press", videoId: "SCVCLChPQFY" },
         { name: "Supino Reto com Halteres - Dumbbell Bench Press", videoId: "YQ2s_Y7g5Qk" },
         { name: "Supino Inclinado com Barra - Incline Barbell Bench Press", videoId: "2jFFCy8JBU8" },
-        { name: "Low Incline Dumbbell Press", videoId: "ADl1Ac2ADHQ" }
+        { name: "Low Incline Dumbbell Press", videoId: "ADl1Ac2ADHQ" },
+        { name: "Crucifixo no Pec Deck - Pec Deck Flye", videoId: "FDay9wFe5uE" },
+        { nama: "Supino Horizontal na Máquina - Machine Chest Press", videoId: "DcSMIlBnnZ8"}
     ],
     triceps: [
         { name: "Tríceps na Polia com Barra Reta - Cable Triceps Pushdown", videoId: "6Fzep104f0s" },
