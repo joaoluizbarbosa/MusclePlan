@@ -273,58 +273,24 @@ input[type="checkbox"]:checked::before {
     background-color: var(--cor-botoes-menuEscArq-fundo);
 }
 
-.lista__periodizacao {
-    background-color: var(--cor-fundo-periodizacao);
+.lista__treino-info {
+    background-color: var(--cor-fundo-treino-info);
     border-radius: 4px;
-    margin: 1em 0.5em 0.5em 0.5em;
+    margin: 0.5em 0.5em 0.5em 0.5em;
     padding: 0.5em 0 1em 0;
     box-shadow: 1px 1px 5px black;
 }
 
-.titulo-da-periodizacao {
-    text-transform: uppercase;
-    display: block;
-    background-color: var(--cor-fundo-titulo-da-periodizacao);
-    border: none;
-    resize: none;
-    width: 90%;
-    height: 50px;
-    font-family: var(--fonte-principal);
-    color: var(--cor-fonte-titulo-da-periodizacao);
-    font-weight: 600;
-    font-size: 1.4em;
-    margin: 0 0.5em 0 0.5em;
-    padding: 0.5em;
-    text-align: center;
-}
-
-.edit-button-tituloDaPeriodizacao {
-    font-family: var(--fonte-principal);
-    font-size: 0.7em;
-    font-weight: 600;
-    background-color: var(--cor-fundo-botao-editButton);
-    color: var(--cor-fonte-botao-editButton);
-    border: none;
-    width: 50px;
-    cursor: pointer;
-    margin-left: 1em;
-    margin-right: auto;
-}
-
-.lista__periodizacao__item-semana-dia {
+.lista__treino-info__item {
     display: flex;
-    margin: 1em;
-    align-items: baseline;
-    justify-content: space-around;
+    flex-direction: column;
+    margin-bottom: 0.5em;
 }
 
-.lista__periodizacao__item-paragrafo {
-    font-family: var(--fonte-principal);
-    font-weight: 400;
-    font-size: 1.2em;
-    color: var(--cor-fonte-semana-dia-paragrafo);
-    text-align: center;
-    padding: 0;
+.treino_proximo-anterior {
+    display: flex;
+    margin: 1em 1.5em 0 25em;
+    justify-content: space-between;
 }
 
 .semana, .dia {
@@ -349,28 +315,6 @@ input[type="checkbox"]:checked::before {
     color: var(--cor-fonte-anteriorProximo);
     font-size: 2.5em;
     cursor: pointer;
-}
-
-.dia-anterior {
-    margin-right: 1em;
-}
-
-.proximo-dia {
-    margin-left: 1em;
-}
-
-.lista__treino-info {
-    background-color: var(--cor-fundo-treino-info);
-    border-radius: 4px;
-    margin: 0.5em 0.5em 0.5em 0.5em;
-    padding: 0.5em 0 1em 0;
-    box-shadow: 1px 1px 5px black;
-}
-
-.lista__treino-info__item {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0.5em;
 }
 
 .titulo-do-treino {

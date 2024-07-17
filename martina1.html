@@ -27,29 +27,13 @@
     </header>
     
     <main class="main__treino-blank">
-
-        <ul class="lista__periodizacao">
-            <li class="lista__periodizacao__item">
-                <textarea id="tituloDaPeriodizacao" class="titulo-da-periodizacao" placeholder="TÍTULO DA PERIODIZAÇÃO" maxlength="50" oninput="limitLines(this, 2)" readonly>
-_martinaAffonso</textarea>
-                <button class="edit-button-tituloDaPeriodizacao" onclick="toggleEdit('tituloDaPeriodizacao')">Editar</button>
-            </li>
-            <li class="lista__periodizacao__item">
-                <div class="lista__periodizacao__item-semana-dia">
+        <ul class="lista__treino-info">
+            <li class="lista__treino-info__item">
+                <div class="treino_proximo-anterior">
                     <a href="#" class="dia-anterior">«</a>
-
-                    <p class="lista__periodizacao__item-paragrafo">SEMANA</p>
-                    <input type="number" id="semana" class="semana" placeholder="1" value="1">
-                    
-                    <p class="lista__periodizacao__item-paragrafo">DIA</p>
-                    <input type="number" id="dia" class="dia" placeholder="1" value="1">
-
                     <a href="martina2.html" class="proximo-dia">»</a>
                 </div>
             </li>
-        </ul>
-
-        <ul class="lista__treino-info">
             <li class="lista__treino-info__item">
                     <textarea id="tituloDoTreino" class="titulo-do-treino" placeholder="TÍTULO DO TREINO" maxlength="40" oninput="limitLines(this, 2)" readonly>
 _MMSS-1</textarea>
