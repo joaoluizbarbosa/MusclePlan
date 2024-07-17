@@ -289,7 +289,7 @@ input[type="checkbox"]:checked::before {
 
 .treino_proximo-anterior {
     display: flex;
-    margin: 1em 1.5em 0 25em;
+    margin: 1em 1.5em 0 20em;
     justify-content: space-between;
 }
 
