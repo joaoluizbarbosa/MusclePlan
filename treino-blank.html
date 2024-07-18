@@ -28,12 +28,6 @@
     <main class="main__treino-blank">
         <ul class="lista__treino-info">
             <li class="lista__treino-info__item">
-                <div class="treino_proximo-anterior">
-                    <a href="#" class="dia-anterior">«</a>
-                    <a href="#" class="proximo-dia">»</a>
-                </div>
-            </li>
-            <li class="lista__treino-info__item">
                 <textarea id="tituloDoTreino" class="titulo-do-treino" placeholder="TÍTULO DO TREINO" maxlength="40" oninput="limitLines(this, 2)" readonly></textarea>
                 <button class="edit-button" onclick="toggleEdit('tituloDoTreino')">Editar</button>
             </li>
@@ -41,13 +35,19 @@
                 <textarea id="treinoObs" class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="300" oninput="limitLines(this, 10)" readonly></textarea>
                 <button class="edit-button" onclick="toggleEdit('treinoObs')">Editar</button>
             </li>
+            <li class="lista__treino-info__item">
+                <div class="treino_proximo-anterior">
+                    <a href="#" class="dia-anterior">«</a>
+                    <a href="#" class="proximo-dia">»</a>
+                </div>
+            </li>
         </ul>
         <ul class="lista__agrupamentosMusculares">
             <li class="lista__agrupamentosMusculares__item">
                 <label class="labelTitulo-group"><span class="infinit">∞</span>Agrupamentos Musculares:</label>
                 <div class="divPrincipal-group">
                     <div class="itens-div">
-                        <input type="checkbox" id="peito" name="group" value="peito" class="checkbox-group">
+                        <input type="checkbox" id="peito" name="group" value="peito" class="checkbox-group"
                         <label for="peito" class="label-group">Peito</label>
                     </div>
                     <div class="itens-div">
@@ -79,6 +79,14 @@
                         <label for="gluteos" class="label-group">Glúteos</label>
                     </div>
                     <div class="itens-div">
+                        <input type="checkbox" id="gluteosequadriceps" name="group" value="gluteosequadriceps" class="checkbox-group">
+                        <label for="gluteosequadriceps" class="label-group">Glúteos e Quadríceps</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="gluteoseisquiotibiais" name="group" value="gluteoseisquiotibiais" class="checkbox-group">
+                        <label for="gluteoseisquiotibiais" class="label-group">Glúteos e Isquiotibiais</label>
+                    </div>
+                    <div class="itens-div">
                         <input type="checkbox" id="quadriceps" name="group" value="quadriceps" class="checkbox-group">
                         <label for="quadriceps" class="label-group">Quadríceps</label>
                     </div>
@@ -95,8 +103,16 @@
                         <label for="panturrilha" class="label-group">Panturrilha</label>
                     </div>
                     <div class="itens-div">
+                        <input type="checkbox" id="soleo" name="group" value="soleo" class="checkbox-group">
+                        <label for="soleo" class="label-group">Soleo</label>
+                    </div>
+                    <div class="itens-div">
                         <input type="checkbox" id="abdomen" name="group" value="abdomen" class="checkbox-group">
                         <label for="abdomen" class="label-group">Abdomen</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="lombar" name="group" value="lombar" class="checkbox-group">
+                        <label for="lombar" class="label-group">Lombar</label>
                     </div>
                     <div class="itens-div">
                         <input type="checkbox" id="cardio" name="group" value="cardio" class="checkbox-group">

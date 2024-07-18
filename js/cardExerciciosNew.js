@@ -70,7 +70,7 @@
         </ul>
         <ul class="lista__aquecimento" id="lista__aquecimento-${j}">
             <li class="lista__aquecimento__item">
-                <p class="lista__aquecimento__w">a</p>
+                <p class="lista__aquecimento__w">A</p>
             </li>
             <li class="lista__aquecimento__item">
                 <input class="lista__aquecimento__input input-reps1" type="number" value="">

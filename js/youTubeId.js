@@ -5,11 +5,14 @@ const muscleGroups = {
         { name: "Supino Inclinado com Barra - Incline Barbell Bench Press", videoId: "2jFFCy8JBU8" },
         { name: "Low Incline Dumbbell Press", videoId: "ADl1Ac2ADHQ" },
         { name: "Crucifixo no Pec Deck - Pec Deck Flye", videoId: "FDay9wFe5uE" },
-        { nama: "Supino Horizontal na Máquina - Machine Chest Press", videoId: "DcSMIlBnnZ8"}
+        { name: "Supino Horizontal na Máquina - Machine Chest Press", videoId: "DcSMIlBnnZ8"}
     ],
     triceps: [
         { name: "Tríceps na Polia com Barra Reta - Cable Triceps Pushdown", videoId: "6Fzep104f0s" },
-        { name: "Tríceps na Polia com Corda - Rope Pushdown", videoId:"-xa-6cQaZKY" }
+        { name: "Tríceps na Polia com Corda - Rope Pushdown", videoId:"-xa-6cQaZKY" },
+        { name: "Tríceps Testa com Barra W - EZ Bar Skull Crusher", videoId:"eluOhtYkm-0" },
+        { name: "Tríceps Francês Unilateral com Halteres - Single Arm Dumbbell French Press", videoId:"9uDyYtQ1JzM" },
+        { name: "Tríceps Acima da Cabeça na Polia com Corda - Rope Overhead Cable Triceps Extension", videoId:"KvrP8c6eVBc" }
     ],
     ombros: [
         { name: "Desenvolvimento de Ombros Sentado com Halteres - Seated Dumbbell Shoulder Press", videoId: "SSXS4Z8OkCg" },
@@ -48,17 +51,23 @@ const muscleGroups = {
     ],
     gluteos: [
         { name: "Cadeira Abdutora - Seated Hip Abductor Machine", videoId: "G_8LItOiZ0Q" },
-        { name: "Levantamento Terra Romeno com Barra - Barbell Romanian Deadlift", videoId: "LURGDIX3adY" },
-        { name: "Levantamento Terra Romeno com Halteres - DB Romanian Deadlift", videoId: "xAL7lHwj30E" },
-        { name: "Barbell Stiff Legged Deadlift", videoId: "CN_7cz3P-1U" },
         { name: "Elevação Pélvica com Barra - Barbell Hip Thrust", videoId: "EF7jXP17DPE" },
         { name: "Elevação Pélvica com Peso Corporal - Bodyweight Hip Thrust", videoId: "7XuNzi5rcj4" },
+        { name: "Extensão Lombar no Banco 45° Foco em Glúteos - Back Extension Glute Focused", videoId: "nk7x3eZgsmM" }
+    ],    
+    gluteosequadriceps: [
         { name: "Leg Press 45°", videoId: "3KJKb1aN6HA" },
+        { name: "Leg Press Horizontal", videoId: "NZlaV9_C-GE" },
         { name: "Agachamento Búlgaro - Bulgarian Split Squat", videoId: "vgn7bSXkgkA" },
         { name: "Passada Afundo com Halteres - Dumbbell Walking Lunge", videoId:"eFWCn5iEbTU" },
         { name: "Passada Afundo - Walking Lunge", videoId: "L8fvypPrzzs" },
         { name: "Agachamento com Peso Corporal - Air Squat", videoId: "rMvwVtlqjTE" },
         { name: "Agachamento com Barra nas Costas - Barbell Back Squat", videoId: "rrJIyZGlK8c" }
+    ],
+    gluteoseisquiotibiais: [
+        { name: "Levantamento Terra Romeno com Barra - Barbell Romanian Deadlift", videoId: "LURGDIX3adY" },
+        { name: "Levantamento Terra Romeno com Halteres - DB Romanian Deadlift", videoId: "xAL7lHwj30E" },
+        { name: "Barbell Stiff Legged Deadlift", videoId: "CN_7cz3P-1U" },
     ],
     quadriceps: [
         { name: "Cadeira Extensora - Leg Extension", videoId: "m0FOpMEgero" },
@@ -75,9 +84,6 @@ const muscleGroups = {
         { name: "Mesa Flexora - Lying Leg Curl", videoId: "SbSNUXPRkc8" },
         { name: "Cadeira Flexora - Seated Leg Curl", videoId: "Orxowest56U" },
         { name: "Flexão Nórdica - Nordic Hamstring Curl", videoId: "kjv4WQXWl_A" },
-        { name: "Levantamento Terra Romeno com Barra - Barbell Romanian Deadlift", videoId: "LURGDIX3adY" },
-        { name: "Levantamento Terra Romeno com Halteres - DB Romanian Deadlift", videoId: "xAL7lHwj30E" },
-        { name: "Barbell Stiff Legged Deadlift", videoId: "CN_7cz3P-1U" },
         { name: "Flexão de Joelhos na Bola Suíça - Swiss Ball Hamstring Curl", videoId: "Kk8dpH4ZPos" }
     ],
     adutores: [
@@ -87,14 +93,21 @@ const muscleGroups = {
     ],
     panturrilha: [
         { name: "Panturrilha no Hack de Agachamento - Hack Squat Calf Raise", videoId: "V_9E0TNBA5w" },
-        { name: "Panturrilha com peso corporal - Bodyweight Calf Raise", videoId: "c5Kv6-fnTj8" },
+        { name: "Panturrilha com peso corporal - Bodyweight Calf Raise", videoId: "c5Kv6-fnTj8" }
+    ],
+    soleo: [
         { name: "Cadeira Solear - Seated Calf Raise", videoId: "NL897yzS30g" }
     ],
     abdomen: [
         { name: "Abdominal Remador - Tuck Up", videoId: "vb6DC9_NDcE" },
         { name: "Abdominal Canivete - V Up", videoId: "7UVgs18Y1P4" },
         { name: "Abdominal Bicicleta - Bicycle Crunch", videoId: "cbKIDZ_XyjY" },
-        { name: "Elevação de Joelhos Pendurado - Hanging Knee Raise", videoId: "RD_A-Z15ER4" }
+        { name: "Elevação de Joelhos Pendurado - Hanging Knee Raise", videoId: "RD_A-Z15ER4" },
+        { name: "Abdominal na Máquina - Crunch Machine", videoId: "kLL2RwhNE68" }
+    ],
+    lombar: [
+        { name: "Extensão Lombar na Máquina - Machine Back Extension", videoId: "4sla2xidkD0" },
+        { name: "Extensão Lombar no Banco 45° - Back Extension", videoId: "Q4_W0wBLXBc" }
     ],
     cardio: [
         { name: "Esteira - Treadmill", videoId: "" },

@@ -29,12 +29,6 @@
     <main class="main__treino-blank">
         <ul class="lista__treino-info">
             <li class="lista__treino-info__item">
-                <div class="treino_proximo-anterior">
-                    <a href="martina2.html" class="dia-anterior">«</a>
-                    <a href="#" class="proximo-dia">»</a>
-                </div>
-            </li>
-            <li class="lista__treino-info__item">
                     <textarea id="tituloDoTreino" class="titulo-do-treino" placeholder="TÍTULO DO TREINO" maxlength="40" oninput="limitLines(this, 2)" readonly>
 _MMSS-2</textarea>
                     <button class="edit-button" onclick="toggleEdit('tituloDoTreino')">Editar</button>
@@ -42,6 +36,12 @@ _MMSS-2</textarea>
             <li class="lista__treino-info__item">
                 <textarea id="treinoObs" class="treino__obs  auto-expand" placeholder="Observações gerais sobre o treino" maxlength="300" oninput="limitLines(this, 10)" readonly>As cargas servem apenas como guia. Elas podem e devem ser ajustadas de acordo com a intensidade estipulada para cada exercício.</textarea>
                 <button class="edit-button" onclick="toggleEdit('treinoObs')">Editar</button>
+            </li>
+            <li class="lista__treino-info__item">
+                <div class="treino_proximo-anterior">
+                    <a href="martina2.html" class="dia-anterior">«</a>
+                    <a href="#" class="proximo-dia">»</a>
+                </div>
             </li>
         </ul>
         <ul class="lista__agrupamentosMusculares">
@@ -81,6 +81,14 @@ _MMSS-2</textarea>
                         <label for="gluteos" class="label-group">Glúteos</label>
                     </div>
                     <div class="itens-div">
+                        <input type="checkbox" id="gluteosequadriceps" name="group" value="gluteosequadriceps" class="checkbox-group">
+                        <label for="gluteosequadriceps" class="label-group">Glúteos e Quadríceps</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="gluteoseisquiotibiais" name="group" value="gluteoseisquiotibiais" class="checkbox-group">
+                        <label for="gluteoseisquiotibiais" class="label-group">Glúteos e Isquiotibiais</label>
+                    </div>
+                    <div class="itens-div">
                         <input type="checkbox" id="quadriceps" name="group" value="quadriceps" class="checkbox-group">
                         <label for="quadriceps" class="label-group">Quadríceps</label>
                     </div>
@@ -97,8 +105,16 @@ _MMSS-2</textarea>
                         <label for="panturrilha" class="label-group">Panturrilha</label>
                     </div>
                     <div class="itens-div">
+                        <input type="checkbox" id="soleo" name="group" value="soleo" class="checkbox-group">
+                        <label for="soleo" class="label-group">Soleo</label>
+                    </div>
+                    <div class="itens-div">
                         <input type="checkbox" id="abdomen" name="group" value="abdomen" class="checkbox-group">
                         <label for="abdomen" class="label-group">Abdomen</label>
+                    </div>
+                    <div class="itens-div">
+                        <input type="checkbox" id="lombar" name="group" value="lombar" class="checkbox-group">
+                        <label for="lombar" class="label-group">Lombar</label>
                     </div>
                     <div class="itens-div">
                         <input type="checkbox" id="cardio" name="group" value="cardio" class="checkbox-group" checked>
