@@ -57,7 +57,7 @@ const muscleGroups = {
     ],    
     gluteosequadriceps: [
         { name: "Leg Press 45°", videoId: "3KJKb1aN6HA" },
-        { name: "Leg Press Horizontal", videoId: "NZlaV9_C-GE" },
+        { name: "Leg Press Horizontal - Horizontal Leg Press", videoId: "NZlaV9_C-GE" },
         { name: "Agachamento Búlgaro - Bulgarian Split Squat", videoId: "vgn7bSXkgkA" },
         { name: "Passada Afundo com Halteres - Dumbbell Walking Lunge", videoId:"eFWCn5iEbTU" },
         { name: "Passada Afundo - Walking Lunge", videoId: "L8fvypPrzzs" },
@@ -68,17 +68,12 @@ const muscleGroups = {
         { name: "Levantamento Terra Romeno com Barra - Barbell Romanian Deadlift", videoId: "LURGDIX3adY" },
         { name: "Levantamento Terra Romeno com Halteres - DB Romanian Deadlift", videoId: "xAL7lHwj30E" },
         { name: "Barbell Stiff Legged Deadlift", videoId: "CN_7cz3P-1U" },
+        { name: "Extensão Lombar no Banco 45° Glúteos e Isquiotibiais - 45° Glute Ham Raise", videoId: "5_ejbGfdAQE" }
     ],
     quadriceps: [
         { name: "Cadeira Extensora - Leg Extension", videoId: "m0FOpMEgero" },
         { name: "Agachamento Sissy - Sissy Squat", videoId: "FTmbNjUu7CI" },
-        { name: "Flexão Nórdica Reversa - Reverse Nordic Curl", videoId: "GbpDfXXKuk0" },
-        { name: "Leg Press 45°", videoId: "3KJKb1aN6HA" },
-        { name: "Agachamento Búlgaro - Bulgarian Split Squat", videoId: "vgn7bSXkgkA" },
-        { name: "Passada Afundo com Halteres - Dumbbell Walking Lunge", videoId:"eFWCn5iEbTU" },
-        { name: "Passada Afundo - Walking Lunge", videoId: "L8fvypPrzzs" },
-        { name: "Agachamento com Peso Corporal - Air Squat", videoId: "rMvwVtlqjTE" },
-        { name: "Agachamento com Barra nas Costas - Barbell Back Squat", videoId: "rrJIyZGlK8c" }
+        { name: "Flexão Nórdica Reversa - Reverse Nordic Curl", videoId: "GbpDfXXKuk0" }
     ],
     isquiotibiais: [
         { name: "Mesa Flexora - Lying Leg Curl", videoId: "SbSNUXPRkc8" },
