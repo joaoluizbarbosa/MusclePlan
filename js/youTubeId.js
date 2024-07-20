@@ -2,22 +2,28 @@ const muscleGroups = {
     peito: [
         { name: "Supino Reto com Barra - Barbell Bench Press", videoId: "SCVCLChPQFY" },
         { name: "Supino Reto com Halteres - Dumbbell Bench Press", videoId: "YQ2s_Y7g5Qk" },
+        { name: "Supino Horizontal na Máquina - Machine Chest Press", videoId: "DcSMIlBnnZ8"},
         { name: "Supino Inclinado com Barra - Incline Barbell Bench Press", videoId: "2jFFCy8JBU8" },
         { name: "Low Incline Dumbbell Press", videoId: "ADl1Ac2ADHQ" },
         { name: "Crucifixo no Pec Deck - Pec Deck Flye", videoId: "FDay9wFe5uE" },
-        { name: "Supino Horizontal na Máquina - Machine Chest Press", videoId: "DcSMIlBnnZ8"}
+        { name: "Crucifixo no Cabo - Cable Bent Flye", videoId: "Cj6P91eFXkM" },
+        { name: "Crucifixo com Halteres - Flat Dumbbell Flye", videoId: "JFm8KbhjibM" }
+        
     ],
     triceps: [
         { name: "Tríceps na Polia com Barra Reta - Cable Triceps Pushdown", videoId: "6Fzep104f0s" },
         { name: "Tríceps na Polia com Corda - Rope Pushdown", videoId:"-xa-6cQaZKY" },
         { name: "Tríceps Testa com Barra W - EZ Bar Skull Crusher", videoId:"eluOhtYkm-0" },
         { name: "Tríceps Francês Unilateral com Halteres - Single Arm Dumbbell French Press", videoId:"9uDyYtQ1JzM" },
-        { name: "Tríceps Acima da Cabeça na Polia com Corda - Rope Overhead Cable Triceps Extension", videoId:"KvrP8c6eVBc" }
+        { name: "Tríceps Acima da Cabeça na Polia com Corda - Rope Overhead Cable Triceps Extension", videoId:"KvrP8c6eVBc" },
+        { name: "Tríceps Coice no Cabo - Cable Triceps Kickback", videoId:"DYsQWSbj7UM" }
     ],
     ombros: [
         { name: "Desenvolvimento de Ombros Sentado com Halteres - Seated Dumbbell Shoulder Press", videoId: "SSXS4Z8OkCg" },
         { name: "Desenvolvimento de Ombros na Máquina - Machine Shoulder Press", videoId: "WvLMauqrnK8" },
         { name: "Desenvolvimento de Ombros em Pé com Barra - Standing Barbell Shoulder Press", videoId: "G2qpTG1Eh40" },
+        { name: "Standing Arnold Press - Arnold Press em Pé", videoId: "pQDrcNoDNVM" },
+        { name: "Seated Arnold Press - Arnold Press Sentado", videoId: "R-RTgOxrj88" },
         { name: "Elevação Lateral com Halteres - Dumbbell Lateral Raise", videoId: "XPPfnSEATJA"},
         { name: "Elevação Lateral no Cabo - Cable Lateral Raise", videoId: "Z5FA9aq3L6A"},
         { name: "Elevação Lateral na Máquina - Machine Lateral Raise", videoId: "0yEX5In9YTg"}
@@ -26,20 +32,27 @@ const muscleGroups = {
         { name: "Remada Baixa no Cabo - Seated Cable Row", videoId: "UCXxvVItLoM" },
         { name: "Remada Inclinada com Peito Apoiado com Halteres - Incline Chest-Supported Dumbbell Row", videoId: "tZUYS7X50so" },
         { name: "Remada com Peito Apoiado Pegada T - Chest-Supported T-Bar Row", videoId: "0UBRfiO4zDs" },
+        { name: "Remada com Peito Apoiado Pegada Diagonal - Chest-Supported Diagonal-Grip Row", videoId: "vee7qopvx3Y" },
+        { name: "Remada com Peito Apoiado Pegada Neutra - Chest-Supported Neutral-Grip Row", videoId: "eOcHlx6E9ok" },
         { name: "Remada Unilateral com Halter - Single Arm Supported Dumbbell Row", videoId: "DMo3HJoawrU" },
         { name: "Crucifixo Invertido no Pec Deck - Machine Reverse Flye", videoId: "5YK4bgzXDp0" },
         { name: "Crucifixo Invertido com Halteres - Bent Over Reverse Dumbbell Flye", videoId: "hf7jnF45N_I" },
         { name: "Crucifixo Invertido no Cabo - Rear Delt Cable Flye", videoId: "er15V96hG5U" },
         { name: "Puxada Frente com Puxador Anatômico N3 - Lat Pulldown N3", videoId: "JyTjbMnwDHw" },
         { name: "Puxada Frente Pegada Aberta Pronada - Overhand Lat Pulldown", videoId: "EUIri47Epcg" },
-        { name: "Puxada Frente com Pegada Neutra - Neutral Grip Lat Pulldown", videoId: "kxeklf1Tkhw" }
+        { name: "Puxada Frente com Pegada Neutra - Neutral Grip Lat Pulldown", videoId: "kxeklf1Tkhw" },
+        { name: "Graviton Pegada Aberta Pronada - Graviton Overhand Wide-Grip", videoId: "BkRGxqQMlzM" },
+        { name: "Graviton Pegada Fechada Supinada - Graviton Underhand Close-Grip", videoId: "Lt96nC-W9s0" }
     ],
     biceps: [
         { name: "Rosca Bíceps com Barra W - EZ Bar Curl", videoId: "-gSM-kqNlUw" },
         { name: "Rosca Bíceps com Halteres - Dumbbell Bicep Curl", videoIde: "HnHuhf4hEWY" },
+        { name: "Rosca Bíceps Inclinado com Halteres - Incline Dumbbell Curl", videoId: "aTYlqC_JacQ" },
+        { name: "Rosca Bíceps Bayesiana - Bayesian Curl", videoId: "JVRpQSWJ6JU" },
         { name: "Rosca Martelo com Halteres - Dumbbell Hammer Curl", videoId: "CFBZ4jN1CMI" },
         { name: "Rosca Scott com Barra W - EZ Bar Preacher Curl", videoId: "sxA__DoLsgo" },
         { name: "Rosca Scott na Máquina - Machine Preacher Curl", videoId: "Ja6ZlIDONac" }
+
     ],
     trapezio: [
         { name: "Encolhimento Kelso com Halteres - DB Kelso Shrug", videoId: "qKCuWRx-hKk" },
